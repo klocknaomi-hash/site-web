@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   CheckCircle2,
   ArrowRight,
@@ -65,6 +65,33 @@ interface SocialPlatform {
 }
 
 export default function PlateformesPage() {
+  useEffect(() => {
+    // Force light background theme dynamically on body & html for this route
+    const body = document.body;
+    const html = document.documentElement;
+    
+    const originalBodyBg = body.style.backgroundColor;
+    const originalBodyColor = body.style.color;
+    
+    body.style.backgroundColor = "#ffffff";
+    body.style.color = "#0f172a";
+    
+    const isDark = html.classList.contains("dark");
+    if (isDark) {
+      html.classList.remove("dark");
+      html.classList.add("light");
+    }
+
+    return () => {
+      body.style.backgroundColor = originalBodyBg;
+      body.style.color = originalBodyColor;
+      if (isDark) {
+        html.classList.remove("light");
+        html.classList.add("dark");
+      }
+    };
+  }, []);
+
   const socialPlatforms: SocialPlatform[] = [
     {
       id: "instagram",
@@ -101,17 +128,17 @@ export default function PlateformesPage() {
     {
       id: "tiktok",
       name: "TikTok",
-      desc: "Vidéos verticales & Audios",
-      longDesc: "Explosez votre visibilité organique. Envoyez vos vidéos courtes directement aux API TikTok et surfez sur les dernières tendances algorithmiques.",
+      desc: "Vidéos verticales",
+      longDesc: "Explosez votre visibilité organique. Envoyez vos vidéos courtes directement aux API TikTok et captez l'attention de votre audience.",
       color: "#000000",
-      bgGradient: "from-slate-900/10 to-transparent dark:from-white/5 to-transparent",
+      bgGradient: "from-slate-900/10 to-transparent",
       gradientLine: "from-[#000000] via-[#25F4EE] to-[#FE2C55]",
-      icon: <TikTokIcon className="w-8 h-8 text-slate-900 dark:text-white" />,
+      icon: <TikTokIcon className="w-8 h-8 text-slate-900" />,
       features: [
         "Auto-publication de vidéos 9:16",
         "Aperçu mobile dynamique interactif",
         "Gestion des comptes créateurs & pros",
-        "Optimisation sonore et hashtags viraux"
+        "Optimisation des hashtags viraux"
       ]
     },
     {
@@ -133,30 +160,30 @@ export default function PlateformesPage() {
     {
       id: "youtube",
       name: "YouTube",
-      desc: "Shorts & Vidéos classiques",
-      longDesc: "Développez votre chaîne vidéo. Programmez vos YouTube Shorts verticaux et vidéos horizontales tout en configurant le SEO.",
+      desc: "Shorts uniquement",
+      longDesc: "Développez votre présence vidéo au format court. Planifiez et publiez vos YouTube Shorts verticaux de manière entièrement automatisée.",
       color: "#FF0000",
       bgGradient: "from-red-500/10 to-rose-500/5",
       gradientLine: "from-[#FF0000] to-[#CC0000]",
       icon: <YoutubeIcon className="w-8 h-8 text-[#FF0000]" />,
       features: [
         "Publication de Shorts automatisée",
-        "Upload de vidéos longues HD",
         "Optimisation des titres & descriptions",
-        "Suivi des abonnés et temps de visionnage"
+        "Suivi des statistiques des Shorts",
+        "Planification aux heures d'audience"
       ]
     },
     {
       id: "x-twitter",
       name: "X (Twitter)",
-      desc: "Threads & Planification fine",
-      longDesc: "Réagissez instantanément à l'actualité. Rédigez des threads structurés et planifiez vos tweets à la minute près pour engager l'audience.",
+      desc: "Tweets & Planification fine",
+      longDesc: "Réagissez instantanément à l'actualité. Rédigez et planifiez vos tweets à la minute près pour engager votre audience.",
       color: "#0F1419",
-      bgGradient: "from-slate-800/10 to-transparent dark:from-white/5 to-transparent",
+      bgGradient: "from-slate-800/10 to-transparent",
       gradientLine: "from-[#0F1419] via-slate-850 to-neutral-900",
-      icon: <TwitterIcon className="w-8 h-8 text-slate-900 dark:text-white" />,
+      icon: <TwitterIcon className="w-8 h-8 text-slate-900" />,
       features: [
-        "Planificateur de threads multi-tweets",
+        "Planificateur de tweets intuitif",
         "Support complet images, GIFs & vidéos",
         "Optimisation d'heures de postage",
         "Statistiques d'impressions en direct"
@@ -165,26 +192,26 @@ export default function PlateformesPage() {
   ];
 
   return (
-    <div className="relative pt-28 pb-20 overflow-x-hidden">
+    <div className="relative pt-28 pb-20 overflow-x-hidden bg-white text-slate-900">
       {/* Background glow effects */}
-      <div className="absolute top-[20%] left-[-10%] w-[40%] aspect-square rounded-full bg-purple-500/10 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[40%] aspect-square rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-[20%] left-[-10%] w-[40%] aspect-square rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-10%] w-[40%] aspect-square rounded-full bg-indigo-500/5 blur-[100px] pointer-events-none" />
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 text-center">
         <ScrollReveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/40 text-primary border border-purple-200/50 dark:border-purple-900/30 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-primary border border-purple-200/50 text-xs font-semibold mb-4">
             ⚡ TOUS VOS CANAUX CONNECTÉS
           </div>
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight">
             Publiez en un clic sur toutes vos{" "}
             <span className="font-serif italic font-normal text-primary">plateformes</span>.
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6">
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mt-6">
             Découvrez comment Creatabl.ia unifie la diffusion de votre contenu. Configurez vos comptes une seule fois et laissez notre planificateur gérer le reste.
           </p>
         </ScrollReveal>
@@ -195,7 +222,7 @@ export default function PlateformesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {socialPlatforms.map((platform) => (
             <ScrollReveal key={platform.id}>
-              <div className="group relative overflow-hidden rounded-3xl border border-slate-200/60 dark:border-purple-950/30 bg-[#FFFFFF] dark:bg-[#121118] p-8 space-y-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full">
+              <div className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 space-y-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full">
                 {/* Custom top border brand line */}
                 <div className={`absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r ${platform.gradientLine}`} />
                 {/* Hover gradient background circle */}
@@ -203,33 +230,35 @@ export default function PlateformesPage() {
                 
                 <div className="space-y-4 relative z-10">
                   <div className="flex justify-between items-center">
-                    <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-purple-950/15 border border-slate-100 dark:border-purple-950/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       {platform.icon}
                     </div>
-                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/5 px-2.5 py-1 rounded-full border border-emerald-500/20 flex items-center gap-1">
+                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 flex items-center gap-1">
                       <ShieldCheck size={12} />
                       API Officielle
                     </span>
                   </div>
                   
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold font-outfit text-slate-900 dark:text-white flex items-center gap-2">
+                    <h3 className="text-xl font-bold font-outfit text-slate-900 flex items-center gap-2">
                       {platform.name}
                     </h3>
                     <p className="text-xs text-primary font-semibold font-outfit">
                       {platform.desc}
                     </p>
-                    <p className="text-sm text-slate-550 dark:text-slate-400 leading-relaxed pt-1">
+                    <p className="text-sm text-slate-550 leading-relaxed pt-1">
                       {platform.longDesc}
                     </p>
                   </div>
                   
                   <div className="pt-2 space-y-2.5">
-                    <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Fonctionnalités</span>
+                    <span className="text-[13px] font-bold text-slate-700 uppercase tracking-wider block mb-2">
+                      Fonctionnalités
+                    </span>
                     <div className="space-y-2">
                       {platform.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
-                          <CheckCircle2 size={14} className="text-primary flex-shrink-0" />
+                        <div key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-700">
+                          <CheckCircle2 size={15} className="text-primary flex-shrink-0" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -240,7 +269,7 @@ export default function PlateformesPage() {
                 <div className="pt-6 relative z-10">
                   <a
                     href="https://app.creatabl-ia.com/sign-up"
-                    className="w-full text-center py-2.5 px-4 rounded-xl border border-slate-200 dark:border-purple-950/40 text-xs font-bold transition-all flex items-center justify-center gap-1 group/btn"
+                    className="w-full text-center py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-1 group/btn"
                     style={{ 
                       background: "rgba(139, 92, 246, 0.05)",
                       color: "var(--color-primary)" 
@@ -260,10 +289,10 @@ export default function PlateformesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               Une architecture optimisée pour chaque réseau
             </h2>
-            <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-500 mt-4 leading-relaxed">
               Ne vous souciez plus des contraintes techniques de chaque réseau. Notre moteur intelligent de publication adapte automatiquement vos images et textes.
             </p>
           </div>
@@ -306,17 +335,17 @@ export default function PlateformesPage() {
             },
           ].map((item, idx) => (
             <ScrollReveal key={idx} delay={idx * 100}>
-              <div className="h-full rounded-3xl border border-slate-200/60 dark:border-purple-950/30 bg-[#FFFFFF] dark:bg-[#121118] p-8 space-y-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-purple-950/10 border border-slate-100 dark:border-purple-950/20 flex items-center justify-center">
+              <div className="h-full rounded-3xl border border-slate-200 bg-white p-8 space-y-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
                   {item.icon}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold font-outfit text-slate-800 dark:text-slate-100">{item.title}</h3>
-                  <p className="text-sm text-slate-550 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold font-outfit text-slate-800">{item.title}</h3>
+                  <p className="text-sm text-slate-555 leading-relaxed">{item.desc}</p>
                 </div>
-                <ul className="space-y-2.5 pt-2 border-t border-slate-100 dark:border-purple-950/10">
+                <ul className="space-y-2.5 pt-2 border-t border-slate-100">
                   {item.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                    <li key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-600">
                       <CheckCircle2 size={14} className="text-primary flex-shrink-0" />
                       <span>{feat}</span>
                     </li>
@@ -328,29 +357,29 @@ export default function PlateformesPage() {
         </div>
       </section>
 
-      {/* CTA section */}
+      {/* CTA section (Stunning Dark Premium Card on White Background) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[#FFFFFF] p-8 sm:p-12 md:p-16 text-center shadow-2xl">
-            <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-tr from-[#1E1B4B] to-[#311062] p-8 sm:p-12 md:p-16 text-center shadow-2xl border border-purple-900/40">
+            <div className="absolute inset-0 radial-glow-cta opacity-60 pointer-events-none" />
             <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white font-outfit">
                 Prêt à connecter vos comptes de réseaux sociaux ?
               </h2>
-              <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto">
+              <p className="text-sm sm:text-base text-purple-100 max-w-lg mx-auto leading-relaxed">
                 Intégrez vos plateformes favorites en 2 clics et commencez à publier immédiatement.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a
                   href="https://app.creatabl-ia.com/sign-up"
-                  className="w-full sm:w-auto text-center px-8 py-4 btn-purple-primary shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto text-center px-8 py-4 btn-purple-primary shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 group font-semibold text-white"
                 >
                   <span>Créer mon compte</span>
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="https://app.creatabl-ia.com/sign-in"
-                  className="w-full sm:w-auto text-center font-semibold text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-slate-900/20"
+                  className="w-full sm:w-auto text-center font-semibold text-purple-200 hover:text-white border border-purple-400/30 hover:border-purple-300 px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-purple-950/20 hover:bg-purple-900/30"
                 >
                   Se connecter
                 </a>
