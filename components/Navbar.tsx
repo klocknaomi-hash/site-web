@@ -8,13 +8,13 @@ import {
   ChevronDown, 
   Calendar, 
   BarChart2, 
-  Share2, 
   Sparkles, 
-  Flame, 
   Users, 
   ArrowRight,
-  Cpu,
-  Layers
+  Layers,
+  Bell,
+  Network,
+  Settings
 } from "lucide-react";
 
 // Local SVG icons to bypass lucide-react differences
@@ -70,38 +70,38 @@ export default function Navbar() {
     {
       name: "Planification intelligente",
       desc: "Postez automatiquement aux heures optimales.",
-      href: "/features#automation",
+      href: "/#fonctionnalites",
       icon: <Calendar className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Analytics temps réel",
       desc: "Suivez vos performances sur un tableau unifié.",
-      href: "/features#performance",
-      icon: <BarChart2 className="w-5 h-5 text-indigo-600" />,
+      href: "/#fonctionnalites",
+      icon: <BarChart2 className="w-5 h-5 text-blue-600" />,
     },
     {
       name: "Génération IA",
       desc: "Rédigez légendes et hashtags en un instant.",
-      href: "/features#intelligence-artificielle",
-      icon: <Sparkles className="w-5 h-5 text-emerald-600" />,
+      href: "/#fonctionnalites",
+      icon: <Sparkles className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Multi-plateforme natif",
       desc: "Canaux multiples et intégration Canva directe.",
-      href: "/features#integration",
-      icon: <Share2 className="w-5 h-5 text-blue-600" />,
+      href: "/#fonctionnalites",
+      icon: <Network className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Alertes tendances",
       desc: "Détectez les hashtags et sons en forte hausse.",
-      href: "/features#tendances",
-      icon: <Flame className="w-5 h-5 text-orange-600" />,
+      href: "/#fonctionnalites",
+      icon: <Bell className="w-5 h-5 text-orange-600" />,
     },
     {
       name: "Collaboration équipe",
       desc: "Workflows de validation simples pour vos clients.",
-      href: "/features#collaboration",
-      icon: <Users className="w-5 h-5 text-pink-600" />,
+      href: "/#fonctionnalites",
+      icon: <Users className="w-5 h-5 text-purple-600" />,
     },
   ];
 
@@ -238,7 +238,7 @@ export default function Navbar() {
                     <div className="col-span-4 bg-slate-50 border border-slate-100 rounded-xl p-4 flex flex-col justify-between">
                       <div className="space-y-2">
                         <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                          <Cpu className="w-4 h-4 text-primary" />
+                          <Settings className="w-4 h-4 text-purple-600" />
                         </div>
                         <h4 className="text-xs font-bold font-outfit text-slate-800">
                           Technologie IA native
@@ -248,7 +248,7 @@ export default function Navbar() {
                         </p>
                       </div>
                       <Link
-                        href="/features"
+                        href="/#fonctionnalites"
                         onClick={() => setActiveDropdown(null)}
                         className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1 mt-4 group"
                       >
@@ -424,7 +424,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                   <Link
-                    href="/features"
+                    href="/#fonctionnalites"
                     onClick={() => {
                       setIsOpen(false);
                       setMobileFeaturesOpen(false);
