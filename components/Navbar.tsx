@@ -109,19 +109,16 @@ export default function Navbar() {
     {
       name: "Instagram",
       desc: "Reels, Stories & Graph API",
-      href: "/plateformes#instagram",
       icon: <InstagramIcon className="w-5 h-5 text-[#E1306C]" />,
     },
     {
       name: "LinkedIn",
       desc: "Carrousels pro & Profils",
-      href: "/plateformes#linkedin",
       icon: <LinkedinIcon className="w-5 h-5 text-[#0A66C2]" />,
     },
     {
       name: "TikTok",
       desc: "Vidéos courtes & Trend sync",
-      href: "/plateformes#tiktok",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
           <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
@@ -131,7 +128,6 @@ export default function Navbar() {
     {
       name: "Facebook",
       desc: "Pages d'entreprise & Groupes",
-      href: "/plateformes#facebook",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-[#1877F2]">
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -141,13 +137,11 @@ export default function Navbar() {
     {
       name: "YouTube",
       desc: "Shorts & Planification vidéo",
-      href: "/plateformes#youtube",
       icon: <YoutubeIcon className="w-5 h-5 text-[#FF0000]" />,
     },
     {
       name: "X (Twitter)",
       desc: "Threads programmés & Réactivité",
-      href: "/plateformes#x-twitter",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -286,13 +280,11 @@ export default function Navbar() {
                   >
                     <div className="col-span-8 grid grid-cols-2 gap-x-4 gap-y-3">
                       {platforms.map((item, idx) => (
-                        <Link
+                        <div
                           key={idx}
-                          href={item.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="flex gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors group"
+                          className="flex gap-3 p-2 rounded-xl cursor-default"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform">
+                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100">
                             {item.icon}
                           </div>
                           <div>
@@ -303,7 +295,7 @@ export default function Navbar() {
                               {item.desc}
                             </p>
                           </div>
-                        </Link>
+                        </div>
                       ))}
                     </div>
 
@@ -322,10 +314,9 @@ export default function Navbar() {
                       <Link
                         href="/plateformes"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1 mt-4 group"
+                        className="text-[11px] font-medium text-[#7225E3] hover:underline flex items-center gap-1 mt-4 cursor-pointer"
                       >
-                        <span>Voir le cadran complet</span>
-                        <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
+                        <span>En savoir plus →</span>
                       </Link>
                     </div>
                   </div>
@@ -451,18 +442,13 @@ export default function Navbar() {
               {mobilePlatformsOpen && (
                 <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 rounded-xl mt-1">
                   {platforms.map((item, idx) => (
-                    <Link
+                    <div
                       key={idx}
-                      href={item.href}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setMobilePlatformsOpen(false);
-                      }}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] hover:bg-slate-100"
+                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] cursor-default"
                     >
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span className="font-medium text-xs">{item.name}</span>
-                    </Link>
+                    </div>
                   ))}
                   <Link
                     href="/plateformes"
