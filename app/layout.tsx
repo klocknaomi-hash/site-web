@@ -76,6 +76,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body className={`${outfit.variable} ${playfair.variable} ${inter.variable} font-sans antialiased bg-white dark:bg-[#0b0a0f] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col`}>
         <ThemeProvider>
           <Navbar />
