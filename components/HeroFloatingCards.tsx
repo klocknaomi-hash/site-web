@@ -74,7 +74,7 @@ export default function HeroFloatingCards() {
 
             {/* AI Response simulation */}
             <div className="bg-purple-500/5 border border-purple-500/10 p-3 rounded-lg space-y-2">
-              <p className="text-[11px] leading-relaxed text-slate-700 dark:text-slate-300">
+              <p className="text-[13px] leading-relaxed text-slate-700 dark:text-slate-300">
                 ✨ <strong>Option 1 :</strong> Vos contenus méritent le meilleur. Découvrez comment passer à la vitesse supérieure dès aujourd&apos;hui avec <strong>#Creatabl</strong> 🚀 Link in bio !
               </p>
               <div className="flex gap-1.5">
@@ -144,7 +144,7 @@ export default function HeroFloatingCards() {
               </div>
               <span className="font-semibold text-sm">Performances</span>
             </div>
-            <div className="flex items-center gap-1 text-[11px] text-emerald-500 font-bold bg-emerald-550/10 px-2 py-0.5 rounded-full bg-emerald-500/10">
+            <div className="flex items-center gap-1 text-[13px] text-emerald-500 font-bold bg-emerald-550/10 px-2 py-0.5 rounded-full bg-emerald-500/10">
               <span>+324%</span>
             </div>
           </div>

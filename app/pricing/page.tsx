@@ -252,7 +252,7 @@ export default function PricingPage() {
                 }}
               >
                 Annuel
-                <span className="font-outfit font-bold text-[11px] text-white px-2 py-0.5 rounded-full"
+                <span className="font-outfit font-bold text-[13px] text-white px-2 py-0.5 rounded-full"
                   style={{ background: "#7225E3" }}>
                   -20%
                 </span>
@@ -283,7 +283,7 @@ export default function PricingPage() {
                 {/* Popular badge */}
                 {plan.popular && (
                   <div
-                    className="absolute left-1/2 -translate-x-1/2 -top-3.5 font-outfit font-semibold text-white text-[11px] px-4 py-1.5 rounded-full whitespace-nowrap"
+                    className="absolute left-1/2 -translate-x-1/2 -top-3.5 font-outfit font-semibold text-white text-[13px] px-4 py-1.5 rounded-full whitespace-nowrap"
                     style={{ background: "#7225E3" }}
                   >
                     Le plus populaire
@@ -396,7 +396,7 @@ export default function PricingPage() {
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
           <ScrollReveal>
             <div className="text-center mb-14">
-              <p className="font-outfit font-bold text-[11px] text-[#7225E3] uppercase tracking-widest mb-3">
+              <p className="font-outfit font-bold text-[13px] text-[#7225E3] uppercase tracking-widest mb-3">
                 Comparatif
               </p>
               <h2 className="font-outfit font-bold text-[#111827]"

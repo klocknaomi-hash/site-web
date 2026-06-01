@@ -257,8 +257,8 @@ export default function PlateformesPage() {
                     </span>
                     <div className="space-y-2">
                       {platform.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-700">
-                          <CheckCircle2 size={15} className="text-primary flex-shrink-0" />
+                        <div key={fIdx} className="flex items-center gap-2.5 text-sm text-slate-700">
+                          <CheckCircle2 size={16} className="text-primary flex-shrink-0" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -345,8 +345,8 @@ export default function PlateformesPage() {
                 </div>
                 <ul className="space-y-2.5 pt-2 border-t border-slate-100">
                   {item.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-600">
-                      <CheckCircle2 size={14} className="text-primary flex-shrink-0" />
+                    <li key={fIdx} className="flex items-center gap-2.5 text-sm text-slate-600">
+                      <CheckCircle2 size={16} className="text-primary flex-shrink-0" />
                       <span>{feat}</span>
                     </li>
                   ))}

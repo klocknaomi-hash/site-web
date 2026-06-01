@@ -89,7 +89,7 @@ export default function Footer() {
             <h3 
               className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
               style={{
-                fontSize: "11px",
+                fontSize: "13px",
                 marginBottom: "18px",
               }}
             >
@@ -140,7 +140,7 @@ export default function Footer() {
             <h3 
               className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
               style={{
-                fontSize: "11px",
+                fontSize: "13px",
                 marginBottom: "18px",
               }}
             >
@@ -191,7 +191,7 @@ export default function Footer() {
             <h3 
               className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
               style={{
-                fontSize: "11px",
+                fontSize: "13px",
                 marginBottom: "18px",
               }}
             >

@@ -70,37 +70,37 @@ export default function Navbar() {
     {
       name: "Planification intelligente",
       desc: "Postez automatiquement aux heures optimales.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/planification",
       icon: <Calendar className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Analytics temps réel",
       desc: "Suivez vos performances sur un tableau unifié.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/analytics",
       icon: <BarChart2 className="w-5 h-5 text-blue-600" />,
     },
     {
       name: "Génération IA",
       desc: "Rédigez légendes et hashtags en un instant.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/generation-ia",
       icon: <Sparkles className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Multi-plateforme natif",
       desc: "Canaux multiples et intégration Canva directe.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/multi-plateforme",
       icon: <Network className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Alertes tendances",
       desc: "Détectez les hashtags et sons en forte hausse.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/alertes-tendances",
       icon: <Bell className="w-5 h-5 text-orange-600" />,
     },
     {
       name: "Collaboration équipe",
       desc: "Workflows de validation simples pour vos clients.",
-      href: "/#fonctionnalites",
+      href: "/fonctionnalites/collaboration",
       icon: <Users className="w-5 h-5 text-purple-600" />,
     },
   ];
@@ -174,7 +174,7 @@ export default function Navbar() {
                 />
                 <div className="flex items-baseline font-outfit font-medium text-[20px]">
                   <span className="text-[#111827]">Creatabl.</span>
-                  <span className="font-playfair italic font-medium text-[#7225E3]">ia</span>
+                  <span className="font-playfair italic font-medium text-[#111827]">ia</span>
                 </div>
               </Link>
             </div>
@@ -221,7 +221,7 @@ export default function Navbar() {
                             <h4 className="text-xs font-bold text-slate-800 font-outfit">
                               {item.name}
                             </h4>
-                            <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                            <p className="text-[13px] text-slate-400 mt-0.5 leading-snug">
                               {item.desc}
                             </p>
                           </div>
@@ -242,9 +242,9 @@ export default function Navbar() {
                         </p>
                       </div>
                       <Link
-                        href="/#fonctionnalites"
+                        href="/fonctionnalites"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1 mt-4 group"
+                        className="text-[13px] font-bold text-primary hover:underline flex items-center gap-1 mt-4 group"
                       >
                         <span>Voir tout</span>
                         <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
@@ -314,7 +314,7 @@ export default function Navbar() {
                       <Link
                         href="/plateformes"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-[11px] font-medium text-[#7225E3] hover:underline flex items-center gap-1 mt-4 cursor-pointer"
+                        className="text-[13px] font-medium text-[#7225E3] hover:underline flex items-center gap-1 mt-4 cursor-pointer"
                       >
                         <span>En savoir plus →</span>
                       </Link>
@@ -415,7 +415,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                   <Link
-                    href="/#fonctionnalites"
+                    href="/fonctionnalites"
                     onClick={() => {
                       setIsOpen(false);
                       setMobileFeaturesOpen(false);

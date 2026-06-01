@@ -58,10 +58,10 @@ export default function FeaturesPage() {
     {
       id: 2,
       badge: "Performance",
-      title: "Analytics en temps réel",
+      title: "Analytics temps réel",
       tagline: "Toutes vos données sociales réunies en un seul endroit.",
       description:
-        "Analysez les performances de toutes vos plateformes depuis un tableau de bord unique et intuitif. Comparez la croissance de vos abonnés, l'engagement de vos publications, et téléchargez des rapports professionnels en un clic pour vos clients ou votre équipe.",
+        "Visualisez les performances de tous vos comptes depuis un tableau de bord unifié. Portée, engagement, impressions, clics — chaque métrique importante accessible en un coup d'œil. Identifiez vos meilleurs contenus pour comprendre ce qui fonctionne.",
       bullets: [
         "Suivi unifié de l'engagement global",
         "Rapports personnalisables exportables en PDF",
@@ -106,7 +106,7 @@ export default function FeaturesPage() {
       title: "Multi-plateforme natif",
       tagline: "Créez une fois, diffusez partout avec élégance.",
       description:
-        "Connectez vos comptes Instagram, TikTok, Facebook, LinkedIn et importez directement vos visuels depuis Canva. Adaptez facilement le format et le message de vos publications en fonction de chaque réseau sans quitter Creatabl.ia.",
+        "Connectez vos comptes Instagram, LinkedIn, TikTok, Facebook, YouTube et X en quelques minutes. Creatabl se connecte via les APIs officielles de chaque plateforme pour une intégration 100% sécurisée et stable. Importez vos visuels directement depuis Canva.",
       bullets: [
         "Intégration fluide avec l'API Canva",
         "Recadrage d'images et vidéos intelligent selon le réseau",
@@ -146,7 +146,7 @@ export default function FeaturesPage() {
       title: "Génération IA",
       tagline: "Dites adieu au syndrome de la page blanche.",
       description:
-        "Générez des légendes percutantes adaptées au ton de votre marque et des ensembles de hashtags pertinents en un clin d'œil. Notre moteur d'écriture IA affine les textes pour susciter l'interaction et optimiser le référencement social.",
+        "Générez des légendes percutantes adaptées au ton de votre marque et des ensembles de hashtags pertinents en un clin d'œil. Notre agent IA affine les textes pour susciter l'interaction et s'adapter au style de chaque plateforme.",
       bullets: [
         "Choix du ton (Professionnel, Amical, Inspirant, Fun)",
         "Génération automatique de hashtags populaires",
@@ -162,7 +162,7 @@ export default function FeaturesPage() {
           <div className="space-y-2">
             <div className="text-xs bg-white dark:bg-[#121118] border border-slate-100 dark:border-purple-950/20 p-3 rounded-xl">
               <span className="text-primary font-bold">Propositions :</span>
-              <p className="mt-1 text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
+              <p className="mt-1 text-slate-600 dark:text-slate-300 leading-relaxed text-[13px]">
                 🚀 Simplifiez la gestion de vos réseaux sociaux ! Avec notre plateforme, planifiez vos posts de la semaine en moins de 10 minutes.
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function FeaturesPage() {
       title: "Alertes tendances",
       tagline: "Créez sur les sujets qui captivent déjà votre audience.",
       description:
-        "Notre scanner de tendances analyse en permanence le web et les réseaux sociaux. Recevez une notification instantanée dès qu'un format audio, un défi, ou un hashtag thématique connait une croissance exponentielle afin de surfer sur la vague immédiatement.",
+        "Surveillez en permanence les hashtags, sons et sujets qui explosent sur chaque réseau social. Configurez vos mots-clés une seule fois et recevez des notifications instantanées sur les opportunités pertinentes.",
       bullets: [
         "Détection précoce des hashtags en explosion",
         "Alertes thématiques personnalisées",
@@ -211,7 +211,7 @@ export default function FeaturesPage() {
       title: "Collaboration équipe",
       tagline: "Travaillez ensemble en toute sécurité.",
       description:
-        "Faites valider vos projets de publication par vos clients ou vos supérieurs sans échanges d'e-mails interminables. Configurez des workflows d'approbation clairs, assignez des rôles et assurez-vous que chaque message respecte la charte graphique de la marque.",
+        "Invitez vos collaborateurs, définissez des rôles précis et gérez des workflows de validation sécurisés. Commentez et ajustez vos publications en contexte avant de publier en toute confiance.",
       bullets: [
         "Rôles personnalisés (Rédacteur, Validateur, Administrateur)",
         "Validation en un clic via un lien partagé externe",
@@ -318,13 +318,13 @@ export default function FeaturesPage() {
       {/* CTA at Bottom */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[#FFFFFF] p-8 sm:p-12 md:p-16 text-center shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[#FFFFFF] dark:bg-[#121118] p-8 sm:p-12 md:p-16 text-center shadow-2xl">
             <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
             <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
                 Prêt à transformer votre stratégie de contenu ?
               </h2>
-              <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto">
+              <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
                 Commencez gratuitement dès aujourd&apos;hui et découvrez la puissance de la planification intelligente.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -337,7 +337,7 @@ export default function FeaturesPage() {
                 </a>
                 <a
                   href="https://app.creatabl-ia.com/sign-in"
-                  className="w-full sm:w-auto text-center font-semibold text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-slate-900/20"
+                  className="w-full sm:w-auto text-center font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-350 dark:border-slate-700 hover:border-slate-500 px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-slate-900/5 dark:bg-slate-900/20"
                 >
                   Se connecter
                 </a>

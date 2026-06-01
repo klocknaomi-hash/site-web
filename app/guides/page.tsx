@@ -280,7 +280,7 @@ export default function GuidesPage() {
               {/* Card Body */}
               <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
                 <div className="space-y-2">
-                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#7225E3]">
+                  <span className="text-[13px] font-extrabold uppercase tracking-widest text-[#7225E3]">
                     {guide.category}
                   </span>
                   <h3 className="font-outfit text-lg font-bold text-[#111827] leading-snug group-hover:text-primary transition-colors">

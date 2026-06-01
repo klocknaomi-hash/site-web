@@ -2,34 +2,17 @@ import React from "react";
 import Link from "next/link";
 import LogosStrip from "@/components/LogosStrip";
 import ScrollReveal from "@/components/ScrollReveal";
+import {
+  Calendar,
+  Sparkles,
+  TrendingUp,
+  BarChart2,
+  Layers,
+  Users,
+  ArrowRight
+} from "lucide-react";
 
-const INSTAGRAM_SVG = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-pink-500">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
 
-const LINKEDIN_SVG = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-blue-600">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const TIKTOK_SVG = (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-black">
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
-  </svg>
-);
-
-const FACEBOOK_SVG = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-blue-600">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
 
 export default function Home() {
   const testimonials = [
@@ -386,348 +369,150 @@ export default function Home() {
             </ScrollReveal>
           </div>
 
-          {/* Grille 2x2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] max-w-[1100px] mx-auto">
+          {/* Grille 3x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
             
-            {/* CARTE 1 */}
+            {/* CARD 1 - Planification intelligente */}
             <ScrollReveal delay={100}>
-              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col h-full group">
-                
-                {/* ZONE MAQUETTE (fond #FFFFFF, height: 260px, overflow: hidden) */}
-                <div className="bg-[#FFFFFF] h-[260px] overflow-hidden relative flex flex-col justify-end">
-                  <div className="w-full px-6 pt-5 flex flex-col items-center h-full">
-                    <div className="w-full max-w-[280px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-4 flex flex-col transform translate-y-3 group-hover:translate-y-1 transition-transform duration-300">
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                        Vos réseaux connectés
-                      </div>
-                      <div className="space-y-1.5">
-                        {/* Instagram */}
-                        <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-full bg-pink-50 flex items-center justify-center">
-                              {INSTAGRAM_SVG}
-                            </div>
-                            <span className="text-[11px] font-semibold text-slate-700">Instagram</span>
-                          </div>
-                          <span className="text-[8px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full font-bold">Connecté</span>
-                        </div>
-                        {/* LinkedIn */}
-                        <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center">
-                              {LINKEDIN_SVG}
-                            </div>
-                            <span className="text-[11px] font-semibold text-slate-700">LinkedIn</span>
-                          </div>
-                          <span className="text-[8px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full font-bold">Connecté</span>
-                        </div>
-                        {/* TikTok */}
-                        <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center">
-                              {TIKTOK_SVG}
-                            </div>
-                            <span className="text-[11px] font-semibold text-slate-700">TikTok</span>
-                          </div>
-                          <span className="text-[8px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full font-bold">Connecté</span>
-                        </div>
-                        {/* Facebook */}
-                        <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center">
-                              {FACEBOOK_SVG}
-                            </div>
-                            <span className="text-[11px] font-semibold text-slate-700">Facebook</span>
-                          </div>
-                          <span className="text-[8px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full font-bold">Connecté</span>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-3 flex justify-center">
-                        <button className="px-4 py-1.5 bg-gradient-to-r from-[#8A38F5] to-[#7225E3] text-white text-[10px] font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-200">
-                          ✦ Tout centraliser
-                        </button>
-                      </div>
-                    </div>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-[#7225E3] mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <Calendar className="w-6 h-6" />
                   </div>
-                </div>
-
-                {/* ZONE TEXTE (padding: 24px) */}
-                <div className="p-[24px] flex flex-col space-y-2">
-                  <span className="font-outfit font-medium text-[12px] text-[#7225E3] uppercase tracking-[0.12em]">
-                    Étape 1
-                  </span>
-                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight">
-                    Centralisez tout
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Planification intelligente
                   </h3>
-                  <p className="font-inter text-[15px] text-[#6B7280] leading-[1.65]">
-                    Connectez vos réseaux et retrouvez tous vos contenus au même endroit. Fini les onglets ouverts en permanence.
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Optimisez vos publications aux heures de plus forte activité de votre audience et gérez votre calendrier en glisser-déposer.
                   </p>
                 </div>
-
+                <Link
+                  href="/fonctionnalites/planification"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
               </div>
             </ScrollReveal>
 
-            {/* CARTE 2 */}
+            {/* CARD 2 - Génération IA */}
+            <ScrollReveal delay={150}>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-[#7225E3] mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <Sparkles className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Génération IA
+                  </h3>
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Rédigez des légendes percutantes et des hashtags optimisés pour chaque réseau en quelques secondes seulement.
+                  </p>
+                </div>
+                <Link
+                  href="/fonctionnalites/generation-ia"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            {/* CARD 3 - Alertes tendances */}
             <ScrollReveal delay={200}>
-              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col h-full group">
-                
-                {/* ZONE MAQUETTE (fond #FFFFFF, height: 260px, overflow: hidden) */}
-                <div className="bg-[#FFFFFF] h-[260px] overflow-hidden relative flex flex-col justify-end">
-                  <div className="w-full px-6 pt-5 flex flex-col items-center h-full">
-                    <div className="w-full max-w-[280px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-4 flex flex-col transform translate-y-3 group-hover:translate-y-1 transition-transform duration-300">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Agent IA · Rédaction</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#7225E3] animate-pulse"></span>
-                      </div>
-                      
-                      {/* Input field */}
-                      <div className="bg-white border border-[#E5E7EB] rounded-lg p-2.5 text-[10px] text-slate-400 font-medium select-none mb-2">
-                        Décrivez votre post en quelques mots...
-                      </div>
-
-                      {/* Stacked AI bubbles */}
-                      <div className="space-y-1.5 max-h-[110px] overflow-hidden">
-                        {/* Bubble 1 */}
-                        <div className="bg-[#F5F3FF] border-l-[3px] border-[#7225E3] p-2 rounded-r-md text-[9px] space-y-0.5">
-                          <div className="font-bold text-[#7225E3]">🚀 LinkedIn · Professionnel</div>
-                          <p className="text-slate-500 leading-tight">Optimisez vos publications avec notre IA pour une portée maximale.</p>
-                        </div>
-                        
-                        {/* Bubble 2 */}
-                        <div className="bg-white border border-[#F3F4F6] p-2 rounded-md text-[9px] space-y-0.5">
-                          <div className="font-bold text-pink-600">📸 Instagram · Engageant</div>
-                          <p className="text-slate-500 leading-tight">Une légende captivante avec des hashtags pertinents.</p>
-                        </div>
-
-                        {/* Bubble 3 */}
-                        <div className="bg-white border border-[#F3F4F6] p-2 rounded-md text-[9px] space-y-0.5">
-                          <div className="font-bold text-slate-800">🎵 TikTok · Viral</div>
-                          <p className="text-slate-500 leading-tight">Accroche percutante adaptée aux tendances actuelles.</p>
-                        </div>
-                      </div>
-
-                      {/* Generate button */}
-                      <div className="flex justify-end mt-2">
-                        <button className="px-3 py-1 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-[10px] font-bold rounded-lg flex items-center gap-1 transition-colors">
-                          ✦ Générer avec l&apos;IA
-                        </button>
-                      </div>
-                    </div>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <TrendingUp className="w-6 h-6" />
                   </div>
-                </div>
-
-                {/* ZONE TEXTE (padding: 24px) */}
-                <div className="p-[24px] flex flex-col space-y-2">
-                  <span className="font-outfit font-medium text-[12px] text-[#7225E3] uppercase tracking-[0.12em]">
-                    Étape 2
-                  </span>
-                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight">
-                    Créez sans effort
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Alertes tendances
                   </h3>
-                  <p className="font-inter text-[15px] text-[#6B7280] leading-[1.65]">
-                    Rédigez votre légende. L&apos;agent IA reformule, améliore et adapte votre texte en quelques secondes.
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Surveillez en continu les hashtags, les sons viraux et les sujets émergents propres à votre niche d&apos;activité.
                   </p>
                 </div>
-
+                <Link
+                  href="/fonctionnalites/alertes-tendances"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
               </div>
             </ScrollReveal>
 
-            {/* CARTE 3 */}
+            {/* CARD 4 - Analytics temps réel */}
+            <ScrollReveal delay={250}>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <BarChart2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Analytics temps réel
+                  </h3>
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Analysez les performances de tous vos comptes de manière unifiée et générez des rapports professionnels automatiques.
+                  </p>
+                </div>
+                <Link
+                  href="/fonctionnalites/analytics"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            {/* CARD 5 - Multi-plateforme natif */}
             <ScrollReveal delay={300}>
-              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col h-full group">
-                
-                {/* ZONE MAQUETTE (fond #FFFFFF, height: 260px, overflow: hidden) */}
-                <div className="bg-[#FFFFFF] h-[260px] overflow-hidden relative flex flex-col justify-end">
-                  <div className="w-full px-6 pt-5 flex flex-col items-center h-full">
-                    <div className="w-full max-w-[280px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-3 flex flex-col transform translate-y-3 group-hover:translate-y-1 transition-transform duration-300">
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                        Calendrier éditorial · Mai 2025
-                      </div>
-                      
-                      {/* Grid of days */}
-                      <div className="grid grid-cols-7 gap-1 text-center mb-1">
-                        {['L', 'M', 'M', 'J', 'V', 'S', 'D'].map((day, idx) => (
-                          <span key={idx} className="text-[10px] font-bold text-slate-400 py-0.5">{day}</span>
-                        ))}
-                      </div>
-                      
-                      <div className="grid grid-cols-7 gap-1">
-                        {Array.from({ length: 28 }).map((_, idx) => {
-                          const dayNumber = idx - 2 <= 0 ? 30 + (idx - 2) : idx - 2;
-                          const isCurrentMonth = idx > 2;
-                          const isToday = dayNumber === 15 && isCurrentMonth;
-                          
-                          // Scheduled posts
-                          const hasInsta = isCurrentMonth && (dayNumber === 12 || dayNumber === 15 || dayNumber === 22);
-                          const hasLinkedIn = isCurrentMonth && (dayNumber === 6 || dayNumber === 22);
-                          const hasTikTok = isCurrentMonth && (dayNumber === 19 || dayNumber === 15);
-                          
-                          return (
-                            <div
-                              key={idx}
-                              className={`h-[34px] w-[34px] rounded-lg flex flex-col items-center justify-between py-1 relative text-[10px] font-semibold transition-colors cursor-pointer ${
-                                isToday 
-                                  ? "border-2 border-[#7225E3] bg-[#F5F3FF] text-[#7225E3]" 
-                                  : isCurrentMonth ? "text-slate-700 hover:bg-[#F5F3FF]" : "text-slate-300 hover:bg-[#F5F3FF]"
-                              }`}
-                            >
-                              <span>{dayNumber}</span>
-                              <div className="flex gap-[2px] justify-center absolute bottom-0.5">
-                                {hasInsta && <span className="w-1 h-1 rounded-full bg-[#7225E3]" />}
-                                {hasLinkedIn && <span className="w-1 h-1 rounded-full bg-blue-500" />}
-                                {hasTikTok && <span className="w-1 h-1 rounded-full bg-red-500" />}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      {/* Legend */}
-                      <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-center gap-3 text-[9px] text-slate-500">
-                        <div className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#7225E3]" />
-                          <span>Instagram</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                          <span>LinkedIn</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                          <span>TikTok</span>
-                        </div>
-                      </div>
-                    </div>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-[#7225E3] mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <Layers className="w-6 h-6" />
                   </div>
-                </div>
-
-                {/* ZONE TEXTE (padding: 24px) */}
-                <div className="p-[24px] flex flex-col space-y-2">
-                  <span className="font-outfit font-medium text-[12px] text-[#7225E3] uppercase tracking-[0.12em]">
-                    Étape 3
-                  </span>
-                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight">
-                    Planifiez intelligemment
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Multi-plateforme natif
                   </h3>
-                  <p className="font-inter text-[15px] text-[#6B7280] leading-[1.65]">
-                    Organisez vos publications sur un calendrier éditorial clair. Visualisez votre stratégie sur 30 jours.
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Connectez vos comptes de réseaux sociaux favoris et importez vos conceptions graphiques Canva en un seul clic.
                   </p>
                 </div>
-
+                <Link
+                  href="/fonctionnalites/multi-plateforme"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
               </div>
             </ScrollReveal>
 
-            {/* CARTE 4 */}
-            <ScrollReveal delay={400}>
-              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col h-full group">
-                
-                {/* ZONE MAQUETTE (fond #FFFFFF, height: 260px, overflow: hidden) */}
-                <div className="bg-[#FFFFFF] h-[260px] overflow-hidden relative flex flex-col justify-end">
-                  <div className="w-full px-4 pt-5 flex flex-col items-center h-full">
-                    <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-3.5 flex gap-3 transform translate-y-3 group-hover:translate-y-1 transition-transform duration-300">
-                      
-                      {/* Left Column - Multi-network publishing */}
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div>
-                          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                            Publié sur :
-                          </div>
-                          <div className="flex items-center gap-1.5 mb-3 flex-wrap">
-                            {/* Instagram ✓ */}
-                            <div className="relative">
-                              <div className="w-7 h-7 rounded-full bg-pink-50 flex items-center justify-center">
-                                {INSTAGRAM_SVG}
-                              </div>
-                              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full text-white text-[7px] flex items-center justify-center border border-white font-bold">✓</span>
-                            </div>
-                            {/* LinkedIn ✓ */}
-                            <div className="relative">
-                              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center">
-                                {LINKEDIN_SVG}
-                              </div>
-                              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full text-white text-[7px] flex items-center justify-center border border-white font-bold">✓</span>
-                            </div>
-                            {/* TikTok ✓ */}
-                            <div className="relative">
-                              <div className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
-                                {TIKTOK_SVG}
-                              </div>
-                              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full text-white text-[7px] flex items-center justify-center border border-white font-bold">✓</span>
-                            </div>
-                            {/* Facebook ✓ */}
-                            <div className="relative">
-                              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center">
-                                {FACEBOOK_SVG}
-                              </div>
-                              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full text-white text-[7px] flex items-center justify-center border border-white font-bold">✓</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <button className="w-full py-1.5 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-[10px] font-bold rounded-lg text-center transition-colors">
-                          ✦ Publier partout
-                        </button>
-                      </div>
-
-                      {/* Vertical Separator */}
-                      <div className="w-[1px] bg-[#E5E7EB] self-stretch" />
-
-                      {/* Right Column - Analytics */}
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div>
-                          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                            Performances
-                          </div>
-                          <div className="space-y-2">
-                            {/* Metric 1 */}
-                            <div className="flex flex-col">
-                              <span className="text-[9px] text-slate-400">Portée</span>
-                              <div className="flex items-center gap-1.5">
-                                <span className="text-xs font-bold text-slate-800">284k</span>
-                                <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.2 rounded">↑ +41%</span>
-                              </div>
-                            </div>
-                            {/* Metric 2 */}
-                            <div className="flex flex-col">
-                              <span className="text-[9px] text-slate-400">Engagement</span>
-                              <div className="flex items-center gap-1.5">
-                                <span className="text-xs font-bold text-slate-800">6.8%</span>
-                                <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.2 rounded">↑ +2.1pp</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Mini bar chart */}
-                        <div className="flex items-end gap-1.5 h-6 mt-2 pb-0.5">
-                          {[25, 55, 35, 90, 70].map((height, idx) => (
-                            <div
-                              key={idx}
-                              className="flex-1 bg-[#7225E3] rounded-t-sm"
-                              style={{ height: `${height}%` }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                    </div>
+            {/* CARD 6 - Collaboration équipe */}
+            <ScrollReveal delay={350}>
+              <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.25)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-[250ms] ease-in-out flex flex-col justify-between h-full group p-6">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-[#7225E3] mb-5 group-hover:scale-105 transition-transform duration-200">
+                    <Users className="w-6 h-6" />
                   </div>
-                </div>
-
-                {/* ZONE TEXTE (padding: 24px) */}
-                <div className="p-[24px] flex flex-col space-y-2">
-                  <span className="font-outfit font-medium text-[12px] text-[#7225E3] uppercase tracking-[0.12em]">
-                    Étape 4 · 5
-                  </span>
-                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight">
-                    Publiez partout &amp; mesurez
+                  <h3 className="font-outfit text-[22px] font-bold text-[#111827] leading-tight mb-2">
+                    Collaboration équipe
                   </h3>
-                  <p className="font-inter text-[15px] text-[#6B7280] leading-[1.65]">
-                    LinkedIn, Instagram, TikTok, Facebook — diffusez en un clic puis suivez vos performances et identifiez vos meilleurs contenus.
+                  <p className="font-inter text-[14px] text-[#6B7280] leading-[1.6]">
+                    Définissez des rôles clairs et gérez des workflows de validation sécurisés pour simplifier le travail d&apos;équipe.
                   </p>
                 </div>
-
+                <Link
+                  href="/fonctionnalites/collaboration"
+                  className="text-[13px] font-bold text-[#7225E3] hover:underline flex items-center gap-1 mt-6 group/link"
+                >
+                  <span>En savoir plus</span>
+                  <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform duration-250" />
+                </Link>
               </div>
             </ScrollReveal>
 
@@ -1013,7 +798,7 @@ export default function Home() {
               <span 
                 className="font-outfit uppercase text-white/70 block"
                 style={{
-                  fontSize: "11px",
+                  fontSize: "13px",
                   letterSpacing: "0.1em",
                 }}
               >
