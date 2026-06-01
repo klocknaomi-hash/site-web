@@ -12,7 +12,6 @@ import {
   Users, 
   ArrowRight,
   Layers,
-  Bell,
   Network,
   Settings
 } from "lucide-react";
@@ -90,12 +89,6 @@ export default function Navbar() {
       desc: "Canaux multiples et intégration Canva directe.",
       href: "/fonctionnalites/multi-plateforme",
       icon: <Network className="w-5 h-5 text-purple-600" />,
-    },
-    {
-      name: "Alertes tendances",
-      desc: "Détectez les hashtags et sons en forte hausse.",
-      href: "/fonctionnalites/alertes-tendances",
-      icon: <Bell className="w-5 h-5 text-orange-600" />,
     },
     {
       name: "Collaboration équipe",

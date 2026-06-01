@@ -6,7 +6,6 @@ import {
   BarChart2,
   Sparkles,
   Share2,
-  Flame,
   Users,
   CheckCircle2,
   ArrowRight,
@@ -174,37 +173,7 @@ export default function FeaturesPage() {
         </div>
       ),
     },
-    {
-      id: 5,
-      badge: "Tendances",
-      title: "Alertes tendances",
-      tagline: "Créez sur les sujets qui captivent déjà votre audience.",
-      description:
-        "Pour percer sur les réseaux sociaux, la réactivité est cruciale. Creatabl intègre un scanner de tendances en temps réel qui surveille en permanence les hashtags, les sujets chauds, les défis et les formats de contenus émergents. Dès qu'une opportunité se dessine dans votre niche d'activité, notre IA filtre le bruit du web pour ne vous envoyer qu'une notification immédiate et ciblée, vous permettant d'être parmi les premiers à prendre la parole.",
-      bullets: [
-        "Détection précoce des hashtags en explosion",
-        "Alertes thématiques personnalisées",
-        "Idées de formats vidéos courts (Reels, TikTok) prêts à l'emploi",
-      ],
-      icon: <Flame className="w-6 h-6 text-[#7225E3]" />,
-      visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
-          <span className="text-sm font-bold text-slate-800 block">Tendances du jour</span>
-          <div className="space-y-2">
-            {[
-              { tag: "#InteligenceArtificielle", growth: "+420%", color: "text-red-500" },
-              { tag: "#NoCodeMarketing", growth: "+180%", color: "text-orange-500" },
-              { tag: "#ProductivitySaaS", growth: "+95%", color: "text-yellow-500" },
-            ].map((trend, i) => (
-              <div key={i} className="flex justify-between items-center p-2.5 bg-white border border-slate-100 rounded-xl shadow-sm">
-                <span className="text-xs font-bold text-slate-800">{trend.tag}</span>
-                <span className={`text-xs font-extrabold ${trend.color}`}>{trend.growth}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ),
-    },
+
     {
       id: 6,
       badge: "Collaboration",
