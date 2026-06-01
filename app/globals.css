@@ -101,7 +101,7 @@ body {
 }
 
 .animate-marquee-custom {
-  animation: marquee 22s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .logos-marquee-container {
@@ -109,7 +109,7 @@ body {
   overflow: hidden;
   width: 100%;
   isolation: isolate;
-  background-color: #EDE9FE;
+  background-color: #ffffff;
 }
 
 .logos-marquee-container::before,
@@ -126,12 +126,12 @@ body {
 
 .logos-marquee-container::before {
   left: 0;
-  background: linear-gradient(to right, #EDE9FE 0%, #EDE9FE 40%, transparent 100%);
+  background: linear-gradient(90deg, white, transparent);
 }
 
 .logos-marquee-container::after {
   right: 0;
-  background: linear-gradient(to left, #EDE9FE 0%, #EDE9FE 40%, transparent 100%);
+  background: linear-gradient(270deg, white, transparent);
 }
 
 @keyframes glowPulse {
