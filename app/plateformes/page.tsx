@@ -1,21 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
-  TrendingUp,
-  Image as ImageIcon,
-  Cpu,
-  Brain,
-  CreditCard,
-  Database,
-  Mail,
-  Server,
   CheckCircle2,
   ArrowRight,
   Sparkles,
   Link2,
   ShieldCheck,
-  Zap,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -49,239 +40,129 @@ const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-interface IntegrationNode {
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
+  </svg>
+);
+
+const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+interface SocialPlatform {
   id: string;
   name: string;
-  category: "Réseau Social" | "Création & Données" | "Intelligence Artificielle" | "Infrastructure";
-  status: string;
-  description: string;
-  useCase: string;
+  desc: string;
+  longDesc: string;
   color: string;
-  x: number; // percentage left
-  y: number; // percentage top
-  ring: 1 | 2; // 1 = inner (API), 2 = outer (social)
+  bgGradient: string;
+  gradientLine: string;
   icon: React.ReactNode;
-  specs: string[];
+  features: string[];
 }
 
 export default function PlateformesPage() {
-  const [activeNode, setActiveNode] = useState<string>("instagram");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const nodes: IntegrationNode[] = [
-    // Outer Ring (Social Networks)
+  const socialPlatforms: SocialPlatform[] = [
     {
       id: "instagram",
       name: "Instagram",
-      category: "Réseau Social",
-      status: "Actif & Certifié Meta",
-      description: "L'outil visuel par excellence pour votre marque.",
-      useCase: "Planification et publication automatique de vos photos, Reels et Stories. Récupération des impressions et statistiques d'engagement en temps réel.",
+      desc: "Reels, Stories & Carrousels",
+      longDesc: "Valorisez votre identité visuelle. Programmez vos publications, vos Reels et vos Stories avec une prévisualisation mobile identique au rendu réel.",
       color: "#E1306C",
-      x: 86.4,
-      y: 71.0,
-      ring: 2,
-      icon: <InstagramIcon className="w-5 h-5" />,
-      specs: ["Publication directe", "Reels & Stories", "Statistiques démographiques", "Planification visuelle"],
+      bgGradient: "from-pink-500/10 to-rose-500/5",
+      gradientLine: "from-[#E1306C] via-[#FD1D1D] to-[#F56040]",
+      icon: <InstagramIcon className="w-8 h-8 text-[#E1306C]" />,
+      features: [
+        "Publication directe de Reels & Stories",
+        "Grille de prévisualisation esthétique",
+        "Statistiques détaillées en temps réel",
+        "Recherche de hashtags géolocalisés"
+      ]
     },
     {
       id: "linkedin",
       name: "LinkedIn",
-      category: "Réseau Social",
-      status: "Actif & Certifié Partner",
-      description: "Le canal B2B leader pour engager vos prospects et partenaires.",
-      useCase: "Publication de carrousels PDF, d'articles de fond et de posts d'entreprise. Analyse précise de l'évolution de l'audience professionnelle.",
+      desc: "Carrousels pro & Profils",
+      longDesc: "Le réseau B2B par excellence pour engager vos prospects. Publiez des carrousels PDF pour maximiser votre portée et générer des leads.",
       color: "#0A66C2",
-      x: 50.0,
-      y: 92.0,
-      ring: 2,
-      icon: <LinkedinIcon className="w-5 h-5" />,
-      specs: ["Publication PDF", "Posts d'entreprise", "Rapports d'abonnés", "Segmentation professionnelle"],
+      bgGradient: "from-blue-500/10 to-indigo-500/5",
+      gradientLine: "from-[#0A66C2] to-[#0077B5]",
+      icon: <LinkedinIcon className="w-8 h-8 text-[#0A66C2]" />,
+      features: [
+        "Publication automatique de fichiers PDF",
+        "Support des profils & pages entreprise",
+        "Statistiques démographiques précises",
+        "Éditeur de texte riche intégré"
+      ]
     },
     {
       id: "tiktok",
       name: "TikTok",
-      category: "Réseau Social",
-      status: "Actif & Connecté API",
-      description: "La plateforme de la viralité et du format court.",
-      useCase: "Envoi automatique de vos vidéos de moins de 60 secondes et détection immédiate des défis et formats musicaux populaires.",
+      desc: "Vidéos verticales & Audios",
+      longDesc: "Explosez votre visibilité organique. Envoyez vos vidéos courtes directement aux API TikTok et surfez sur les dernières tendances algorithmiques.",
       color: "#000000",
-      x: 13.6,
-      y: 71.0,
-      ring: 2,
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
-        </svg>
-      ),
-      specs: ["Auto-publication", "Suivi de tendances", "Formats Reels / Shorts", "Optimisation audio"],
+      bgGradient: "from-slate-900/10 to-transparent dark:from-white/5 to-transparent",
+      gradientLine: "from-[#000000] via-[#25F4EE] to-[#FE2C55]",
+      icon: <TikTokIcon className="w-8 h-8 text-slate-900 dark:text-white" />,
+      features: [
+        "Auto-publication de vidéos 9:16",
+        "Aperçu mobile dynamique interactif",
+        "Gestion des comptes créateurs & pros",
+        "Optimisation sonore et hashtags viraux"
+      ]
     },
     {
       id: "facebook",
       name: "Facebook",
-      category: "Réseau Social",
-      status: "Actif",
-      description: "Le réseau global pour fédérer vos communautés locales.",
-      useCase: "Publication simultanée sur vos groupes et pages Facebook professionnelles. Gestion centralisée des réactions et réponses rapides.",
+      desc: "Pages d'entreprise & Groupes",
+      longDesc: "Fédérez et animez votre communauté locale. Centralisez la publication de vos images, vidéos et liens vers vos groupes et pages pro.",
       color: "#1877F2",
-      x: 13.6,
-      y: 29.0,
-      ring: 2,
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      ),
-      specs: ["Pages & Groupes", "Publication programmée", "Multidiffusion", "Analytics"],
+      bgGradient: "from-sky-500/10 to-blue-500/5",
+      gradientLine: "from-[#1877F2] to-[#3b5998]",
+      icon: <FacebookIcon className="w-8 h-8 text-[#1877F2]" />,
+      features: [
+        "Publication simultanée groupes & pages",
+        "Rapports d'activité de votre audience",
+        "Planification par fuseau horaire",
+        "Centralisation des avis et réactions"
+      ]
     },
     {
       id: "youtube",
       name: "YouTube",
-      category: "Réseau Social",
-      status: "Actif",
-      description: "La plus grande bibliothèque de vidéos du monde.",
-      useCase: "Planification optimisée pour vos vidéos horizontales classiques ainsi que pour vos YouTube Shorts avec insertion automatique des métadonnées de référencement.",
+      desc: "Shorts & Vidéos classiques",
+      longDesc: "Développez votre chaîne vidéo. Programmez vos YouTube Shorts verticaux et vidéos horizontales tout en configurant le SEO.",
       color: "#FF0000",
-      x: 50.0,
-      y: 8.0,
-      ring: 2,
-      icon: <YoutubeIcon className="w-5 h-5" />,
-      specs: ["YouTube Shorts", "Vidéos horizontales", "SEO Vidéo auto", "Statistiques de vues"],
+      bgGradient: "from-red-500/10 to-rose-500/5",
+      gradientLine: "from-[#FF0000] to-[#CC0000]",
+      icon: <YoutubeIcon className="w-8 h-8 text-[#FF0000]" />,
+      features: [
+        "Publication de Shorts automatisée",
+        "Upload de vidéos longues HD",
+        "Optimisation des titres & descriptions",
+        "Suivi des abonnés et temps de visionnage"
+      ]
     },
     {
       id: "x-twitter",
       name: "X (Twitter)",
-      category: "Réseau Social",
-      status: "Actif v2 API",
-      description: "L'information instantanée et la réactivité absolue.",
-      useCase: "Écriture et envoi de threads structurés. Planification heure par heure pour capter les flux d'actualités mondiaux.",
+      desc: "Threads & Planification fine",
+      longDesc: "Réagissez instantanément à l'actualité. Rédigez des threads structurés et planifiez vos tweets à la minute près pour engager l'audience.",
       color: "#0F1419",
-      x: 86.4,
-      y: 29.0,
-      ring: 2,
-      icon: <TwitterIcon className="w-5 h-5" />,
-      specs: ["Threads automatiques", "Planification précise", "Visualisation grille", "Intégration d'images"],
-    },
-    // Inner Ring (Tools, AI & Infra)
-    {
-      id: "canva",
-      name: "Canva API",
-      category: "Création & Données",
-      status: "Partenaire Certifié",
-      description: "Votre studio de création graphique intégré.",
-      useCase: "Importation fluide de vos créations visuelles et templates Canva directement dans l'interface de programmation Creatabl sans aucun téléchargement externe.",
-      color: "#00C4CC",
-      x: 75.0,
-      y: 50.0,
-      ring: 1,
-      icon: <ImageIcon className="w-4 h-4" />,
-      specs: ["Import en 1 clic", "Sync des designs", "Recadrage automatique", "Formats réseaux"],
-    },
-    {
-      id: "google-trends",
-      name: "Google Trends",
-      category: "Création & Données",
-      status: "Opérationnel",
-      description: "Le baromètre d'intérêt du public mondial.",
-      useCase: "Analyse en temps réel des flux de recherche pour vous suggérer les mots-clés et hashtags les plus performants du moment.",
-      color: "#4285F4",
-      x: 67.7,
-      y: 67.7,
-      ring: 1,
-      icon: <TrendingUp className="w-4 h-4" />,
-      specs: ["Hashtags chauds", "Mots-clés en hausse", "Filtres géographiques", "Alertes directes"],
-    },
-    {
-      id: "openai",
-      name: "OpenAI GPT-4",
-      category: "Intelligence Artificielle",
-      status: "Opérationnel",
-      description: "Le moteur de génération rédactionnel d'élite.",
-      useCase: "Génération automatique d'accroches persuasives, de résumés de posts et de réponses à forte valeur ajoutée en fonction du ton de votre marque.",
-      color: "#10A37F",
-      x: 50.0,
-      y: 75.0,
-      ring: 1,
-      icon: <Cpu className="w-4 h-4" />,
-      specs: ["Génération de légendes", "Brainstorming d'idées", "Multi-tons d'écriture", "Insertion de hashtags"],
-    },
-    {
-      id: "anthropic",
-      name: "Claude by Anthropic",
-      category: "Intelligence Artificielle",
-      status: "Opérationnel",
-      description: "L'expert de l'adaptation et de la contextualisation.",
-      useCase: "Ajustement stylistique avancé et traduction naturelle de vos posts dans plus de 15 langues pour toucher une audience internationale.",
-      color: "#CC9966",
-      x: 32.3,
-      y: 67.7,
-      ring: 1,
-      icon: <Brain className="w-4 h-4" />,
-      specs: ["Traduction naturelle", "Vérification de ton", "Rédaction de threads", "Relecteur de posts"],
-    },
-    {
-      id: "supabase",
-      name: "Supabase DB",
-      category: "Infrastructure",
-      status: "Sécurisé SSL",
-      description: "La base de données temps réel et l'authentification sécurisée.",
-      useCase: "Sauvegarde instantanée de vos brouillons, droits d'équipe cryptés et planification stockée de manière hautement sécurisée.",
-      color: "#3ECF8E",
-      x: 25.0,
-      y: 50.0,
-      ring: 1,
-      icon: <Database className="w-4 h-4" />,
-      specs: ["Données cryptées", "Sync en temps réel", "Sauvegarde automatique", "Accès rôle par rôle"],
-    },
-    {
-      id: "stripe",
-      name: "Stripe",
-      category: "Infrastructure",
-      status: "Sécurisé PCI-DSS",
-      description: "Le standard de paiement sécurisé sur Internet.",
-      useCase: "Gestion transparente de vos abonnements, de vos factures et de votre période d'essai gratuite en toute conformité.",
-      color: "#635BFF",
-      x: 32.3,
-      y: 32.3,
-      ring: 1,
-      icon: <CreditCard className="w-4 h-4" />,
-      specs: ["Paiements sécurisés", "Facturation en ligne", "Période d'essai", "Gestion portail client"],
-    },
-    {
-      id: "resend",
-      name: "Resend Mail",
-      category: "Infrastructure",
-      status: "Opérationnel",
-      description: "Le serveur de courrier électronique moderne à haute délivrabilité.",
-      useCase: "Envoi automatique des rapports de performance hebdomadaires, des confirmations de validation et des notifications instantanées de sécurité.",
-      color: "#000000",
-      x: 50.0,
-      y: 25.0,
-      ring: 1,
-      icon: <Mail className="w-4 h-4" />,
-      specs: ["Rapports hebdomadaires", "Emails transactionnels", "Alertes d'engagement", "Haute délivrabilité"],
-    },
-    {
-      id: "vercel",
-      name: "Vercel Edge",
-      category: "Infrastructure",
-      status: "Opérationnel CDN",
-      description: "Le réseau global pour une rapidité de chargement absolue.",
-      useCase: "Hébergement de l'interface Creatabl sur un réseau de serveurs ultra-rapides, assurant que votre calendrier se charge en moins de 200ms.",
-      color: "#000000",
-      x: 67.7,
-      y: 32.3,
-      ring: 1,
-      icon: <Server className="w-4 h-4" />,
-      specs: ["Hébergement ultra-rapide", "Sécurité DDoS native", "Temps de réponse minimal", "Réseau CDN mondial"],
-    },
+      bgGradient: "from-slate-800/10 to-transparent dark:from-white/5 to-transparent",
+      gradientLine: "from-[#0F1419] via-slate-850 to-neutral-900",
+      icon: <TwitterIcon className="w-8 h-8 text-slate-900 dark:text-white" />,
+      features: [
+        "Planificateur de threads multi-tweets",
+        "Support complet images, GIFs & vidéos",
+        "Optimisation d'heures de postage",
+        "Statistiques d'impressions en direct"
+      ]
+    }
   ];
-
-  const currentActive = nodes.find((n) => n.id === activeNode) || nodes[0];
 
   return (
     <div className="relative pt-28 pb-20 overflow-x-hidden">
@@ -293,191 +174,85 @@ export default function PlateformesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 text-center">
         <ScrollReveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/40 text-primary border border-purple-200/50 dark:border-purple-900/30 text-xs font-semibold mb-4">
-            🔌 UN ÉCOSYSTÈME COMPLET D&apos;INTÉGRATIONS
+            ⚡ TOUS VOS CANAUX CONNECTÉS
           </div>
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white max-w-4xl mx-auto leading-tight">
-            Les meilleures API & Réseaux pour faire pulser votre{" "}
-            <span className="font-serif italic font-normal text-primary">contenu</span>.
+            Publiez en un clic sur toutes vos{" "}
+            <span className="font-serif italic font-normal text-primary">plateformes</span>.
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={200}>
           <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-6">
-            Explorez notre cadran d&apos;intégrations interactif. Creatabl connecte vos réseaux sociaux à l&apos;infrastructure technologique la plus robuste du marché.
+            Découvrez comment Creatabl.ia unifie la diffusion de votre contenu. Configurez vos comptes une seule fois et laissez notre planificateur gérer le reste.
           </p>
         </ScrollReveal>
       </section>
 
-      {/* Interactive Dial Section */}
+      {/* Networks Grid Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Dial container */}
-          <div className="lg:col-span-7 flex justify-center items-center relative">
-            <ScrollReveal>
-              <div className="relative w-full max-w-[340px] xs:max-w-[400px] sm:max-w-[480px] aspect-square rounded-full bg-slate-50/40 dark:bg-purple-950/5 border border-slate-100 dark:border-purple-950/20 p-8 shadow-inner">
-                {/* SVG connection lines */}
-                {mounted && (
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 100 100">
-                    <defs>
-                      <linearGradient id="line-glow" x1="0.5" y1="0.5" x2={currentActive.x / 100} y2={currentActive.y / 100}>
-                        <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor={currentActive.color} stopOpacity="0.4" />
-                      </linearGradient>
-                    </defs>
-                    <line
-                      x1="50"
-                      y1="50"
-                      x2={currentActive.x}
-                      y2={currentActive.y}
-                      stroke="url(#line-glow)"
-                      strokeWidth="0.8"
-                      strokeDasharray="1.5, 1"
-                      className="animate-[shimmer_2s_infinite_linear]"
-                    />
-                  </svg>
-                )}
-
-                {/* Outer Orbit Circle */}
-                <div className="absolute inset-[8%] border border-dashed border-slate-200 dark:border-purple-900/30 rounded-full pointer-events-none" />
-
-                {/* Inner Orbit Circle */}
-                <div className="absolute inset-[25%] border border-dashed border-slate-200 dark:border-purple-900/40 rounded-full pointer-events-none" />
-
-                {/* Center Node (Creatabl Hub) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-primary to-[#7225E3] flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20 relative">
-                    <span className="absolute inset-0 rounded-full bg-purple-500/30 animate-ping opacity-60" />
-                    <Sparkles className="w-7 h-7 sm:w-9 sm:h-9 text-white relative z-10" />
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-bold font-outfit text-slate-800 dark:text-purple-200 block mt-2 bg-white/80 dark:bg-[#121118]/80 backdrop-blur-sm px-2 py-0.5 rounded-full border border-slate-100 dark:border-purple-950/30 w-max mx-auto shadow-sm">
-                    Creatabl.ia
-                  </span>
-                </div>
-
-                {/* Interactive Orbit Nodes */}
-                {nodes.map((node) => {
-                  const isActive = node.id === activeNode;
-                  return (
-                    <button
-                      key={node.id}
-                      onClick={() => setActiveNode(node.id)}
-                      onMouseEnter={() => setActiveNode(node.id)}
-                      className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        isActive
-                          ? "bg-white dark:bg-[#121118] border-2 scale-110 shadow-lg"
-                          : "bg-white/80 dark:bg-[#121118]/80 border hover:bg-white hover:scale-105 shadow-sm"
-                      }`}
-                      style={{
-                        left: `${node.x}%`,
-                        top: `${node.y}%`,
-                        borderColor: isActive ? node.color : "rgba(139, 92, 246, 0.15)",
-                        color: isActive ? node.color : "currentColor",
-                        boxShadow: isActive ? `0 0 16px ${node.color}33` : undefined,
-                      }}
-                      title={`${node.name} (${node.category})`}
-                    >
-                      <div
-                        className="transition-transform duration-300"
-                        style={{
-                          transform: isActive ? "scale(1.1)" : "scale(1)",
-                          color: isActive ? node.color : "var(--text-secondary)",
-                        }}
-                      >
-                        {node.icon}
-                      </div>
-                      
-                      {/* Optional Indicator dot */}
-                      <span
-                        className="absolute bottom-[-2px] right-[-2px] w-2.5 h-2.5 rounded-full border border-white dark:border-[#0b0a0f]"
-                        style={{
-                          backgroundColor: node.category === "Réseau Social" ? "#8B5CF6" : "#CC9966",
-                        }}
-                      />
-                    </button>
-                  );
-                })}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Details card panel */}
-          <div className="lg:col-span-5">
-            <ScrollReveal delay={200}>
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200/60 dark:border-purple-950/40 bg-white/70 dark:bg-purple-950/5 backdrop-blur-xl p-6 sm:p-8 shadow-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {socialPlatforms.map((platform) => (
+            <ScrollReveal key={platform.id}>
+              <div className="group relative overflow-hidden rounded-3xl border border-slate-200/60 dark:border-purple-950/30 bg-[#FFFFFF] dark:bg-[#121118] p-8 space-y-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full">
+                {/* Custom top border brand line */}
+                <div className={`absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r ${platform.gradientLine}`} />
+                {/* Hover gradient background circle */}
+                <div className={`absolute -right-20 -top-20 w-40 h-40 rounded-full bg-gradient-to-br ${platform.bgGradient} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
-                {/* Header detail */}
-                <div className="flex justify-between items-start gap-4 pb-6 border-b border-slate-100 dark:border-purple-950/20">
-                  <div>
-                    <span 
-                      className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white"
-                      style={{ backgroundColor: currentActive.color }}
-                    >
-                      {currentActive.category}
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-bold font-outfit mt-3 text-slate-900 dark:text-white flex items-center gap-2">
-                      <span style={{ color: currentActive.color }}>{currentActive.icon}</span>
-                      {currentActive.name}
-                    </h2>
-                  </div>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-wider block">API STATUT</span>
-                    <span className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-500/10 dark:bg-emerald-500/5 px-2.5 py-1 rounded-full border border-emerald-500/20 mt-1">
+                <div className="space-y-4 relative z-10">
+                  <div className="flex justify-between items-center">
+                    <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-purple-950/15 border border-slate-100 dark:border-purple-950/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      {platform.icon}
+                    </div>
+                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/5 px-2.5 py-1 rounded-full border border-emerald-500/20 flex items-center gap-1">
                       <ShieldCheck size={12} />
-                      {currentActive.status}
+                      API Officielle
                     </span>
                   </div>
-                </div>
-
-                {/* Body detail */}
-                <div className="space-y-6 pt-6">
+                  
                   <div className="space-y-2">
-                    <p className="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-200">
-                      {currentActive.description}
+                    <h3 className="text-xl font-bold font-outfit text-slate-900 dark:text-white flex items-center gap-2">
+                      {platform.name}
+                    </h3>
+                    <p className="text-xs text-primary font-semibold font-outfit">
+                      {platform.desc}
                     </p>
-                    <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-                      {currentActive.useCase}
+                    <p className="text-sm text-slate-550 dark:text-slate-400 leading-relaxed pt-1">
+                      {platform.longDesc}
                     </p>
                   </div>
-
-                  {/* Integration specific checklist */}
-                  <div className="space-y-3">
-                    <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Capacités & Fonctionnalités</span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {currentActive.specs.map((spec, index) => (
-                        <div key={index} className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300">
-                          <CheckCircle2 size={16} className="text-primary flex-shrink-0" />
-                          <span>{spec}</span>
+                  
+                  <div className="pt-2 space-y-2.5">
+                    <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Fonctionnalités</span>
+                    <div className="space-y-2">
+                      {platform.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+                          <CheckCircle2 size={14} className="text-primary flex-shrink-0" />
+                          <span>{feat}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-
-                  {/* Subtitle callout */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-purple-950/10 border border-slate-100 dark:border-purple-950/20 flex gap-3 items-start">
-                    <Zap size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                      Chaque connexion API est auditée en continu pour garantir un taux de réussite de publication de 99.9% et une sécurité totale de vos identifiants.
-                    </p>
-                  </div>
-
-                  {/* Connect accounts button CTA */}
-                  <div className="pt-2">
-                    <a
-                      href="https://app.creatabl-ia.com/sign-up"
-                      className="w-full text-center px-6 py-3.5 btn-purple-primary shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20 transition-all flex items-center justify-center gap-2 group text-sm"
-                    >
-                      <span>Connecter mon compte {currentActive.name}</span>
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
                 </div>
-
+                
+                <div className="pt-6 relative z-10">
+                  <a
+                    href="https://app.creatabl-ia.com/sign-up"
+                    className="w-full text-center py-2.5 px-4 rounded-xl border border-slate-200 dark:border-purple-950/40 text-xs font-bold transition-all flex items-center justify-center gap-1 group/btn"
+                    style={{ 
+                      background: "rgba(139, 92, 246, 0.05)",
+                      color: "var(--color-primary)" 
+                    }}
+                  >
+                    <span>Connecter {platform.name}</span>
+                    <ArrowRight size={12} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
               </div>
             </ScrollReveal>
-          </div>
-
+          ))}
         </div>
       </section>
 
@@ -489,7 +264,7 @@ export default function PlateformesPage() {
               Une architecture optimisée pour chaque réseau
             </h2>
             <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-4 leading-relaxed">
-              Ne vous souciez plus des limites techniques de chaque plateforme. Notre moteur de routage API adapte dynamiquement vos formats.
+              Ne vous souciez plus des contraintes techniques de chaque réseau. Notre moteur intelligent de publication adapte automatiquement vos images et textes.
             </p>
           </div>
         </ScrollReveal>
@@ -497,41 +272,41 @@ export default function PlateformesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "Réseaux Sociaux",
-              desc: "Publication et statistiques en direct pour Instagram, TikTok, LinkedIn, Facebook, YouTube et X.",
+              title: "Multi-Posting Intelligent",
+              desc: "Rédigez votre publication une seule fois, puis adaptez automatiquement le format (images, tags, caractères) pour chaque réseau cible.",
               features: [
-                "Planification de carrousels & vidéos",
-                "Optimisation d'heures de postage",
-                "Aperçu mobile identique à l'original",
-                "Gestion d'équipe pour validations",
+                "Personnalisation du texte par réseau",
+                "Recadrage d'images automatique",
+                "Vérification des limites de caractères",
+                "Génération intelligente de hashtags",
               ],
               icon: <Link2 className="w-6 h-6 text-primary" />,
             },
             {
-              title: "Intégrations IA & Moteurs",
-              desc: "Optimisation de texte et hashtags grâce à GPT-4 d'OpenAI et Claude d'Anthropic intégrés.",
+              title: "Moteurs d'IA Intégrés",
+              desc: "Optimisez la rédaction de vos accroches et de vos légendes en un clin d'œil avec ChatGPT-4 et Claude d'Anthropic natifs.",
               features: [
-                "Légendes automatisées selon le ton",
-                "Traduction parfaite de vos messages",
-                "Optimisation des hashtags du moment",
-                "Suggestions de thématiques par IA",
+                "Adaptation du ton d'écriture",
+                "Recherche d'angles marketing",
+                "Générateur de listes à puces",
+                "Traduction automatique multilingue",
               ],
               icon: <Sparkles className="w-6 h-6 text-[#CC9966]" />,
             },
             {
-              title: "Infrastructure SaaS",
-              desc: "Un hébergement Vercel avec authentification Supabase et paiements Stripe cryptés.",
+              title: "Sécurité & Robustesse",
+              desc: "Vos données et jetons d'accès d'API sont cryptés. Nous utilisons l'infrastructure Supabase DB et Stripe.",
               features: [
-                "Sécurité des données de bout en bout",
-                "Hébergement CDN à temps de réponse <200ms",
-                "Portail client Stripe ultra-simple",
-                "Emails et notifications instantanés",
+                "Jetons d'accès API cryptés en continu",
+                "Taux de réussite d'envoi de 99.9%",
+                "Rapports d'envoi détaillés",
+                "Politique stricte de confidentialité",
               ],
               icon: <ShieldCheck className="w-6 h-6 text-[#3ECF8E]" />,
             },
           ].map((item, idx) => (
             <ScrollReveal key={idx} delay={idx * 100}>
-              <div className="h-full rounded-2xl border border-slate-200/60 dark:border-purple-950/30 bg-[#FFFFFF] dark:bg-[#121118] p-6 sm:p-8 space-y-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-full rounded-3xl border border-slate-200/60 dark:border-purple-950/30 bg-[#FFFFFF] dark:bg-[#121118] p-8 space-y-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-purple-950/10 border border-slate-100 dark:border-purple-950/20 flex items-center justify-center">
                   {item.icon}
                 </div>
