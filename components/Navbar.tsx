@@ -71,37 +71,37 @@ export default function Navbar() {
       name: "Planification intelligente",
       desc: "Postez automatiquement aux heures optimales.",
       href: "/features#automation",
-      icon: <Calendar className="w-5 h-5 text-purple-600 dark:text-purple-400" />,
+      icon: <Calendar className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Analytics temps réel",
       desc: "Suivez vos performances sur un tableau unifié.",
       href: "/features#performance",
-      icon: <BarChart2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
+      icon: <BarChart2 className="w-5 h-5 text-indigo-600" />,
     },
     {
       name: "Génération IA",
       desc: "Rédigez légendes et hashtags en un instant.",
       href: "/features#intelligence-artificielle",
-      icon: <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      icon: <Sparkles className="w-5 h-5 text-emerald-600" />,
     },
     {
       name: "Multi-plateforme natif",
       desc: "Canaux multiples et intégration Canva directe.",
       href: "/features#integration",
-      icon: <Share2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+      icon: <Share2 className="w-5 h-5 text-blue-600" />,
     },
     {
       name: "Alertes tendances",
       desc: "Détectez les hashtags et sons en forte hausse.",
       href: "/features#tendances",
-      icon: <Flame className="w-5 h-5 text-orange-600 dark:text-orange-400" />,
+      icon: <Flame className="w-5 h-5 text-orange-600" />,
     },
     {
       name: "Collaboration équipe",
       desc: "Workflows de validation simples pour vos clients.",
       href: "/features#collaboration",
-      icon: <Users className="w-5 h-5 text-pink-600 dark:text-pink-400" />,
+      icon: <Users className="w-5 h-5 text-pink-600" />,
     },
   ];
 
@@ -123,7 +123,7 @@ export default function Navbar() {
       desc: "Vidéos courtes & Trend sync",
       href: "/plateformes#tiktok",
       icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800 dark:text-slate-200">
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
           <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
         </svg>
       ),
@@ -149,7 +149,7 @@ export default function Navbar() {
       desc: "Threads programmés & Réactivité",
       href: "/plateformes#x-twitter",
       icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800 dark:text-slate-200">
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
         </svg>
       ),
@@ -164,7 +164,7 @@ export default function Navbar() {
       </div>
 
       <nav
-        className="fixed left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-[#0b0a0f]/90 dark:backdrop-blur-md border-b border-[#F3F4F6] dark:border-purple-950/20 h-[64px] flex items-center"
+        className="fixed left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-[#F3F4F6] h-[64px] flex items-center"
         style={{ top: "36px" }}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -178,9 +178,9 @@ export default function Navbar() {
                   alt="Creatabl Logo" 
                   className="h-[20px] w-auto object-contain"
                 />
-                <div className="flex items-baseline font-outfit font-medium text-[20px] text-[#111827] dark:text-white">
-                  <span>Creatabl.</span>
-                  <span className="font-playfair italic font-medium text-[#111827] dark:text-white">ia</span>
+                <div className="flex items-baseline font-outfit font-medium text-[20px]">
+                  <span className="text-[#111827]">Creatabl.</span>
+                  <span className="font-playfair italic font-medium text-[#7225E3]">ia</span>
                 </div>
               </Link>
             </div>
@@ -196,12 +196,12 @@ export default function Navbar() {
               >
                 <button
                   className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "features" ? "text-[#7225E3]" : "text-[#374151] dark:text-white"
+                    activeDropdown === "features" ? "text-[#7225E3]" : "text-[#374151]"
                   }`}
                 >
                   <span>Fonctionnalités</span>
                   <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "features" ? "rotate-180 text-[#7225E3]" : "text-[#374151] dark:text-white"
+                    activeDropdown === "features" ? "rotate-180 text-[#7225E3]" : "text-[#374151]"
                   }`} />
                 </button>
 
@@ -210,7 +210,7 @@ export default function Navbar() {
                   <div 
                     onMouseEnter={clearDropdownTimeout}
                     onMouseLeave={handleMouseLeave}
-                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[660px] bg-white dark:bg-[#121118] border border-slate-200/60 dark:border-purple-950/40 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[660px] bg-white border border-slate-200/60 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                   >
                     <div className="col-span-8 grid grid-cols-2 gap-4">
                       {features.map((item, idx) => (
@@ -218,16 +218,16 @@ export default function Navbar() {
                           key={idx}
                           href={item.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="flex gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-purple-950/20 transition-colors group"
+                          className="flex gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
                         >
-                          <div className="w-9 h-9 rounded-lg bg-slate-50 dark:bg-purple-950/10 flex items-center justify-center border border-slate-100 dark:border-purple-950/10 group-hover:scale-105 transition-transform">
+                          <div className="w-9 h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform">
                             {item.icon}
                           </div>
                           <div>
-                            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit">
+                            <h4 className="text-xs font-bold text-slate-800 font-outfit">
                               {item.name}
                             </h4>
-                            <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5 leading-snug">
+                            <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
                               {item.desc}
                             </p>
                           </div>
@@ -235,15 +235,15 @@ export default function Navbar() {
                       ))}
                     </div>
 
-                    <div className="col-span-4 bg-slate-50 dark:bg-purple-950/10 border border-slate-100 dark:border-purple-950/20 rounded-xl p-4 flex flex-col justify-between">
+                    <div className="col-span-4 bg-slate-50 border border-slate-100 rounded-xl p-4 flex flex-col justify-between">
                       <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-950/40 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
                           <Cpu className="w-4 h-4 text-primary" />
                         </div>
-                        <h4 className="text-xs font-bold font-outfit text-slate-800 dark:text-slate-200">
+                        <h4 className="text-xs font-bold font-outfit text-slate-800">
                           Technologie IA native
                         </h4>
-                        <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-normal">
+                        <p className="text-[10px] text-slate-400 leading-normal">
                           Notre IA analyse les tendances en direct pour optimiser chaque phrase.
                         </p>
                       </div>
@@ -268,12 +268,12 @@ export default function Navbar() {
               >
                 <button
                   className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "platforms" ? "text-[#7225E3]" : "text-[#374151] dark:text-white"
+                    activeDropdown === "platforms" ? "text-[#7225E3]" : "text-[#374151]"
                   }`}
                 >
                   <span>Plateformes</span>
                   <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "platforms" ? "rotate-180 text-[#7225E3]" : "text-[#374151] dark:text-white"
+                    activeDropdown === "platforms" ? "rotate-180 text-[#7225E3]" : "text-[#374151]"
                   }`} />
                 </button>
 
@@ -282,7 +282,7 @@ export default function Navbar() {
                   <div 
                     onMouseEnter={clearDropdownTimeout}
                     onMouseLeave={handleMouseLeave}
-                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[600px] bg-white dark:bg-[#121118] border border-slate-200/60 dark:border-purple-950/40 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[600px] bg-white border border-slate-200/60 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                   >
                     <div className="col-span-8 grid grid-cols-2 gap-x-4 gap-y-3">
                       {platforms.map((item, idx) => (
@@ -290,16 +290,16 @@ export default function Navbar() {
                           key={idx}
                           href={item.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="flex gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-purple-950/20 transition-colors group"
+                          className="flex gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors group"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-slate-50 dark:bg-purple-950/10 flex items-center justify-center border border-slate-100 dark:border-purple-950/10 group-hover:scale-105 transition-transform">
+                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform">
                             {item.icon}
                           </div>
                           <div>
-                            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit">
+                            <h4 className="text-xs font-bold text-slate-800 font-outfit">
                               {item.name}
                             </h4>
-                            <p className="text-[10px] text-slate-400 dark:text-slate-500">
+                            <p className="text-[10px] text-slate-400">
                               {item.desc}
                             </p>
                           </div>
@@ -307,15 +307,15 @@ export default function Navbar() {
                       ))}
                     </div>
 
-                    <div className="col-span-4 bg-slate-50 dark:bg-purple-950/10 border border-slate-100 dark:border-purple-950/20 rounded-xl p-4 flex flex-col justify-between">
+                    <div className="col-span-4 bg-slate-50 border border-slate-100 rounded-xl p-4 flex flex-col justify-between">
                       <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-950/40 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
                           <Layers className="w-4 h-4 text-primary" />
                         </div>
-                        <h4 className="text-xs font-bold font-outfit text-slate-800 dark:text-slate-200">
+                        <h4 className="text-xs font-bold font-outfit text-slate-800">
                           Le Cadran d&apos;Intégration
                         </h4>
-                        <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-normal">
+                        <p className="text-[10px] text-slate-400 leading-normal">
                           Explorez l&apos;intégralité des API (Canva, OpenAI, Stripe) connectées à notre coeur.
                         </p>
                       </div>
@@ -334,13 +334,13 @@ export default function Navbar() {
 
               <Link
                 href="/pricing"
-                className="font-inter font-medium text-[15px] text-[#374151] dark:text-white hover:text-[#7225E3] transition-colors"
+                className="font-inter font-medium text-[15px] text-[#374151] hover:text-[#7225E3] transition-colors"
               >
                 Tarifs
               </Link>
               <Link
                 href="/blog"
-                className="font-inter font-medium text-[15px] text-[#374151] dark:text-white hover:text-[#7225E3] transition-colors"
+                className="font-inter font-medium text-[15px] text-[#374151] hover:text-[#7225E3] transition-colors"
               >
                 Blog
               </Link>
@@ -350,7 +350,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-3">
               <a
                 href="https://app.creatabl-ia.com/sign-up"
-                className="font-inter font-medium text-[14px] text-[#374151] dark:text-white bg-white dark:bg-[#121118]/80 border border-[#D1D5DB] dark:border-purple-950/30 px-[20px] py-[8px] rounded-[8px] hover:bg-slate-50 dark:hover:bg-purple-950/20 transition-colors"
+                className="font-inter font-medium text-[14px] text-[#374151] bg-white border border-[#D1D5DB] px-[20px] py-[8px] rounded-[8px] hover:bg-slate-50 transition-colors"
               >
                 S&apos;inscrire
               </a>
@@ -379,7 +379,7 @@ export default function Navbar() {
             <div className="flex md:hidden items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-xl text-slate-600 dark:text-white hover:bg-slate-100 dark:hover:bg-purple-950/20 transition-colors"
+                className="p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -390,7 +390,7 @@ export default function Navbar() {
 
         {/* Mobile Drawer */}
         <div
-          className={`md:hidden fixed inset-x-0 bg-white dark:bg-[#0b0a0f] border-b border-slate-200 dark:border-purple-950/20 overflow-y-auto transition-all duration-300 ease-in-out ${
+          className={`md:hidden fixed inset-x-0 bg-white border-b border-[#F3F4F6] overflow-y-auto transition-all duration-300 ease-in-out ${
             isOpen ? "max-h-[85vh] py-4" : "max-h-0"
           }`}
           style={{ top: "100px" }}
@@ -401,14 +401,14 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobileFeaturesOpen(!mobileFeaturesOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#374151] dark:text-slate-200 py-2.5 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-purple-950/20 flex items-center justify-between"
+                className="w-full font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
               >
                 <span>Fonctionnalités</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileFeaturesOpen ? "rotate-180" : ""}`} />
               </button>
               
               {mobileFeaturesOpen && (
-                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 dark:bg-purple-950/5 rounded-xl mt-1">
+                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 rounded-xl mt-1">
                   {features.map((item, idx) => (
                     <Link
                       key={idx}
@@ -417,7 +417,7 @@ export default function Navbar() {
                         setIsOpen(false);
                         setMobileFeaturesOpen(false);
                       }}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B5563] dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-purple-950/20"
+                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] hover:bg-slate-100"
                     >
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span className="font-medium text-xs">{item.name}</span>
@@ -442,14 +442,14 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobilePlatformsOpen(!mobilePlatformsOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#374151] dark:text-slate-200 py-2.5 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-purple-950/20 flex items-center justify-between"
+                className="w-full font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
               >
                 <span>Plateformes</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlatformsOpen ? "rotate-180" : ""}`} />
               </button>
 
               {mobilePlatformsOpen && (
-                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 dark:bg-purple-950/5 rounded-xl mt-1">
+                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 rounded-xl mt-1">
                   {platforms.map((item, idx) => (
                     <Link
                       key={idx}
@@ -458,7 +458,7 @@ export default function Navbar() {
                         setIsOpen(false);
                         setMobilePlatformsOpen(false);
                       }}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B5563] dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-purple-950/20"
+                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] hover:bg-slate-100"
                     >
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span className="font-medium text-xs">{item.name}</span>
@@ -482,22 +482,22 @@ export default function Navbar() {
             <Link
               href="/pricing"
               onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#374151] dark:text-slate-200 py-2.5 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-purple-950/20"
+              className="font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50"
             >
               Tarifs
             </Link>
             <Link
               href="/blog"
               onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#374151] dark:text-slate-200 py-2.5 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-purple-950/20"
+              className="font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50"
             >
               Blog
             </Link>
 
-            <div className="border-t border-slate-100 dark:border-purple-950/10 pt-4 flex flex-col space-y-2">
+            <div className="border-t border-slate-100 pt-4 flex flex-col space-y-2">
               <a
                 href="https://app.creatabl-ia.com/sign-up"
-                className="text-center font-inter font-medium text-[14px] text-[#374151] dark:text-slate-200 bg-white dark:bg-[#121118] border border-[#D1D5DB] dark:border-purple-950/30 py-2.5 rounded-[8px]"
+                className="text-center font-inter font-medium text-[14px] text-[#374151] bg-white border border-[#D1D5DB] py-2.5 rounded-[8px]"
               >
                 S&apos;inscrire
               </a>
