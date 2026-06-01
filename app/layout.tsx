@@ -23,17 +23,49 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Creatabl.ia - Vos contenus, à la vitesse supérieure",
-  description: "Créez, planifiez et analysez tous vos réseaux sociaux depuis une seule interface avec Creatabl.ia.",
-  keywords: "reseaux sociaux, planification, intelligence artificielle, analytics, SaaS, marketing digital",
-  metadataBase: new URL("https://creatabl-ia.com"),
+  metadataBase: new URL('https://creatabl-ia.com'),
+  
+  title: {
+    default: 'Creatabl.ia — Vos contenus à la vitesse supérieure',
+    template: '%s | Creatabl.ia',
+  },
+  
+  description: 'Créez, planifiez et analysez tous vos réseaux sociaux sur une seule interface.',
+  
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+    shortcut: '/favicon.ico',
+  },
+  
   openGraph: {
-    title: "Creatabl.ia - Gestion de réseaux sociaux par IA",
-    description: "Créez, planifiez et analysez tous vos réseaux sociaux depuis une seule interface.",
-    url: "https://creatabl-ia.com",
-    siteName: "Creatabl.ia",
-    locale: "fr_FR",
-    type: "website",
+    title: 'Creatabl.ia — Vos contenus à la vitesse supérieure',
+    description: 'Créez, planifiez et analysez tous vos réseaux sociaux.',
+    url: 'https://creatabl-ia.com',
+    siteName: 'Creatabl.ia',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Creatabl.ia logo',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  
+  twitter: {
+    card: 'summary',
+    title: 'Creatabl.ia',
+    description: 'Créez, planifiez et analysez tous vos réseaux sociaux.',
+    images: ['/logo.png'],
   },
 };
 
