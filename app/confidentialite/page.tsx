@@ -79,10 +79,6 @@ export default function ConfidentialitePage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold mr-1">&mdash;</span>
-              <span>Détecter les alertes tendances et proposer des recommandations pertinentes.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold mr-1">&mdash;</span>
               <span>Garantir la sécurité de nos systèmes, prévenir les abus et résoudre les incidents techniques.</span>
             </li>
           </ul>
