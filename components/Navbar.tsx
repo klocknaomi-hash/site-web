@@ -79,10 +79,16 @@ export default function Navbar() {
       icon: <BarChart2 className="w-5 h-5 text-blue-600" />,
     },
     {
-      name: "Génération IA",
+      name: "Création de post",
       desc: "Rédigez légendes et hashtags en un instant.",
-      href: "/fonctionnalites/generation-ia",
+      href: "/fonctionnalites/creation",
       icon: <Sparkles className="w-5 h-5 text-purple-600" />,
+    },
+    {
+      name: "Agent IA (Tendances)",
+      desc: "Générez des idées de posts basées sur les tendances.",
+      href: "/fonctionnalites/agent-ia",
+      icon: <Settings className="w-5 h-5 text-purple-600" />,
     },
     {
       name: "Multi-plateforme natif",

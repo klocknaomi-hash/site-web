@@ -65,6 +65,25 @@ const SoonBadge = () => (
 /* ─── Data ─── */
 const plans = [
   {
+    name: "Free",
+    tagline: "Pour découvrir Creatabl sans engagement",
+    price: { monthly: 0, yearly: 0 },
+    postsPerMonth: "20 posts / mois",
+    features: [
+      "Assistant IA de rédaction (basique)",
+      "LinkedIn, Instagram, Facebook, X",
+      "Calendrier éditorial",
+      "✗ Analytics avancés",
+      "✗ Suggestions d'idées IA",
+      "✗ Multi-comptes",
+      "✗ Support prioritaire",
+    ],
+    cta: "Commencer gratuitement →",
+    popular: false,
+    ctaStyle: "outline" as const,
+    href: "/sign-up?plan=free",
+  },
+  {
     name: "Starter",
     tagline: "Pour les solopreneurs qui démarrent",
     price: { monthly: 49, yearly: 39 },
@@ -74,7 +93,7 @@ const plans = [
       "Calendrier éditorial",
       "Analytics essentiels",
     ],
-    cta: "Essayer Starter — 7j gratuits",
+    cta: "Essayer Starter — 7j gratuits →",
     popular: false,
     ctaStyle: "outline" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=starter",
@@ -90,7 +109,7 @@ const plans = [
       "Suggestions d'idées IA",
       "Analytics avancés",
     ],
-    cta: "Essayer Pro — 7j gratuits",
+    cta: "Essayer Pro — 7j gratuits →",
     popular: true,
     ctaStyle: "primary" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=pro",
@@ -99,14 +118,14 @@ const plans = [
     name: "Business",
     tagline: "Pour les agences et équipes marketing",
     price: { monthly: 199, yearly: 159 },
-    postsPerMonth: "Illimité",
+    postsPerMonth: "300 posts / mois",
     features: [
       "Tout le plan Pro",
       "Multi-comptes (jusqu'à 5)",
       "Gestion équipe + rôles",
       "Agent IA",
     ],
-    cta: "Essayer Business — 7j gratuits",
+    cta: "Essayer Business — 7j gratuits →",
     popular: false,
     ctaStyle: "dark" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=business",
@@ -152,23 +171,24 @@ const faqs = [
   },
   {
     question: "Comment est sécurisé mon paiement ?",
-    answer: "Les paiements sont traités par Paddle, solution certifiée PCI-DSS. Vos données bancaires ne sont jamais stockées sur nos serveurs.",
+    answer: "Les paiements sont traités par Stripe, solution certifiée PCI-DSS. Vos données bancaires ne sont jamais stockées sur nos serveurs.",
   },
 ];
 
 /* ─── Comparison table rows ─── */
 type CellValue = "check" | "cross" | "soon" | string;
-const comparisonRows: { label: string; starter: CellValue; pro: CellValue; business: CellValue }[] = [
-  { label: "Posts / mois", starter: "30", pro: "120", business: "Illimité" },
-  { label: "Réseaux disponibles", starter: "LinkedIn · IG · FB · X", pro: "LinkedIn · IG · FB · X", business: "LinkedIn · IG · FB · X" },
-  { label: "TikTok · YouTube · Pinterest", starter: "soon", pro: "soon", business: "soon" },
-  { label: "Rédaction IA", starter: "Limitée", pro: "Illimitée", business: "Illimitée" },
-  { label: "Suggestions d'idées", starter: "cross", pro: "check", business: "check" },
-  { label: "Agent IA", starter: "cross", pro: "cross", business: "check" },
-  { label: "Calendrier éditorial", starter: "check", pro: "check", business: "check" },
-  { label: "Analytics", starter: "Essentiels", pro: "Avancés", business: "Avancés" },
-  { label: "Multi-comptes", starter: "cross", pro: "cross", business: "Jusqu'à 5" },
-  { label: "Gestion équipe + rôles", starter: "cross", pro: "cross", business: "check" },
+const comparisonRows: { label: string; free: CellValue; starter: CellValue; pro: CellValue; business: CellValue }[] = [
+  { label: "Posts/mois", free: "20", starter: "30", pro: "120", business: "300" },
+  { label: "IA basique", free: "check", starter: "check", pro: "check", business: "check" },
+  { label: "IA avancée", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Suggestions IA", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Agent IA", free: "cross", starter: "cross", pro: "cross", business: "check" },
+  { label: "Analytics basiques", free: "check", starter: "check", pro: "check", business: "check" },
+  { label: "Analytics avancés", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Calendrier éditorial", free: "check", starter: "check", pro: "check", business: "check" },
+  { label: "Multi-comptes", free: "cross", starter: "cross", pro: "cross", business: "check" },
+  { label: "Gestion équipe", free: "cross", starter: "cross", pro: "cross", business: "check" },
+  { label: "Support", free: "Email", starter: "Email", pro: "Prioritaire", business: "Dédié" },
 ];
 
 function renderCell(val: CellValue, isPro: boolean) {
@@ -206,13 +226,33 @@ export default function PricingPage() {
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={160}>
-          <p className="font-inter text-[#6B7280] text-[15px] mb-10">
+          <p className="font-inter text-[#6B7280] text-[15px] mb-8">
             Choisissez l&apos;offre qui correspond à vos besoins. 7 jours gratuits, sans carte.
           </p>
         </ScrollReveal>
+        <ScrollReveal delay={200}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+            <a
+              id="hero-cta-primary"
+              href="https://app.creatabl-ia.com/sign-up"
+              className="font-inter font-semibold text-[14px] text-center py-3.5 px-8 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }}
+            >
+              Démarrer avec Creatabl →
+            </a>
+            <a
+              id="hero-cta-secondary"
+              href="https://app.creatabl-ia.com/sign-up"
+              className="font-inter font-semibold text-[14px] text-center py-3.5 px-8 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: "transparent", border: "1.5px solid #7225E3", color: "#7225E3" }}
+            >
+              Rejoindre gratuitement →
+            </a>
+          </div>
+        </ScrollReveal>
 
         {/* Toggle mensuel / annuel */}
-        <ScrollReveal delay={220}>
+        <ScrollReveal delay={240}>
           <div className="flex justify-center mb-14">
             <div style={{
               background: "#F3F4F6",
@@ -264,7 +304,7 @@ export default function PricingPage() {
 
       {/* ─── PRICING CARDS ─── */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan, idx) => (
             <ScrollReveal key={plan.name} delay={idx * 100}>
               <div
@@ -297,11 +337,13 @@ export default function PricingPage() {
                   <div className="flex flex-col gap-1">
                     <div style={{ display: "flex", alignItems: "baseline", gap: "6px" }}>
                       <span className="font-outfit font-extrabold text-[#111827]" style={{ fontSize: "36px", lineHeight: 1 }}>
-                        {billing === "monthly" ? plan.price.monthly : plan.price.yearly}€
+                        {plan.name === "Free" ? "0" : (billing === "monthly" ? plan.price.monthly : plan.price.yearly)}€
                       </span>
                       <span className="font-inter text-[#6B7280] text-[14px]">/mois</span>
                     </div>
-                    {billing === "yearly" && (
+                    {plan.name === "Free" ? (
+                      <p className="font-inter text-[#9CA3AF] text-[12px] mt-1">Pour toujours</p>
+                    ) : billing === "yearly" ? (
                       <div className="flex flex-col">
                         <span className="font-inter text-[#9CA3AF] text-[14px] line-through">
                           {plan.price.monthly}€/mois
@@ -310,8 +352,7 @@ export default function PricingPage() {
                           par utilisateur · facturé {plan.price.yearly * 12}€/an
                         </span>
                       </div>
-                    )}
-                    {billing === "monthly" && (
+                    ) : (
                       <p className="font-inter text-[#9CA3AF] text-[12px] mt-1">par utilisateur et par mois</p>
                     )}
                   </div>
@@ -344,12 +385,22 @@ export default function PricingPage() {
 
                   {/* Feature list */}
                   <ul className="space-y-2">
-                    {plan.features.map((feat) => (
-                      <li key={feat} className="flex items-start gap-2 font-inter text-[#374151] text-[14px]">
-                        <span className="font-bold text-[#16A34A] flex-shrink-0">✓</span>
-                        <span>{feat}</span>
-                      </li>
-                    ))}
+                    {plan.features.map((feat) => {
+                      const isExcluded = feat.startsWith("✗");
+                      const cleanFeat = isExcluded ? feat.substring(1).trim() : feat;
+                      return (
+                        <li key={feat} className="flex items-start gap-2 font-inter text-[14px]">
+                          {isExcluded ? (
+                            <span className="font-bold text-[#9CA3AF] flex-shrink-0">✗</span>
+                          ) : (
+                            <span className="font-bold text-[#16A34A] flex-shrink-0">✓</span>
+                          )}
+                          <span style={{ color: isExcluded ? "#9CA3AF" : "#374151" }}>
+                            {cleanFeat}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
@@ -370,9 +421,9 @@ export default function PricingPage() {
                 </a>
                 <div className="text-center mt-2 flex flex-col gap-0.5">
                   <p className="font-inter text-[#9CA3AF] text-[12px]">
-                    Essai gratuit 7 jours · Sans carte bancaire
+                    {plan.name === "Free" ? "Sans engagement" : "Essai gratuit 7 jours · Sans carte bancaire"}
                   </p>
-                  {billing === "yearly" && (
+                  {plan.name !== "Free" && billing === "yearly" && (
                     <p className="font-inter text-[#9CA3AF] text-[12px] font-medium">
                       Soit {plan.price.yearly * 12}€ facturés en une fois par an
                     </p>
@@ -386,7 +437,7 @@ export default function PricingPage() {
         {/* Secure payment note */}
         <ScrollReveal delay={400}>
           <p className="font-inter text-[#9CA3AF] text-[13px] text-center mt-8">
-            Paiement sécurisé par Paddle
+            Paiement sécurisé par Stripe
           </p>
         </ScrollReveal>
       </section>
@@ -414,6 +465,7 @@ export default function PricingPage() {
                     <th style={{ textAlign: "left", padding: "12px 16px", color: "#9CA3AF", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", width: "40%", fontFamily: "var(--font-outfit)" }}>
                       Fonctionnalité
                     </th>
+                    <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Free</th>
                     <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Starter</th>
                     <th style={{ textAlign: "center", padding: "12px 16px", color: "#7225E3", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Pro ✦</th>
                     <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Business</th>
@@ -430,6 +482,9 @@ export default function PricingPage() {
                     >
                       <td style={{ padding: "14px 16px", color: "#6B7280", fontSize: "14px", fontFamily: "var(--font-inter)" }}>
                         {row.label}
+                      </td>
+                      <td style={{ textAlign: "center", padding: "14px 16px" }}>
+                        {renderCell(row.free, false)}
                       </td>
                       <td style={{ textAlign: "center", padding: "14px 16px" }}>
                         {renderCell(row.starter, false)}
@@ -566,7 +621,7 @@ export default function PricingPage() {
               </p>
               <a
                 id="contact-cta"
-                href="/contact"
+                href="https://app.creatabl-ia.com/sign-up?plan=free"
                 className="font-inter font-medium text-[14px] text-[#374151] transition-all duration-200 hover:bg-[#F3F4F6] inline-flex items-center gap-2"
                 style={{
                   border: "1.5px solid #E5E7EB",
@@ -574,7 +629,7 @@ export default function PricingPage() {
                   padding: "12px 28px",
                 }}
               >
-                Nous contacter →
+                Tester sans engagement →
               </a>
             </div>
           </ScrollReveal>

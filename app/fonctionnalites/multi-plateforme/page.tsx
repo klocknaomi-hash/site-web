@@ -63,34 +63,19 @@ export default function MultiPlateformePage() {
             <ScrollReveal delay={200}>
               <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10 shadow-sm">
                 <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 shadow-md">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <Share2 className="w-4 h-4 text-[#7225E3]" />
-                      <span className="text-sm font-bold text-slate-800">Canaux de diffusion</span>
-                    </div>
-                    <span className="text-[10px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded font-bold">API Officielle</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      { name: "Instagram", desc: "Reels & Carrousels", active: true },
-                      { name: "LinkedIn", desc: "Articles & Posts Pro", active: true },
-                      { name: "TikTok", desc: "Vidéos courtes", active: true },
-                      { name: "YouTube", desc: "Shorts & Vidéos", active: true },
-                      { name: "Facebook", desc: "Pages & Groupes", active: true },
-                      { name: "Canva Integration", desc: "Design Direct Sync", active: false },
-                    ].map((platform, i) => (
-                      <div key={i} className="flex justify-between items-center p-2.5 bg-white border border-slate-100 rounded-xl shadow-sm">
-                        <div>
-                          <span className="text-xs font-bold text-slate-750 block">{platform.name}</span>
-                          <span className="text-[9px] text-slate-400">{platform.desc}</span>
-                        </div>
-                        <span className={`text-[9px] px-2 py-0.5 rounded font-bold ${platform.active ? "bg-emerald-500/10 text-emerald-600" : "bg-purple-100 text-[#7225E3]"}`}>
-                          {platform.active ? "API OK" : "Actif"}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md overflow-hidden">
+                  <video
+                    src="/videos/demo-comptes.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      width: '100%',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(127,119,221,0.2)',
+                    }}
+                  />
                 </div>
               </div>
             </ScrollReveal>

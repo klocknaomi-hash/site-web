@@ -4,11 +4,11 @@ import { CheckCircle2, Sparkles } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Génération IA | Creatabl.ia",
+  title: "Création de post | Creatabl.ia",
   description: "Fini le syndrome de la page blanche. Notre agent IA génère des légendes optimisées pour chaque réseau social en quelques secondes.",
 };
 
-export default function GenerationIaPage() {
+export default function CreationPage() {
   const bullets = [
     "Génération en moins de 5 secondes",
     "Adapté à chaque réseau social",
@@ -35,7 +35,7 @@ export default function GenerationIaPage() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
-                Génération IA
+                Création de post
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={150}>
@@ -63,35 +63,19 @@ export default function GenerationIaPage() {
             <ScrollReveal delay={200}>
               <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10 shadow-sm">
                 <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 shadow-md">
-                  <div className="flex gap-2 items-center pb-3 border-b border-slate-100">
-                    <Sparkles size={16} className="text-[#7225E3] animate-pulse" />
-                    <span className="text-sm font-bold text-slate-800">Assistant Écriture IA</span>
-                  </div>
-                  <div className="space-y-4">
-                    {/* Input */}
-                    <div>
-                      <span className="text-[10px] text-slate-400 block mb-1">Votre sujet</span>
-                      <div className="p-3 bg-white border border-slate-200 rounded-xl text-xs text-slate-700 font-medium">
-                        Lancer une nouvelle fonctionnalité de planification automatique
-                      </div>
-                    </div>
-                    {/* Tones */}
-                    <div className="flex gap-2">
-                      {["Professionnel", "Inspirant", "Viral"].map((ton, i) => (
-                        <span key={i} className={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${i === 2 ? "bg-purple-100 text-[#7225E3]" : "bg-white text-slate-500 border border-slate-200"}`}>
-                          {ton}
-                        </span>
-                      ))}
-                    </div>
-                    {/* Result bubble */}
-                    <div className="text-xs bg-white border border-slate-150 p-3 rounded-xl shadow-sm">
-                      <span className="text-[#7225E3] font-bold text-[10px] uppercase">Légende TikTok générée :</span>
-                      <p className="mt-1 text-slate-600 leading-relaxed text-[12px]">
-                        Fini de galérer à poster au mauvais moment ! ⏰ Notre IA calcule vos heures d&apos;audience max et planifie vos publications pour vous. Clique sur le lien dans la bio ! 🚀 #automation #saaslife
-                      </p>
-                    </div>
-                  </div>
+                <div className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md overflow-hidden">
+                  <video
+                    src="/videos/demo-create-post.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      width: '100%',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(127,119,221,0.2)',
+                    }}
+                  />
                 </div>
               </div>
             </ScrollReveal>

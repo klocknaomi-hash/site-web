@@ -142,10 +142,10 @@ export default function FeaturesPage() {
     {
       id: 4,
       badge: "Intelligence Artificielle",
-      title: "Génération IA",
-      tagline: "Dites adieu au syndrome de la page blanche.",
+      title: "Création de post",
+      tagline: "Rédigez légendes et hashtags en un instant.",
       description:
-        "Notre agent de génération IA est conçu pour éliminer définitivement l'angoisse de la page blanche. En saisissant simplement les grandes lignes de votre sujet ou une description rapide de votre visuel, notre moteur de rédaction produit des légendes percutantes et accrocheuses en moins de 5 secondes. Il structure le texte, utilise les émojis appropriés et crée des introductions captivantes pour retenir immédiatement l'attention de vos lecteurs.",
+        "Notre assistant de génération IA élimine le syndrome de la page blanche. En saisissant simplement les grandes lignes de votre sujet ou une description rapide de votre visuel, notre moteur de rédaction produit des légendes percutantes et accrocheuses en moins de 5 secondes. Il structure le texte, utilise les émojis appropriés et crée des introductions captivantes pour retenir immédiatement l'attention de vos lecteurs.",
       bullets: [
         "Choix du ton (Professionnel, Amical, Inspirant, Fun)",
         "Génération automatique de hashtags populaires",
@@ -168,6 +168,37 @@ export default function FeaturesPage() {
             <div className="flex justify-between items-center text-[10px] text-slate-400">
               <span>96 mots générés</span>
               <button className="text-[#7225E3] font-bold hover:underline">Insérer le texte</button>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: 5,
+      badge: "Veille & Idées",
+      title: "Agent IA (Tendances)",
+      tagline: "Trouvez des idées basées sur les tendances du web.",
+      description:
+        "Identifiez instantanément les sujets chauds du moment grâce à notre Agent IA. Il parcourt en continu les tendances et le web pour vous suggérer des angles éditoriaux uniques et porteurs d'engagement. Générez des idées de posts en un clic et envoyez-les directement dans l'éditeur pour créer vos contenus en un temps record.",
+      bullets: [
+        "Détection des sujets tendances en temps réel",
+        "Génération de 3 angles éditoriaux différents par sujet",
+        "Envoi direct dans l'éditeur de post en un clic",
+      ],
+      icon: <Sparkles className="w-6 h-6 text-[#7225E3]" />,
+      visual: (
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
+          <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+            <span className="text-sm font-bold text-slate-800">Sujets Chauds</span>
+            <span className="text-[10px] text-[#7225E3] bg-purple-50 px-1.5 py-0.5 rounded font-bold">Recommandé</span>
+          </div>
+          <div className="space-y-2">
+            <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold text-slate-800 block">L&apos;essor de l&apos;IA générative</span>
+                <span className="text-[10px] text-slate-400">Sujet très populaire sur LinkedIn</span>
+              </div>
+              <span className="text-xs text-[#7225E3] font-bold">Générer</span>
             </div>
           </div>
         </div>

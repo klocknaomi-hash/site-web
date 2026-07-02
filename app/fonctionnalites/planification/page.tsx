@@ -63,34 +63,19 @@ export default function PlanificationPage() {
             <ScrollReveal delay={200}>
               <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10 shadow-sm">
                 <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 shadow-md">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-[#7225E3]" />
-                      <span className="text-sm font-bold text-slate-800">Calendrier intelligent</span>
-                    </div>
-                    <span className="text-xs text-slate-400">Mai 2026</span>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      { day: "Lundi", time: "18:15", status: "Optimisé par l'IA", text: "Lancement de produit", net: "LinkedIn" },
-                      { day: "Mardi", time: "12:30", status: "Engagement Élevé", text: "Coulisses de l'équipe", net: "Instagram" },
-                      { day: "Mercredi", time: "20:00", status: "Recommandé", text: "Tutoriel vidéo", net: "TikTok" },
-                    ].map((slot, i) => (
-                      <div key={i} className="flex justify-between items-center p-3 bg-white border border-slate-100 rounded-xl shadow-sm">
-                        <div>
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <span className="text-[9px] text-[#7225E3] bg-[#F5F3FF] px-1.5 py-0.5 rounded font-bold">{slot.net}</span>
-                            <span className="text-xs font-semibold text-slate-700">{slot.text}</span>
-                          </div>
-                          <span className="text-[10px] text-slate-400 block">{slot.day} à {slot.time}</span>
-                        </div>
-                        <span className="text-[10px] bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
-                          {slot.status}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md overflow-hidden">
+                  <video
+                    src="/videos/demo-calendrier.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      width: '100%',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(127,119,221,0.2)',
+                    }}
+                  />
                 </div>
               </div>
             </ScrollReveal>

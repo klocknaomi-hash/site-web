@@ -63,32 +63,19 @@ export default function CollaborationPage() {
             <ScrollReveal delay={200}>
               <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10 shadow-sm">
                 <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 shadow-md">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-[#7225E3]" />
-                      <span className="text-sm font-bold text-slate-800">Flux d&apos;approbation</span>
-                    </div>
-                    <span className="text-[10px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded font-bold">Actif</span>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      { post: "Visuel de lancement.png", user: "Sophie (Designer)", status: "En attente", time: "Il y a 5 min", stColor: "text-amber-500 bg-amber-50" },
-                      { post: "Vidéo tutoriel.mp4", user: "Thomas (Marketing)", status: "Approuvé", time: "Il y a 2h", stColor: "text-emerald-500 bg-emerald-50" },
-                      { post: "Post Blog.txt", user: "Marie (Rédactrice)", status: "Brouillon", time: "Il y a 1 j", stColor: "text-slate-500 bg-slate-100" },
-                    ].map((flow, i) => (
-                      <div key={i} className="flex justify-between items-center p-3 bg-white border border-slate-100 rounded-xl shadow-sm">
-                        <div>
-                          <span className="text-xs font-bold text-slate-800 block">{flow.post}</span>
-                          <span className="text-[10px] text-slate-400">Soumis par {flow.user}</span>
-                        </div>
-                        <div className="text-right shrink-0">
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded block mb-1 ${flow.stColor}`}>{flow.status}</span>
-                          <span className="text-[8px] text-slate-400">{flow.time}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md overflow-hidden">
+                  <video
+                    src="/videos/demo-equipe.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      width: '100%',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(127,119,221,0.2)',
+                    }}
+                  />
                 </div>
               </div>
             </ScrollReveal>
