@@ -71,9 +71,9 @@ const plans = [
       "✗ Multi-comptes",
       "✗ Support prioritaire",
     ],
-    socialsMuted: false,
     cta: "Commencer gratuitement →",
-    popular: false,
+    badgeText: null,
+    footerText: "Sans carte · Sans engagement",
     ctaStyle: "outline" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=free",
   },
@@ -89,9 +89,9 @@ const plans = [
       "Analytics essentiels",
       "Intégration Canva",
     ],
-    socialsMuted: false,
     cta: "Essayer Starter — 14j gratuits →",
-    popular: false,
+    badgeText: null,
+    footerText: "14 jours gratuits · Carte requise · Annulable",
     ctaStyle: "outline" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=starter",
   },
@@ -107,9 +107,9 @@ const plans = [
       "Suggestions d'idées IA",
       "Analytics avancés",
     ],
-    socialsMuted: false,
     cta: "Essayer Pro — 14j gratuits →",
-    popular: true,
+    badgeText: "Le plus populaire",
+    footerText: "14 jours gratuits · Carte requise · Annulable",
     ctaStyle: "primary" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=pro",
   },
@@ -125,9 +125,9 @@ const plans = [
       "Gestion équipe + rôles",
       "Agent IA (Tendances)",
     ],
-    socialsMuted: false,
     cta: "Essayer Business — 14j gratuits →",
-    popular: false,
+    badgeText: null,
+    footerText: "14 jours gratuits · Carte requise · Annulable",
     ctaStyle: "dark" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=business",
   },
@@ -227,33 +227,13 @@ export default function PricingPage() {
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={160}>
-          <p className="font-inter text-[#6B7280] text-[15px] mb-8">
-            Choisissez l&apos;offre qui correspond à vos besoins. 14 jours d&apos;essai gratuit sur les plans payants, plan Free sans limite.
+          <p className="font-inter text-[#6B7280] text-[16px] mb-10">
+            Choisissez l&apos;offre qui correspond à vos besoins.
           </p>
-        </ScrollReveal>
-        <ScrollReveal delay={200}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-            <a
-              id="hero-cta-primary"
-              href="https://app.creatabl-ia.com/sign-up"
-              className="font-inter font-semibold text-[14px] text-center py-3.5 px-8 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }}
-            >
-              Démarrer avec Creatabl →
-            </a>
-            <a
-              id="hero-cta-secondary"
-              href="https://app.creatabl-ia.com/sign-up?plan=free"
-              className="font-inter font-semibold text-[14px] text-center py-3.5 px-8 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "transparent", border: "1.5px solid #7225E3", color: "#7225E3" }}
-            >
-              Rejoindre gratuitement →
-            </a>
-          </div>
         </ScrollReveal>
 
         {/* Toggle mensuel / annuel */}
-        <ScrollReveal delay={240}>
+        <ScrollReveal delay={200}>
           <div className="flex justify-center mb-14">
             <div style={{
               background: "#F3F4F6",
@@ -304,36 +284,35 @@ export default function PricingPage() {
       </section>
 
       {/* ─── PRICING CARDS ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      <div className="max-w-[1400px] mx-auto px-4 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
           {plans.map((plan, idx) => {
             const displayPrice = plan.name === "Free" ? 0 : (billing === "monthly" ? plan.price.monthly : plan.price.yearly);
 
             return (
-              <ScrollReveal key={plan.name} delay={idx * 80} className="flex flex-col h-full">
+              <ScrollReveal key={plan.name} delay={idx * 60} className="flex flex-col h-full">
                 <div
-                  className="relative flex flex-col h-full bg-white rounded-2xl border p-6 sm:p-8 transition-all duration-300 hover:shadow-xl"
+                  className="relative flex flex-col h-full bg-white rounded-2xl border p-6 transition-all duration-300 hover:shadow-xl"
                   style={{
-                    border: plan.popular ? "2px solid #7225E3" : "1.5px solid #E5E7EB",
-                    boxShadow: plan.popular
+                    border: plan.badgeText ? "2px solid #7225E3" : "1.5px solid #E5E7EB",
+                    boxShadow: plan.badgeText
                       ? "0 0 0 1px rgba(114,37,227,0.18), 0 12px 40px rgba(114,37,227,0.15)"
                       : "0 0 0 1px rgba(114,37,227,0.05), 0 8px 32px rgba(114,37,227,0.06)",
                   }}
                 >
-                  {/* Popular badge - Centered at top border */}
-                  {plan.popular && (
-                    <div
-                      className="absolute left-1/2 -translate-x-1/2 -top-3.5 font-outfit font-semibold text-white text-[12px] px-4 py-1.5 rounded-full whitespace-nowrap shadow-md z-10"
-                      style={{ background: "#7225E3" }}
-                    >
-                      Le plus populaire
+                  {/* Badge inside relative wrapper */}
+                  {plan.badgeText && (
+                    <div className="relative">
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#7225E3] text-white font-semibold text-xs rounded-full whitespace-nowrap shadow-md z-10">
+                        {plan.badgeText}
+                      </span>
                     </div>
                   )}
 
                   {/* Plan header */}
-                  <div className="mb-6">
+                  <div className="mb-6 pt-2">
                     <h3 className="font-outfit font-bold text-[22px] text-[#111827] mb-1">{plan.name}</h3>
-                    <p className="font-playfair italic text-[#7225E3] text-[13px] h-10 mb-4 flex items-center">
+                    <p className="font-playfair italic text-[#7225E3] text-[13px] min-h-[36px] mb-4 flex items-center">
                       {plan.tagline}
                     </p>
                     
@@ -382,7 +361,7 @@ export default function PricingPage() {
                         const isExcluded = feat.startsWith("✗");
                         const cleanFeat = isExcluded ? feat.substring(1).trim() : feat;
                         return (
-                          <li key={feat} className="flex items-start gap-2.5 font-inter text-[14px]">
+                          <li key={feat} className="flex items-start gap-2.5 font-inter text-[13px]">
                             {isExcluded ? (
                               <span className="font-bold text-[#9CA3AF] flex-shrink-0">✗</span>
                             ) : (
@@ -407,7 +386,7 @@ export default function PricingPage() {
                     <a
                       id={`cta-plan-${plan.name.toLowerCase()}`}
                       href={plan.href}
-                      className="w-full font-inter font-bold text-[14px] text-center py-3.5 px-4 rounded-full transition-all duration-200 block shadow-sm hover:-translate-y-0.5"
+                      className="w-full font-inter font-bold text-[13px] text-center py-3.5 px-3 rounded-full transition-all duration-200 block shadow-sm hover:-translate-y-0.5"
                       style={
                         plan.ctaStyle === "primary"
                           ? { background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }
@@ -420,7 +399,7 @@ export default function PricingPage() {
                     </a>
                     
                     <p className="font-inter text-[#9CA3AF] text-[11px] text-center font-medium mt-1">
-                      {plan.name === "Free" ? "Sans engagement · Sans carte bancaire" : "Essai gratuit 14 jours · Carte bancaire obligatoire"}
+                      {plan.footerText}
                     </p>
                   </div>
                 </div>
@@ -430,12 +409,12 @@ export default function PricingPage() {
         </div>
 
         {/* Secure payment note */}
-        <ScrollReveal delay={350}>
+        <ScrollReveal delay={300}>
           <p className="font-inter text-[#9CA3AF] text-[13px] text-center mt-10">
             Paiement sécurisé par Stripe
           </p>
         </ScrollReveal>
-      </section>
+      </div>
 
       {/* ─── COMPARISON TABLE ─── */}
       <section className="w-full py-20" style={{ background: "#F9FAFB", borderTop: "1px solid #F3F4F6", borderBottom: "1px solid #F3F4F6" }}>

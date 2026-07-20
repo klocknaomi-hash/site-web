@@ -77,7 +77,7 @@ export default function BlogPage() {
 
           <div className="p-6 bg-purple-50 border border-purple-100 rounded-2xl mt-8">
             <h4 className="text-xl font-bold text-[#111827] mb-2">Prêt à créer du contenu plus vite ?</h4>
-            <p className="text-slate-600 mb-4">Essayez Creatabl gratuitement pendant 14 jours. Sans carte bancaire.</p>
+            <p className="text-slate-600 mb-4">Essayez Creatabl gratuitement pendant 14 jours. Annulable à tout moment.</p>
             <a 
               href="https://app.creatabl-ia.com/sign-up" 
               className="inline-flex items-center gap-2 px-6 py-3.5 font-semibold text-white bg-[#7225E3] hover:bg-[#8A38F5] transition-all rounded-full font-outfit shadow-sm hover:shadow-md"
