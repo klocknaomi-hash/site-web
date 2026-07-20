@@ -174,6 +174,7 @@ const faqs = [
 type CellValue = "check" | "cross" | "soon" | string;
 const comparisonRows: { label: string; free: CellValue; starter: CellValue; pro: CellValue; business: CellValue }[] = [
   { label: "Posts / mois", free: "20", starter: "50", pro: "120", business: "300" },
+  { label: "Engagement", free: "—", starter: "Sans engagement", pro: "Sans engagement", business: "Sans engagement" },
   { label: "Rédaction IA (basique)", free: "check", starter: "check", pro: "check", business: "check" },
   { label: "Rédaction IA (avancée)", free: "cross", starter: "cross", pro: "check", business: "check" },
   { label: "Reformuler & Tons IA", free: "cross", starter: "cross", pro: "check", business: "check" },
@@ -198,6 +199,11 @@ function renderCell(val: CellValue, isPro: boolean) {
     }}>{val}</span>
   );
 }
+
+const getEngagementLabel = (planName: string, billingState: "monthly" | "yearly") => {
+  if (planName === "Free") return "Sans engagement";
+  return billingState === "monthly" ? "Sans engagement" : "Avec engagement — 12 mois";
+};
 
 export default function PricingPage() {
   const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
@@ -227,7 +233,7 @@ export default function PricingPage() {
 
         {/* Toggle mensuel / annuel */}
         <ScrollReveal delay={200}>
-          <div className="flex justify-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-14">
             <div style={{
               background: "#F3F4F6",
               borderRadius: "40px",
@@ -272,6 +278,26 @@ export default function PricingPage() {
                 </span>
               </button>
             </div>
+
+            {/* Tooltip Info Icon */}
+            <div className="relative group flex items-center">
+              <button
+                type="button"
+                aria-label="Informations sur l'engagement"
+                className="w-5 h-5 rounded-full bg-[#F3F4F6] hover:bg-[#E5E7EB] text-[#6B7280] hover:text-[#111827] flex items-center justify-center font-inter font-bold text-[12px] transition-colors cursor-help"
+              >
+                i
+              </button>
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2.5 hidden group-hover:block w-72 p-3 bg-[#111827] text-white text-[12px] leading-snug rounded-xl shadow-xl z-20 pointer-events-none transition-all duration-200 font-inter text-left">
+                <p className="mb-1.5">
+                  <strong className="font-semibold text-white">Mensuel :</strong> sans engagement, annulable à tout moment. Accès conservé jusqu&apos;à la fin de la période payée.
+                </p>
+                <p>
+                  <strong className="font-semibold text-white">Annuel :</strong> engagement 12 mois avec 20% de réduction.
+                </p>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#111827]" />
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </section>
@@ -310,11 +336,16 @@ export default function PricingPage() {
                     </p>
                     
                     <div className="flex flex-col gap-1">
-                      <div className="flex items-baseline gap-1.5">
+                      <div className="flex items-baseline gap-1.5 flex-wrap">
                         <span className="font-outfit font-extrabold text-[#111827] text-4xl leading-none">
                           {displayPrice}€
                         </span>
                         <span className="font-inter text-[#6B7280] text-[14px]">/mois</span>
+                        {billing === "yearly" && plan.name !== "Free" && (
+                          <span className="font-inter text-[#6B7280] text-[13px] font-normal">
+                            soit {plan.price.yearly * 12}€/an
+                          </span>
+                        )}
                       </div>
                       
                       <p className="font-inter font-bold text-[#9CA3AF] text-[11px] uppercase tracking-wider mt-1.5">
@@ -392,7 +423,7 @@ export default function PricingPage() {
                     </a>
                     
                     <p className="font-inter text-[#9CA3AF] text-[11px] text-center font-medium mt-1">
-                      {plan.footerText}
+                      {getEngagementLabel(plan.name, billing)}
                     </p>
                   </div>
                 </div>
@@ -439,31 +470,39 @@ export default function PricingPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr
-                      key={row.label}
-                      style={{
-                        background: i % 2 === 0 ? "rgba(249, 250, 251, 0.7)" : "transparent",
-                        borderTop: "1px solid #F3F4F6",
-                      }}
-                    >
-                      <td style={{ padding: "14px 16px", color: "#374151", fontSize: "14px", fontWeight: 500, fontFamily: "var(--font-inter)" }}>
-                        {row.label}
-                      </td>
-                      <td style={{ textAlign: "center", padding: "14px 16px" }}>
-                        {renderCell(row.free, false)}
-                      </td>
-                      <td style={{ textAlign: "center", padding: "14px 16px" }}>
-                        {renderCell(row.starter, false)}
-                      </td>
-                      <td style={{ textAlign: "center", padding: "14px 16px", background: "rgba(114,37,227,0.04)" }}>
-                        {renderCell(row.pro, true)}
-                      </td>
-                      <td style={{ textAlign: "center", padding: "14px 16px" }}>
-                        {renderCell(row.business, false)}
-                      </td>
-                    </tr>
-                  ))}
+                  {comparisonRows.map((row, i) => {
+                    const isEngagement = row.label === "Engagement";
+                    const freeVal = isEngagement ? "—" : row.free;
+                    const starterVal = isEngagement ? getEngagementLabel("Starter", billing) : row.starter;
+                    const proVal = isEngagement ? getEngagementLabel("Pro", billing) : row.pro;
+                    const businessVal = isEngagement ? getEngagementLabel("Business", billing) : row.business;
+
+                    return (
+                      <tr
+                        key={row.label}
+                        style={{
+                          background: i % 2 === 0 ? "rgba(249, 250, 251, 0.7)" : "transparent",
+                          borderTop: "1px solid #F3F4F6",
+                        }}
+                      >
+                        <td style={{ padding: "14px 16px", color: "#374151", fontSize: "14px", fontWeight: 500, fontFamily: "var(--font-inter)" }}>
+                          {row.label}
+                        </td>
+                        <td style={{ textAlign: "center", padding: "14px 16px" }}>
+                          {renderCell(freeVal, false)}
+                        </td>
+                        <td style={{ textAlign: "center", padding: "14px 16px" }}>
+                          {renderCell(starterVal, false)}
+                        </td>
+                        <td style={{ textAlign: "center", padding: "14px 16px", background: "rgba(114,37,227,0.04)" }}>
+                          {renderCell(proVal, true)}
+                        </td>
+                        <td style={{ textAlign: "center", padding: "14px 16px" }}>
+                          {renderCell(businessVal, false)}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
