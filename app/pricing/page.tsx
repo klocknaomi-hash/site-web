@@ -4,23 +4,23 @@ import React, { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 /* ─── Social network icon SVGs ─── */
-const LinkedInIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#0A66C2" }}>
+const LinkedInIcon = ({ muted }: { muted?: boolean }) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: muted ? "#D1D5DB" : "#0A66C2" }}>
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
   </svg>
 );
-const InstagramIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#E1306C" }}>
+const InstagramIcon = ({ muted }: { muted?: boolean }) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: muted ? "#D1D5DB" : "#E1306C" }}>
     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
   </svg>
 );
-const FacebookIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#1877F2" }}>
+const FacebookIcon = ({ muted }: { muted?: boolean }) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: muted ? "#D1D5DB" : "#1877F2" }}>
     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
   </svg>
 );
-const XIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#111827" }}>
+const XIcon = ({ muted }: { muted?: boolean }) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: muted ? "#D1D5DB" : "#111827" }}>
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.717-8.813L1.671 2.25H8.12l4.266 5.64 5.858-5.64zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
@@ -42,24 +42,16 @@ const PinterestIcon = ({ muted }: { muted?: boolean }) => (
 
 /* ─── Check / Cross SVG icons ─── */
 const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="flex-shrink-0">
     <circle cx="9" cy="9" r="9" fill="rgba(114,37,227,0.12)" />
     <path d="M5.5 9L8 11.5L12.5 7" stroke="#7225E3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const CrossIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="9" fill="rgba(255,255,255,0.04)" />
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="flex-shrink-0">
+    <circle cx="9" cy="9" r="9" fill="rgba(243,244,246,1)" />
     <path d="M6.5 11.5L11.5 6.5M6.5 6.5L11.5 11.5" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
-);
-const SoonBadge = () => (
-  <span style={{
-    fontSize: "10px", fontWeight: 700, color: "#D97706",
-    background: "rgba(245,158,11,0.1)", border: "1px solid rgba(245,158,11,0.3)",
-    borderRadius: "20px", padding: "2px 8px", display: "inline-block",
-    fontFamily: "var(--font-outfit)",
-  }}>Bientôt</span>
 );
 
 /* ─── Data ─── */
@@ -68,6 +60,7 @@ const plans = [
     name: "Free",
     tagline: "Pour découvrir Creatabl sans engagement",
     price: { monthly: 0, yearly: 0 },
+    subtext: "POUR TOUJOURS",
     postsPerMonth: "20 posts / mois",
     features: [
       "Assistant IA de rédaction (basique)",
@@ -78,22 +71,26 @@ const plans = [
       "✗ Multi-comptes",
       "✗ Support prioritaire",
     ],
+    socialsMuted: false,
     cta: "Commencer gratuitement →",
     popular: false,
     ctaStyle: "outline" as const,
-    href: "/sign-up?plan=free",
+    href: "https://app.creatabl-ia.com/sign-up?plan=free",
   },
   {
     name: "Starter",
     tagline: "Pour les solopreneurs qui démarrent",
     price: { monthly: 49, yearly: 39 },
+    subtext: "PAR UTILISATEUR ET PAR MOIS",
     postsPerMonth: "30 posts / mois",
     features: [
       "Assistant IA de rédaction (limité)",
       "Calendrier éditorial",
       "Analytics essentiels",
+      "Intégration Canva",
     ],
-    cta: "Essayer Starter — 7j gratuits →",
+    socialsMuted: false,
+    cta: "Essayer Starter — 14j gratuits →",
     popular: false,
     ctaStyle: "outline" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=starter",
@@ -102,6 +99,7 @@ const plans = [
     name: "Pro",
     tagline: "Pour les créateurs actifs qui veulent scaler",
     price: { monthly: 99, yearly: 79 },
+    subtext: "PAR UTILISATEUR ET PAR MOIS",
     postsPerMonth: "120 posts / mois",
     features: [
       "Tout du Starter",
@@ -109,7 +107,8 @@ const plans = [
       "Suggestions d'idées IA",
       "Analytics avancés",
     ],
-    cta: "Essayer Pro — 7j gratuits →",
+    socialsMuted: false,
+    cta: "Essayer Pro — 14j gratuits →",
     popular: true,
     ctaStyle: "primary" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=pro",
@@ -118,14 +117,16 @@ const plans = [
     name: "Business",
     tagline: "Pour les agences et équipes marketing",
     price: { monthly: 199, yearly: 159 },
+    subtext: "PAR UTILISATEUR ET PAR MOIS",
     postsPerMonth: "300 posts / mois",
     features: [
       "Tout le plan Pro",
       "Multi-comptes (jusqu'à 5)",
       "Gestion équipe + rôles",
-      "Agent IA",
+      "Agent IA (Tendances)",
     ],
-    cta: "Essayer Business — 7j gratuits →",
+    socialsMuted: false,
+    cta: "Essayer Business — 14j gratuits →",
     popular: false,
     ctaStyle: "dark" as const,
     href: "https://app.creatabl-ia.com/sign-up?plan=business",
@@ -150,12 +151,12 @@ const faqs = [
     answer: "Pas du tout. Creatabl est conçu pour tout le monde : vous décrivez votre idée et l'IA génère un post optimisé pour chaque réseau.",
   },
   {
-    question: "Quelle est la différence entre les plans Starter, Pro et Business ?",
-    answer: "Le Starter convient aux solopreneurs (30 posts/mois, IA limitée). Le Pro est pour les créateurs actifs (120 posts, IA illimitée). Le Business est pour les agences (multi-comptes, équipes, agent IA).",
+    question: "Quelle est la différence entre les plans Free, Starter, Pro et Business ?",
+    answer: "Le plan Free est permanent avec 20 posts/mois. Le Starter convient aux solopreneurs (30 posts/mois). Le Pro est idéal pour les créateurs actifs (120 posts, IA illimitée). Le Business s'adresse aux agences (300 posts, multi-comptes, équipes).",
   },
   {
     question: "Y a-t-il une période d'essai gratuite ?",
-    answer: "Oui ! Vous bénéficiez de 7 jours d'essai gratuit, sans carte bancaire requise, sur tous nos plans.",
+    answer: "Oui ! Vous bénéficiez de 14 jours d'essai gratuit avec carte bancaire obligatoire sur les plans payants, ou du plan Free permanent sans carte.",
   },
   {
     question: "Puis-je programmer mes publications à l'avance ?",
@@ -167,7 +168,7 @@ const faqs = [
   },
   {
     question: "Est-ce que Creatabl analyse mes performances ?",
-    answer: "Oui, des analytics essentiels sont inclus dès le Starter. Le plan Pro et Business offrent des analytics avancés avec comparaisons et suggestions d'optimisation.",
+    answer: "Oui, des analytics essentiels sont inclus dès le plan Free et Starter. Les plans Pro et Business offrent des analytics avancés avec comparaisons et suggestions d'optimisation.",
   },
   {
     question: "Comment est sécurisé mon paiement ?",
@@ -178,28 +179,28 @@ const faqs = [
 /* ─── Comparison table rows ─── */
 type CellValue = "check" | "cross" | "soon" | string;
 const comparisonRows: { label: string; free: CellValue; starter: CellValue; pro: CellValue; business: CellValue }[] = [
-  { label: "Posts/mois", free: "20", starter: "30", pro: "120", business: "300" },
-  { label: "IA basique", free: "check", starter: "check", pro: "check", business: "check" },
-  { label: "IA avancée", free: "cross", starter: "cross", pro: "check", business: "check" },
-  { label: "Suggestions IA", free: "cross", starter: "cross", pro: "check", business: "check" },
-  { label: "Agent IA", free: "cross", starter: "cross", pro: "cross", business: "check" },
-  { label: "Analytics basiques", free: "check", starter: "check", pro: "check", business: "check" },
-  { label: "Analytics avancés", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Posts / mois", free: "20", starter: "30", pro: "120", business: "300" },
+  { label: "Rédaction IA (basique)", free: "check", starter: "check", pro: "check", business: "check" },
+  { label: "Rédaction IA (avancée)", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Reformuler & Tons IA", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Suggestions d'idées IA", free: "cross", starter: "cross", pro: "check", business: "check" },
+  { label: "Agent IA (Tendances)", free: "cross", starter: "cross", pro: "cross", business: "check" },
   { label: "Calendrier éditorial", free: "check", starter: "check", pro: "check", business: "check" },
-  { label: "Multi-comptes", free: "cross", starter: "cross", pro: "cross", business: "check" },
-  { label: "Gestion équipe", free: "cross", starter: "cross", pro: "cross", business: "check" },
-  { label: "Support", free: "Email", starter: "Email", pro: "Prioritaire", business: "Dédié" },
+  { label: "Analytics", free: "Essentiels", starter: "Essentiels", pro: "Avancés", business: "Avancés" },
+  { label: "Intégration Canva", free: "cross", starter: "check", pro: "check", business: "check" },
+  { label: "Multi-comptes", free: "1 compte", starter: "1 compte", pro: "1 compte", business: "Jusqu'à 5" },
+  { label: "Gestion équipe & rôles", free: "cross", starter: "cross", pro: "cross", business: "check" },
+  { label: "Support client", free: "Communauté", starter: "Standard", pro: "Prioritaire", business: "Dédié" },
 ];
 
 function renderCell(val: CellValue, isPro: boolean) {
   if (val === "check") return <CheckIcon />;
   if (val === "cross") return <CrossIcon />;
-  if (val === "soon") return <SoonBadge />;
   return (
     <span style={{
-      color: isPro ? "#7225E3" : "#9CA3AF",
+      color: isPro ? "#7225E3" : "#4B5563",
       fontSize: "13px",
-      fontWeight: isPro ? 600 : 500,
+      fontWeight: isPro ? 700 : 500,
       fontFamily: "var(--font-inter)",
     }}>{val}</span>
   );
@@ -227,7 +228,7 @@ export default function PricingPage() {
         </ScrollReveal>
         <ScrollReveal delay={160}>
           <p className="font-inter text-[#6B7280] text-[15px] mb-8">
-            Choisissez l&apos;offre qui correspond à vos besoins. 7 jours gratuits, sans carte.
+            Choisissez l&apos;offre qui correspond à vos besoins. 14 jours d&apos;essai gratuit sur les plans payants, plan Free sans limite.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={200}>
@@ -242,7 +243,7 @@ export default function PricingPage() {
             </a>
             <a
               id="hero-cta-secondary"
-              href="https://app.creatabl-ia.com/sign-up"
+              href="https://app.creatabl-ia.com/sign-up?plan=free"
               className="font-inter font-semibold text-[14px] text-center py-3.5 px-8 rounded-full transition-all duration-200 hover:-translate-y-0.5"
               style={{ background: "transparent", border: "1.5px solid #7225E3", color: "#7225E3" }}
             >
@@ -303,140 +304,134 @@ export default function PricingPage() {
       </section>
 
       {/* ─── PRICING CARDS ─── */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {plans.map((plan, idx) => (
-            <ScrollReveal key={plan.name} delay={idx * 100}>
-              <div
-                className="relative flex flex-col h-full"
-                style={{
-                  background: "#FFFFFF",
-                  border: plan.popular ? "2px solid #7225E3" : "1.5px solid #E5E7EB",
-                  borderRadius: "20px",
-                  padding: "32px",
-                  boxShadow: plan.popular
-                    ? "0 0 0 1px rgba(114,37,227,0.18), 0 12px 40px rgba(114,37,227,0.15)"
-                    : "0 0 0 1px rgba(114,37,227,0.05), 0 8px 32px rgba(114,37,227,0.06)",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                {/* Popular badge */}
-                {plan.popular && (
-                  <div
-                    className="absolute left-1/2 -translate-x-1/2 -top-3.5 font-outfit font-semibold text-white text-[13px] px-4 py-1.5 rounded-full whitespace-nowrap"
-                    style={{ background: "#7225E3" }}
-                  >
-                    Le plus populaire
-                  </div>
-                )}
+          {plans.map((plan, idx) => {
+            const displayPrice = plan.name === "Free" ? 0 : (billing === "monthly" ? plan.price.monthly : plan.price.yearly);
 
-                {/* Plan header */}
-                <div className="mb-6">
-                  <h3 className="font-outfit font-bold text-[20px] text-[#111827] mb-1">{plan.name}</h3>
-                  <p className="font-playfair italic text-[#7225E3] text-[13px] mb-4">{plan.tagline}</p>
-                  <div className="flex flex-col gap-1">
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "6px" }}>
-                      <span className="font-outfit font-extrabold text-[#111827]" style={{ fontSize: "36px", lineHeight: 1 }}>
-                        {plan.name === "Free" ? "0" : (billing === "monthly" ? plan.price.monthly : plan.price.yearly)}€
-                      </span>
-                      <span className="font-inter text-[#6B7280] text-[14px]">/mois</span>
-                    </div>
-                    {plan.name === "Free" ? (
-                      <p className="font-inter text-[#9CA3AF] text-[12px] mt-1">Pour toujours</p>
-                    ) : billing === "yearly" ? (
-                      <div className="flex flex-col">
-                        <span className="font-inter text-[#9CA3AF] text-[14px] line-through">
-                          {plan.price.monthly}€/mois
-                        </span>
-                        <span className="font-inter text-[#9CA3AF] text-[12px] mt-1">
-                          par utilisateur · facturé {plan.price.yearly * 12}€/an
-                        </span>
-                      </div>
-                    ) : (
-                      <p className="font-inter text-[#9CA3AF] text-[12px] mt-1">par utilisateur et par mois</p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Posts + networks */}
-                <div className="mb-5 flex-1">
-                  <p className="font-inter font-semibold text-[#6B7280] text-[12px] uppercase tracking-wider mb-2">
-                    Génération de posts
-                  </p>
-                  <div className="flex items-center gap-2 font-inter text-[#374151] text-[14px] mb-4">
-                    <span className="font-bold text-[#16A34A]">✓</span>
-                    {plan.postsPerMonth}
-                  </div>
-
-                  <p className="font-inter font-semibold text-[#6B7280] text-[12px] uppercase tracking-wider mb-3">
-                    Fonctionnalités
-                  </p>
-
-                  {/* Social icons row */}
-                  <div className="flex items-center gap-2 mb-4 flex-wrap">
-                    <LinkedInIcon />
-                    <InstagramIcon />
-                    <FacebookIcon />
-                    <XIcon />
-                    <TikTokIcon muted />
-                    <YouTubeIcon muted />
-                    <PinterestIcon muted />
-                  </div>
-
-                  {/* Feature list */}
-                  <ul className="space-y-2">
-                    {plan.features.map((feat) => {
-                      const isExcluded = feat.startsWith("✗");
-                      const cleanFeat = isExcluded ? feat.substring(1).trim() : feat;
-                      return (
-                        <li key={feat} className="flex items-start gap-2 font-inter text-[14px]">
-                          {isExcluded ? (
-                            <span className="font-bold text-[#9CA3AF] flex-shrink-0">✗</span>
-                          ) : (
-                            <span className="font-bold text-[#16A34A] flex-shrink-0">✓</span>
-                          )}
-                          <span style={{ color: isExcluded ? "#9CA3AF" : "#374151" }}>
-                            {cleanFeat}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                {/* CTA */}
-                <a
-                  id={`cta-plan-${plan.name.toLowerCase()}`}
-                  href={plan.href}
-                  className="font-inter font-semibold text-[14px] text-center py-3 px-6 rounded-full transition-all duration-200 hover:-translate-y-0.5 block"
-                  style={
-                    plan.ctaStyle === "primary"
-                      ? { background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }
-                      : plan.ctaStyle === "dark"
-                      ? { background: "#111827", color: "#FFFFFF", border: "none" }
-                      : { background: "transparent", border: "1.5px solid #7225E3", color: "#7225E3" }
-                  }
+            return (
+              <ScrollReveal key={plan.name} delay={idx * 80} className="flex flex-col h-full">
+                <div
+                  className="relative flex flex-col h-full bg-white rounded-2xl border p-6 sm:p-8 transition-all duration-300 hover:shadow-xl"
+                  style={{
+                    border: plan.popular ? "2px solid #7225E3" : "1.5px solid #E5E7EB",
+                    boxShadow: plan.popular
+                      ? "0 0 0 1px rgba(114,37,227,0.18), 0 12px 40px rgba(114,37,227,0.15)"
+                      : "0 0 0 1px rgba(114,37,227,0.05), 0 8px 32px rgba(114,37,227,0.06)",
+                  }}
                 >
-                  {plan.cta}
-                </a>
-                <div className="text-center mt-2 flex flex-col gap-0.5">
-                  <p className="font-inter text-[#9CA3AF] text-[12px]">
-                    {plan.name === "Free" ? "Sans engagement" : "Essai gratuit 7 jours · Sans carte bancaire"}
-                  </p>
-                  {plan.name !== "Free" && billing === "yearly" && (
-                    <p className="font-inter text-[#9CA3AF] text-[12px] font-medium">
-                      Soit {plan.price.yearly * 12}€ facturés en une fois par an
-                    </p>
+                  {/* Popular badge - Centered at top border */}
+                  {plan.popular && (
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 -top-3.5 font-outfit font-semibold text-white text-[12px] px-4 py-1.5 rounded-full whitespace-nowrap shadow-md z-10"
+                      style={{ background: "#7225E3" }}
+                    >
+                      Le plus populaire
+                    </div>
                   )}
+
+                  {/* Plan header */}
+                  <div className="mb-6">
+                    <h3 className="font-outfit font-bold text-[22px] text-[#111827] mb-1">{plan.name}</h3>
+                    <p className="font-playfair italic text-[#7225E3] text-[13px] h-10 mb-4 flex items-center">
+                      {plan.tagline}
+                    </p>
+                    
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="font-outfit font-extrabold text-[#111827] text-4xl leading-none">
+                          {displayPrice}€
+                        </span>
+                        <span className="font-inter text-[#6B7280] text-[14px]">/mois</span>
+                      </div>
+                      
+                      <p className="font-inter font-bold text-[#9CA3AF] text-[11px] uppercase tracking-wider mt-1.5">
+                        {plan.subtext}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Posts + Features Section */}
+                  <div className="mb-6 flex-1 flex flex-col">
+                    <p className="font-inter font-semibold text-[#6B7280] text-[11px] uppercase tracking-wider mb-2">
+                      Génération de posts
+                    </p>
+                    <div className="flex items-center gap-2 font-inter font-bold text-[#374151] text-[14px] mb-5">
+                      <span className="text-[#16A34A] flex-shrink-0">✓</span>
+                      {plan.postsPerMonth}
+                    </div>
+
+                    <p className="font-inter font-semibold text-[#6B7280] text-[11px] uppercase tracking-wider mb-3">
+                      Fonctionnalités
+                    </p>
+
+                    {/* Social icons row */}
+                    <div className="flex items-center gap-2 mb-4 flex-wrap">
+                      <LinkedInIcon />
+                      <InstagramIcon />
+                      <FacebookIcon />
+                      <XIcon />
+                      <TikTokIcon muted />
+                      <YouTubeIcon muted />
+                      <PinterestIcon muted />
+                    </div>
+
+                    {/* Feature list */}
+                    <ul className="space-y-2.5 flex-1">
+                      {plan.features.map((feat) => {
+                        const isExcluded = feat.startsWith("✗");
+                        const cleanFeat = isExcluded ? feat.substring(1).trim() : feat;
+                        return (
+                          <li key={feat} className="flex items-start gap-2.5 font-inter text-[14px]">
+                            {isExcluded ? (
+                              <span className="font-bold text-[#9CA3AF] flex-shrink-0">✗</span>
+                            ) : (
+                              <span className="font-bold text-[#16A34A] flex-shrink-0">✓</span>
+                            )}
+                            <span
+                              style={{
+                                color: isExcluded ? "#9CA3AF" : "#374151",
+                                textDecoration: isExcluded ? "line-through" : "none",
+                              }}
+                            >
+                              {cleanFeat}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+
+                  {/* CTA at Bottom */}
+                  <div className="mt-auto pt-6 flex flex-col gap-2">
+                    <a
+                      id={`cta-plan-${plan.name.toLowerCase()}`}
+                      href={plan.href}
+                      className="w-full font-inter font-bold text-[14px] text-center py-3.5 px-4 rounded-full transition-all duration-200 block shadow-sm hover:-translate-y-0.5"
+                      style={
+                        plan.ctaStyle === "primary"
+                          ? { background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }
+                          : plan.ctaStyle === "dark"
+                          ? { background: "#111827", color: "#FFFFFF", border: "none" }
+                          : { background: "transparent", border: "1.5px solid #7225E3", color: "#7225E3" }
+                      }
+                    >
+                      {plan.cta}
+                    </a>
+                    
+                    <p className="font-inter text-[#9CA3AF] text-[11px] text-center font-medium mt-1">
+                      {plan.name === "Free" ? "Sans engagement · Sans carte bancaire" : "Essai gratuit 14 jours · Carte bancaire obligatoire"}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Secure payment note */}
-        <ScrollReveal delay={400}>
-          <p className="font-inter text-[#9CA3AF] text-[13px] text-center mt-8">
+        <ScrollReveal delay={350}>
+          <p className="font-inter text-[#9CA3AF] text-[13px] text-center mt-10">
             Paiement sécurisé par Stripe
           </p>
         </ScrollReveal>
@@ -444,7 +439,7 @@ export default function PricingPage() {
 
       {/* ─── COMPARISON TABLE ─── */}
       <section className="w-full py-20" style={{ background: "#F9FAFB", borderTop: "1px solid #F3F4F6", borderBottom: "1px solid #F3F4F6" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 24px" }}>
           <ScrollReveal>
             <div className="text-center mb-14">
               <p className="font-outfit font-bold text-[13px] text-[#7225E3] uppercase tracking-widest mb-3">
@@ -458,17 +453,17 @@ export default function PricingPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "540px" }}>
+            <div style={{ overflowX: "auto" }} className="bg-white rounded-2xl border border-slate-200 shadow-sm p-2">
+              <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "640px" }}>
                 <thead>
-                  <tr>
-                    <th style={{ textAlign: "left", padding: "12px 16px", color: "#9CA3AF", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", width: "40%", fontFamily: "var(--font-outfit)" }}>
+                  <tr style={{ borderBottom: "1px solid #E5E7EB" }}>
+                    <th style={{ textAlign: "left", padding: "16px", color: "#9CA3AF", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", width: "36%", fontFamily: "var(--font-outfit)" }}>
                       Fonctionnalité
                     </th>
-                    <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Free</th>
-                    <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Starter</th>
-                    <th style={{ textAlign: "center", padding: "12px 16px", color: "#7225E3", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Pro ✦</th>
-                    <th style={{ textAlign: "center", padding: "12px 16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Business</th>
+                    <th style={{ textAlign: "center", padding: "16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Free</th>
+                    <th style={{ textAlign: "center", padding: "16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Starter</th>
+                    <th style={{ textAlign: "center", padding: "16px", color: "#7225E3", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Pro ✦</th>
+                    <th style={{ textAlign: "center", padding: "16px", color: "#374151", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-outfit)" }}>Business</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -476,11 +471,11 @@ export default function PricingPage() {
                     <tr
                       key={row.label}
                       style={{
-                        background: i % 2 === 0 ? "rgba(114,37,227,0.02)" : "transparent",
+                        background: i % 2 === 0 ? "rgba(249, 250, 251, 0.7)" : "transparent",
                         borderTop: "1px solid #F3F4F6",
                       }}
                     >
-                      <td style={{ padding: "14px 16px", color: "#6B7280", fontSize: "14px", fontFamily: "var(--font-inter)" }}>
+                      <td style={{ padding: "14px 16px", color: "#374151", fontSize: "14px", fontWeight: 500, fontFamily: "var(--font-inter)" }}>
                         {row.label}
                       </td>
                       <td style={{ textAlign: "center", padding: "14px 16px" }}>

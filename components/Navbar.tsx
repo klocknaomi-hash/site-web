@@ -153,7 +153,7 @@ export default function Navbar() {
     <>
       {/* Top Announcement Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 w-full h-[36px] bg-[#C2B8FF] flex items-center justify-center font-outfit text-[15px] font-normal text-[#3B0764] px-4 text-center">
-        <span>Lancement officiel — 7 jours d&apos;essai gratuit</span>
+        <span>Lancement officiel — 14 jours d&apos;essai gratuit</span>
       </div>
 
       <nav

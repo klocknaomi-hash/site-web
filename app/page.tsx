@@ -1041,7 +1041,7 @@ export default function Home() {
                   marginTop: "12px",
                 }}
               >
-                7 jours gratuits · Sans carte bancaire · Sans engagement
+                14 jours gratuits sur les plans payants · Plan Free sans limite
               </p>
 
               {/* Badges de confiance */}
