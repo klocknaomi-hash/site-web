@@ -129,6 +129,18 @@ const plans = [
 
 const faqs = [
   {
+    question: "Puis-je annuler à tout moment ?",
+    answer: "Oui, sans engagement sur les plans mensuels. Vous conservez l'accès jusqu'à la fin de votre période payée. Sur les plans annuels, l'engagement est de 12 mois avec 20% de réduction.",
+  },
+  {
+    question: "Mes données sont-elles sécurisées ?",
+    answer: "Oui. Toutes vos données et vos tokens d'accès aux réseaux sociaux sont chiffrés (AES-256) en base de données. Nous respectons le RGPD et nous ne partageons jamais vos données. Vous pouvez supprimer votre compte à tout moment.",
+  },
+  {
+    question: "Combien de temps pour créer mon premier post ?",
+    answer: "Moins de 3 minutes. Après votre inscription, vous connectez vos réseaux sociaux en un clic et vous générez votre premier post avec l'IA. Un tutoriel de démarrage vous guide.",
+  },
+  {
     question: "Comment fonctionne Creatabl concrètement ?",
     answer: "Vous connectez vos réseaux sociaux, rédigez votre contenu, l'IA l'améliore et vous planifiez sa publication. Tout se passe depuis une seule interface simple et intuitive.",
   },
