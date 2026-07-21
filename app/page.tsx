@@ -364,6 +364,175 @@ export default function Home() {
         <LogosStrip />
       </section>
 
+      {/* COMMENT ÇA MARCHE SECTION */}
+      <section style={{
+        padding: '80px 24px',
+        maxWidth: '1200px',
+        margin: '0 auto',
+      }}>
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '56px',
+        }}>
+          <p style={{
+            color: '#7F77DD',
+            fontSize: '13px',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            marginBottom: '12px',
+            fontWeight: 500,
+          }}>
+            Comment ça marche
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 700,
+            color: '#111827',
+            lineHeight: 1.2,
+          }}>
+            Créez du contenu qui performe<br />
+            en 3 étapes simples.
+          </h2>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns:
+            'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px',
+        }}>
+
+          {/* Step 1 */}
+          <div style={{
+            padding: '32px 24px',
+            background: '#FFFFFF',
+            border: '1px solid #F3F4F6',
+            borderRadius: '20px',
+            textAlign: 'center',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: '#7F77DD',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+              fontSize: '22px',
+              fontWeight: 700,
+              color: 'white',
+            }}>
+              1
+            </div>
+            <h3 style={{
+              fontSize: '20px',
+              fontWeight: 600,
+              color: '#111827',
+              marginBottom: '12px',
+            }}>
+              Tape ton idée
+            </h3>
+            <p style={{
+              fontSize: '14px',
+              color: '#6B7280',
+              lineHeight: 1.6,
+            }}>
+              Quelques mots suffisent. Un sujet, 
+              une tendance, une émotion — l&apos;IA 
+              s&apos;occupe du reste.
+            </p>
+          </div>
+
+          {/* Step 2 */}
+          <div style={{
+            padding: '32px 24px',
+            background: '#FFFFFF',
+            border: '1px solid #F3F4F6',
+            borderRadius: '20px',
+            textAlign: 'center',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: '#7F77DD',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+              fontSize: '22px',
+              fontWeight: 700,
+              color: 'white',
+            }}>
+              2
+            </div>
+            <h3 style={{
+              fontSize: '20px',
+              fontWeight: 600,
+              color: '#111827',
+              marginBottom: '12px',
+            }}>
+              L&apos;IA génère
+            </h3>
+            <p style={{
+              fontSize: '14px',
+              color: '#6B7280',
+              lineHeight: 1.6,
+            }}>
+              3 posts adaptés à chaque réseau,
+              en 10 secondes. Ton ton, ton style,
+              ton audience.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div style={{
+            padding: '32px 24px',
+            background: '#FFFFFF',
+            border: '1px solid #F3F4F6',
+            borderRadius: '20px',
+            textAlign: 'center',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: '#7F77DD',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+              fontSize: '22px',
+              fontWeight: 700,
+              color: 'white',
+            }}>
+              3
+            </div>
+            <h3 style={{
+              fontSize: '20px',
+              fontWeight: 600,
+              color: '#111827',
+              marginBottom: '12px',
+            }}>
+              Publie partout
+            </h3>
+            <p style={{
+              fontSize: '14px',
+              color: '#6B7280',
+              lineHeight: 1.6,
+            }}>
+              LinkedIn, Instagram, Facebook, X — 
+              un clic. Ou programme pour plus tard.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       {/* 4. FEATURES VEROAPP GRID */}
       <section id="features" className="bg-[#FFFFFF] py-[100px] relative border-t border-slate-100">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
