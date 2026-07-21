@@ -37,35 +37,84 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white py-20 px-6 pt-32">
-      <div className="max-w-2xl mx-auto">
-
-        <div className="text-center mb-12">
-          <p className="text-purple-600 text-xs tracking-widest uppercase mb-3 font-medium">
+    <div style={{
+      minHeight: '100vh',
+      background: '#FFFFFF',
+      padding: '120px 24px 80px',
+    }}>
+      <div style={{ 
+        maxWidth: '600px', 
+        margin: '0 auto' 
+      }}>
+        <div style={{ 
+          textAlign: 'center', 
+          marginBottom: '48px' 
+        }}>
+          <p style={{
+            color: '#7F77DD',
+            fontSize: '13px',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            marginBottom: '12px',
+            fontWeight: 500,
+          }}>
             Contact
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 style={{
+            fontSize: 'clamp(28px, 5vw, 48px)',
+            fontWeight: 700,
+            color: '#111827',
+            lineHeight: 1.2,
+            marginBottom: '16px',
+          }}>
             Une question ? Écrivez-nous.
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p style={{
+            fontSize: '16px',
+            color: '#6B7280',
+            lineHeight: 1.6,
+          }}>
             On répond en moins de 24h ouvrées.
           </p>
         </div>
 
         {sent ? (
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-            <p className="text-green-700 text-lg font-semibold mb-2">
+          <div style={{
+            background: '#F0FDF4',
+            border: '1px solid #BBF7D0',
+            borderRadius: '16px',
+            padding: '32px',
+            textAlign: 'center',
+          }}>
+            <p style={{
+              fontSize: '18px',
+              color: '#15803D',
+              fontWeight: 600,
+              marginBottom: '8px',
+            }}>
               ✓ Message envoyé !
             </p>
-            <p className="text-gray-600">
+            <p style={{
+              color: '#6B7280',
+              fontSize: '14px',
+            }}>
               Nous vous répondrons rapidement.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-
+          <form onSubmit={handleSubmit} style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px',
+          }}>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#374151',
+                marginBottom: '8px',
+              }}>
                 Nom complet
               </label>
               <input
@@ -75,13 +124,27 @@ export default function ContactPage() {
                 onChange={e => setForm({
                   ...form, name: e.target.value
                 })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900"
                 placeholder="Votre nom"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
+                  fontSize: '15px',
+                  color: '#111827',
+                  outline: 'none',
+                }}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#374151',
+                marginBottom: '8px',
+              }}>
                 Email
               </label>
               <input
@@ -91,13 +154,27 @@ export default function ContactPage() {
                 onChange={e => setForm({
                   ...form, email: e.target.value
                 })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900"
                 placeholder="votre@email.com"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
+                  fontSize: '15px',
+                  color: '#111827',
+                  outline: 'none',
+                }}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#374151',
+                marginBottom: '8px',
+              }}>
                 Sujet
               </label>
               <select
@@ -105,7 +182,17 @@ export default function ContactPage() {
                 onChange={e => setForm({
                   ...form, subject: e.target.value
                 })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900 bg-white">
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
+                  fontSize: '15px',
+                  color: '#111827',
+                  background: 'white',
+                  outline: 'none',
+                }}
+              >
                 <option value="general">
                   Question générale
                 </option>
@@ -125,7 +212,13 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#374151',
+                marginBottom: '8px',
+              }}>
                 Message
               </label>
               <textarea
@@ -135,34 +228,75 @@ export default function ContactPage() {
                 onChange={e => setForm({
                   ...form, message: e.target.value
                 })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900 resize-none"
                 placeholder="Comment pouvons-nous vous aider ?"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
+                  fontSize: '15px',
+                  color: '#111827',
+                  outline: 'none',
+                  resize: 'none',
+                  fontFamily: 'inherit',
+                }}
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+              style={{
+                width: '100%',
+                background: '#7F77DD',
+                color: 'white',
+                padding: '16px',
+                borderRadius: '12px',
+                fontSize: '15px',
+                fontWeight: 600,
+                border: 'none',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                opacity: loading ? 0.5 : 1,
+                marginTop: '8px',
+              }}
+            >
               {loading ? 'Envoi...' : 'Envoyer le message →'}
             </button>
 
-            <p className="text-xs text-gray-500 text-center">
-              Vos données sont utilisées uniquement pour vous répondre. Voir notre <a href="/confidentialite" className="text-purple-600 hover:underline">politique de confidentialité</a>.
+            <p style={{
+              fontSize: '12px',
+              color: '#9CA3AF',
+              textAlign: 'center',
+            }}>
+              Vos données sont utilisées uniquement pour vous répondre.
             </p>
-
           </form>
         )}
 
-        <div className="mt-16 pt-8 border-t border-gray-100 text-center">
-          <p className="text-sm text-gray-500 mb-2">
+        <div style={{
+          marginTop: '64px',
+          paddingTop: '32px',
+          borderTop: '1px solid #F3F4F6',
+          textAlign: 'center',
+        }}>
+          <p style={{
+            fontSize: '14px',
+            color: '#9CA3AF',
+            marginBottom: '8px',
+          }}>
             Ou écrivez-nous directement à
           </p>
-          <a href="mailto:contact@creatabl-ia.com" className="text-purple-600 font-medium hover:underline">
+          <a
+            href="mailto:contact@creatabl-ia.com"
+            style={{
+              color: '#7F77DD',
+              fontWeight: 500,
+              textDecoration: 'none',
+            }}
+          >
             contact@creatabl-ia.com
           </a>
         </div>
-
       </div>
     </div>
   )
