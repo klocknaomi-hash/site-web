@@ -1,235 +1,169 @@
-"use client";
-
-import React, { useState } from "react";
-import { Mail, MessageSquare, Clock, ArrowRight, CheckCircle2, Loader2, Send } from "lucide-react";
+'use client'
+import { useState } from 'react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "general", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: 'general',
+    message: '',
+  })
 
-  const validateForm = () => {
-    const nextErrors: Record<string, string> = {};
-    if (!formData.name.trim()) nextErrors.name = "Le nom est obligatoire.";
-    if (!formData.email.trim()) {
-      nextErrors.email = "L'adresse email est obligatoire.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      nextErrors.email = "L'adresse email est invalide.";
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSent(true)
+        setForm({
+          name: '',
+          email: '',
+          subject: 'general',
+          message: '',
+        })
+      }
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoading(false)
     }
-    if (!formData.message.trim()) nextErrors.message = "Le message ne peut pas être vide.";
-    
-    setErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", subject: "general", message: "" });
-    }, 1200);
-  };
+  }
 
   return (
-    <div className="bg-[#FFFFFF] text-[#111827] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto space-y-12">
-        {/* Header Block */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
-            CONTACT
-          </span>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
-            Nous Contacter
+    <div className="min-h-screen bg-white py-20 px-6 pt-32">
+      <div className="max-w-2xl mx-auto">
+
+        <div className="text-center mb-12">
+          <p className="text-purple-600 text-xs tracking-widest uppercase mb-3 font-medium">
+            Contact
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Une question ? Écrivez-nous.
           </h1>
-          <p className="font-inter text-slate-500 text-base sm:text-lg">
-            Une question sur notre plateforme ? Notre équipe commerciale ou technique vous répond en moins de 24h.
+          <p className="text-gray-600 text-lg">
+            On répond en moins de 24h ouvrées.
           </p>
         </div>
 
-        {/* Form and Info Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column — Contact Form */}
-          <div className="lg:col-span-7 bg-white border border-[#E5E7EB] rounded-[24px] p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.015)]">
-            {isSuccess ? (
-              <div className="text-center py-10 space-y-4 animate-fade-in font-inter">
-                <div className="inline-flex p-3 bg-emerald-50 text-emerald-500 rounded-full">
-                  <CheckCircle2 className="w-10 h-10" />
-                </div>
-                <h3 className="font-outfit text-2xl font-bold text-slate-900">
-                  Message envoyé avec succès !
-                </h3>
-                <p className="text-slate-550 max-w-sm mx-auto text-sm leading-relaxed">
-                  Merci de nous avoir contactés. Nous avons bien reçu vos informations et un conseiller vous répondra sous 24 heures maximum.
-                </p>
-                <button
-                  onClick={() => setIsSuccess(false)}
-                  className="mt-6 px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl text-sm transition-colors cursor-pointer"
-                >
-                  Rédiger un autre message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 font-inter">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name field */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500">Votre nom</label>
-                    <input
-                      type="text"
-                      placeholder="Jean Dupont"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary ${
-                        errors.name ? "border-red-500 focus:border-red-500" : "border-slate-200"
-                      }`}
-                    />
-                    {errors.name && <span className="text-[10px] text-red-500 block">{errors.name}</span>}
-                  </div>
-
-                  {/* Email field */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500">Votre email</label>
-                    <input
-                      type="email"
-                      placeholder="jean.dupont@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary ${
-                        errors.email ? "border-red-500 focus:border-red-500" : "border-slate-200"
-                      }`}
-                    />
-                    {errors.email && <span className="text-[10px] text-red-500 block">{errors.email}</span>}
-                  </div>
-                </div>
-
-                {/* Subject Selector */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500">Sujet de votre demande</label>
-                  <select
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:border-primary"
-                  >
-                    <option value="general">Question générale</option>
-                    <option value="billing">Facturation & Offres</option>
-                    <option value="support">Support technique</option>
-                    <option value="partnership">Partenariats</option>
-                  </select>
-                </div>
-
-                {/* Message Textarea */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500">Message</label>
-                  <textarea
-                    rows={5}
-                    placeholder="Comment pouvons-nous vous aider ?"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary resize-none ${
-                      errors.message ? "border-red-500 focus:border-red-500" : "border-slate-200"
-                    }`}
-                  />
-                  {errors.message && <span className="text-[10px] text-red-500 block">{errors.message}</span>}
-                </div>
-
-                {/* Submit button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3.5 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Envoi en cours...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Envoyer le message</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+        {sent ? (
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
+            <p className="text-green-700 text-lg font-semibold mb-2">
+              ✓ Message envoyé !
+            </p>
+            <p className="text-gray-600">
+              Nous vous répondrons rapidement.
+            </p>
           </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
 
-          {/* Right Column — Support Panels */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* Panel 1 (Direct Email) */}
-            <div className="bg-white border border-[#E5E7EB] rounded-[20px] p-6 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex gap-4 items-start">
-              <div className="p-2.5 bg-primary/10 rounded-xl text-primary flex-shrink-0">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div className="space-y-1.5 font-inter">
-                <h4 className="font-outfit text-base font-bold text-[#111827] leading-none">
-                  Écrivez-nous directement
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Notre équipe traite vos emails tous les jours de la semaine.
-                </p>
-                <a 
-                  href="mailto:hello@creatabl-ia.com" 
-                  className="inline-block text-sm font-bold text-primary hover:underline"
-                >
-                  hello@creatabl-ia.com
-                </a>
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Nom complet
+              </label>
+              <input
+                type="text"
+                required
+                value={form.name}
+                onChange={e => setForm({
+                  ...form, name: e.target.value
+                })}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900"
+                placeholder="Votre nom"
+              />
             </div>
 
-            {/* Panel 2 (Support Hours) */}
-            <div className="bg-white border border-[#E5E7EB] rounded-[20px] p-6 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex gap-4 items-start">
-              <div className="p-2.5 bg-primary/10 rounded-xl text-primary flex-shrink-0">
-                <Clock className="w-5 h-5" />
-              </div>
-              <div className="space-y-1.5 font-inter">
-                <h4 className="font-outfit text-base font-bold text-[#111827] leading-none">
-                  Heures d&apos;ouverture
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Notre service client et nos développeurs sont à votre disposition :
-                </p>
-                <span className="inline-block text-xs font-bold text-slate-700">
-                  Du lundi au vendredi &bull; 9h00 à 18h00
-                </span>
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                required
+                value={form.email}
+                onChange={e => setForm({
+                  ...form, email: e.target.value
+                })}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900"
+                placeholder="votre@email.com"
+              />
             </div>
 
-            {/* Panel 3 (Feature Requests) */}
-            <div className="bg-white border border-[#E5E7EB] rounded-[20px] p-6 space-y-4 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex gap-4 items-start">
-              <div className="p-2.5 bg-primary/10 rounded-xl text-primary flex-shrink-0">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-              <div className="space-y-1.5 font-inter">
-                <h4 className="font-outfit text-base font-bold text-[#111827] leading-none">
-                  Une idée de fonctionnalité ?
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Soumettez directement vos retours et votez pour les améliorations sur notre tableau de bord.
-                </p>
-                <a 
-                  href="/roadmap" 
-                  className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline hover:gap-1.5 transition-all"
-                >
-                  <span>Accéder à la Roadmap</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Sujet
+              </label>
+              <select
+                value={form.subject}
+                onChange={e => setForm({
+                  ...form, subject: e.target.value
+                })}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900 bg-white">
+                <option value="general">
+                  Question générale
+                </option>
+                <option value="support">
+                  Support technique
+                </option>
+                <option value="billing">
+                  Facturation
+                </option>
+                <option value="partnership">
+                  Partenariat
+                </option>
+                <option value="feedback">
+                  Feedback
+                </option>
+              </select>
             </div>
 
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Message
+              </label>
+              <textarea
+                required
+                rows={6}
+                value={form.message}
+                onChange={e => setForm({
+                  ...form, message: e.target.value
+                })}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-gray-900 resize-none"
+                placeholder="Comment pouvons-nous vous aider ?"
+              />
+            </div>
 
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+              {loading ? 'Envoi...' : 'Envoyer le message →'}
+            </button>
+
+            <p className="text-xs text-gray-500 text-center">
+              Vos données sont utilisées uniquement pour vous répondre. Voir notre <a href="/confidentialite" className="text-purple-600 hover:underline">politique de confidentialité</a>.
+            </p>
+
+          </form>
+        )}
+
+        <div className="mt-16 pt-8 border-t border-gray-100 text-center">
+          <p className="text-sm text-gray-500 mb-2">
+            Ou écrivez-nous directement à
+          </p>
+          <a href="mailto:contact@creatabl-ia.com" className="text-purple-600 font-medium hover:underline">
+            contact@creatabl-ia.com
+          </a>
         </div>
+
       </div>
     </div>
-  );
+  )
 }
