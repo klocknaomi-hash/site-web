@@ -92,7 +92,7 @@ export default function FaqSection() {
 
             {/* Pills de catégories */}
             <ScrollReveal delay={150}>
-              <div className="flex flex-wrap gap-2.5">
+              <div className="flex flex-wrap gap-2.5 mb-8">
                 {CATEGORIES.map((cat) => {
                   const isActive = activeCategory === cat
                   return (
@@ -109,6 +109,26 @@ export default function FaqSection() {
                     </button>
                   )
                 })}
+              </div>
+            </ScrollReveal>
+
+            {/* Card "Encore des questions ?" */}
+            <ScrollReveal delay={250} className="w-full">
+              <div className="w-full p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-slate-50 via-purple-50/20 to-slate-50 border border-slate-200/80 shadow-sm flex flex-col items-start gap-4">
+                <div>
+                  <h3 className="font-outfit font-bold text-lg text-[#111827] mb-1">
+                    Encore des questions ?
+                  </h3>
+                  <p className="font-inter text-sm text-[#6B7280]">
+                    Notre équipe est là pour vous aider à démarrer et répondre à vos besoins.
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-inter font-semibold text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm hover:shadow text-center"
+                >
+                  Contacter le support →
+                </Link>
               </div>
             </ScrollReveal>
           </div>
@@ -158,26 +178,6 @@ export default function FaqSection() {
                 )}
               </div>
             </ScrollReveal>
-
-            {/* Card "Vous avez d'autres questions ?" */}
-            <ScrollReveal delay={300}>
-              <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-50 via-purple-50/20 to-slate-50 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                <div>
-                  <h3 className="font-outfit font-bold text-xl text-[#111827] mb-1">
-                    Encore des questions ?
-                  </h3>
-                  <p className="font-inter text-sm text-[#6B7280]">
-                    Notre équipe est là pour vous aider à démarrer et répondre à vos besoins.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-inter font-semibold text-sm px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow whitespace-nowrap"
-                >
-                  Contacter le support →
-                </Link>
-              </div>
-            </ScrollReveal>
           </div>
 
         </div>
@@ -185,3 +185,4 @@ export default function FaqSection() {
     </section>
   )
 }
+
