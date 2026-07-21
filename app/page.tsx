@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import LogosStrip from "@/components/LogosStrip";
 import ScrollReveal from "@/components/ScrollReveal";
+import FAQ from "@/components/FAQ";
 
 const INSTAGRAM_SVG = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-pink-500">
@@ -985,6 +986,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <div className="w-full bg-[#0B0F19] relative z-10">
+        <FAQ />
+      </div>
 
       {/* 7. CTA BANNER */}
       <section className="w-full bg-white relative z-10" style={{ backgroundColor: "#FFFFFF", paddingBottom: "80px", paddingTop: "0px" }}>
