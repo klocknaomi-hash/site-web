@@ -40,7 +40,7 @@ export default function ContactPage() {
     <div style={{
       minHeight: '100vh',
       background: '#FFFFFF',
-      padding: '120px 24px 80px',
+      padding: '140px 24px 80px',
     }}>
       <div style={{ 
         maxWidth: '600px', 
@@ -51,21 +51,22 @@ export default function ContactPage() {
           marginBottom: '48px' 
         }}>
           <p style={{
-            color: '#7F77DD',
+            color: '#7225E3',
             fontSize: '13px',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
             marginBottom: '12px',
-            fontWeight: 500,
+            fontWeight: 600,
           }}>
             Contact
           </p>
           <h1 style={{
-            fontSize: 'clamp(28px, 5vw, 48px)',
-            fontWeight: 700,
+            fontSize: 'clamp(32px, 5vw, 48px)',
+            fontWeight: 800,
             color: '#111827',
             lineHeight: 1.2,
             marginBottom: '16px',
+            fontFamily: 'var(--font-outfit)',
           }}>
             Une question ? Écrivez-nous.
           </h1>
@@ -111,7 +112,7 @@ export default function ContactPage() {
               <label style={{
                 display: 'block',
                 fontSize: '14px',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: '#374151',
                 marginBottom: '8px',
               }}>
@@ -127,12 +128,14 @@ export default function ContactPage() {
                 placeholder="Votre nom"
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
+                  padding: '14px 18px',
                   border: '1px solid #E5E7EB',
                   borderRadius: '12px',
                   fontSize: '15px',
                   color: '#111827',
                   outline: 'none',
+                  background: '#FAFAFA',
+                  transition: 'border-color 0.2s',
                 }}
               />
             </div>
@@ -141,7 +144,7 @@ export default function ContactPage() {
               <label style={{
                 display: 'block',
                 fontSize: '14px',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: '#374151',
                 marginBottom: '8px',
               }}>
@@ -157,12 +160,14 @@ export default function ContactPage() {
                 placeholder="votre@email.com"
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
+                  padding: '14px 18px',
                   border: '1px solid #E5E7EB',
                   borderRadius: '12px',
                   fontSize: '15px',
                   color: '#111827',
                   outline: 'none',
+                  background: '#FAFAFA',
+                  transition: 'border-color 0.2s',
                 }}
               />
             </div>
@@ -171,7 +176,7 @@ export default function ContactPage() {
               <label style={{
                 display: 'block',
                 fontSize: '14px',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: '#374151',
                 marginBottom: '8px',
               }}>
@@ -184,13 +189,14 @@ export default function ContactPage() {
                 })}
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
+                  padding: '14px 18px',
                   border: '1px solid #E5E7EB',
                   borderRadius: '12px',
                   fontSize: '15px',
                   color: '#111827',
-                  background: 'white',
+                  background: '#FAFAFA',
                   outline: 'none',
+                  cursor: 'pointer',
                 }}
               >
                 <option value="general">
@@ -215,7 +221,7 @@ export default function ContactPage() {
               <label style={{
                 display: 'block',
                 fontSize: '14px',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: '#374151',
                 marginBottom: '8px',
               }}>
@@ -231,7 +237,7 @@ export default function ContactPage() {
                 placeholder="Comment pouvons-nous vous aider ?"
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
+                  padding: '14px 18px',
                   border: '1px solid #E5E7EB',
                   borderRadius: '12px',
                   fontSize: '15px',
@@ -239,6 +245,7 @@ export default function ContactPage() {
                   outline: 'none',
                   resize: 'none',
                   fontFamily: 'inherit',
+                  background: '#FAFAFA',
                 }}
               />
             </div>
@@ -248,16 +255,18 @@ export default function ContactPage() {
               disabled={loading}
               style={{
                 width: '100%',
-                background: '#7F77DD',
+                background: 'linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)',
                 color: 'white',
                 padding: '16px',
                 borderRadius: '12px',
                 fontSize: '15px',
-                fontWeight: 600,
+                fontWeight: 700,
                 border: 'none',
                 cursor: loading ? 'not-allowed' : 'pointer',
-                opacity: loading ? 0.5 : 1,
+                opacity: loading ? 0.6 : 1,
                 marginTop: '8px',
+                boxShadow: '0 4px 14px rgba(114, 37, 227, 0.25)',
+                transition: 'transform 0.2s, box-shadow 0.2s',
               }}
             >
               {loading ? 'Envoi...' : 'Envoyer le message →'}
@@ -289,8 +298,8 @@ export default function ContactPage() {
           <a
             href="mailto:contact@creatabl-ia.com"
             style={{
-              color: '#7F77DD',
-              fontWeight: 500,
+              color: '#7225E3',
+              fontWeight: 600,
               textDecoration: 'none',
             }}
           >
