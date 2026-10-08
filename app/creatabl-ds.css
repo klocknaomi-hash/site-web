@@ -651,3 +651,7 @@ body {
 }
 .hp-bento .big { display: flex; flex-direction: column; }
 .hp-bento .big .hp-demo-btn { margin-top: auto; }
+/* Logo du pied de page : variante claire du design system (texte blanc, symbole violet) */
+.cr-footer--violet a.cr-wordmark--light, .cr-footer--violet a.cr-wordmark--light:hover { color: var(--white); text-decoration: none; }
+.cr-announce .cr-container { flex-wrap: nowrap; overflow: hidden; }
+.cr-announce .cr-container > span:not(.cr-badge) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }

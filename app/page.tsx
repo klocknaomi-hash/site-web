@@ -168,7 +168,7 @@ export default function Home() {
             <ScrollReveal delay={450}>
               <div className="hp-hero-cta" style={{ marginTop: 16 }}>
                 <a className="cr-btn cr-btn--primary cr-btn--lg" href={`${APP_URL}/sign-up`}>
-                  Commencez gratuitement — 14 jours
+                  Et c&apos;est gratuit 14 jours
                 </a>
                 <a className="cr-btn cr-btn--secondary cr-btn--lg" href="#demo">
                   <Play size={18} aria-hidden="true" />
@@ -195,30 +195,6 @@ export default function Home() {
             <ScrollReveal delay={300}>
               <DemoVideo />
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Preuve sociale : qui publie avec Creatabl, et où */}
-      <section className="hp-proof" aria-label="Ils publient avec Creatabl">
-        <div className="cr-container">
-          <div className="hp-proof-people">
-            <span className="hp-avatars" aria-hidden="true">
-              {["ML", "TR", "SM", "JD", "+"].map((a, i) => (
-                <span key={a} className={`a a${i}`}>{a}</span>
-              ))}
-            </span>
-            <p>
-              <strong>Plus de 100 créateurs, indépendants et agences</strong> publient déjà avec Creatabl.
-            </p>
-          </div>
-          <div className="hp-proof-nets">
-            <span>Publiez sur</span>
-            <ul>
-              {(["instagram", "linkedin", "tiktok", "facebook", "x"] as NetworkName[]).map((n) => (
-                <li key={n}><NetworkLogo name={n} size={18} />{networkLabel[n]}</li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>

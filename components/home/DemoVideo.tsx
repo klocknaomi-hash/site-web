@@ -15,7 +15,7 @@ export default function DemoVideo() {
   return (
     <div
       id="demo"
-      className="relative max-w-[880px] mx-auto z-10"
+      className="relative max-w-[740px] mx-auto z-10"
       style={{ position: "relative", zIndex: 10, scrollMarginTop: 120 }}
     >
       {/* Halo violet scintillant (design d'origine) */}
