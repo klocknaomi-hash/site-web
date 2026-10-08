@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display, Inter } from 'next/font/google'
 import "./globals.css";
+import "./creatabl-ds.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
