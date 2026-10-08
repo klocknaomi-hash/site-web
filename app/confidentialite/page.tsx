@@ -55,7 +55,7 @@ export default function ConfidentialitePage() {
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold mr-1">&mdash;</span>
               <div>
-                <strong className="text-[#14121F]">Données des réseaux sociaux connectés :</strong> jetons d&apos;accès sécurisés (OAuth) pour Facebook, Instagram, LinkedIn et TikTok, utilisés uniquement pour publier votre contenu et analyser les métriques selon vos instructions explicites.
+                <strong className="text-[#14121F]">Données des réseaux sociaux connectés :</strong> jetons d&apos;accès sécurisés (OAuth) pour Facebook, Instagram, LinkedIn et X, utilisés uniquement pour publier votre contenu et analyser les métriques selon vos instructions explicites.
               </div>
             </li>
           </ul>

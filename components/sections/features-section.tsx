@@ -69,7 +69,7 @@ export default function FeaturesSection() {
     {
       icon: <Layers className="w-6 h-6 text-[#7225E3]" />,
       title: "Multi-comptes équipe",
-      description: "Connectez Instagram, LinkedIn, TikTok et Facebook sans basculer d'onglet.",
+      description: "Connectez Instagram, LinkedIn, Facebook et X sans basculer d'onglet.",
     },
   ];
 

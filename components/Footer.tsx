@@ -44,7 +44,18 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   },
 ];
 
-const socials: NetworkName[] = ["instagram", "facebook", "linkedin", "tiktok"];
+// Comptes Creatabl.ia : une icône n'apparaît que si son adresse est renseignée
+// (variables d'environnement Vercel), pour ne jamais afficher de lien vide.
+const SOCIAL_URLS: Partial<Record<NetworkName, string | undefined>> = {
+  instagram: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM,
+  facebook: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK,
+  linkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN,
+  tiktok: process.env.NEXT_PUBLIC_SOCIAL_TIKTOK,
+};
+const socials = (Object.entries(SOCIAL_URLS) as [NetworkName, string | undefined][]).filter(
+  (entry): entry is [NetworkName, string] => Boolean(entry[1])
+);
+const SOCIAL_LABELS: Partial<Record<NetworkName, string>> = { instagram: "Instagram", facebook: "Facebook", linkedin: "LinkedIn", tiktok: "TikTok" };
 
 const legal = [
   { label: "Mentions légales", href: "/mentions-legales" },
@@ -67,13 +78,15 @@ export default function Footer() {
             <p style={{ maxWidth: "32ch" }}>
               La plateforme française pour créer, planifier et analyser vos réseaux sociaux avec l&apos;IA.
             </p>
-            <div className="cr-footer-social">
-              {socials.map((n) => (
-                <a key={n} href="#" aria-label={n === "linkedin" ? "LinkedIn" : n === "tiktok" ? "TikTok" : n.charAt(0).toUpperCase() + n.slice(1)}>
-                  <NetworkLogo name={n} size={16} mono />
-                </a>
-              ))}
-            </div>
+            {socials.length > 0 && (
+              <div className="cr-footer-social">
+                {socials.map(([n, url]) => (
+                  <a key={n} href={url} target="_blank" rel="noopener noreferrer" aria-label={`Creatabl.ia sur ${SOCIAL_LABELS[n] ?? n}`}>
+                    <NetworkLogo name={n} size={16} mono />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
           {columns.map((col) => (
             <div key={col.title}>

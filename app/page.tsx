@@ -357,7 +357,7 @@ export default function Home() {
                 <span className="ws">Agence Lumière · 6 comptes</span>
               </div>
               <h4>Multi-comptes équipe</h4>
-              <p>Connectez Instagram, LinkedIn, TikTok et Facebook et travaillez à plusieurs, sans basculer d&apos;onglet.</p>
+              <p>Connectez Instagram, LinkedIn, Facebook et X et travaillez à plusieurs, sans basculer d&apos;onglet.</p>
               <FeatureDemo title="Multi-comptes équipe" video="/videos/demo-equipe.mp4" href="/fonctionnalites/collaboration" />
             </article>
           </div>

@@ -28,9 +28,9 @@ const featureItems = [
 const platformItems: { name: string; desc: string; logo: NetworkName }[] = [
   { name: "Instagram", desc: "Reels, Stories et carrousels", logo: "instagram" },
   { name: "LinkedIn", desc: "Carrousels pro et profils", logo: "linkedin" },
-  { name: "TikTok", desc: "Vidéos courtes et tendances", logo: "tiktok" },
   { name: "Facebook", desc: "Pages d'entreprise et groupes", logo: "facebook" },
   { name: "X (Twitter)", desc: "Threads programmés", logo: "x" },
+  { name: "TikTok", desc: "Bientôt disponible", logo: "tiktok" },
 ];
 
 export function Wordmark({ light = false, size = 18 }: { light?: boolean; size?: number }) {
