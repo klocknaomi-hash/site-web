@@ -28,14 +28,14 @@ export default function BlogPage() {
       readTime: "5 min de lecture",
       imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
-          <p className="text-base sm:text-lg leading-relaxed text-slate-700">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
+          <p className="text-base sm:text-lg leading-relaxed text-[#4B4B63]">
             Vous venez de vous inscrire sur Creatabl. L&apos;éditeur est ouvert devant vous. Et maintenant ? Pas de panique — créer votre premier post prend moins de 5 minutes, même si c&apos;est la première fois que vous utilisez une plateforme de gestion de contenu.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-slate-700">
+          <p className="text-base sm:text-lg leading-relaxed text-[#4B4B63]">
             Ce guide vous accompagne étape par étape, de la connexion de votre réseau social jusqu&apos;à la publication ou la programmation de votre premier post. À la fin, vous saurez exactement comment fonctionne le workflow de création dans Creatabl.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-slate-700">
+          <p className="text-base sm:text-lg leading-relaxed text-[#4B4B63]">
             La bonne nouvelle : vous n&apos;avez pas besoin de maîtriser tous les outils d&apos;un coup. Commencez par un réseau, un post, et prenez vos marques. Le reste viendra naturellement au fil des jours.
           </p>
           
@@ -75,9 +75,9 @@ export default function BlogPage() {
             <p className="leading-relaxed">Voilà — votre premier post est créé, adapté et publié (ou programmé). Le workflow complet prend moins de 5 minutes une fois que vous avez vos comptes connectés. Plus vous l&apos;utilisez, plus il devient fluide et rapide.</p>
           </div>
 
-          <div className="p-6 bg-purple-50 border border-purple-100 rounded-2xl mt-8">
+          <div className="p-6 bg-[#F3EEFD] border border-[#E7DCFC] rounded-2xl mt-8">
             <h4 className="text-xl font-bold text-[#14121F] mb-2">Prêt à créer du contenu plus vite ?</h4>
-            <p className="text-slate-600 mb-4">Essayez Creatabl gratuitement pendant 14 jours. Annulable à tout moment.</p>
+            <p className="text-[#4B4B63] mb-4">Essayez Creatabl gratuitement pendant 14 jours. Annulable à tout moment.</p>
             <a 
               href="https://app.creatabl-ia.com/sign-up" 
               className="inline-flex items-center gap-2 px-6 py-3.5 font-semibold text-white bg-[#7225E3] hover:bg-[#8A38F5] transition-all rounded-full font-outfit shadow-sm hover:shadow-md"
@@ -96,8 +96,8 @@ export default function BlogPage() {
       readTime: "4 min de lecture",
       imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
-          <p className="text-lg leading-relaxed text-slate-800">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
+          <p className="text-lg leading-relaxed text-[#14121F]">
             Notre Assistant IA est spécialement entraîné pour capter l&apos;attention sur les réseaux sociaux. Apprenez à l&apos;utiliser pour transformer des idées brutes en publications virales.
           </p>
 
@@ -116,9 +116,9 @@ export default function BlogPage() {
             </ol>
           </div>
 
-          <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
+          <div className="p-4 bg-[#F3EEFD] border border-[#E7DCFC] rounded-xl">
             <span className="text-primary font-bold block mb-1">🤖 Modèles IA Disponibles</span>
-            <p className="text-slate-600">Creatabl utilise les derniers modèles linguistiques optimisés pour le copywriting. Ils analysent également la présence de mots-clés d&apos;engagement pour booster le score de lisibilité.</p>
+            <p className="text-[#4B4B63]">Creatabl utilise les derniers modèles linguistiques optimisés pour le copywriting. Ils analysent également la présence de mots-clés d&apos;engagement pour booster le score de lisibilité.</p>
           </div>
         </div>
       )
@@ -131,8 +131,8 @@ export default function BlogPage() {
       readTime: "4 min de lecture",
       imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
-          <p className="text-lg leading-relaxed text-slate-800">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
+          <p className="text-lg leading-relaxed text-[#14121F]">
             Évitez les tâches répétitives. Publiez en une seule fois sur plusieurs canaux tout en respectant les formats natifs de chaque plateforme.
           </p>
 
@@ -151,9 +151,9 @@ export default function BlogPage() {
             <p>Si vous postez sur Instagram et LinkedIn, vous pouvez configurer une heure différente pour chacun afin de cibler les audiences B2B de LinkedIn le matin, et B2C d&apos;Instagram en soirée.</p>
           </div>
 
-          <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
+          <div className="p-4 bg-[#F3EEFD] border border-[#E7DCFC] rounded-xl">
             <span className="text-primary font-bold block mb-1">⚡ Publication Directe Native</span>
-            <p className="text-slate-600">Creatabl utilise les API officielles certifiées. Pas besoin de notifications mobiles pour publier : notre système s&apos;occupe de tout en tâche de fond, photos et vidéos incluses.</p>
+            <p className="text-[#4B4B63]">Creatabl utilise les API officielles certifiées. Pas besoin de notifications mobiles pour publier : notre système s&apos;occupe de tout en tâche de fond, photos et vidéos incluses.</p>
           </div>
         </div>
       )
@@ -166,8 +166,8 @@ export default function BlogPage() {
       readTime: "3 min de lecture",
       imageUrl: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
-          <p className="text-lg leading-relaxed text-slate-800">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
+          <p className="text-lg leading-relaxed text-[#14121F]">
             Gagnez un temps précieux en connectant votre espace de design Canva à votre planificateur Creatabl. Plus besoin de télécharger vos créations sur votre bureau pour les réimporter !
           </p>
 
@@ -181,9 +181,9 @@ export default function BlogPage() {
             <p>Lorsque vous créez un post dans Creatabl, cliquez sur l&apos;icône Canva dans la section média. Une fenêtre s&apos;ouvrira, affichant vos dossiers et projets récents. Sélectionnez le visuel de votre choix et validez. Il sera converti et optimisé automatiquement au bon format.</p>
           </div>
 
-          <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
+          <div className="p-4 bg-[#F3EEFD] border border-[#E7DCFC] rounded-xl">
             <span className="text-primary font-bold block mb-1">🎯 Résolution et Format</span>
-            <p className="text-slate-600">Creatabl importe vos designs en haute définition. Notre algorithme propose un outil de recadrage intelligent (1:1, 9:16 ou 16:9) pour adapter le visuel aux exigences spécifiques de chaque réseau social.</p>
+            <p className="text-[#4B4B63]">Creatabl importe vos designs en haute définition. Notre algorithme propose un outil de recadrage intelligent (1:1, 9:16 ou 16:9) pour adapter le visuel aux exigences spécifiques de chaque réseau social.</p>
           </div>
         </div>
       )
@@ -196,8 +196,8 @@ export default function BlogPage() {
       readTime: "6 min de lecture",
       imageUrl: "https://images.pexels.com/photos/5077067/pexels-photo-5077067.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
-          <p className="text-lg leading-relaxed text-slate-800">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
+          <p className="text-lg leading-relaxed text-[#14121F]">
             Les hashtags restent un excellent moyen de toucher des comptes qui ne vous suivent pas encore. Voici comment structurer vos blocs de hashtags pour un référencement social optimal.
           </p>
 
@@ -205,7 +205,7 @@ export default function BlogPage() {
             <h3 className="text-xl font-bold text-[#14121F] font-outfit">La règle des 3 tiers</h3>
             <p>Pour chaque publication, notre IA utilise la méthode des trois tiers pour équilibrer la portée et la concurrence :</p>
             <ul className="space-y-2 list-disc pl-5">
-              <li><strong className="text-slate-800">Hashtags à fort volume (100k+ publications) :</strong> Pour capter du trafic immédiat (ex: #MarketingDigital).</li>
+              <li><strong className="text-[#14121F]">Hashtags à fort volume (100k+ publications) :</strong> Pour capter du trafic immédiat (ex: #MarketingDigital).</li>
               <li><strong className="text-slate-850">Hashtags de niche (10k à 100k publications) :</strong> Pour cibler une communauté qualifiée et rester visible plus longtemps.</li>
               <li><strong className="text-slate-850">Hashtags ultra-spécifiques (&lt;10k publications) :</strong> Liés à votre marque ou à l&apos;événement précis pour vous positionner immédiatement dans le top des résultats de recherche.</li>
             </ul>
@@ -226,7 +226,7 @@ export default function BlogPage() {
       readTime: "8 min de lecture",
       imageUrl: "https://images.pexels.com/photos/273153/pexels-photo-273153.jpeg?auto=compress&cs=tinysrgb&w=800",
       contentHtml: (
-        <div className="space-y-6 text-slate-600 font-inter">
+        <div className="space-y-6 text-[#4B4B63] font-inter">
           <p className="text-lg leading-relaxed text-slate-850">
             La clé du succès sur les réseaux sociaux réside dans la régularité. Découvrez notre méthode de planification globale pour anticiper vos publications sur un mois entier.
           </p>
@@ -262,10 +262,10 @@ export default function BlogPage() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold uppercase tracking-wider">
             Blog & Ressources
           </div>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-semibold text-[#14121F] leading-tight">
             Guides & Ressources
           </h1>
-          <p className="font-inter text-slate-500 text-base sm:text-lg">
+          <p className="font-inter text-[#6B6780] text-base sm:text-lg">
             Tout ce dont vous avez besoin pour maîtriser Creatabl et créer du contenu qui performe.
           </p>
         </div>
@@ -279,7 +279,7 @@ export default function BlogPage() {
               className={`font-inter font-medium text-sm px-5 py-2.5 rounded-full border transition-all duration-200 cursor-pointer ${
                 activeTab === tab
                   ? "bg-primary text-white border-primary shadow-lg shadow-purple-500/10"
-                  : "bg-white text-slate-500 border-slate-200 hover:text-[#14121F] hover:border-slate-300"
+                  : "bg-white text-[#6B6780] border-[#E8E6F0] hover:text-[#14121F] hover:border-[#878399]"
               }`}
             >
               {tab}
@@ -295,7 +295,7 @@ export default function BlogPage() {
               className="bg-white rounded-[24px] border border-[#E8E6F0] shadow-[0_2px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Header Visual preview */}
-              <div className="h-[180px] w-full relative overflow-hidden bg-slate-100">
+              <div className="h-[180px] w-full relative overflow-hidden bg-[#F8F7FC]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={article.imageUrl} 
@@ -308,19 +308,19 @@ export default function BlogPage() {
               {/* Card Body */}
               <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
                 <div className="space-y-2">
-                  <span className="text-[13px] font-extrabold uppercase tracking-widest text-[#7225E3]">
+                  <span className="text-sm font-semibold uppercase tracking-widest text-[#7225E3]">
                     {article.category}
                   </span>
                   <h3 className="font-outfit text-lg font-bold text-[#14121F] leading-snug group-hover:text-primary transition-colors">
                     {article.title}
                   </h3>
-                  <p className="font-inter text-sm text-slate-500 leading-relaxed line-clamp-3">
+                  <p className="font-inter text-sm text-[#6B6780] leading-relaxed line-clamp-3">
                     {article.description}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                  <span className="flex items-center gap-1 text-[12px] font-medium text-slate-400">
+                <div className="flex items-center justify-between pt-4 border-t border-[#E8E6F0]">
+                  <span className="flex items-center gap-1 text-xs font-medium text-[#6B6780]">
                     <Clock className="w-3.5 h-3.5" />
                     {article.readTime}
                   </span>
@@ -341,15 +341,15 @@ export default function BlogPage() {
       {/* Modal Article Viewer */}
       {selectedArticle && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white border border-slate-200 rounded-[28px] max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col relative">
+          <div className="bg-white border border-[#E8E6F0] rounded-[28px] max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col relative">
             
             {/* Modal Header */}
             <div className="p-8 bg-gradient-to-r from-[#7225E3] to-[#8A38F5] text-white flex items-center justify-between relative">
               <div className="space-y-1.5 pr-8">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/25 px-2.5 py-0.5 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-wider bg-white/25 px-2.5 py-0.5 rounded-full">
                   {selectedArticle.category}
                 </span>
-                <h2 className="font-outfit text-2xl font-extrabold leading-tight">
+                <h2 className="font-outfit text-2xl font-semibold leading-tight">
                   {selectedArticle.title}
                 </h2>
               </div>
@@ -368,10 +368,10 @@ export default function BlogPage() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-6 border-t border-slate-100 bg-slate-50 flex justify-end">
+            <div className="p-6 border-t border-[#E8E6F0] bg-[#F8F7FC] flex justify-end">
               <button
                 onClick={() => setSelectedArticle(null)}
-                className="px-5 py-2.5 bg-white text-slate-700 hover:text-slate-900 border border-slate-200 rounded-xl text-sm font-bold transition-colors cursor-pointer"
+                className="px-5 py-2.5 bg-white text-[#4B4B63] hover:text-[#14121F] border border-[#E8E6F0] rounded-xl text-sm font-bold transition-colors cursor-pointer"
               >
                 Fermer la lecture
               </button>

@@ -231,7 +231,7 @@ export default function PricingPage() {
       {/* ─── HERO ─── */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 text-center">
         <ScrollReveal>
-          <p className="font-outfit font-semibold text-[#7225E3] uppercase tracking-widest text-[12px] mb-4">
+          <p className="font-outfit font-semibold text-[#7225E3] uppercase tracking-widest text-xs mb-4">
             Tarifs
           </p>
         </ScrollReveal>
@@ -242,7 +242,7 @@ export default function PricingPage() {
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={160}>
-          <p className="font-inter text-[#6B6780] text-[16px] mb-10">
+          <p className="font-inter text-[#6B6780] text-base mb-10">
             Choisissez l&apos;offre qui correspond à vos besoins.
           </p>
         </ScrollReveal>
@@ -260,7 +260,7 @@ export default function PricingPage() {
               <button
                 id="toggle-monthly"
                 onClick={() => setBilling("monthly")}
-                className="font-inter font-medium text-[14px] transition-all duration-300"
+                className="font-inter font-medium text-sm transition-all duration-300"
                 style={{
                   padding: "8px 20px",
                   borderRadius: "36px",
@@ -276,7 +276,7 @@ export default function PricingPage() {
               <button
                 id="toggle-yearly"
                 onClick={() => setBilling("yearly")}
-                className="font-inter font-medium text-[14px] transition-all duration-300 flex items-center gap-2"
+                className="font-inter font-medium text-sm transition-all duration-300 flex items-center gap-2"
                 style={{
                   padding: "8px 20px",
                   borderRadius: "36px",
@@ -288,7 +288,7 @@ export default function PricingPage() {
                 }}
               >
                 Annuel
-                <span className="font-outfit font-bold text-[13px] text-white px-2 py-0.5 rounded-full"
+                <span className="font-outfit font-bold text-sm text-white px-2 py-0.5 rounded-full"
                   style={{ background: "#7225E3" }}>
                   -20%
                 </span>
@@ -300,11 +300,11 @@ export default function PricingPage() {
               <button
                 type="button"
                 aria-label="Informations sur l'engagement"
-                className="w-5 h-5 rounded-full bg-[#F8F7FC] hover:bg-[#E8E6F0] text-[#6B6780] hover:text-[#14121F] flex items-center justify-center font-inter font-bold text-[12px] transition-colors cursor-help"
+                className="w-5 h-5 rounded-full bg-[#F8F7FC] hover:bg-[#E8E6F0] text-[#6B6780] hover:text-[#14121F] flex items-center justify-center font-inter font-bold text-xs transition-colors cursor-help"
               >
                 i
               </button>
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2.5 hidden group-hover:block w-72 p-3 bg-[#14121F] text-white text-[12px] leading-snug rounded-xl shadow-xl z-20 pointer-events-none transition-all duration-200 font-inter text-left">
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2.5 hidden group-hover:block w-72 p-3 bg-[#14121F] text-white text-xs leading-snug rounded-xl shadow-xl z-20 pointer-events-none transition-all duration-200 font-inter text-left">
                 <p className="mb-1.5">
                   <strong className="font-semibold text-white">Mensuel :</strong> sans engagement, annulable à tout moment. Accès conservé jusqu&apos;à la fin de la période payée.
                 </p>
@@ -347,24 +347,24 @@ export default function PricingPage() {
                   {/* Plan header */}
                   <div className="mb-6 pt-2">
                     <h3 className="font-outfit font-bold text-[22px] text-[#14121F] mb-1">{plan.name}</h3>
-                    <p className="font-inter text-[#4B4B63] text-[14px] leading-[22px] min-h-[44px] mb-4 flex items-center">
+                    <p className="font-inter text-[#4B4B63] text-sm leading-[22px] min-h-[44px] mb-4 flex items-center">
                       {plan.tagline}
                     </p>
                     
                     <div className="flex flex-col gap-1">
                       <div className="flex items-baseline gap-1.5 flex-wrap">
-                        <span className="font-outfit font-extrabold text-[#14121F] text-4xl leading-none">
+                        <span className="font-outfit font-semibold text-[#14121F] text-4xl leading-none">
                           {displayPrice}€
                         </span>
-                        <span className="font-inter text-[#6B6780] text-[14px]">/mois</span>
+                        <span className="font-inter text-[#6B6780] text-sm">/mois</span>
                         {billing === "yearly" && plan.name !== "Free" && (
-                          <span className="font-inter text-[#6B6780] text-[13px] font-normal">
+                          <span className="font-inter text-[#6B6780] text-sm font-normal">
                             soit {plan.price.yearly * 12}€/an
                           </span>
                         )}
                       </div>
                       
-                      <p className="font-inter font-bold text-[#6B6780] text-[11px] uppercase tracking-wider mt-1.5">
+                      <p className="font-inter font-bold text-[#6B6780] text-xs uppercase tracking-wider mt-1.5">
                         {plan.subtext}
                       </p>
                     </div>
@@ -372,18 +372,18 @@ export default function PricingPage() {
 
                   {/* Posts + Features Section */}
                   <div className="mb-6 flex-1 flex flex-col">
-                    <p className="font-inter font-semibold text-[#6B6780] text-[11px] uppercase tracking-wider mb-2">
+                    <p className="font-inter font-semibold text-[#6B6780] text-xs uppercase tracking-wider mb-2">
                       Crédits mensuels
                     </p>
-                    <div className="flex items-center gap-2 font-inter font-bold text-[#4B4B63] text-[14px] mb-5">
+                    <div className="flex items-center gap-2 font-inter font-bold text-[#4B4B63] text-sm mb-5">
                       <span className="text-[#16A34A] flex-shrink-0">✓</span>
                       {plan.postsPerMonth}
                     </div>
-                    <p className="font-inter text-[#6B6780] text-[12px] -mt-3 mb-5">
+                    <p className="font-inter text-[#6B6780] text-xs -mt-3 mb-5">
                       1 crédit = 1 post programmé ou publié
                     </p>
 
-                    <p className="font-inter font-semibold text-[#6B6780] text-[11px] uppercase tracking-wider mb-3">
+                    <p className="font-inter font-semibold text-[#6B6780] text-xs uppercase tracking-wider mb-3">
                       Fonctionnalités
                     </p>
 
@@ -404,7 +404,7 @@ export default function PricingPage() {
                         const isExcluded = feat.startsWith("✗");
                         const cleanFeat = isExcluded ? feat.substring(1).trim() : feat;
                         return (
-                          <li key={feat} className="flex items-start gap-2.5 font-inter text-[13px]">
+                          <li key={feat} className="flex items-start gap-2.5 font-inter text-sm">
                             {isExcluded ? (
                               <span className="font-bold text-[#6B6780] flex-shrink-0">✗</span>
                             ) : (
@@ -429,7 +429,7 @@ export default function PricingPage() {
                     <a
                       id={`cta-plan-${plan.name.toLowerCase()}`}
                       href={plan.href}
-                      className="w-full font-inter font-bold text-[13px] text-center py-3.5 px-3 rounded-full transition-all duration-200 block shadow-sm hover:-translate-y-0.5"
+                      className="w-full font-inter font-bold text-sm text-center py-3.5 px-3 rounded-full transition-all duration-200 block shadow-sm hover:-translate-y-0.5"
                       style={
                         plan.ctaStyle === "primary"
                           ? { background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)", color: "#FFFFFF", border: "none", boxShadow: "0 4px 18px rgba(114,37,227,0.3)" }
@@ -441,7 +441,7 @@ export default function PricingPage() {
                       {plan.cta}
                     </a>
                     
-                    <p className="font-inter text-[#6B6780] text-[11px] text-center font-medium mt-1">
+                    <p className="font-inter text-[#6B6780] text-xs text-center font-medium mt-1">
                       {getEngagementLabel(plan.name, billing)}
                     </p>
                   </div>
@@ -453,7 +453,7 @@ export default function PricingPage() {
 
         {/* Secure payment note */}
         <ScrollReveal delay={300}>
-          <p className="font-inter text-[#6B6780] text-[13px] text-center mt-10">
+          <p className="font-inter text-[#6B6780] text-sm text-center mt-10">
             Paiement sécurisé par Stripe
           </p>
         </ScrollReveal>
@@ -464,7 +464,7 @@ export default function PricingPage() {
         <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 24px" }}>
           <ScrollReveal>
             <div className="text-center mb-14">
-              <p className="font-outfit font-bold text-[13px] text-[#7225E3] uppercase tracking-widest mb-3">
+              <p className="font-outfit font-bold text-sm text-[#7225E3] uppercase tracking-widest mb-3">
                 Comparatif
               </p>
               <h2 className="font-outfit font-bold text-[#14121F]"
@@ -475,7 +475,7 @@ export default function PricingPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <div style={{ overflowX: "auto" }} className="bg-white rounded-2xl border border-slate-200 shadow-sm p-2">
+            <div style={{ overflowX: "auto" }} className="bg-white rounded-2xl border border-[#E8E6F0] shadow-sm p-2">
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "640px" }}>
                 <thead>
                   <tr style={{ borderBottom: "1px solid #E8E6F0" }}>
@@ -538,7 +538,7 @@ export default function PricingPage() {
                 style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>
                 Questions fréquentes
               </h2>
-              <p className="font-inter text-[#6B6780] text-[16px]">
+              <p className="font-inter text-[#6B6780] text-base">
                 Tout ce que vous devez savoir sur Creatabl.
               </p>
             </div>
@@ -641,13 +641,13 @@ export default function PricingPage() {
               <h2 className="font-outfit font-bold text-[#14121F] text-[22px] mb-3">
                 Une question avant de vous lancer ?
               </h2>
-              <p className="font-inter text-[#6B6780] text-[15px] mb-8">
+              <p className="font-inter text-[#6B6780] text-base mb-8">
                 Notre équipe est disponible pour répondre à toutes vos questions.
               </p>
               <a
                 id="contact-cta"
                 href="https://app.creatabl-ia.com/sign-up?plan=free"
-                className="font-inter font-medium text-[14px] text-[#4B4B63] transition-all duration-200 hover:bg-[#F8F7FC] inline-flex items-center gap-2"
+                className="font-inter font-medium text-sm text-[#4B4B63] transition-all duration-200 hover:bg-[#F8F7FC] inline-flex items-center gap-2"
                 style={{
                   border: "1.5px solid #E8E6F0",
                   borderRadius: "50px",

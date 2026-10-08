@@ -29,10 +29,10 @@ export default function FeaturesPage() {
       ],
       icon: <Calendar className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
-          <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-            <span className="text-sm font-bold text-slate-800">Calendrier de contenu</span>
-            <span className="text-xs text-slate-400">Mai 2026</span>
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
+          <div className="flex justify-between items-center pb-3 border-b border-[#E8E6F0]">
+            <span className="text-sm font-bold text-[#14121F]">Calendrier de contenu</span>
+            <span className="text-xs text-[#6B6780]">Mai 2026</span>
           </div>
           <div className="space-y-3">
             {[
@@ -40,12 +40,12 @@ export default function FeaturesPage() {
               { day: "Mardi", time: "12:30", status: "Engagement Élevé" },
               { day: "Mercredi", time: "20:00", status: "Recommandé" },
             ].map((slot, i) => (
-              <div key={i} className="flex justify-between items-center p-3 bg-white border border-slate-100 rounded-xl shadow-sm">
+              <div key={i} className="flex justify-between items-center p-3 bg-white border border-[#E8E6F0] rounded-xl shadow-sm">
                 <div>
-                  <span className="text-[10px] text-slate-400 block">{slot.day}</span>
-                  <span className="text-sm font-bold text-slate-800">{slot.time}</span>
+                  <span className="text-xs text-[#6B6780] block">{slot.day}</span>
+                  <span className="text-sm font-bold text-[#14121F]">{slot.time}</span>
                 </div>
-                <span className="text-xs bg-emerald-500/10 text-emerald-600 px-2.5 py-1 rounded-full font-semibold">
+                <span className="text-xs bg-[#0E7445]/10 text-[#0E7445] px-2.5 py-1 rounded-full font-semibold">
                   {slot.status}
                 </span>
               </div>
@@ -68,21 +68,21 @@ export default function FeaturesPage() {
       ],
       icon: <BarChart2 className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
           <div className="flex justify-between items-center">
-            <span className="text-sm font-bold text-slate-800">Rapport d&apos;activité</span>
-            <span className="text-xs text-emerald-500 font-bold flex items-center gap-1">
+            <span className="text-sm font-bold text-[#14121F]">Rapport d&apos;activité</span>
+            <span className="text-xs text-[#0E7445] font-bold flex items-center gap-1">
               <TrendingUp size={12} /> +24% ce mois
             </span>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-sm">
-              <span className="text-[10px] text-slate-400 block">Impressions</span>
-              <span className="text-lg font-bold text-slate-800">142,500</span>
+            <div className="p-3 bg-white border border-[#E8E6F0] rounded-xl shadow-sm">
+              <span className="text-xs text-[#6B6780] block">Impressions</span>
+              <span className="text-lg font-bold text-[#14121F]">142,500</span>
             </div>
-            <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-sm">
-              <span className="text-[10px] text-slate-400 block">Clics sur le lien</span>
-              <span className="text-lg font-bold text-slate-800">8,912</span>
+            <div className="p-3 bg-white border border-[#E8E6F0] rounded-xl shadow-sm">
+              <span className="text-xs text-[#6B6780] block">Clics sur le lien</span>
+              <span className="text-lg font-bold text-[#14121F]">8,912</span>
             </div>
           </div>
           <div className="h-20 w-full pt-2">
@@ -113,8 +113,8 @@ export default function FeaturesPage() {
       ],
       icon: <Share2 className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
-          <span className="text-sm font-bold text-slate-800 block">Canaux Connectés</span>
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
+          <span className="text-sm font-bold text-[#14121F] block">Canaux Connectés</span>
           <div className="space-y-2">
             {[
               { name: "Instagram Business", handle: "@creatabl.ia", active: true },
@@ -122,14 +122,14 @@ export default function FeaturesPage() {
               { name: "LinkedIn Company", handle: "Creatabl IA", active: true },
               { name: "Canva Integration", handle: "Design direct", active: false },
             ].map((chan, i) => (
-              <div key={i} className="flex justify-between items-center p-2.5 bg-white border border-slate-100 rounded-xl shadow-sm">
+              <div key={i} className="flex justify-between items-center p-2.5 bg-white border border-[#E8E6F0] rounded-xl shadow-sm">
                 <div>
-                  <span className="text-xs font-bold text-slate-800 block">{chan.name}</span>
-                  <span className="text-[10px] text-slate-400">{chan.handle}</span>
+                  <span className="text-xs font-bold text-[#14121F] block">{chan.name}</span>
+                  <span className="text-xs text-[#6B6780]">{chan.handle}</span>
                 </div>
-                <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${chan.active
-                    ? "bg-purple-100 text-[#7225E3]"
-                    : "bg-slate-100 text-slate-400"
+                <span className={`text-xs px-2.5 py-0.5 rounded-full font-bold ${chan.active
+                    ? "bg-[#E7DCFC] text-[#7225E3]"
+                    : "bg-[#F8F7FC] text-[#6B6780]"
                   }`}>
                   {chan.active ? "Connecté" : "Actif"}
                 </span>
@@ -153,19 +153,19 @@ export default function FeaturesPage() {
       ],
       icon: <Sparkles className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
           <div className="flex gap-2 items-center">
             <Sparkles size={16} className="text-[#7225E3] animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Assistant IA</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#6B6780]">Assistant IA</span>
           </div>
           <div className="space-y-2">
-            <div className="text-xs bg-white border border-slate-100 p-3 rounded-xl shadow-sm">
+            <div className="text-xs bg-white border border-[#E8E6F0] p-3 rounded-xl shadow-sm">
               <span className="text-[#7225E3] font-bold">Propositions :</span>
-              <p className="mt-1 text-slate-600 leading-relaxed text-[13px]">
+              <p className="mt-1 text-[#4B4B63] leading-relaxed text-sm">
                 🚀 Simplifiez la gestion de vos réseaux sociaux ! Avec notre plateforme, planifiez vos posts de la semaine en moins de 10 minutes.
               </p>
             </div>
-            <div className="flex justify-between items-center text-[10px] text-slate-400">
+            <div className="flex justify-between items-center text-xs text-[#6B6780]">
               <span>96 mots générés</span>
               <button className="text-[#7225E3] font-bold hover:underline">Insérer le texte</button>
             </div>
@@ -187,16 +187,16 @@ export default function FeaturesPage() {
       ],
       icon: <Sparkles className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
-          <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-            <span className="text-sm font-bold text-slate-800">Sujets Chauds</span>
-            <span className="text-[10px] text-[#7225E3] bg-purple-50 px-1.5 py-0.5 rounded font-bold">Recommandé</span>
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
+          <div className="flex justify-between items-center pb-3 border-b border-[#E8E6F0]">
+            <span className="text-sm font-bold text-[#14121F]">Sujets Chauds</span>
+            <span className="text-xs text-[#7225E3] bg-[#F3EEFD] px-1.5 py-0.5 rounded font-bold">Recommandé</span>
           </div>
           <div className="space-y-2">
-            <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-between">
+            <div className="p-3 bg-white border border-[#E8E6F0] rounded-xl shadow-sm flex items-center justify-between">
               <div>
-                <span className="text-xs font-bold text-slate-800 block">L&apos;essor de l&apos;IA générative</span>
-                <span className="text-[10px] text-slate-400">Sujet très populaire sur LinkedIn</span>
+                <span className="text-xs font-bold text-[#14121F] block">L&apos;essor de l&apos;IA générative</span>
+                <span className="text-xs text-[#6B6780]">Sujet très populaire sur LinkedIn</span>
               </div>
               <span className="text-xs text-[#7225E3] font-bold">Générer</span>
             </div>
@@ -219,16 +219,16 @@ export default function FeaturesPage() {
       ],
       icon: <Users className="w-6 h-6 text-[#7225E3]" />,
       visual: (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
-          <span className="text-sm font-bold text-slate-800 block">Flux d&apos;approbation</span>
+        <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 space-y-4">
+          <span className="text-sm font-bold text-[#14121F] block">Flux d&apos;approbation</span>
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-2 bg-white border border-slate-100 rounded-lg shadow-sm">
-              <span className="text-xs font-semibold text-slate-800">Post Lancement.png</span>
-              <span className="text-[10px] text-amber-500 font-bold bg-amber-50 px-2 py-0.5 rounded">En attente</span>
+            <div className="flex items-center justify-between p-2 bg-white border border-[#E8E6F0] rounded-lg shadow-sm">
+              <span className="text-xs font-semibold text-[#14121F]">Post Lancement.png</span>
+              <span className="text-xs text-[#8A4B00] font-bold bg-[#FDF2DF] px-2 py-0.5 rounded">En attente</span>
             </div>
-            <div className="flex items-center justify-between p-2 bg-white border border-slate-100 rounded-lg shadow-sm">
-              <span className="text-xs font-semibold text-slate-800">Post Tarifs.mp4</span>
-              <span className="text-[10px] text-emerald-500 font-bold bg-emerald-50 px-2 py-0.5 rounded">Approuvé</span>
+            <div className="flex items-center justify-between p-2 bg-white border border-[#E8E6F0] rounded-lg shadow-sm">
+              <span className="text-xs font-semibold text-[#14121F]">Post Tarifs.mp4</span>
+              <span className="text-xs text-[#0E7445] font-bold bg-[#E7F6EE] px-2 py-0.5 rounded">Approuvé</span>
             </div>
           </div>
         </div>
@@ -237,21 +237,21 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="relative pt-28 bg-white min-h-screen text-slate-800">
+    <div className="relative pt-28 bg-white min-h-screen text-[#14121F]">
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
         <ScrollReveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-[#7225E3] border border-purple-100 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3EEFD] text-[#7225E3] border border-[#E7DCFC] text-xs font-semibold mb-4">
             🚀 EXPLOREZ TOUTES NOS FONCTIONS
           </div>
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#14121F] max-w-4xl mx-auto leading-tight">
             Chaque outil pensé pour votre <span className="font-serif italic font-normal text-[#7225E3]">croissance</span>.
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mt-6">
+          <p className="text-lg md:text-xl text-[#6B6780] max-w-2xl mx-auto mt-6">
             Découvrez comment Creatabl.ia unifie votre flux de production de contenu du premier brouillon jusqu&apos;à l&apos;analyse finale.
           </p>
         </ScrollReveal>
@@ -270,29 +270,29 @@ export default function FeaturesPage() {
               {/* Text Area */}
               <div className={`lg:col-span-6 space-y-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                 <ScrollReveal>
-                  <span className="text-xs font-bold text-[#7225E3] uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold text-[#7225E3] uppercase tracking-widest bg-[#F3EEFD] px-3 py-1 rounded-full">
                     {feat.badge}
                   </span>
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#14121F] leading-tight">
                     {feat.title}
                   </h2>
                 </ScrollReveal>
                 <ScrollReveal delay={150}>
-                  <p className="text-base sm:text-lg text-slate-800 font-semibold">
+                  <p className="text-base sm:text-lg text-[#14121F] font-semibold">
                     {feat.tagline}
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#4B4B63] leading-relaxed">
                     {feat.description}
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={250}>
                   <ul className="space-y-2.5">
                     {feat.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <li key={idx} className="flex items-start gap-2.5 text-sm text-[#4B4B63]">
                         <CheckCircle2 size={18} className="text-[#7225E3] mt-0.5 flex-shrink-0" />
                         <span>{bullet}</span>
                       </li>
@@ -304,8 +304,8 @@ export default function FeaturesPage() {
               {/* Visual Area */}
               <div className={`lg:col-span-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                 <ScrollReveal delay={200}>
-                  <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10">
-                    <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
+                  <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-[#E8E6F0]/50 via-[#F8F7FC] to-[#7225E3]/10">
+                    <div className="absolute inset-0 bg-[#7225E3]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
                     {feat.visual}
                   </div>
                 </ScrollReveal>
@@ -318,13 +318,13 @@ export default function FeaturesPage() {
       {/* CTA at Bottom */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl border border-[#E7DCFC]/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
             <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
             <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#14121F]">
                 Prêt à transformer votre stratégie de contenu ?
               </h2>
-              <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto">
+              <p className="text-sm sm:text-base text-[#6B6780] max-w-lg mx-auto">
                 Commencez gratuitement dès aujourd&apos;hui et découvrez la puissance de la planification intelligente.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -337,7 +337,7 @@ export default function FeaturesPage() {
                 </a>
                 <a
                   href="https://app.creatabl-ia.com/sign-in"
-                  className="w-full sm:w-auto text-center font-semibold text-slate-600 hover:text-slate-900 border border-slate-300 hover:border-slate-400 px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-white shadow-sm"
+                  className="w-full sm:w-auto text-center font-semibold text-[#4B4B63] hover:text-[#14121F] border border-[#878399] hover:border-[#878399] px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 bg-white shadow-sm"
                 >
                   Se connecter
                 </a>
