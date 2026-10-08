@@ -102,7 +102,7 @@ export default function FaqSection() {
   }
 
   return (
-    <section className="w-full bg-[#FFFFFF] py-20 md:py-28 border-t border-slate-100 relative z-10">
+    <section id="faq" style={{ scrollMarginTop: 120 }} className="w-full bg-[#FFFFFF] py-20 md:py-28 border-t border-slate-100 relative z-10">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           

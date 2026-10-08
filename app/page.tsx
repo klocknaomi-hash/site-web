@@ -1,28 +1,21 @@
 import React from "react";
-import Link from "next/link";
 import {
-  BarChart2,
   CalendarClock,
   Check,
-  Clock,
-  Image as ImageIcon,
-  Network,
+  Heart,
+  MessageCircle,
+  Play,
   Sparkles,
   Star,
   TrendingUp,
-  Users,
   WandSparkles,
-  X,
-  Play,
-  Lock,
-  Zap,
-  MapPin,
 } from "lucide-react";
 import NetworkLogo, { NetworkName } from "@/components/NetworkLogo";
 import PricingCards from "@/components/ds/PricingCards";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqSection from "@/components/sections/faq-section";
 import DemoVideo from "@/components/home/DemoVideo";
+import FeatureDemo from "@/components/home/FeatureDemo";
 
 // Page d'accueil : hero d'origine (fond à colonnes et effets violets, FAQ et CTA final
 // d'origine) fusionné avec les nouvelles sections issues du design system Creatabl.ia.
@@ -64,6 +57,33 @@ const calendar: { day: string; events: { net: NetworkName; time: string }[] }[] 
   { day: "Mer. 15", events: [] },
   { day: "Jeu. 16", events: [{ net: "tiktok", time: "18 h 00" }] },
   { day: "Ven. 17", events: [{ net: "instagram", time: "12 h 15" }, { net: "x", time: "17 h 00" }] },
+];
+
+const networkLabel: Record<NetworkName, string> = {
+  instagram: "Instagram",
+  linkedin: "LinkedIn",
+  tiktok: "TikTok",
+  facebook: "Facebook",
+  x: "X",
+  canva: "Canva",
+};
+
+const problems = [
+  {
+    q: "« Je n'ai pas le temps d'écrire. »",
+    before: "Jusqu'à 3 h par post, un format différent par réseau.",
+    after: "L'agent IA rédige et adapte votre texte en quelques secondes.",
+  },
+  {
+    q: "« On publie quand on y pense. »",
+    before: "Des semaines sans rien, puis trois posts le même jour.",
+    after: "Un calendrier éditorial sur 30 jours, publié automatiquement.",
+  },
+  {
+    q: "« Je ne sais pas ce qui marche. »",
+    before: "Des statistiques éparpillées dans cinq applications.",
+    after: "Portée et engagement de tous vos réseaux sur un seul tableau.",
+  },
 ];
 
 function initials(name: string) {
@@ -148,7 +168,7 @@ export default function Home() {
             <ScrollReveal delay={450}>
               <div className="hp-hero-cta" style={{ marginTop: 16 }}>
                 <a className="cr-btn cr-btn--primary cr-btn--lg" href={`${APP_URL}/sign-up`}>
-                  C&apos;est gratuit — 14 jours
+                  Commencez gratuitement — 14 jours
                 </a>
                 <a className="cr-btn cr-btn--secondary cr-btn--lg" href="#demo">
                   <Play size={18} aria-hidden="true" />
@@ -179,43 +199,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Réassurance */}
-      <section className="hp-trust" aria-label="Creatabl en chiffres">
+      {/* Preuve sociale : qui publie avec Creatabl, et où */}
+      <section className="hp-proof" aria-label="Ils publient avec Creatabl">
         <div className="cr-container">
-          <div className="t"><span className="cr-icon-tile"><Users size={20} aria-hidden="true" /></span><div><strong>100+</strong>profils ont déjà rejoint Creatabl</div></div>
-          <div className="t"><span className="cr-icon-tile"><Clock size={20} aria-hidden="true" /></span><div><strong>3 h</strong>gagnées par semaine en moyenne</div></div>
-          <div className="t"><span className="cr-icon-tile"><Network size={20} aria-hidden="true" /></span><div><strong>5 réseaux</strong>LinkedIn, Instagram, TikTok, Facebook, X</div></div>
-          <div className="t"><span className="cr-icon-tile"><CalendarClock size={20} aria-hidden="true" /></span><div><strong>14 jours</strong>d&apos;essai gratuit sur les plans payants</div></div>
+          <div className="hp-proof-people">
+            <span className="hp-avatars" aria-hidden="true">
+              {["ML", "TR", "SM", "JD", "+"].map((a, i) => (
+                <span key={a} className={`a a${i}`}>{a}</span>
+              ))}
+            </span>
+            <p>
+              <strong>Plus de 100 créateurs, indépendants et agences</strong> publient déjà avec Creatabl.
+            </p>
+          </div>
+          <div className="hp-proof-nets">
+            <span>Publiez sur</span>
+            <ul>
+              {(["instagram", "linkedin", "tiktok", "facebook", "x"] as NetworkName[]).map((n) => (
+                <li key={n}><NetworkLogo name={n} size={18} />{networkLabel[n]}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Problèmes */}
-      <section className="cr-section">
+      <section className="cr-section hp-pain-section">
         <div className="cr-container">
-          <div className="cr-section-head">
-            <span className="cr-overline">Le constat</span>
+          <div className="cr-section-head cr-section-head--center">
+            <span className="cr-overline">Ça vous parle ?</span>
             <h2 className="hp-h2">Publier régulièrement ne devrait pas vous prendre <span className="cr-accent">vos</span> soirées</h2>
             <p>Trois situations que nos utilisateurs décrivent avant de nous rejoindre.</p>
           </div>
-          <div className="hp-problems">
-            <div className="hp-problem">
-              <span className="cr-icon-tile"><Clock size={22} aria-hidden="true" /></span>
-              <span className="q">« Je n&apos;ai pas le temps d&apos;écrire. »</span>
-              <span className="before"><X size={16} aria-hidden="true" />Jusqu&apos;à 3 h par post, un format différent par réseau.</span>
-              <span className="after"><Check size={16} aria-hidden="true" />L&apos;agent IA rédige et adapte votre texte en quelques secondes.</span>
-            </div>
-            <div className="hp-problem">
-              <span className="cr-icon-tile"><CalendarClock size={22} aria-hidden="true" /></span>
-              <span className="q">« On publie quand on y pense. »</span>
-              <span className="before"><X size={16} aria-hidden="true" />Des semaines sans rien, puis trois posts le même jour.</span>
-              <span className="after"><Check size={16} aria-hidden="true" />Un calendrier éditorial sur 30 jours, publié automatiquement.</span>
-            </div>
-            <div className="hp-problem">
-              <span className="cr-icon-tile"><BarChart2 size={22} aria-hidden="true" /></span>
-              <span className="q">« Je ne sais pas ce qui marche. »</span>
-              <span className="before"><X size={16} aria-hidden="true" />Des statistiques éparpillées dans cinq applications.</span>
-              <span className="after"><Check size={16} aria-hidden="true" />Portée et engagement de tous vos réseaux sur un seul tableau.</span>
-            </div>
+          <div className="hp-pains">
+            {problems.map((pb) => (
+              <article key={pb.q} className="hp-pain">
+                <p className="hp-pain-q">{pb.q}</p>
+                <div className="hp-pain-row before">
+                  <span className="lbl">Avant</span>
+                  <span>{pb.before}</span>
+                </div>
+                <div className="hp-pain-row after">
+                  <span className="lbl"><Check size={12} strokeWidth={3} aria-hidden="true" />Avec Creatabl</span>
+                  <span>{pb.after}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -223,18 +252,57 @@ export default function Home() {
       {/* Fonctionnement en 4 étapes */}
       <section className="cr-section cr-section--tint" id="fonctionnement">
         <div className="cr-container">
-          <div className="cr-section-head">
+          <div className="cr-section-head cr-section-head--center">
             <span className="cr-overline">Comment ça marche</span>
             <h2 className="hp-h2">De l&apos;idée à la publication en 4 étapes</h2>
           </div>
-          <ol className="hp-steps">
-            {steps.map((s, i) => (
-              <li key={s.title} className={`hp-step${i === 0 ? " on" : ""}`}>
-                <span className="n">{i + 1}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </li>
-            ))}
+          <ol className="hp-flow">
+            <li className="hp-flow-step">
+              <div className="hp-flow-visual" aria-hidden="true">
+                <div className="v-connect">
+                  {(["instagram", "linkedin", "tiktok", "facebook"] as NetworkName[]).map((n) => (
+                    <span key={n} className="chip"><NetworkLogo name={n} size={14} />{networkLabel[n]}<Check size={12} strokeWidth={3} className="ok" /></span>
+                  ))}
+                </div>
+              </div>
+              <span className="n">1</span>
+              <h3>{steps[0].title}</h3>
+              <p>{steps[0].text}</p>
+            </li>
+            <li className="hp-flow-step">
+              <div className="hp-flow-visual" aria-hidden="true">
+                <div className="v-write">
+                  <span className="line w90" /><span className="line w70" /><span className="line w80" />
+                  <span className="ai"><Sparkles size={12} />Reformuler pour LinkedIn</span>
+                </div>
+              </div>
+              <span className="n">2</span>
+              <h3>{steps[1].title}</h3>
+              <p>{steps[1].text}</p>
+            </li>
+            <li className="hp-flow-step">
+              <div className="hp-flow-visual" aria-hidden="true">
+                <div className="v-plan">
+                  {["L", "M", "M", "J", "V"].map((d, i) => (
+                    <span key={i} className="col"><b>{d}</b>{i !== 2 && <i className={`ev e${i}`} />}{i === 1 && <i className="ev e5" />}</span>
+                  ))}
+                </div>
+              </div>
+              <span className="n">3</span>
+              <h3>{steps[2].title}</h3>
+              <p>{steps[2].text}</p>
+            </li>
+            <li className="hp-flow-step">
+              <div className="hp-flow-visual" aria-hidden="true">
+                <div className="v-measure">
+                  <span className="bars">{[34, 48, 40, 62, 56, 78, 92].map((h, i) => <i key={i} style={{ height: `${h}%` }} />)}</span>
+                  <span className="kpi"><TrendingUp size={12} />+38 %</span>
+                </div>
+              </div>
+              <span className="n">4</span>
+              <h3>{steps[3].title}</h3>
+              <p>{steps[3].text}</p>
+            </li>
           </ol>
         </div>
       </section>
@@ -245,11 +313,12 @@ export default function Home() {
           <div className="cr-section-head">
             <span className="cr-overline">Fonctionnalités</span>
             <h2 className="hp-h2">Tout ce qu&apos;il faut pour publier, rien de plus</h2>
+            <p>Cliquez sur « En savoir plus » pour voir chaque fonctionnalité en vidéo.</p>
           </div>
           <div className="hp-bento">
             <article className="big">
               <span className="cr-icon-tile"><CalendarClock size={22} aria-hidden="true" /></span>
-              <h3>Planification</h3>
+              <h3>Publication et planification</h3>
               <p className="cr-muted" style={{ maxWidth: "52ch" }}>
                 Visualisez et organisez votre calendrier éditorial pour garder une longueur d&apos;avance. Creatabl publie
                 automatiquement à l&apos;heure prévue.
@@ -264,37 +333,56 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link className="cr-link" href="/fonctionnalites/planification">Découvrir la planification →</Link>
+              <FeatureDemo title="Publication et planification" video="/videos/demo-calendrier.mp4" href="/fonctionnalites/planification" />
             </article>
-            <article className="cr-feature">
-              <span className="cr-icon-tile"><WandSparkles size={22} aria-hidden="true" /></span>
+            <article className="hp-feat">
+              <div className="hp-feat-visual v-gen" aria-hidden="true">
+                <span className="line w90" /><span className="line w60" />
+                <span className="ai"><WandSparkles size={12} />Rédigé par l&apos;IA</span>
+              </div>
               <h4>Génération IA</h4>
               <p>Rédigez et adaptez vos posts en quelques secondes grâce à notre IA sur-mesure.</p>
-              <Link className="cr-link" href="/fonctionnalites/creation">En savoir plus →</Link>
+              <FeatureDemo title="Génération IA" video="/videos/demo-create-post.mp4" href="/fonctionnalites/creation" />
             </article>
-            <article className="cr-feature">
-              <span className="cr-icon-tile"><TrendingUp size={22} aria-hidden="true" /></span>
+            <article className="hp-feat">
+              <div className="hp-feat-visual v-stats" aria-hidden="true">
+                <span className="bars">{[30, 45, 38, 60, 52, 74, 88, 70].map((h, i) => <i key={i} style={{ height: `${h}%` }} />)}</span>
+                <span className="kpi"><TrendingUp size={12} />Portée +24 %</span>
+              </div>
               <h4>Analytics unifiés</h4>
               <p>Suivez la portée et l&apos;engagement de tous vos réseaux en un coup d&apos;œil.</p>
-              <Link className="cr-link" href="/fonctionnalites/analytics">En savoir plus →</Link>
+              <FeatureDemo title="Analytics unifiés" video="/videos/demo-analytics.mp4" href="/fonctionnalites/analytics" />
             </article>
-            <article className="cr-feature">
-              <span className="cr-icon-tile"><Users size={22} aria-hidden="true" /></span>
-              <h4>Multi-comptes équipe</h4>
-              <p>Connectez Instagram, LinkedIn, TikTok et Facebook sans basculer d&apos;onglet.</p>
-              <Link className="cr-link" href="/fonctionnalites/collaboration">En savoir plus →</Link>
-            </article>
-            <article className="cr-feature">
-              <span className="cr-icon-tile"><ImageIcon size={22} aria-hidden="true" /></span>
-              <h4>Intégration Canva</h4>
-              <p>Importez vos designs Canva directement dans vos posts.</p>
-              <Link className="cr-link" href="/fonctionnalites/multi-plateforme">En savoir plus →</Link>
-            </article>
-            <article className="cr-feature">
-              <span className="cr-icon-tile"><Sparkles size={22} aria-hidden="true" /></span>
+            <article className="hp-feat">
+              <div className="hp-feat-visual v-agent" aria-hidden="true">
+                <span className="trend"><Sparkles size={12} />Idée : coulisses de l&apos;équipe</span>
+                <span className="trend t2"><TrendingUp size={12} />#MarqueEmployeur · en hausse</span>
+              </div>
               <h4>Agent IA (Tendances)</h4>
               <p>Générez des idées de posts basées sur les tendances de votre secteur.</p>
-              <Link className="cr-link" href="/fonctionnalites/agent-ia">En savoir plus →</Link>
+              <FeatureDemo title="Agent IA (Tendances)" video="/videos/demo-agent-ia.mp4" href="/fonctionnalites/agent-ia" />
+            </article>
+            <article className="hp-feat">
+              <div className="hp-feat-visual v-canva" aria-hidden="true">
+                <span className="tile k1">Soldes d&apos;été</span>
+                <span className="tile k2">Nouveau</span>
+                <span className="tile k3">Atelier</span>
+                <span className="badge"><NetworkLogo name="canva" size={14} />Canva</span>
+              </div>
+              <h4>Intégration Canva</h4>
+              <p>Importez vos designs Canva directement dans vos posts.</p>
+              <FeatureDemo title="Intégration Canva" video="/videos/demo-canva.mp4" href="/fonctionnalites/multi-plateforme" />
+            </article>
+            <article className="hp-feat">
+              <div className="hp-feat-visual v-team" aria-hidden="true">
+                <span className="hp-avatars sm">
+                  {["SM", "JD", "AL"].map((a, i) => <span key={a} className={`a a${i}`}>{a}</span>)}
+                </span>
+                <span className="ws">Agence Lumière · 6 comptes</span>
+              </div>
+              <h4>Multi-comptes équipe</h4>
+              <p>Connectez Instagram, LinkedIn, TikTok et Facebook et travaillez à plusieurs, sans basculer d&apos;onglet.</p>
+              <FeatureDemo title="Multi-comptes équipe" video="/videos/demo-equipe.mp4" href="/fonctionnalites/collaboration" />
             </article>
           </div>
         </div>
@@ -329,6 +417,25 @@ export default function Home() {
                 <span className="cr-avatar">{initials(main.name)}</span>
                 <div><cite>{main.name}</cite><span>{main.role}</span></div>
               </footer>
+              <div className="hp-usecase" aria-label="Exemple : un post de Marie préparé avec Creatabl">
+                <div className="hp-usecase-post">
+                  <div className="head">
+                    <span className="cr-avatar">{initials(main.name)}</span>
+                    <div><strong>marie.cree</strong><small><NetworkLogo name="instagram" size={11} />Programmé · mar. 9 h 30</small></div>
+                  </div>
+                  <div className="media"><span>3 erreurs qui ruinent<br />vos visuels</span></div>
+                  <div className="meta">
+                    <span><Heart size={14} aria-hidden="true" />248</span>
+                    <span><MessageCircle size={14} aria-hidden="true" />31</span>
+                  </div>
+                </div>
+                <ul className="hp-usecase-steps">
+                  <li><Sparkles size={14} aria-hidden="true" /><span><b>Légende générée</b> à partir de son idée, puis ajustée</span></li>
+                  <li><NetworkLogo name="canva" size={14} /><span><b>Visuel importé</b> depuis Canva</span></li>
+                  <li><CalendarClock size={14} aria-hidden="true" /><span><b>Programmé</b> sur Instagram et LinkedIn</span></li>
+                  <li className="time"><span>20 min au total, contre 3 h avant</span></li>
+                </ul>
+              </div>
             </figure>
             {others.map((t) => (
               <figure key={t.name} className="cr-quote" style={{ margin: 0, background: "var(--white)", border: "1px solid var(--border)" }}>
@@ -346,17 +453,15 @@ export default function Home() {
       {/* FAQ — design d'origine, questions fusionnées */}
       <FaqSection />
 
-      {/* CTA FINAL — design d'origine, contenu mis à jour */}
+      {/* CTA FINAL — dégradé et trame d'origine, mise en page du design system */}
       <section className="w-full bg-white relative z-10" style={{ backgroundColor: "#FFFFFF", paddingBottom: "80px", paddingTop: "0px" }}>
-        <div className="mx-4 md:mx-[60px] rounded-[24px] overflow-hidden">
+        <div className="cr-container">
           <ScrollReveal>
-            <div
-              className="relative text-center py-[90px] px-6 sm:px-12 md:px-[80px]"
-              style={{ background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)" }}
-            >
+            <div className="hp-final-cta">
               {/* Trame de grille */}
               <div
                 className="absolute inset-0 pointer-events-none"
+                aria-hidden="true"
                 style={{
                   backgroundImage: `
                     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
@@ -365,66 +470,17 @@ export default function Home() {
                   backgroundSize: "40px 40px",
                 }}
               />
-
-              <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-                <span className="font-outfit uppercase text-white/70 block" style={{ fontSize: "11px", letterSpacing: "0.1em" }}>
-                  ✦ Commencez aujourd&apos;hui
-                </span>
-
-                <h2
-                  className="font-outfit text-white font-extrabold mx-auto leading-tight"
-                  style={{ fontSize: "min(48px, 9.5vw)", fontWeight: 800, maxWidth: "640px", marginTop: "16px" }}
-                >
-                  Si vous êtes arrivé jusque-là, c&apos;est que vous êtes prêt.
-                </h2>
-
-                <p className="font-inter text-white/85" style={{ fontSize: "18px", marginTop: "12px" }}>
-                  Votre prochain mois de posts commence ce soir.
-                </p>
-
-                <div className="flex flex-wrap items-center justify-center gap-[16px]" style={{ marginTop: "24px" }}>
-                  {[
-                    { icon: Lock, label: "Paiement sécurisé" },
-                    { icon: Zap, label: "Prise en main en 5 minutes" },
-                    { icon: MapPin, label: "Support en français" },
-                  ].map(({ icon: Icon, label }) => (
-                    <span
-                      key={label}
-                      className="font-inter text-white border inline-flex items-center gap-1.5"
-                      style={{
-                        background: "rgba(255,255,255,0.12)",
-                        borderColor: "rgba(255,255,255,0.2)",
-                        borderRadius: "100px",
-                        padding: "6px 14px",
-                        fontSize: "12px",
-                      }}
-                    >
-                      <Icon size={13} aria-hidden="true" />
-                      {label}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-[14px]" style={{ marginTop: "36px" }}>
-                  <a
-                    href={`${APP_URL}/sign-up`}
-                    className="font-inter text-center hover:scale-[1.02] transition-transform"
-                    style={{ background: "#ffffff", color: "#7225E3", fontWeight: 700, padding: "14px 32px", borderRadius: "999px" }}
-                  >
-                    C&apos;est gratuit — 14 jours
-                  </a>
-                  <a
-                    href={`${APP_URL}/sign-in`}
-                    className="font-inter text-center text-white border hover:bg-white/5 transition-colors"
-                    style={{ background: "transparent", borderColor: "rgba(255,255,255,0.4)", padding: "14px 32px", borderRadius: "999px" }}
-                  >
-                    Connectez-vous à votre compte
-                  </a>
-                </div>
-
-                <p className="font-inter text-white/80" style={{ fontSize: "14px", marginTop: "20px" }}>
-                  14 jours d&apos;essai — Résiliation à tout moment
-                </p>
+              <div className="txt">
+                <span className="ov">✦ Commencez aujourd&apos;hui</span>
+                <h2>Si vous êtes arrivé jusque-là, c&apos;est que vous êtes prêt.</h2>
+                <p className="lead">Votre prochain mois de posts commence ce soir.</p>
+                <p>Connectez vos comptes, donnez trois sujets, Creatabl s&apos;occupe du reste.</p>
+              </div>
+              <div className="act">
+                <a href={`${APP_URL}/sign-up`} className="cr-btn cr-btn--lg hp-btn-white">
+                  Essayer gratuitement
+                </a>
+                <small>14 jours d&apos;essai, résiliation à tout moment.</small>
               </div>
             </div>
           </ScrollReveal>
