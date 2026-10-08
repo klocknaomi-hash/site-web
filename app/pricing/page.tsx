@@ -61,7 +61,7 @@ const plans = [
     tagline: "Pour découvrir Creatabl sans engagement",
     price: { monthly: 0, yearly: 0 },
     subtext: "POUR TOUJOURS",
-    postsPerMonth: "20 posts / mois",
+    postsPerMonth: "20 crédits / mois",
     features: [
       "Calendrier éditorial",
       "Assistant IA basique",
@@ -77,7 +77,7 @@ const plans = [
     tagline: "Pour les solopreneurs qui démarrent",
     price: { monthly: 49, yearly: 39 },
     subtext: "PAR UTILISATEUR ET PAR MOIS",
-    postsPerMonth: "50 posts / mois",
+    postsPerMonth: "50 crédits / mois",
     features: [
       "Assistant IA de rédaction (limité)",
       "Calendrier éditorial",
@@ -94,7 +94,7 @@ const plans = [
     tagline: "Pour les créateurs actifs qui veulent scaler",
     price: { monthly: 99, yearly: 79 },
     subtext: "PAR UTILISATEUR ET PAR MOIS",
-    postsPerMonth: "120 posts / mois",
+    postsPerMonth: "120 crédits / mois",
     features: [
       "Tout du Starter",
       "Assistant IA de rédaction (illimité)",
@@ -112,7 +112,7 @@ const plans = [
     tagline: "Pour les agences et équipes marketing",
     price: { monthly: 199, yearly: 159 },
     subtext: "PAR UTILISATEUR ET PAR MOIS",
-    postsPerMonth: "300 posts / mois",
+    postsPerMonth: "300 crédits / mois",
     features: [
       "Tout le plan Pro",
       "Multi-comptes (jusqu'à 5)",
@@ -128,6 +128,10 @@ const plans = [
 ];
 
 const faqs = [
+  {
+    question: "Comment fonctionnent les crédits ?",
+    answer: "Chaque plan inclut un nombre de crédits par mois : 1 crédit = 1 post programmé ou publié, quel que soit le nombre de réseaux sur lesquels il part. Les brouillons ne consomment rien. Vos crédits se renouvellent le 1er de chaque mois.",
+  },
   {
     question: "Puis-je annuler à tout moment ?",
     answer: "Oui, sans engagement sur les plans mensuels. Vous conservez l'accès jusqu'à la fin de votre période payée. Sur les plans annuels, l'engagement est de 12 mois avec 20% de réduction.",
@@ -158,7 +162,7 @@ const faqs = [
   },
   {
     question: "Quelle est la différence entre les plans Free, Starter, Pro et Business ?",
-    answer: "Le plan Free est permanent avec 20 posts/mois. Le Starter convient aux solopreneurs (50 posts/mois). Le Pro est idéal pour les créateurs actifs (120 posts, IA illimitée). Le Business s'adresse aux agences (300 posts, multi-comptes, équipes).",
+    answer: "Le plan Free est permanent avec 20 crédits par mois. Le Starter convient aux solopreneurs (50 crédits). Le Pro est idéal pour les créateurs actifs (120 crédits, IA illimitée). Le Business s'adresse aux agences (300 crédits, multi-comptes, équipes). 1 crédit = 1 post programmé ou publié ; les brouillons sont gratuits.",
   },
   {
     question: "Y a-t-il une période d'essai gratuite ?",
@@ -369,12 +373,15 @@ export default function PricingPage() {
                   {/* Posts + Features Section */}
                   <div className="mb-6 flex-1 flex flex-col">
                     <p className="font-inter font-semibold text-[#6B7280] text-[11px] uppercase tracking-wider mb-2">
-                      Génération de posts
+                      Crédits mensuels
                     </p>
                     <div className="flex items-center gap-2 font-inter font-bold text-[#374151] text-[14px] mb-5">
                       <span className="text-[#16A34A] flex-shrink-0">✓</span>
                       {plan.postsPerMonth}
                     </div>
+                    <p className="font-inter text-[#6B7280] text-[12px] -mt-3 mb-5">
+                      1 crédit = 1 post programmé ou publié
+                    </p>
 
                     <p className="font-inter font-semibold text-[#6B7280] text-[11px] uppercase tracking-wider mb-3">
                       Fonctionnalités
