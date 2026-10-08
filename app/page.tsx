@@ -168,7 +168,7 @@ export default function Home() {
             <ScrollReveal delay={450}>
               <div className="hp-hero-cta" style={{ marginTop: 16 }}>
                 <a className="cr-btn cr-btn--primary cr-btn--lg" href={`${APP_URL}/sign-up`}>
-                  Et c&apos;est gratuit 14 jours
+                  Essayer gratuitement 14 jours
                 </a>
                 <a className="cr-btn cr-btn--secondary cr-btn--lg" href="#demo">
                   <Play size={18} aria-hidden="true" />

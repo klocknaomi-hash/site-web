@@ -140,7 +140,7 @@ export default function Navbar() {
 
           <div className="cr-nav-actions">
             <a className="cr-btn cr-btn--neutral nav-desktop" href={`${APP_URL}/sign-in`}>Se connecter</a>
-            <a className="cr-btn cr-btn--primary nav-desktop" href={`${APP_URL}/sign-up`}>Et c&apos;est gratuit</a>
+            <a className="cr-btn cr-btn--primary nav-desktop" href={`${APP_URL}/sign-up`}>Essai gratuit</a>
             <button
               className="cr-btn cr-btn--secondary cr-btn--icon nav-burger"
               onClick={() => setIsOpen(!isOpen)}
@@ -194,7 +194,7 @@ export default function Navbar() {
             <Link className="cr-nav-link" style={{ fontSize: 16 }} href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
             <div style={{ display: "grid", gap: 8, marginTop: 16 }}>
               <a className="cr-btn cr-btn--secondary cr-btn--block" href={`${APP_URL}/sign-in`}>Se connecter</a>
-              <a className="cr-btn cr-btn--primary cr-btn--block" href={`${APP_URL}/sign-up`}>Et c&apos;est gratuit</a>
+              <a className="cr-btn cr-btn--primary cr-btn--block" href={`${APP_URL}/sign-up`}>Essai gratuit</a>
             </div>
           </nav>
         </div>
