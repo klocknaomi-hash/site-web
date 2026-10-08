@@ -57,6 +57,36 @@ const FAQS: FAQItem[] = [
     question: 'Comment fonctionne la planification de publications ?',
     answer: 'Une fois vos comptes sociaux connectés en toute sécurité via OAuth, préparez ou générez vos posts puis choisissez la date et heure d’envoi sur le calendrier interactif. Creatabl se charge de la publication automatique à l’instant prévu.',
   },
+  {
+    id: 7,
+    category: 'Abonnement & tarifs',
+    question: 'Comment fonctionnent les crédits ?',
+    answer: "Chaque plan inclut des crédits mensuels : 1 crédit = 1 post programmé ou publié, quel que soit le nombre de réseaux sur lesquels il part. Les brouillons ne consomment rien. Free : 20 crédits, Starter : 50, Pro : 120, Business : 300. Vos crédits se renouvellent le 1er de chaque mois.",
+  },
+  {
+    id: 8,
+    category: 'Abonnement & tarifs',
+    question: 'Que se passe-t-il si je dépasse mes crédits du mois ?',
+    answer: "Vous êtes prévenu avant d'atteindre la limite. Vous pouvez passer au plan supérieur à tout moment pour continuer à publier, ou attendre le renouvellement le 1er du mois. Aucune publication n'est supprimée.",
+  },
+  {
+    id: 9,
+    category: 'Abonnement & tarifs',
+    question: 'Comment est sécurisé mon paiement ?',
+    answer: "Les paiements sont traités par Stripe, solution certifiée PCI-DSS. Vos données bancaires ne sont jamais stockées sur nos serveurs.",
+  },
+  {
+    id: 10,
+    category: 'Création de contenu',
+    question: "Est-ce que je peux personnaliser mon style d'écriture ?",
+    answer: "Oui. L'agent IA s'adapte à votre ton : professionnel, storytelling ou viral. Vous pouvez reformuler, améliorer ou réécrire n'importe quel texte avant de le publier.",
+  },
+  {
+    id: 11,
+    category: 'Réseaux sociaux',
+    question: 'Puis-je importer mes designs Canva ?',
+    answer: "Oui. L'intégration Canva vous permet d'importer vos designs en un clic directement dans vos posts, sans téléchargement ni copier-coller.",
+  },
 ]
 
 export default function FaqSection() {
@@ -72,7 +102,7 @@ export default function FaqSection() {
   }
 
   return (
-    <section className="w-full bg-[#FFFFFF] py-20 md:py-28 border-t border-slate-100 relative z-10">
+    <section id="faq" style={{ scrollMarginTop: 120 }} className="w-full bg-[#FFFFFF] py-20 md:py-28 border-t border-slate-100 relative z-10">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           

@@ -1,513 +1,204 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { 
-  Menu, 
-  X, 
-  ChevronDown, 
-  Calendar, 
-  BarChart2, 
-  Sparkles, 
-  Users, 
+import {
   ArrowRight,
-  Layers,
-  Network,
-  Settings
+  BarChart2,
+  Calendar,
+  ChevronDown,
+  Menu,
+  Send,
+  WandSparkles,
+  X,
 } from "lucide-react";
+import NetworkLogo, { NetworkName } from "@/components/NetworkLogo";
 
-// Local SVG icons to bypass lucide-react differences
-const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
+// Barre de navigation du site : composant Navbar du design system Creatabl.ia
+// (Fonctionnalités en 4 catégories, renvoi vers l'offre Business).
+const APP_URL = "https://app.creatabl-ia.com";
 
-const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+const featureItems = [
+  { name: "Création avec IA", desc: "Des posts rédigés dans votre ton.", icon: WandSparkles, href: "/fonctionnalites/creation" },
+  { name: "Planification", desc: "Un calendrier pour tous vos réseaux.", icon: Calendar, href: "/fonctionnalites/planification" },
+  { name: "Publication", desc: "Diffusez partout en un clic.", icon: Send, href: "/fonctionnalites/multi-plateforme" },
+  { name: "Analytique", desc: "Vos performances sur un seul tableau.", icon: BarChart2, href: "/fonctionnalites/analytics" },
+];
 
-const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" />
-  </svg>
-);
+const platformItems: { name: string; desc: string; logo: NetworkName }[] = [
+  { name: "Instagram", desc: "Reels, Stories et carrousels", logo: "instagram" },
+  { name: "LinkedIn", desc: "Carrousels pro et profils", logo: "linkedin" },
+  { name: "TikTok", desc: "Vidéos courtes et tendances", logo: "tiktok" },
+  { name: "Facebook", desc: "Pages d'entreprise et groupes", logo: "facebook" },
+  { name: "X (Twitter)", desc: "Threads programmés", logo: "x" },
+];
+
+export function Wordmark({ light = false, size = 18 }: { light?: boolean; size?: number }) {
+  return (
+    <span className={`cr-wordmark${light ? " cr-wordmark--light" : ""}`} style={{ fontSize: size }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="cr-mark" src={process.env.NEXT_PUBLIC_LOGO_URL || "/logo.png"} alt="" />
+      <span>Creatabl.<i>ia</i></span>
+    </span>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<"features" | "platforms" | null>(null);
-  
-  // Mobile accordion states
-  const [mobileFeaturesOpen, setMobileFeaturesOpen] = useState(false);
-  const [mobilePlatformsOpen, setMobilePlatformsOpen] = useState(false);
-
+  const [openMenu, setOpenMenu] = useState<"features" | "platforms" | null>(null);
+  const [mobileSection, setMobileSection] = useState<"features" | "platforms" | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseEnter = (type: "features" | "platforms") => {
+  const open = (menu: "features" | "platforms") => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setActiveDropdown(type);
+    setOpenMenu(menu);
   };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 150);
+  const close = () => {
+    timeoutRef.current = setTimeout(() => setOpenMenu(null), 150);
   };
-
-  const clearDropdownTimeout = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-  };
-
-  const features = [
-    {
-      name: "Planification intelligente",
-      desc: "Postez automatiquement aux heures optimales.",
-      href: "/fonctionnalites/planification",
-      icon: <Calendar className="w-5 h-5 text-purple-600" />,
-    },
-    {
-      name: "Analytics temps réel",
-      desc: "Suivez vos performances sur un tableau unifié.",
-      href: "/fonctionnalites/analytics",
-      icon: <BarChart2 className="w-5 h-5 text-blue-600" />,
-    },
-    {
-      name: "Création de post",
-      desc: "Rédigez légendes et hashtags en un instant.",
-      href: "/fonctionnalites/creation",
-      icon: <Sparkles className="w-5 h-5 text-purple-600" />,
-    },
-    {
-      name: "Agent IA (Tendances)",
-      desc: "Générez des idées de posts basées sur les tendances.",
-      href: "/fonctionnalites/agent-ia",
-      icon: <Settings className="w-5 h-5 text-purple-600" />,
-    },
-    {
-      name: "Multi-plateforme natif",
-      desc: "Canaux multiples et intégration Canva directe.",
-      href: "/fonctionnalites/multi-plateforme",
-      icon: <Network className="w-5 h-5 text-purple-600" />,
-    },
-    {
-      name: "Collaboration équipe",
-      desc: "Workflows de validation simples pour vos clients.",
-      href: "/fonctionnalites/collaboration",
-      icon: <Users className="w-5 h-5 text-purple-600" />,
-    },
-  ];
-
-  const platforms = [
-    {
-      name: "Instagram",
-      desc: "Reels, Stories & Graph API",
-      icon: <InstagramIcon className="w-5 h-5 text-[#E1306C]" />,
-    },
-    {
-      name: "LinkedIn",
-      desc: "Carrousels pro & Profils",
-      icon: <LinkedinIcon className="w-5 h-5 text-[#0A66C2]" />,
-    },
-    {
-      name: "TikTok",
-      desc: "Vidéos courtes & Trend sync",
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
-          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.86 1.08 2.07 1.85 3.4 2.27V10.1c-1.74-.08-3.41-.78-4.73-1.92-.12-.1-.23-.21-.34-.32v7.71c.08 2.3-1.02 4.54-2.87 5.79-1.94 1.34-4.56 1.63-6.73.74-2.25-.91-3.86-3.14-4.05-5.58-.29-3.23 2.1-6.19 5.33-6.49 1.03-.1 2.08.09 3.02.55V3.86c-1.52-.42-3.13-.3-4.57.34-1.85.83-3.22 2.53-3.64 4.53-.52 2.44.25 5.06 1.96 6.84 1.76 1.84 4.4 2.5 6.87 1.7 2.19-.7 3.82-2.73 4.12-5.02.07-.5.08-1.01.07-1.51V.02z"/>
-        </svg>
-      ),
-    },
-    {
-      name: "Facebook",
-      desc: "Pages d'entreprise & Groupes",
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-[#1877F2]">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      ),
-    },
-    {
-      name: "YouTube",
-      desc: "Shorts & Planification vidéo",
-      icon: <YoutubeIcon className="w-5 h-5 text-[#FF0000]" />,
-    },
-    {
-      name: "X (Twitter)",
-      desc: "Threads programmés & Réactivité",
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-slate-800">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      ),
-    },
-  ];
 
   return (
     <>
-      {/* Top Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full h-[36px] bg-[#14121F] flex items-center justify-center font-inter text-[14px] font-medium text-white px-4 text-center">
-        <span>Lancement officiel — 14 jours d&apos;essai gratuit</span>
+      <div className="cr-announce fixed top-0 left-0 right-0 z-50" style={{ position: "fixed", height: 36, zIndex: 51 }}>
+        <div className="cr-container" style={{ minHeight: 36 }}>
+          <span className="cr-badge cr-badge--plain">Nouveau</span>
+          <span>Importez vos designs Canva directement dans vos posts.</span>
+          <Link href="/fonctionnalites/multi-plateforme">
+            Voir comment <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
 
-      <nav
-        className="fixed left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-[#E8E6F0] h-[64px] flex items-center"
-        style={{ top: "36px" }}
-      >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center justify-between h-full">
-            {/* Logo Left */}
-            <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={process.env.NEXT_PUBLIC_LOGO_URL || "/logo.png"} 
-                  alt="Creatabl Logo" 
-                  className="h-[28px] w-auto object-contain"
-                />
-                <div className="flex items-baseline font-outfit font-medium text-[20px]">
-                  <span className="font-semibold text-[#14121F]">Creatabl.</span>
-                  <span className="font-playfair italic font-medium text-[#7225E3]">ia</span>
-                </div>
-              </Link>
-            </div>
+      <header className="cr-nav fixed left-0 right-0 z-50" style={{ position: "fixed", top: 36, zIndex: 50 }}>
+        <div className="cr-container" style={{ height: 64 }}>
+          <Link href="/" aria-label="Creatabl.ia, accueil">
+            <Wordmark />
+          </Link>
 
-            {/* Links Center */}
-            <div className="hidden md:flex items-center space-x-8">
-              
-              {/* Features Link & Dropdown */}
-              <div 
-                className="relative py-4"
-                onMouseEnter={() => handleMouseEnter("features")}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "features" ? "text-[#7225E3]" : "text-[#4B4B63]"
-                  }`}
-                >
-                  <span>Fonctionnalités</span>
-                  <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "features" ? "rotate-180 text-[#7225E3]" : "text-[#4B4B63]"
-                  }`} />
-                </button>
-
-                {/* Features Dropdown Menu (Cadran) */}
-                {activeDropdown === "features" && (
-                  <div 
-                    onMouseEnter={clearDropdownTimeout}
-                    onMouseLeave={handleMouseLeave}
-                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[660px] bg-white border border-slate-200/60 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-                  >
-                    <div className="col-span-8 grid grid-cols-2 gap-4">
-                      {features.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          href={item.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="flex gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
-                        >
-                          <div className="w-9 h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform">
-                            {item.icon}
-                          </div>
-                          <div>
-                            <h4 className="text-xs font-bold text-slate-800 font-outfit">
-                              {item.name}
-                            </h4>
-                            <p className="text-[13px] text-slate-400 mt-0.5 leading-snug">
-                              {item.desc}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-
-                    <div className="col-span-4 bg-slate-50 border border-slate-100 rounded-xl p-4 flex flex-col justify-between">
-                      <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                          <Settings className="w-4 h-4 text-purple-600" />
-                        </div>
-                        <h4 className="text-xs font-bold font-outfit text-slate-800">
-                          Technologie IA native
-                        </h4>
-                        <p className="text-[10px] text-slate-400 leading-normal">
-                          Notre IA analyse les tendances en direct pour optimiser chaque phrase.
-                        </p>
-                      </div>
-                      <Link
-                        href="/fonctionnalites"
-                        onClick={() => setActiveDropdown(null)}
-                        className="text-[13px] font-bold text-primary hover:underline flex items-center gap-1 mt-4 group"
-                      >
-                        <span>Voir tout</span>
-                        <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Platforms Link & Dropdown */}
-              <div 
-                className="relative py-4"
-                onMouseEnter={() => handleMouseEnter("platforms")}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "platforms" ? "text-[#7225E3]" : "text-[#4B4B63]"
-                  }`}
-                >
-                  <span>Plateformes</span>
-                  <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "platforms" ? "rotate-180 text-[#7225E3]" : "text-[#4B4B63]"
-                  }`} />
-                </button>
-
-                {/* Platforms Dropdown Menu (Cadran) */}
-                {activeDropdown === "platforms" && (
-                  <div 
-                    onMouseEnter={clearDropdownTimeout}
-                    onMouseLeave={handleMouseLeave}
-                    className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[600px] bg-white border border-slate-200/60 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-                  >
-                    <div className="col-span-8 grid grid-cols-2 gap-x-4 gap-y-3">
-                      {platforms.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="flex gap-3 p-2 rounded-xl cursor-default"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100">
-                            {item.icon}
-                          </div>
-                          <div>
-                            <h4 className="text-xs font-bold text-slate-800 font-outfit">
-                              {item.name}
-                            </h4>
-                            <p className="text-[10px] text-slate-400">
-                              {item.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="col-span-4 bg-slate-50 border border-slate-100 rounded-xl p-4 flex flex-col justify-between">
-                      <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                          <Layers className="w-4 h-4 text-primary" />
-                        </div>
-                        <h4 className="text-xs font-bold font-outfit text-slate-800">
-                          Le Cadran d&apos;Intégration
-                        </h4>
-                        <p className="text-[10px] text-slate-400 leading-normal">
-                          Explorez l&apos;intégralité des API (Canva, OpenAI, Stripe) connectées à notre coeur.
-                        </p>
-                      </div>
-                      <Link
-                        href="/plateformes"
-                        onClick={() => setActiveDropdown(null)}
-                        className="text-[13px] font-medium text-[#7225E3] hover:underline flex items-center gap-1 mt-4 cursor-pointer"
-                      >
-                        <span>En savoir plus →</span>
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <Link
-                href="/pricing"
-                className="font-inter font-medium text-[15px] text-[#4B4B63] hover:text-[#7225E3] transition-colors"
-              >
-                Tarifs
-              </Link>
-              <Link
-                href="/blog"
-                className="font-inter font-medium text-[15px] text-[#4B4B63] hover:text-[#7225E3] transition-colors"
-              >
-                Blog
-              </Link>
-            </div>
-
-            {/* Buttons Right */}
-            <div className="hidden md:flex items-center space-x-3">
-              <a
-                href="https://app.creatabl-ia.com/sign-up"
-                className="font-inter font-medium text-[14px] text-[#4B4B63] bg-white border border-[#D4D1E0] px-[20px] py-[8px] rounded-full hover:bg-slate-50 transition-colors"
-              >
-                S&apos;inscrire
-              </a>
-              
-              <a
-                href="https://app.creatabl-ia.com/sign-in"
-                className="font-inter font-medium text-[14px] text-white px-[20px] py-[8px] rounded-full flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all duration-250"
-                style={{
-                  background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)",
-                  boxShadow: "0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04)",
-                }}
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-[16px] h-[16px]">
-                  <path d="M9.315 7.584C12.195 3.883 16.695 1.5 
-                  21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 
-                  9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 
-                  22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 
-                  15.838 0 0 1 6.382 15H2.25a.75.75 0 0 
-                  1-.75-.75 6.75 6.75 0 0 1 7.815-6.666Z"/>
-                </svg>
-                <span>Se Connecter</span>
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="flex md:hidden items-center">
+          <ul className="cr-nav-links nav-desktop">
+            <li onMouseEnter={() => open("features")} onMouseLeave={close}>
               <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors"
-                aria-label="Toggle menu"
+                className="cr-nav-link"
+                aria-expanded={openMenu === "features"}
+                aria-haspopup="true"
+                onClick={() => setOpenMenu(openMenu === "features" ? null : "features")}
               >
-                {isOpen ? <X size={22} /> : <Menu size={22} />}
+                Fonctionnalités <ChevronDown size={16} aria-hidden="true" />
               </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Drawer */}
-        <div
-          className={`md:hidden fixed inset-x-0 bg-white border-b border-[#E8E6F0] overflow-y-auto transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-[85vh] py-4" : "max-h-0"
-          }`}
-          style={{ top: "100px" }}
-        >
-          <div className="px-4 space-y-2 flex flex-col">
-            
-            {/* Mobile Features Accordion */}
-            <div>
-              <button
-                onClick={() => setMobileFeaturesOpen(!mobileFeaturesOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
-              >
-                <span>Fonctionnalités</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileFeaturesOpen ? "rotate-180" : ""}`} />
-              </button>
-              
-              {mobileFeaturesOpen && (
-                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 rounded-xl mt-1">
-                  {features.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      href={item.href}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setMobileFeaturesOpen(false);
-                      }}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B4B63] hover:bg-slate-100"
-                    >
-                      <span className="flex-shrink-0">{item.icon}</span>
-                      <span className="font-medium text-xs">{item.name}</span>
+              {openMenu === "features" && (
+                <div className="cr-mega">
+                  {featureItems.map((item) => (
+                    <Link key={item.href} href={item.href} onClick={() => setOpenMenu(null)}>
+                      <span className="cr-icon-tile"><item.icon size={18} aria-hidden="true" /></span>
+                      <span>
+                        <strong>{item.name}</strong>
+                        <span>{item.desc}</span>
+                      </span>
                     </Link>
                   ))}
-                  <Link
-                    href="/fonctionnalites"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setMobileFeaturesOpen(false);
-                    }}
-                    className="flex items-center justify-center gap-1.5 py-2.5 mt-2 text-xs font-bold text-primary bg-primary/5 rounded-lg"
-                  >
-                    <span>Voir toutes les fonctions</span>
-                    <ArrowRight size={12} />
-                  </Link>
+                  <div className="cr-mega-foot">
+                    <span>Vous gérez plusieurs clients ?</span>
+                    <Link className="cr-link" href="/pricing" style={{ padding: 0 }} onClick={() => setOpenMenu(null)}>
+                      Offre Business <ArrowRight size={16} aria-hidden="true" />
+                    </Link>
+                  </div>
                 </div>
               )}
-            </div>
-
-            {/* Mobile Platforms Accordion */}
-            <div>
+            </li>
+            <li onMouseEnter={() => open("platforms")} onMouseLeave={close}>
               <button
-                onClick={() => setMobilePlatformsOpen(!mobilePlatformsOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
+                className="cr-nav-link"
+                aria-expanded={openMenu === "platforms"}
+                aria-haspopup="true"
+                onClick={() => setOpenMenu(openMenu === "platforms" ? null : "platforms")}
               >
-                <span>Plateformes</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlatformsOpen ? "rotate-180" : ""}`} />
+                Plateformes <ChevronDown size={16} aria-hidden="true" />
               </button>
-
-              {mobilePlatformsOpen && (
-                <div className="pl-6 pr-2 py-2 space-y-2 bg-slate-50/50 rounded-xl mt-1">
-                  {platforms.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B4B63] cursor-default"
-                    >
-                      <span className="flex-shrink-0">{item.icon}</span>
-                      <span className="font-medium text-xs">{item.name}</span>
-                    </div>
+              {openMenu === "platforms" && (
+                <div className="cr-mega">
+                  {platformItems.map((item) => (
+                    <Link key={item.name} href="/plateformes" onClick={() => setOpenMenu(null)}>
+                      <span className="cr-icon-tile" style={{ background: "var(--surface)" }}><NetworkLogo name={item.logo} size={18} /></span>
+                      <span>
+                        <strong>{item.name}</strong>
+                        <span>{item.desc}</span>
+                      </span>
+                    </Link>
                   ))}
-                  <Link
-                    href="/plateformes"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setMobilePlatformsOpen(false);
-                    }}
-                    className="flex items-center justify-center gap-1.5 py-2.5 mt-2 text-xs font-bold text-primary bg-primary/5 rounded-lg"
-                  >
-                    <span>Découvrir le cadran d&apos;intégrations</span>
-                    <ArrowRight size={12} />
-                  </Link>
+                  <div className="cr-mega-foot">
+                    <span>Un seul outil pour tous vos réseaux</span>
+                    <Link className="cr-link" href="/plateformes" style={{ padding: 0 }} onClick={() => setOpenMenu(null)}>
+                      Voir les plateformes <ArrowRight size={16} aria-hidden="true" />
+                    </Link>
+                  </div>
                 </div>
               )}
-            </div>
+            </li>
+            <li><Link className="cr-nav-link" href="/pricing">Tarifs</Link></li>
+            <li><Link className="cr-nav-link" href="/blog">Blog</Link></li>
+          </ul>
 
-            <Link
-              href="/pricing"
-              onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50"
+          <div className="cr-nav-actions">
+            <a className="cr-btn cr-btn--neutral nav-desktop" href={`${APP_URL}/sign-in`}>Se connecter</a>
+            <a className="cr-btn cr-btn--primary nav-desktop" href={`${APP_URL}/sign-up`}>Essai gratuit</a>
+            <button
+              className="cr-btn cr-btn--secondary cr-btn--icon nav-burger"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isOpen}
             >
-              Tarifs
-            </Link>
-            <Link
-              href="/blog"
-              onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50"
-            >
-              Blog
-            </Link>
-
-            <div className="border-t border-slate-100 pt-4 flex flex-col space-y-2">
-              <a
-                href="https://app.creatabl-ia.com/sign-up"
-                className="text-center font-inter font-medium text-[14px] text-[#4B4B63] bg-white border border-[#D4D1E0] py-2.5 rounded-full"
-              >
-                S&apos;inscrire
-              </a>
-              <a
-                href="https://app.creatabl-ia.com/sign-in"
-                className="text-center font-inter font-medium text-[14px] text-white py-2.5 rounded-full flex items-center justify-center gap-2"
-                style={{
-                  background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)",
-                  boxShadow: "0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04)",
-                }}
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-[16px] h-[16px]">
-                  <path d="M9.315 7.584C12.195 3.883 16.695 1.5 
-                  21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 
-                  9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 
-                  22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 
-                  15.838 0 0 1 6.382 15H2.25a.75.75 0 0 
-                  1-.75-.75 6.75 6.75 0 0 1 7.815-6.666Z"/>
-                </svg>
-                <span>Se Connecter</span>
-              </a>
-            </div>
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-      </nav>
+      </header>
+
+      {isOpen && (
+        <div className="fixed left-0 right-0 bottom-0 z-40 overflow-y-auto md:hidden" style={{ top: 100, background: "var(--white)" }}>
+          <nav className="cr-container" style={{ paddingBlock: 16, display: "grid", gap: 4 }} aria-label="Menu mobile">
+            {([
+              ["features", "Fonctionnalités"],
+              ["platforms", "Plateformes"],
+            ] as const).map(([key, label]) => (
+              <div key={key}>
+                <button
+                  className="cr-nav-link"
+                  style={{ width: "100%", justifyContent: "space-between", fontSize: 16 }}
+                  aria-expanded={mobileSection === key}
+                  onClick={() => setMobileSection(mobileSection === key ? null : key)}
+                >
+                  {label} <ChevronDown size={18} aria-hidden="true" />
+                </button>
+                {mobileSection === key && (
+                  <div style={{ display: "grid", gap: 2, padding: "4px 0 8px 12px" }}>
+                    {key === "features"
+                      ? featureItems.map((item) => (
+                          <Link key={item.href} href={item.href} className="cr-menu-item" onClick={() => setIsOpen(false)}>
+                            <item.icon size={18} aria-hidden="true" /> {item.name}
+                          </Link>
+                        )).concat(
+                          <Link key="business" href="/pricing" className="cr-menu-item" style={{ color: "var(--violet-600)", fontWeight: 600 }} onClick={() => setIsOpen(false)}>
+                            Vous gérez plusieurs clients ? Offre Business <ArrowRight size={16} aria-hidden="true" />
+                          </Link>
+                        )
+                      : platformItems.map((item) => (
+                          <Link key={item.name} href="/plateformes" className="cr-menu-item" onClick={() => setIsOpen(false)}>
+                            <NetworkLogo name={item.logo} size={18} /> {item.name}
+                          </Link>
+                        ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <Link className="cr-nav-link" style={{ fontSize: 16 }} href="/pricing" onClick={() => setIsOpen(false)}>Tarifs</Link>
+            <Link className="cr-nav-link" style={{ fontSize: 16 }} href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
+            <div style={{ display: "grid", gap: 8, marginTop: 16 }}>
+              <a className="cr-btn cr-btn--secondary cr-btn--block" href={`${APP_URL}/sign-in`}>Se connecter</a>
+              <a className="cr-btn cr-btn--primary cr-btn--block" href={`${APP_URL}/sign-up`}>Essai gratuit</a>
+            </div>
+          </nav>
+        </div>
+      )}
     </>
   );
 }
