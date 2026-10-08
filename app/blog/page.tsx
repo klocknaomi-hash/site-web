@@ -40,35 +40,35 @@ export default function BlogPage() {
           </p>
           
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 — Connectez votre réseau social</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 — Connectez votre réseau social</h3>
             <p className="leading-relaxed">Avant de pouvoir publier, Creatabl doit avoir accès à vos comptes. Rendez-vous dans <strong>Paramètres &rarr; Comptes connectés</strong>. Vous verrez la liste de tous les réseaux disponibles : LinkedIn, Instagram, Facebook et X (Twitter).</p>
             <p className="leading-relaxed">Cliquez sur <strong>Connecter</strong> à côté du réseau de votre choix. Une fenêtre d&apos;autorisation s&apos;ouvre — elle vient directement de la plateforme concernée (LinkedIn, Meta, etc.). Acceptez les autorisations demandées et votre compte apparaît confirmé en quelques secondes.</p>
             <p className="leading-relaxed">Important : pour Instagram, la connexion passe par votre compte Facebook Business. Assurez-vous que votre compte Instagram est bien lié à une Page Facebook avant de commencer. Si ce n&apos;est pas encore le cas, faites-le directement dans les paramètres de votre compte Instagram Pro.</p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 — Ouvrez l&apos;éditeur de post</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 — Ouvrez l&apos;éditeur de post</h3>
             <p className="leading-relaxed">L&apos;éditeur de post est le cœur de Creatabl. Pour y accéder, cliquez sur le bouton <strong>Créer un post</strong> dans la barre latérale gauche — le bouton violet est difficile à rater.</p>
             <p className="leading-relaxed">L&apos;éditeur s&apos;ouvre avec trois zones principales : la zone de texte où vous rédigez votre post, le panneau de sélection des réseaux, et les options de publication (Publier maintenant / Programmer). Prenez 30 secondes pour explorer l&apos;interface avant de commencer.</p>
             <p className="leading-relaxed">Regardez les boutons d&apos;action IA en bas de la zone de texte — <em>Améliorer, Reformuler, Raccourcir, Allonger, Changer le ton</em>. Ce sont eux qui vont transformer votre façon de créer du contenu quotidiennement.</p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 3 — Rédigez ou laissez faire l&apos;IA</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 3 — Rédigez ou laissez faire l&apos;IA</h3>
             <p className="leading-relaxed">Vous avez deux options pour créer votre texte. La première : rédigez vous-même. Tapez votre post directement dans la zone de texte. Pas d&apos;inspiration ? Commencez par une phrase ou une idée, même imparfaite — vous affinerez ensuite.</p>
             <p className="leading-relaxed">La deuxième option — et souvent la plus rapide : laissez <strong>Jimmy</strong> générer le post à votre place. Tapez quelques mots dans le champ d&apos;idée (par exemple : <em>« Post sur les bénéfices du télétravail pour les freelances »</em>) et cliquez sur <strong>Générer</strong>. En moins de 10 secondes, Jimmy produit un post complet adapté à votre secteur et à votre ton.</p>
             <p className="leading-relaxed">Une fois le texte généré, vous pouvez l&apos;utiliser tel quel ou l&apos;affiner. Cliquez sur <strong>Améliorer</strong> pour le rendre plus engageant, sur <strong>Raccourcir</strong> si c&apos;est trop long, ou sur <strong>Changer le ton</strong> si le style ne vous convient pas. Ces ajustements prennent 2 à 3 secondes chacun.</p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 4 — Choisissez vos réseaux de destination</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 4 — Choisissez vos réseaux de destination</h3>
             <p className="leading-relaxed">Dans le panneau de sélection des réseaux, cochez les plateformes sur lesquelles vous souhaitez publier ce post. Vous pouvez choisir un seul réseau ou tous en même temps selon votre stratégie.</p>
             <p className="leading-relaxed">Creatabl adapte automatiquement votre contenu au format de chaque plateforme. Un post trop long pour X sera automatiquement raccourci. Un post optimisé pour LinkedIn conservera ses espaces blancs et sa mise en forme aérée. Vous n&apos;avez pas à gérer les différences de format manuellement — la plateforme s&apos;en charge.</p>
             <p className="leading-relaxed">Les hashtags sont préservés pour Instagram et nettoyés sur LinkedIn où ils sont moins pertinents. Les émojis s&apos;affichent correctement sur tous les réseaux. Si vous attachez une image, elle sera publiée dans le bon ratio selon la plateforme cible.</p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 5 — Publiez maintenant ou programmez</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 5 — Publiez maintenant ou programmez</h3>
             <p className="leading-relaxed">Vous avez deux choix pour la diffusion. <strong>Publier maintenant</strong> envoie votre contenu immédiatement sur tous les réseaux sélectionnés. C&apos;est l&apos;option à choisir si votre contenu est lié à l&apos;actualité ou si vous voulez vous lancer sans attendre.</p>
             <p className="leading-relaxed"><strong>Programmer</strong> vous permet de choisir une date et une heure précises. Le calendrier intégré vous montre vos publications déjà planifiées pour éviter les doublons et bien répartir votre contenu dans le temps. Choisissez un créneau, cliquez sur Programmer — Creatabl publiera automatiquement à l&apos;heure choisie, même si vous êtes hors ligne ou en vacances.</p>
             <p className="leading-relaxed">En règle générale, LinkedIn performe bien le mardi et mercredi entre 9h et 11h. Instagram fonctionne mieux en soirée (18h–20h) et le week-end. Testez, observez vos analytics après quelques semaines, et affinez votre calendrier en conséquence. Creatabl vous donne ces données directement dans le tableau de bord.</p>
@@ -76,7 +76,7 @@ export default function BlogPage() {
           </div>
 
           <div className="p-6 bg-purple-50 border border-purple-100 rounded-2xl mt-8">
-            <h4 className="text-xl font-bold text-[#111827] mb-2">Prêt à créer du contenu plus vite ?</h4>
+            <h4 className="text-xl font-bold text-[#14121F] mb-2">Prêt à créer du contenu plus vite ?</h4>
             <p className="text-slate-600 mb-4">Essayez Creatabl gratuitement pendant 14 jours. Annulable à tout moment.</p>
             <a 
               href="https://app.creatabl-ia.com/sign-up" 
@@ -102,15 +102,15 @@ export default function BlogPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Pourquoi reformuler avec l&apos;IA ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Pourquoi reformuler avec l&apos;IA ?</h3>
             <p>Parfois, un bon texte manque juste d&apos;accroche ou de structure. L&apos;IA ajuste le rythme, ajoute de la clarté et optimise le vocabulaire pour encourager les interactions (commentaires, partages).</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Comment faire en pratique ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Comment faire en pratique ?</h3>
             <ol className="list-decimal pl-5 space-y-2">
               <li>Collez votre brouillon dans l&apos;éditeur.</li>
-              <li>Surlignez la partie que vous souhaitez modifier et cliquez sur <strong className="text-[#111827]">Reformuler</strong>.</li>
+              <li>Surlignez la partie que vous souhaitez modifier et cliquez sur <strong className="text-[#14121F]">Reformuler</strong>.</li>
               <li>Choisissez une variante de ton : <em className="text-primary font-semibold">Humoristique, Professionnel, Connaisseur ou Minimaliste</em>.</li>
               <li>Cliquez sur &ldquo;Régénérer&rdquo; jusqu&apos;à obtenir la formulation parfaite.</li>
             </ol>
@@ -137,17 +137,17 @@ export default function BlogPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">La planification intelligente pas à pas</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">La planification intelligente pas à pas</h3>
             <p>Après avoir rédigé votre message, repérez la section de planification au bas de l&apos;éditeur de post :</p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-[#111827]">1. Activer la planification automatique</h4>
+            <h4 className="text-lg font-bold text-[#14121F]">1. Activer la planification automatique</h4>
             <p>Cliquez sur l&apos;icône calendrier. L&apos;IA analysera les statistiques de votre compte pour mettre en avant les créneaux d&apos;engagement maximaux.</p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-[#111827]">2. Ajustement par canal</h4>
+            <h4 className="text-lg font-bold text-[#14121F]">2. Ajustement par canal</h4>
             <p>Si vous postez sur Instagram et LinkedIn, vous pouvez configurer une heure différente pour chacun afin de cibler les audiences B2B de LinkedIn le matin, et B2C d&apos;Instagram en soirée.</p>
           </div>
 
@@ -172,12 +172,12 @@ export default function BlogPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 : Activer l&apos;intégration</h3>
-            <p>Rendez-vous dans vos Paramètres &gt; Intégrations. Recherchez Canva et cliquez sur <strong className="text-[#111827]">&ldquo;Connecter mon compte&rdquo;</strong>. Connectez-vous avec vos identifiants Canva ordinaires et accordez les permissions d&apos;importation.</p>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 : Activer l&apos;intégration</h3>
+            <p>Rendez-vous dans vos Paramètres &gt; Intégrations. Recherchez Canva et cliquez sur <strong className="text-[#14121F]">&ldquo;Connecter mon compte&rdquo;</strong>. Connectez-vous avec vos identifiants Canva ordinaires et accordez les permissions d&apos;importation.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 : Importer un design depuis l&apos;éditeur</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 : Importer un design depuis l&apos;éditeur</h3>
             <p>Lorsque vous créez un post dans Creatabl, cliquez sur l&apos;icône Canva dans la section média. Une fenêtre s&apos;ouvrira, affichant vos dossiers et projets récents. Sélectionnez le visuel de votre choix et validez. Il sera converti et optimisé automatiquement au bon format.</p>
           </div>
 
@@ -202,7 +202,7 @@ export default function BlogPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">La règle des 3 tiers</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">La règle des 3 tiers</h3>
             <p>Pour chaque publication, notre IA utilise la méthode des trois tiers pour équilibrer la portée et la concurrence :</p>
             <ul className="space-y-2 list-disc pl-5">
               <li><strong className="text-slate-800">Hashtags à fort volume (100k+ publications) :</strong> Pour capter du trafic immédiat (ex: #MarketingDigital).</li>
@@ -212,7 +212,7 @@ export default function BlogPage() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Combien de hashtags utiliser ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Combien de hashtags utiliser ?</h3>
             <p>Instagram autorise jusqu&apos;à 30 hashtags. Les études récentes montrent qu&apos;un bloc de 5 à 11 hashtags bien ciblés génère autant, sinon plus, d&apos;engagement qu&apos;une liste saturée. Notre générateur de hashtags IA sélectionne automatiquement les 8 à 10 tags les plus performants pour votre niche.</p>
           </div>
         </div>
@@ -232,17 +232,17 @@ export default function BlogPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 : Définir vos piliers de contenu</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 : Définir vos piliers de contenu</h3>
             <p>Divisez votre communication en 3 ou 4 grands thèmes (ex: éducation/conseils, coulisses de l&apos;entreprise, promotion produit, témoignages clients). Cela assure un flux varié et évite l&apos;effet de lassitude.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 : Planifier en blocs (Time-blocking)</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 : Planifier en blocs (Time-blocking)</h3>
             <p>Consacrez 2 à 3 heures consécutives par mois pour rédiger tous vos posts. Utilisez le calendrier Creatabl pour glisser-déposer vos brouillons. Vous aurez ainsi une vision globale de la répartition thématique.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 3 : Analyser et ajuster</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 3 : Analyser et ajuster</h3>
             <p>À la fin de chaque mois, consultez vos Analytics unifiées sur Creatabl pour identifier le post le plus performant. Dupliquez sa structure ou son format pour le mois suivant.</p>
           </div>
         </div>
@@ -255,14 +255,14 @@ export default function BlogPage() {
     : articles.filter(a => a.category === activeTab);
 
   return (
-    <div className="bg-[#FFFFFF] text-[#111827] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FFFFFF] text-[#14121F] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold uppercase tracking-wider">
             Blog & Ressources
           </div>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
             Guides & Ressources
           </h1>
           <p className="font-inter text-slate-500 text-base sm:text-lg">
@@ -279,7 +279,7 @@ export default function BlogPage() {
               className={`font-inter font-medium text-sm px-5 py-2.5 rounded-full border transition-all duration-200 cursor-pointer ${
                 activeTab === tab
                   ? "bg-primary text-white border-primary shadow-lg shadow-purple-500/10"
-                  : "bg-white text-slate-500 border-slate-200 hover:text-[#111827] hover:border-slate-300"
+                  : "bg-white text-slate-500 border-slate-200 hover:text-[#14121F] hover:border-slate-300"
               }`}
             >
               {tab}
@@ -292,7 +292,7 @@ export default function BlogPage() {
           {filteredArticles.map((article) => (
             <div
               key={article.id}
-              className="bg-white rounded-[24px] border border-[#F3F4F6] shadow-[0_2px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-[24px] border border-[#E8E6F0] shadow-[0_2px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Header Visual preview */}
               <div className="h-[180px] w-full relative overflow-hidden bg-slate-100">
@@ -311,7 +311,7 @@ export default function BlogPage() {
                   <span className="text-[13px] font-extrabold uppercase tracking-widest text-[#7225E3]">
                     {article.category}
                   </span>
-                  <h3 className="font-outfit text-lg font-bold text-[#111827] leading-snug group-hover:text-primary transition-colors">
+                  <h3 className="font-outfit text-lg font-bold text-[#14121F] leading-snug group-hover:text-primary transition-colors">
                     {article.title}
                   </h3>
                   <p className="font-inter text-sm text-slate-500 leading-relaxed line-clamp-3">
@@ -344,7 +344,7 @@ export default function BlogPage() {
           <div className="bg-white border border-slate-200 rounded-[28px] max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col relative">
             
             {/* Modal Header */}
-            <div className="p-8 bg-gradient-to-r from-[#7225E3] to-[#8B5CF6] text-white flex items-center justify-between relative">
+            <div className="p-8 bg-gradient-to-r from-[#7225E3] to-[#8A38F5] text-white flex items-center justify-between relative">
               <div className="space-y-1.5 pr-8">
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-white/25 px-2.5 py-0.5 rounded-full">
                   {selectedArticle.category}

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer 
       className="w-full bg-[#FFFFFF]"
       style={{
-        borderTop: "1px solid #F3F4F6",
+        borderTop: "1px solid #E8E6F0",
       }}
     >
       <div 
@@ -27,14 +27,14 @@ export default function Footer() {
                 alt="Creatabl Logo" 
                 className="h-[28px] w-auto object-contain"
               />
-              <div className="flex items-baseline font-outfit font-medium text-[24px] text-[#111827]">
+              <div className="flex items-baseline font-outfit font-medium text-[24px] text-[#14121F]">
                 <span>Creatabl.</span>
-                <span className="font-playfair italic font-medium text-[#111827]">ia</span>
+                <span className="font-playfair italic font-medium text-[#7225E3]">ia</span>
               </div>
             </Link>
             
             <p 
-              className="font-inter text-[#6B7280] leading-relaxed"
+              className="font-inter text-[#6B6780] leading-relaxed"
               style={{
                 fontSize: "14px",
                 maxWidth: "280px",
@@ -48,7 +48,7 @@ export default function Footer() {
               {/* Instagram */}
               <a 
                 href="#" 
-                className="text-[#9CA3AF] hover:text-[#7225E3] transition-colors duration-200" 
+                className="text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200" 
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,7 +61,7 @@ export default function Footer() {
               {/* LinkedIn */}
               <a 
                 href="#" 
-                className="text-[#9CA3AF] hover:text-[#7225E3] transition-colors duration-200" 
+                className="text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200" 
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +74,7 @@ export default function Footer() {
               {/* TikTok */}
               <a 
                 href="#" 
-                className="text-[#9CA3AF] hover:text-[#7225E3] transition-colors duration-200" 
+                className="text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200" 
                 aria-label="TikTok"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -87,7 +87,7 @@ export default function Footer() {
           {/* Column 2 — Ressources */}
           <div className="flex flex-col">
             <h3 
-              className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
+              className="font-outfit font-medium uppercase text-[#14121F] tracking-[0.12em]"
               style={{
                 fontSize: "13px",
                 marginBottom: "18px",
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/blog" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Blog
@@ -108,7 +108,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/guides" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Guides
@@ -117,7 +117,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/roadmap" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Roadmap
@@ -126,7 +126,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/contact" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Contact
@@ -138,7 +138,7 @@ export default function Footer() {
           {/* Column 3 — Support */}
           <div className="flex flex-col">
             <h3 
-              className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
+              className="font-outfit font-medium uppercase text-[#14121F] tracking-[0.12em]"
               style={{
                 fontSize: "13px",
                 marginBottom: "18px",
@@ -150,7 +150,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/mentions-legales" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Mentions légales
@@ -159,7 +159,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/cgu" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   CGU
@@ -168,7 +168,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/confidentialite" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Confidentialité
@@ -177,7 +177,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/contact" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Support
@@ -189,7 +189,7 @@ export default function Footer() {
           {/* Column 4 — Produit */}
           <div className="flex flex-col">
             <h3 
-              className="font-outfit font-medium uppercase text-[#111827] tracking-[0.12em]"
+              className="font-outfit font-medium uppercase text-[#14121F] tracking-[0.12em]"
               style={{
                 fontSize: "13px",
                 marginBottom: "18px",
@@ -201,7 +201,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/#fonctionnalites" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Fonctionnalités
@@ -210,7 +210,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/tarifs" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Tarifs
@@ -219,7 +219,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/#pour-qui" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Pour qui
@@ -228,7 +228,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="https://app.creatabl-ia.com/sign-up" 
-                  className="font-inter text-[#6B7280] hover:text-[#7225E3] transition-colors duration-200"
+                  className="font-inter text-[#6B6780] hover:text-[#7225E3] transition-colors duration-200"
                   style={{ fontSize: "14px" }}
                 >
                   Essai gratuit
@@ -242,9 +242,9 @@ export default function Footer() {
 
       {/* Bottom Strip */}
       <div 
-        className="w-full bg-[#FAFAFA]"
+        className="w-full bg-[#F8F7FC]"
         style={{
-          borderTop: "1px solid #F3F4F6",
+          borderTop: "1px solid #E8E6F0",
         }}
       >
         <div 
@@ -255,7 +255,7 @@ export default function Footer() {
         >
           {/* Left Text */}
           <p 
-            className="font-inter text-[#9CA3AF]"
+            className="font-inter text-[#6B6780]"
             style={{ fontSize: "13px" }}
           >
             © 2026 Creatabl · Tous droits réservés
@@ -263,18 +263,18 @@ export default function Footer() {
 
           {/* Right Links */}
           <div 
-            className="flex items-center flex-wrap gap-2 font-inter text-[#9CA3AF]"
+            className="flex items-center flex-wrap gap-2 font-inter text-[#6B6780]"
             style={{ fontSize: "13px" }}
           >
-            <Link href="/mentions-legales" className="hover:text-[#6B7280] transition-colors duration-200">
+            <Link href="/mentions-legales" className="hover:text-[#6B6780] transition-colors duration-200">
               Mentions légales
             </Link>
             <span>·</span>
-            <Link href="/cgu" className="hover:text-[#6B7280] transition-colors duration-200">
+            <Link href="/cgu" className="hover:text-[#6B6780] transition-colors duration-200">
               CGU
             </Link>
             <span>·</span>
-            <Link href="/confidentialite" className="hover:text-[#6B7280] transition-colors duration-200">
+            <Link href="/confidentialite" className="hover:text-[#6B6780] transition-colors duration-200">
               Confidentialité
             </Link>
           </div>

@@ -134,12 +134,12 @@ export default function FeaturesSection() {
     switch (idx) {
       case 0:
         return (
-          <div className="bg-[#F5F3FF] w-full h-full rounded-2xl p-4 sm:p-6 flex flex-col justify-center items-center overflow-hidden border border-purple-100 min-h-[340px]">
-            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex flex-col space-y-2.5">
+          <div className="bg-[#F3EEFD] w-full h-full rounded-2xl p-4 sm:p-6 flex flex-col justify-center items-center overflow-hidden border border-purple-100 min-h-[340px]">
+            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#E8E6F0] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex flex-col space-y-2.5">
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
                 Vos réseaux connectés
               </div>
-              <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
+              <div className="flex items-center justify-between bg-white border border-[#E8E6F0] rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-pink-50 flex items-center justify-center">
                     {INSTAGRAM_SVG}
@@ -148,7 +148,7 @@ export default function FeaturesSection() {
                 </div>
                 <span className="text-[9px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">Connecté</span>
               </div>
-              <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
+              <div className="flex items-center justify-between bg-white border border-[#E8E6F0] rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center">
                     {LINKEDIN_SVG}
@@ -157,7 +157,7 @@ export default function FeaturesSection() {
                 </div>
                 <span className="text-[9px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">Connecté</span>
               </div>
-              <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
+              <div className="flex items-center justify-between bg-white border border-[#E8E6F0] rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center">
                     {TIKTOK_SVG}
@@ -166,7 +166,7 @@ export default function FeaturesSection() {
                 </div>
                 <span className="text-[9px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">Connecté</span>
               </div>
-              <div className="flex items-center justify-between bg-white border border-[#F3F4F6] rounded-lg px-3 py-2">
+              <div className="flex items-center justify-between bg-white border border-[#E8E6F0] rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center">
                     {FACEBOOK_SVG}
@@ -186,30 +186,30 @@ export default function FeaturesSection() {
       case 1:
         return (
           <div className="bg-[#FFF8F8] w-full h-full rounded-2xl p-4 sm:p-6 flex flex-col justify-center items-center overflow-hidden border border-rose-100 min-h-[340px]">
-            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex flex-col">
+            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#E8E6F0] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex flex-col">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Agent IA · Rédaction</span>
                 <span className="w-2 h-2 rounded-full bg-[#7225E3] animate-pulse"></span>
               </div>
-              <div className="bg-slate-50 border border-[#E5E7EB] rounded-lg p-2.5 text-xs text-slate-400 font-medium mb-3">
+              <div className="bg-slate-50 border border-[#E8E6F0] rounded-lg p-2.5 text-xs text-slate-400 font-medium mb-3">
                 Décrivez votre post en quelques mots...
               </div>
               <div className="space-y-2">
-                <div className="bg-[#F5F3FF] border-l-[3px] border-[#7225E3] p-2.5 rounded-r-md text-xs space-y-1">
+                <div className="bg-[#F3EEFD] border-l-[3px] border-[#7225E3] p-2.5 rounded-r-md text-xs space-y-1">
                   <div className="font-bold text-[#7225E3]">🚀 LinkedIn · Professionnel</div>
                   <p className="text-slate-600 text-[11px] leading-tight">Optimisez vos publications avec notre IA pour une portée maximale.</p>
                 </div>
-                <div className="bg-white border border-[#F3F4F6] p-2.5 rounded-md text-xs space-y-1">
+                <div className="bg-white border border-[#E8E6F0] p-2.5 rounded-md text-xs space-y-1">
                   <div className="font-bold text-pink-600">📸 Instagram · Engageant</div>
                   <p className="text-slate-600 text-[11px] leading-tight">Une légende captivante avec des hashtags pertinents.</p>
                 </div>
-                <div className="bg-white border border-[#F3F4F6] p-2.5 rounded-md text-xs space-y-1">
+                <div className="bg-white border border-[#E8E6F0] p-2.5 rounded-md text-xs space-y-1">
                   <div className="font-bold text-slate-800">🎵 TikTok · Viral</div>
                   <p className="text-slate-600 text-[11px] leading-tight">Accroche percutante adaptée aux tendances actuelles.</p>
                 </div>
               </div>
               <div className="flex justify-end mt-3">
-                <button className="px-3.5 py-1.5 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-xs font-bold rounded-lg flex items-center gap-1">
+                <button className="px-3.5 py-1.5 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-xs font-bold rounded-full flex items-center gap-1">
                   ✦ Générer avec l&apos;IA
                 </button>
               </div>
@@ -219,7 +219,7 @@ export default function FeaturesSection() {
       case 2:
         return (
           <div className="bg-[#F0FDF4] w-full h-full rounded-2xl p-4 sm:p-6 flex flex-col justify-center items-center overflow-hidden border border-emerald-100 min-h-[340px]">
-            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-3.5 flex flex-col">
+            <div className="w-full max-w-[310px] bg-white rounded-xl border border-[#E8E6F0] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-3.5 flex flex-col">
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                 Calendrier éditorial · Mai 2025
               </div>
@@ -241,7 +241,7 @@ export default function FeaturesSection() {
                       key={cIdx}
                       className={`h-[30px] rounded-lg flex flex-col items-center justify-between py-0.5 relative text-[10px] font-semibold ${
                         isToday 
-                          ? "border-2 border-[#7225E3] bg-[#F5F3FF] text-[#7225E3]" 
+                          ? "border-2 border-[#7225E3] bg-[#F3EEFD] text-[#7225E3]" 
                           : isCurrentMonth ? "text-slate-700" : "text-slate-300"
                       }`}
                     >
@@ -276,7 +276,7 @@ export default function FeaturesSection() {
       default:
         return (
           <div className="bg-[#FFFBF0] w-full h-full rounded-2xl p-4 sm:p-6 flex flex-col justify-center items-center overflow-hidden border border-amber-100 min-h-[340px]">
-            <div className="w-full max-w-[340px] bg-white rounded-xl border border-[#F3F4F6] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex gap-3">
+            <div className="w-full max-w-[340px] bg-white rounded-xl border border-[#E8E6F0] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-4 flex gap-3">
               <div className="flex-1 flex flex-col justify-between">
                 <div>
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
@@ -309,12 +309,12 @@ export default function FeaturesSection() {
                     </div>
                   </div>
                 </div>
-                <button className="w-full py-1.5 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-[10px] font-bold rounded-lg text-center">
+                <button className="w-full py-1.5 bg-[#7225E3] hover:bg-[#8A38F5] text-white text-[10px] font-bold rounded-full text-center">
                   ✦ Publier partout
                 </button>
               </div>
 
-              <div className="w-[1px] bg-[#E5E7EB] self-stretch" />
+              <div className="w-[1px] bg-[#E8E6F0] self-stretch" />
 
               <div className="flex-1 flex flex-col justify-between">
                 <div>
@@ -371,12 +371,12 @@ export default function FeaturesSection() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h2 className="font-outfit text-[32px] sm:text-[40px] md:text-[48px] font-extrabold tracking-[-0.03em] text-[#111827] leading-[1.1] mb-3">
+              <h2 className="font-outfit text-[32px] sm:text-[40px] md:text-[48px] font-extrabold tracking-[-0.03em] text-[#14121F] leading-[1.1] mb-3">
                 Tout ce qu&apos;il vous faut, au même endroit
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="font-inter font-medium text-[15px] sm:text-[18px] text-[#6B7280]">
+              <p className="font-inter font-medium text-[15px] sm:text-[18px] text-[#6B6780]">
                 Créez, planifiez et publiez sans effort avec Creatabl.ia
               </p>
             </ScrollReveal>
@@ -386,14 +386,14 @@ export default function FeaturesSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
             {quickFeatures.map((feature, idx) => (
               <ScrollReveal key={idx} delay={100 * (idx + 1)}>
-                <div className="bg-[#FFFFFF] border border-[#F3F4F6] rounded-[20px] p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(139,92,246,0.3)] hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)] transition-all duration-300 flex flex-col h-full group">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F5F3FF] text-[#7225E3] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-[#FFFFFF] border border-[#E8E6F0] rounded-[20px] p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:border-[rgba(114,37,227,0.3)] hover:shadow-[0_8px_32px_rgba(114,37,227,0.1)] transition-all duration-300 flex flex-col h-full group">
+                  <div className="w-12 h-12 rounded-2xl bg-[#F3EEFD] text-[#7225E3] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="font-outfit text-xl font-bold text-[#111827] mb-2">
+                  <h3 className="font-outfit text-xl font-bold text-[#14121F] mb-2">
                     {feature.title}
                   </h3>
-                  <p className="font-inter text-sm text-[#6B7280] leading-relaxed">
+                  <p className="font-inter text-sm text-[#6B6780] leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -414,12 +414,12 @@ export default function FeaturesSection() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h2 className="font-outfit text-[30px] sm:text-[38px] md:text-[44px] font-extrabold tracking-[-0.03em] text-[#111827] leading-[1.15] mb-4">
+              <h2 className="font-outfit text-[30px] sm:text-[38px] md:text-[44px] font-extrabold tracking-[-0.03em] text-[#14121F] leading-[1.15] mb-4">
                 Découvrez comment Creatabl transforme votre gestion de contenu
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="font-inter font-medium text-[15px] sm:text-[18px] text-[#6B7280]">
+              <p className="font-inter font-medium text-[15px] sm:text-[18px] text-[#6B6780]">
                 Une expérience fluide et automatisée à chaque étape de votre création.
               </p>
             </ScrollReveal>
@@ -451,12 +451,12 @@ export default function FeaturesSection() {
                       Étape {idx + 1} · {step.eyebrow}
                     </span>
                     <h3 className={`font-outfit text-2xl lg:text-3xl font-bold mb-3 transition-colors ${
-                      isActive ? "text-[#111827]" : "text-slate-500"
+                      isActive ? "text-[#14121F]" : "text-slate-500"
                     }`}>
                       {step.title}
                     </h3>
                     <p className={`font-inter text-base leading-relaxed transition-colors ${
-                      isActive ? "text-[#4B5563]" : "text-slate-400"
+                      isActive ? "text-[#4B4B63]" : "text-slate-400"
                     }`}>
                       {step.description}
                     </p>
@@ -467,7 +467,7 @@ export default function FeaturesSection() {
 
             {/* Right Column: Sticky Mockup */}
             <div className="md:col-span-7 sticky top-28 py-12">
-              <div className="relative w-full h-[520px] bg-white rounded-[24px] border border-[#F3F4F6] shadow-[0_8px_32px_rgba(0,0,0,0.06)] overflow-hidden flex items-center justify-center p-4">
+              <div className="relative w-full h-[520px] bg-white rounded-[24px] border border-[#E8E6F0] shadow-[0_8px_32px_rgba(0,0,0,0.06)] overflow-hidden flex items-center justify-center p-4">
                 {steps.map((_, idx) => {
                   const isActive = activeStep === idx;
                   return (
@@ -491,22 +491,22 @@ export default function FeaturesSection() {
           {/* Mobile Layout (< md) */}
           <div className="md:hidden space-y-8">
             {steps.map((step, idx) => (
-              <div key={idx} className="bg-white border border-[#F3F4F6] rounded-[20px] p-6 shadow-sm space-y-4">
+              <div key={idx} className="bg-white border border-[#E8E6F0] rounded-[20px] p-6 shadow-sm space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-[#F5F3FF] text-[#7225E3] font-bold flex items-center justify-center text-sm">
+                  <span className="w-8 h-8 rounded-full bg-[#F3EEFD] text-[#7225E3] font-bold flex items-center justify-center text-sm">
                     {idx + 1}
                   </span>
                   <span className="font-outfit text-xs font-semibold text-[#7225E3] uppercase tracking-wider">
                     {step.eyebrow}
                   </span>
                 </div>
-                <h3 className="font-outfit text-2xl font-bold text-[#111827]">
+                <h3 className="font-outfit text-2xl font-bold text-[#14121F]">
                   {step.title}
                 </h3>
                 <p className="font-inter text-slate-600 text-sm leading-relaxed">
                   {step.description}
                 </p>
-                <div className="mt-4 rounded-xl overflow-hidden border border-[#F3F4F6]">
+                <div className="mt-4 rounded-xl overflow-hidden border border-[#E8E6F0]">
                   {renderMockup(idx)}
                 </div>
               </div>

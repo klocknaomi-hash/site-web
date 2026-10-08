@@ -34,7 +34,7 @@ export default function RoadmapPage() {
     {
       title: "Planifié",
       icon: <Lightbulb className="w-5 h-5 text-indigo-500" />,
-      colorClass: "border-indigo-100 bg-[#FAFAFC]",
+      colorClass: "border-indigo-100 bg-[#F8F7FC]",
       items: [
         {
           id: 1,
@@ -91,14 +91,14 @@ export default function RoadmapPage() {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] text-[#111827] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FFFFFF] text-[#14121F] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
             ÉVOLUTION
           </span>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
             Notre Feuille de Route
           </h1>
           <p className="font-inter text-slate-550 text-base sm:text-lg">
@@ -137,7 +137,7 @@ export default function RoadmapPage() {
                     >
                       {/* Left Block (Text) */}
                       <div className="flex-grow space-y-1">
-                        <h4 className="font-outfit text-sm font-bold text-[#111827] leading-snug">
+                        <h4 className="font-outfit text-sm font-bold text-[#14121F] leading-snug">
                           {item.title}
                         </h4>
                         <p className="font-inter text-xs text-slate-500 leading-relaxed">

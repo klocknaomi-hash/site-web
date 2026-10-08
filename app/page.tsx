@@ -85,13 +85,14 @@ export default function Home() {
           <div className="relative z-10 w-full max-w-[800px] flex flex-col items-center space-y-6">
             <ScrollReveal delay={150}>
               <h1 
-                className="font-outfit text-[#111827] text-center" 
+                className="font-outfit text-[#14121F] text-center" 
                 style={{ 
-                  fontSize: "min(55px, 9vw)", 
-                  lineHeight: "1.1", 
+                  fontSize: "min(56px, 9vw)", 
+                  lineHeight: "1.14", 
+                  letterSpacing: "-0.02em",
                   maxWidth: "800px", 
                   margin: "0 auto",
-                  fontWeight: 400,
+                  fontWeight: 700,
                   position: "relative",
                   zIndex: 10
                 }}
@@ -100,14 +101,14 @@ export default function Home() {
                 <br />
                 passer vos contenus
                 <br />
-                <span className="font-outfit" style={{ fontSize: "min(64px, 10.5vw)", fontWeight: 400 }}>à la </span>
-                <span className="font-playfair italic text-[#7225E3]" style={{ fontSize: "min(64px, 10.5vw)", fontWeight: 500 }}>vitesse supérieure.</span>
+                à la{" "}
+                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse</span> supérieure.
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
               <p 
-                className="font-inter font-medium text-[#6B7280] text-center leading-relaxed" 
+                className="font-inter font-medium text-[#6B6780] text-center leading-relaxed" 
                 style={{ 
                   fontSize: "18px", 
                   maxWidth: "750px", 
@@ -155,7 +156,7 @@ export default function Home() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
+                      boxShadow: "0 2px 6px rgba(20,18,31,0.08)",
                       zIndex: 10,
                       position: "relative",
                       flexShrink: 0
@@ -191,7 +192,7 @@ export default function Home() {
                         border: "2px solid #ffffff",
                         objectFit: "cover",
                         marginLeft: "-10px",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
+                        boxShadow: "0 2px 6px rgba(20,18,31,0.08)",
                         zIndex: 11 + idx,
                         position: "relative"
                       }}
@@ -233,7 +234,7 @@ export default function Home() {
                       gap: "6px",
                       fontFamily: "Inter Medium, sans-serif",
                       fontSize: "15px",
-                      color: "#6B7280",
+                      color: "#6B6780",
                       lineHeight: "24px",
                       zIndex: 10,
                       position: "relative"
@@ -243,7 +244,7 @@ export default function Home() {
                     <span 
                       style={{
                         fontWeight: 700,
-                        color: "#111827"
+                        color: "#14121F"
                       }}
                     >
                       127
@@ -321,7 +322,7 @@ export default function Home() {
                 <img 
                   src="/dashboard.png" 
                   alt="Creatabl Dashboard Screenshot" 
-                  className="relative z-20 w-full rounded-[12px] border-[1.5px] border-[rgba(139,92,246,0.25)] block"
+                  className="relative z-20 w-full rounded-[12px] border-[1.5px] border-[rgba(114,37,227,0.25)] block"
                   style={{
                     boxShadow: "0 20px 60px rgba(114,37,227,0.15), 0 4px 16px rgba(0,0,0,0.08)"
                   }}
@@ -341,12 +342,12 @@ export default function Home() {
       <FeaturesSection />
 
       {/* 5. STATS ROW */}
-      <section className="w-full bg-[#F5F3FF] border-t border-b border-[#DDD6FE] relative z-10">
+      <section className="w-full bg-[#F3EEFD] border-t border-b border-[#E7DCFC] relative z-10">
         <div className="w-full grid grid-cols-1 md:grid-cols-3">
           
           {/* Colonne 1 */}
           <div 
-            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#DDD6FE] last:border-0"
+            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#E7DCFC] last:border-0"
             style={{ padding: "64px 48px" }}
           >
             <ScrollReveal delay={100} className="flex flex-col items-center text-center">
@@ -357,13 +358,13 @@ export default function Home() {
                 100+
               </span>
               <p 
-                className="font-inter text-[#6B7280] font-medium mb-1"
+                className="font-inter text-[#6B6780] font-medium mb-1"
                 style={{ fontSize: "16px" }}
               >
                 Profils ont déjà rejoint Creatabl
               </p>
               <span 
-                className="font-inter text-[#9CA3AF]"
+                className="font-inter text-[#6B6780]"
                 style={{ fontSize: "13px" }}
               >
                 et ça grandit chaque jour
@@ -373,7 +374,7 @@ export default function Home() {
 
           {/* Colonne 2 */}
           <div 
-            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#DDD6FE] last:border-0"
+            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#E7DCFC] last:border-0"
             style={{ padding: "64px 48px" }}
           >
             <ScrollReveal delay={200} className="flex flex-col items-center text-center">
@@ -384,13 +385,13 @@ export default function Home() {
                 3h
               </span>
               <p 
-                className="font-inter text-[#6B7280] font-medium mb-1"
+                className="font-inter text-[#6B6780] font-medium mb-1"
                 style={{ fontSize: "16px" }}
               >
                 Gagnées par semaine en moyenne
               </p>
               <span 
-                className="font-inter text-[#9CA3AF]"
+                className="font-inter text-[#6B6780]"
                 style={{ fontSize: "13px" }}
               >
                 sur la gestion de contenu
@@ -400,7 +401,7 @@ export default function Home() {
 
           {/* Colonne 3 */}
           <div 
-            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#DDD6FE] last:border-0"
+            className="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-[#E7DCFC] last:border-0"
             style={{ padding: "64px 48px" }}
           >
             <ScrollReveal delay={300} className="flex flex-col items-center text-center">
@@ -411,13 +412,13 @@ export default function Home() {
                 5
               </span>
               <p 
-                className="font-inter text-[#6B7280] font-medium mb-1"
+                className="font-inter text-[#6B6780] font-medium mb-1"
                 style={{ fontSize: "16px" }}
               >
                 Réseaux sociaux supportés
               </p>
               <span 
-                className="font-inter text-[#9CA3AF]"
+                className="font-inter text-[#6B6780]"
                 style={{ fontSize: "13px" }}
               >
                 LinkedIn, Instagram, TikTok, Facebook, X
@@ -457,7 +458,7 @@ export default function Home() {
                 style={{
                   fontSize: "min(48px, 9.5vw)",
                   fontWeight: 800,
-                  color: "#111827",
+                  color: "#14121F",
                 }}
               >
                 Leurs avis valent mieux que tous nos arguments.
@@ -468,7 +469,7 @@ export default function Home() {
                 className="font-inter text-center"
                 style={{
                   fontSize: "18px",
-                  color: "#6B7280",
+                  color: "#6B6780",
                 }}
               >
                 Ils ont rejoint Creatabl. Voici leur expérience.
@@ -507,8 +508,8 @@ export default function Home() {
                   key={index}
                   style={{
                     background: "#FFFFFF",
-                    border: "1px solid #F3F4F6",
-                    borderRadius: "16px",
+                    border: "1px solid #E8E6F0",
+                    borderRadius: "12px",
                     padding: "24px",
                     width: "380px",
                     flexShrink: 0,
@@ -532,7 +533,7 @@ export default function Home() {
                       style={{
                         fontStyle: "italic",
                         fontSize: "15px",
-                        color: "#374151",
+                        color: "#4B4B63",
                         lineHeight: 1.7,
                         marginBottom: "20px",
                       }}
@@ -566,7 +567,7 @@ export default function Home() {
                         style={{
                           fontSize: "14px",
                           fontWeight: 600,
-                          color: "#111827",
+                          color: "#14121F",
                           margin: 0,
                         }}
                       >
@@ -576,7 +577,7 @@ export default function Home() {
                         className="font-inter"
                         style={{
                           fontSize: "13px",
-                          color: "#9CA3AF",
+                          color: "#6B6780",
                           margin: 0,
                         }}
                       >
@@ -598,7 +599,7 @@ export default function Home() {
             <div 
               className="relative text-center py-[90px] px-6 sm:px-12 md:px-[80px]"
               style={{
-                background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)",
+                background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)",
               }}
             >
             {/* Grid pattern layer */}
@@ -688,7 +689,7 @@ export default function Home() {
                     color: "#7225E3",
                     fontWeight: 700,
                     padding: "14px 32px",
-                    borderRadius: "10px",
+                    borderRadius: "999px",
                   }}
                 >
                   Commencez gratuitement !
@@ -700,7 +701,7 @@ export default function Home() {
                     background: "transparent",
                     borderColor: "rgba(255,255,255,0.4)",
                     padding: "14px 32px",
-                    borderRadius: "10px",
+                    borderRadius: "999px",
                   }}
                 >
                   Voir les tarifs →

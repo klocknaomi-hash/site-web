@@ -72,8 +72,8 @@ export default function CollaborationPage() {
                     playsInline
                     style={{
                       width: '100%',
-                      borderRadius: '16px',
-                      border: '1px solid rgba(127,119,221,0.2)',
+                      borderRadius: '12px',
+                      border: '1px solid #E8E6F0',
                     }}
                   />
                 </div>
@@ -102,7 +102,7 @@ export default function CollaborationPage() {
       {/* CTA at Bottom */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F5F3FF] p-8 sm:p-12 md:p-16 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
             <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
             <div className="max-w-2xl mx-auto space-y-6 relative z-10">
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">

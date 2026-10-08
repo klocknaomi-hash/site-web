@@ -79,13 +79,13 @@ export default function FaqSection() {
           {/* Colonne gauche (35-40%) */}
           <div className="lg:col-span-5 flex flex-col items-start lg:sticky lg:top-28">
             <ScrollReveal>
-              <span className="font-outfit uppercase tracking-widest text-[#7C3AED] text-xs font-bold block mb-3">
+              <span className="font-outfit uppercase tracking-widest text-[#7225E3] text-xs font-bold block mb-3">
                 FAQ
               </span>
-              <h2 className="font-outfit text-[#111827] text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.15] mb-4">
-                Questions <span className="font-playfair italic font-normal text-[#7C3AED]">fréquentes</span>
+              <h2 className="font-outfit text-[#14121F] text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.15] mb-4">
+                Questions <span className="font-playfair italic font-normal text-[#7225E3]">fréquentes</span>
               </h2>
-              <p className="font-inter text-[#6B7280] text-base md:text-lg leading-relaxed mb-8">
+              <p className="font-inter text-[#6B6780] text-base md:text-lg leading-relaxed mb-8">
                 Tout ce qu&apos;il faut savoir sur Creatabl, de la prise en main à la facturation.
               </p>
             </ScrollReveal>
@@ -101,8 +101,8 @@ export default function FaqSection() {
                       onClick={() => setActiveCategory(cat)}
                       className={`px-4 py-2 rounded-full text-xs sm:text-sm font-inter font-medium transition-all duration-200 cursor-pointer ${
                         isActive
-                          ? 'bg-[#111827] text-white shadow-sm border border-[#111827]'
-                          : 'bg-transparent text-[#374151] border border-slate-200 hover:border-[#7C3AED] hover:text-[#7C3AED]'
+                          ? 'bg-[#14121F] text-white shadow-sm border border-[#14121F]'
+                          : 'bg-transparent text-[#4B4B63] border border-slate-200 hover:border-[#7225E3] hover:text-[#7225E3]'
                       }`}
                     >
                       {cat}
@@ -116,16 +116,16 @@ export default function FaqSection() {
             <ScrollReveal delay={250} className="w-full">
               <div className="w-full p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-slate-50 via-purple-50/20 to-slate-50 border border-slate-200/80 shadow-sm flex flex-col items-start gap-4">
                 <div>
-                  <h3 className="font-outfit font-bold text-lg text-[#111827] mb-1">
+                  <h3 className="font-outfit font-bold text-lg text-[#14121F] mb-1">
                     Encore des questions ?
                   </h3>
-                  <p className="font-inter text-sm text-[#6B7280]">
+                  <p className="font-inter text-sm text-[#6B6780]">
                     Notre équipe est là pour vous aider à démarrer et répondre à vos besoins.
                   </p>
                 </div>
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-inter font-semibold text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm hover:shadow text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center bg-[#7225E3] hover:bg-[#6D28D9] text-white font-inter font-semibold text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm hover:shadow text-center"
                 >
                   Contacter le support →
                 </Link>
@@ -146,10 +146,10 @@ export default function FaqSection() {
                         className="flex items-center justify-between w-full text-left group cursor-pointer focus:outline-none"
                         aria-expanded={isOpen}
                       >
-                        <span className="font-inter font-semibold text-lg sm:text-[20px] text-[#111827] group-hover:text-[#7C3AED] transition-colors pr-4 leading-snug">
+                        <span className="font-inter font-semibold text-lg sm:text-[20px] text-[#14121F] group-hover:text-[#7225E3] transition-colors pr-4 leading-snug">
                           {faq.question}
                         </span>
-                        <span className="w-8 h-8 rounded-full border border-slate-200 group-hover:border-[#7C3AED] flex items-center justify-center text-slate-700 group-hover:text-[#7C3AED] flex-shrink-0 transition-all font-inter text-lg leading-none">
+                        <span className="w-8 h-8 rounded-full border border-slate-200 group-hover:border-[#7225E3] flex items-center justify-center text-slate-700 group-hover:text-[#7225E3] flex-shrink-0 transition-all font-inter text-lg leading-none">
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
@@ -162,7 +162,7 @@ export default function FaqSection() {
                         }`}
                       >
                         <div className="overflow-hidden">
-                          <p className="font-inter text-[#6B7280] text-sm sm:text-base leading-relaxed">
+                          <p className="font-inter text-[#6B6780] text-sm sm:text-base leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
@@ -172,7 +172,7 @@ export default function FaqSection() {
                 })}
 
                 {filteredFaqs.length === 0 && (
-                  <div className="py-8 text-center font-inter text-[#6B7280]">
+                  <div className="py-8 text-center font-inter text-[#6B6780]">
                     Aucune question dans cette catégorie pour le moment.
                   </div>
                 )}

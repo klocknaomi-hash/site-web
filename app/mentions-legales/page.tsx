@@ -60,14 +60,14 @@ export default function MentionsLegalesPage() {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] text-[#111827] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FFFFFF] text-[#14121F] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="space-y-4">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
             LÉGAL
           </span>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
             Mentions légales
           </h1>
           <p className="font-inter text-sm text-slate-500">
@@ -80,7 +80,7 @@ export default function MentionsLegalesPage() {
           {sections.map((sec, idx) => (
             <div 
               key={idx}
-              className="bg-white border border-[#E5E7EB] hover:border-purple-350 transition-colors duration-300 rounded-2xl p-6 sm:p-8 space-y-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
+              className="bg-white border border-[#E8E6F0] hover:border-purple-350 transition-colors duration-300 rounded-2xl p-6 sm:p-8 space-y-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-primary/10 rounded-xl">

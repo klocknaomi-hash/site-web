@@ -15,10 +15,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    // Determine the initial theme
-    const storedTheme = localStorage.getItem("creatabl-theme") as Theme | null;
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = storedTheme || (systemPrefersDark ? "dark" : "light");
+    // Le design system Creatabl.ia est en thème clair uniquement : le réglage
+    // sombre du système n'est plus suivi au chargement.
+    const initialTheme = "light" as Theme;
 
     setTheme(initialTheme);
 
