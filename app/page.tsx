@@ -13,12 +13,19 @@ import {
   Users,
   WandSparkles,
   X,
+  Play,
+  Lock,
+  Zap,
+  MapPin,
 } from "lucide-react";
 import NetworkLogo, { NetworkName } from "@/components/NetworkLogo";
 import PricingCards from "@/components/ds/PricingCards";
-import Faq from "@/components/ds/Faq";
+import ScrollReveal from "@/components/ScrollReveal";
+import FaqSection from "@/components/sections/faq-section";
+import DemoVideo from "@/components/home/DemoVideo";
 
-// Page d'accueil construite sur la page d'exemple HomePage du design system Creatabl.ia.
+// Page d'accueil : hero d'origine (fond à colonnes et effets violets, FAQ et CTA final
+// d'origine) fusionné avec les nouvelles sections issues du design system Creatabl.ia.
 const APP_URL = "https://app.creatabl-ia.com";
 
 const testimonials = [
@@ -67,35 +74,107 @@ export default function Home() {
   const [main, ...others] = testimonials;
 
   return (
-    <div style={{ paddingTop: 100 }}>
-      {/* Hero */}
-      <section className="hp-hero">
-        <div className="hp-hero-band" aria-hidden="true" />
-        <div className="cr-container" style={{ position: "relative" }}>
-          <div className="hp-hero-grid">
-            <span className="cr-badge cr-badge--violet cr-badge--plain">
-              <Sparkles size={14} aria-hidden="true" /> Adoré par 127 petites entreprises et agences
-            </span>
-            <h1>
-              La plateforme qui fait passer vos contenus à la <span className="cr-accent">vitesse</span> supérieure
-            </h1>
-            <p className="lead">
-              Créez, planifiez et analysez tous vos réseaux sociaux sur une seule interface conçue pour vous simplifier la
-              gestion avec une maîtrise complète.
-            </p>
-            <div className="hp-hero-cta">
-              <a className="cr-btn cr-btn--primary cr-btn--lg" href={`${APP_URL}/sign-up?plan=free`}>Commencer gratuitement</a>
-              <Link className="cr-btn cr-btn--secondary cr-btn--lg" href="/pricing">Voir les tarifs</Link>
-            </div>
-            <div className="hp-hero-note">
-              <span><Check size={16} aria-hidden="true" />Plan Free permanent</span>
-              <span><Check size={16} aria-hidden="true" />14 jours d&apos;essai sur les plans payants</span>
-              <span><Check size={16} aria-hidden="true" />Sans engagement</span>
-            </div>
+    <div className="relative overflow-hidden pt-20">
+
+      {/* HERO — fond d'origine conservé : colonnes, demi-cercle violet, panneaux */}
+      <section
+        className="relative w-full overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-24 border-b border-slate-100"
+        style={{ background: "#FFFFFF", position: "relative", overflow: "hidden", backgroundColor: "#ffffff" }}
+      >
+        <div className="hero-bg-wrapper" aria-hidden="true">
+          {/* Demi-cercle violet illuminé depuis le bas */}
+          <div className="hero-glow-circle" />
+
+          {/* 12 colonnes avec degrés de transparence variables */}
+          <div className="hero-columns">
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
+            <div className="hero-col" />
           </div>
-          <div className="hp-video">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/dashboard.png" alt="Tableau de bord Creatabl.ia : portée, engagement, publications planifiées et canaux connectés" />
+
+          {/* Panneaux blancs semi-transparents */}
+          <div className="hero-panel-left" />
+          <div className="hero-panel-right" />
+        </div>
+
+        <div
+          className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center"
+          style={{ position: "relative", zIndex: 10 }}
+        >
+          <div className="relative z-10 w-full max-w-[800px] flex flex-col items-center space-y-6">
+            <ScrollReveal delay={150}>
+              <h1
+                className="font-outfit text-[#14121F] text-center"
+                style={{
+                  fontSize: "min(56px, 9vw)",
+                  lineHeight: "1.14",
+                  letterSpacing: "-0.02em",
+                  maxWidth: "800px",
+                  margin: "0 auto",
+                  fontWeight: 700,
+                  position: "relative",
+                  zIndex: 10,
+                }}
+              >
+                La plateforme qui fait
+                <br />
+                passer votre contenu
+                <br />
+                à la{" "}
+                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse</span> supérieure.
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal delay={300}>
+              <p
+                className="font-inter font-medium text-[#6B6780] text-center leading-relaxed"
+                style={{ fontSize: "18px", maxWidth: "750px", margin: "0 auto", position: "relative", zIndex: 10 }}
+              >
+                <strong className="font-semibold text-[#14121F]">Créez, planifiez, analysez.</strong> Tous vos réseaux sociaux sur
+                une seule interface, conçue pour vous simplifier la gestion avec une maîtrise complète.
+              </p>
+            </ScrollReveal>
+
+            {/* CTA principaux */}
+            <ScrollReveal delay={450}>
+              <div className="hp-hero-cta" style={{ marginTop: 16 }}>
+                <a className="cr-btn cr-btn--primary cr-btn--lg" href={`${APP_URL}/sign-up`}>
+                  C&apos;est gratuit — 14 jours
+                </a>
+                <a className="cr-btn cr-btn--secondary cr-btn--lg" href="#demo">
+                  <Play size={18} aria-hidden="true" />
+                  Voir la démo
+                </a>
+              </div>
+            </ScrollReveal>
+
+            {/* Réassurance */}
+            <ScrollReveal delay={550}>
+              <ul className="hp-checks" aria-label="Ce qui est inclus">
+                {["Plan gratuit permanent", "Hébergement en France", "Visualisation en un clic"].map((item) => (
+                  <li key={item}>
+                    <span className="hp-check" aria-hidden="true"><Check size={12} strokeWidth={3} /></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </div>
+
+          {/* Vidéo démo dans le cadre violet d'origine */}
+          <div className="w-full" style={{ marginTop: "56px" }}>
+            <ScrollReveal delay={300}>
+              <DemoVideo />
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -264,37 +343,91 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="cr-section cr-section--tint" id="faq">
-        <div className="cr-container hp-faq">
-          <div className="cr-section-head" style={{ alignContent: "start" }}>
-            <span className="cr-overline">FAQ</span>
-            <h2 className="hp-h2">Questions fréquentes</h2>
-            <p>Une autre question ? Écrivez-nous, on vous répond en français.</p>
-            <Link className="cr-btn cr-btn--secondary" href="/contact" style={{ justifySelf: "start" }}>Contacter l&apos;équipe</Link>
-          </div>
-          <Faq />
-        </div>
-      </section>
+      {/* FAQ — design d'origine, questions fusionnées */}
+      <FaqSection />
 
-      {/* CTA final */}
-      <section className="cr-section">
-        <div className="cr-container">
-          <div className="hp-final">
-            <svg aria-hidden="true" viewBox="0 0 200 200" style={{ position: "absolute", right: -60, top: -60, width: 320, opacity: 0.18 }}>
-              <circle cx="100" cy="100" r="98" fill="none" stroke="#FFFFFF" strokeWidth="1.5" />
-              <circle cx="100" cy="100" r="64" fill="none" stroke="#FFFFFF" strokeWidth="1.5" />
-            </svg>
-            <div style={{ position: "relative" }}>
-              <h2>Si vous êtes arrivé jusque-là, c&apos;est que vous êtes <span className="cr-accent">prêt</span></h2>
-              <p>Créez, planifiez et analysez tous vos réseaux sociaux depuis une seule interface.</p>
+      {/* CTA FINAL — design d'origine, contenu mis à jour */}
+      <section className="w-full bg-white relative z-10" style={{ backgroundColor: "#FFFFFF", paddingBottom: "80px", paddingTop: "0px" }}>
+        <div className="mx-4 md:mx-[60px] rounded-[24px] overflow-hidden">
+          <ScrollReveal>
+            <div
+              className="relative text-center py-[90px] px-6 sm:px-12 md:px-[80px]"
+              style={{ background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)" }}
+            >
+              {/* Trame de grille */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+                  `,
+                  backgroundSize: "40px 40px",
+                }}
+              />
+
+              <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+                <span className="font-outfit uppercase text-white/70 block" style={{ fontSize: "11px", letterSpacing: "0.1em" }}>
+                  ✦ Commencez aujourd&apos;hui
+                </span>
+
+                <h2
+                  className="font-outfit text-white font-extrabold mx-auto leading-tight"
+                  style={{ fontSize: "min(48px, 9.5vw)", fontWeight: 800, maxWidth: "640px", marginTop: "16px" }}
+                >
+                  Si vous êtes arrivé jusque-là, c&apos;est que vous êtes prêt.
+                </h2>
+
+                <p className="font-inter text-white/85" style={{ fontSize: "18px", marginTop: "12px" }}>
+                  Votre prochain mois de posts commence ce soir.
+                </p>
+
+                <div className="flex flex-wrap items-center justify-center gap-[16px]" style={{ marginTop: "24px" }}>
+                  {[
+                    { icon: Lock, label: "Paiement sécurisé" },
+                    { icon: Zap, label: "Prise en main en 5 minutes" },
+                    { icon: MapPin, label: "Support en français" },
+                  ].map(({ icon: Icon, label }) => (
+                    <span
+                      key={label}
+                      className="font-inter text-white border inline-flex items-center gap-1.5"
+                      style={{
+                        background: "rgba(255,255,255,0.12)",
+                        borderColor: "rgba(255,255,255,0.2)",
+                        borderRadius: "100px",
+                        padding: "6px 14px",
+                        fontSize: "12px",
+                      }}
+                    >
+                      <Icon size={13} aria-hidden="true" />
+                      {label}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-[14px]" style={{ marginTop: "36px" }}>
+                  <a
+                    href={`${APP_URL}/sign-up`}
+                    className="font-inter text-center hover:scale-[1.02] transition-transform"
+                    style={{ background: "#ffffff", color: "#7225E3", fontWeight: 700, padding: "14px 32px", borderRadius: "999px" }}
+                  >
+                    C&apos;est gratuit — 14 jours
+                  </a>
+                  <a
+                    href={`${APP_URL}/sign-in`}
+                    className="font-inter text-center text-white border hover:bg-white/5 transition-colors"
+                    style={{ background: "transparent", borderColor: "rgba(255,255,255,0.4)", padding: "14px 32px", borderRadius: "999px" }}
+                  >
+                    Connectez-vous à votre compte
+                  </a>
+                </div>
+
+                <p className="font-inter text-white/80" style={{ fontSize: "14px", marginTop: "20px" }}>
+                  14 jours d&apos;essai — Résiliation à tout moment
+                </p>
+              </div>
             </div>
-            <div className="cta" style={{ position: "relative" }}>
-              <a className="cr-btn cr-btn--lg cr-btn--white" href={`${APP_URL}/sign-up?plan=free`}>Commencez gratuitement</a>
-              <Link className="cr-btn cr-btn--outline-white" href="/pricing">Voir les tarifs</Link>
-              <small>14 jours gratuits sur les plans payants · Plan Free à 20 crédits par mois</small>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
