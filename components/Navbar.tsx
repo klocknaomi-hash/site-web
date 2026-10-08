@@ -152,12 +152,12 @@ export default function Navbar() {
   return (
     <>
       {/* Top Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full h-[36px] bg-[#C2B8FF] flex items-center justify-center font-outfit text-[15px] font-normal text-[#3B0764] px-4 text-center">
+      <div className="fixed top-0 left-0 right-0 z-50 w-full h-[36px] bg-[#14121F] flex items-center justify-center font-inter text-[14px] font-medium text-white px-4 text-center">
         <span>Lancement officiel — 14 jours d&apos;essai gratuit</span>
       </div>
 
       <nav
-        className="fixed left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-[#F3F4F6] h-[64px] flex items-center"
+        className="fixed left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-[#E8E6F0] h-[64px] flex items-center"
         style={{ top: "36px" }}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -169,11 +169,11 @@ export default function Navbar() {
                 <img 
                   src={process.env.NEXT_PUBLIC_LOGO_URL || "/logo.png"} 
                   alt="Creatabl Logo" 
-                  className="h-[20px] w-auto object-contain"
+                  className="h-[28px] w-auto object-contain"
                 />
                 <div className="flex items-baseline font-outfit font-medium text-[20px]">
-                  <span className="text-[#111827]">Creatabl.</span>
-                  <span className="font-playfair italic font-medium text-[#111827]">ia</span>
+                  <span className="font-semibold text-[#14121F]">Creatabl.</span>
+                  <span className="font-playfair italic font-medium text-[#7225E3]">ia</span>
                 </div>
               </Link>
             </div>
@@ -189,12 +189,12 @@ export default function Navbar() {
               >
                 <button
                   className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "features" ? "text-[#7225E3]" : "text-[#374151]"
+                    activeDropdown === "features" ? "text-[#7225E3]" : "text-[#4B4B63]"
                   }`}
                 >
                   <span>Fonctionnalités</span>
                   <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "features" ? "rotate-180 text-[#7225E3]" : "text-[#374151]"
+                    activeDropdown === "features" ? "rotate-180 text-[#7225E3]" : "text-[#4B4B63]"
                   }`} />
                 </button>
 
@@ -261,12 +261,12 @@ export default function Navbar() {
               >
                 <button
                   className={`font-inter font-medium text-[15px] hover:text-[#7225E3] transition-colors flex items-center gap-[4px] cursor-pointer ${
-                    activeDropdown === "platforms" ? "text-[#7225E3]" : "text-[#374151]"
+                    activeDropdown === "platforms" ? "text-[#7225E3]" : "text-[#4B4B63]"
                   }`}
                 >
                   <span>Plateformes</span>
                   <ChevronDown className={`w-[14px] h-[14px] transition-transform duration-200 ${
-                    activeDropdown === "platforms" ? "rotate-180 text-[#7225E3]" : "text-[#374151]"
+                    activeDropdown === "platforms" ? "rotate-180 text-[#7225E3]" : "text-[#4B4B63]"
                   }`} />
                 </button>
 
@@ -324,13 +324,13 @@ export default function Navbar() {
 
               <Link
                 href="/pricing"
-                className="font-inter font-medium text-[15px] text-[#374151] hover:text-[#7225E3] transition-colors"
+                className="font-inter font-medium text-[15px] text-[#4B4B63] hover:text-[#7225E3] transition-colors"
               >
                 Tarifs
               </Link>
               <Link
                 href="/blog"
-                className="font-inter font-medium text-[15px] text-[#374151] hover:text-[#7225E3] transition-colors"
+                className="font-inter font-medium text-[15px] text-[#4B4B63] hover:text-[#7225E3] transition-colors"
               >
                 Blog
               </Link>
@@ -340,17 +340,17 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-3">
               <a
                 href="https://app.creatabl-ia.com/sign-up"
-                className="font-inter font-medium text-[14px] text-[#374151] bg-white border border-[#D1D5DB] px-[20px] py-[8px] rounded-[8px] hover:bg-slate-50 transition-colors"
+                className="font-inter font-medium text-[14px] text-[#4B4B63] bg-white border border-[#D4D1E0] px-[20px] py-[8px] rounded-full hover:bg-slate-50 transition-colors"
               >
                 S&apos;inscrire
               </a>
               
               <a
                 href="https://app.creatabl-ia.com/sign-in"
-                className="font-inter font-medium text-[14px] text-white px-[20px] py-[8px] rounded-[8px] flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all duration-250"
+                className="font-inter font-medium text-[14px] text-white px-[20px] py-[8px] rounded-full flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all duration-250"
                 style={{
-                  background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)",
-                  boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
+                  background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)",
+                  boxShadow: "0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04)",
                 }}
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-[16px] h-[16px]">
@@ -380,7 +380,7 @@ export default function Navbar() {
 
         {/* Mobile Drawer */}
         <div
-          className={`md:hidden fixed inset-x-0 bg-white border-b border-[#F3F4F6] overflow-y-auto transition-all duration-300 ease-in-out ${
+          className={`md:hidden fixed inset-x-0 bg-white border-b border-[#E8E6F0] overflow-y-auto transition-all duration-300 ease-in-out ${
             isOpen ? "max-h-[85vh] py-4" : "max-h-0"
           }`}
           style={{ top: "100px" }}
@@ -391,7 +391,7 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobileFeaturesOpen(!mobileFeaturesOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
+                className="w-full font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
               >
                 <span>Fonctionnalités</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileFeaturesOpen ? "rotate-180" : ""}`} />
@@ -407,7 +407,7 @@ export default function Navbar() {
                         setIsOpen(false);
                         setMobileFeaturesOpen(false);
                       }}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] hover:bg-slate-100"
+                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B4B63] hover:bg-slate-100"
                     >
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span className="font-medium text-xs">{item.name}</span>
@@ -432,7 +432,7 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobilePlatformsOpen(!mobilePlatformsOpen)}
-                className="w-full font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
+                className="w-full font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
               >
                 <span>Plateformes</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlatformsOpen ? "rotate-180" : ""}`} />
@@ -443,7 +443,7 @@ export default function Navbar() {
                   {platforms.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#374151] cursor-default"
+                      className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-[#4B4B63] cursor-default"
                     >
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span className="font-medium text-xs">{item.name}</span>
@@ -467,14 +467,14 @@ export default function Navbar() {
             <Link
               href="/pricing"
               onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50"
+              className="font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50"
             >
               Tarifs
             </Link>
             <Link
               href="/blog"
               onClick={() => setIsOpen(false)}
-              className="font-inter font-semibold text-[15px] text-[#374151] py-2.5 px-3 rounded-lg hover:bg-slate-50"
+              className="font-inter font-semibold text-[15px] text-[#4B4B63] py-2.5 px-3 rounded-lg hover:bg-slate-50"
             >
               Blog
             </Link>
@@ -482,16 +482,16 @@ export default function Navbar() {
             <div className="border-t border-slate-100 pt-4 flex flex-col space-y-2">
               <a
                 href="https://app.creatabl-ia.com/sign-up"
-                className="text-center font-inter font-medium text-[14px] text-[#374151] bg-white border border-[#D1D5DB] py-2.5 rounded-[8px]"
+                className="text-center font-inter font-medium text-[14px] text-[#4B4B63] bg-white border border-[#D4D1E0] py-2.5 rounded-full"
               >
                 S&apos;inscrire
               </a>
               <a
                 href="https://app.creatabl-ia.com/sign-in"
-                className="text-center font-inter font-medium text-[14px] text-white py-2.5 rounded-[8px] flex items-center justify-center gap-2"
+                className="text-center font-inter font-medium text-[14px] text-white py-2.5 rounded-full flex items-center justify-center gap-2"
                 style={{
-                  background: "linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)",
-                  boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
+                  background: "linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)",
+                  boxShadow: "0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04)",
                 }}
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-[16px] h-[16px]">

@@ -34,23 +34,23 @@ export default function GuidesPage() {
           </p>
           
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 : Accéder à l&apos;éditeur</h3>
-            <p>Connectez-vous à votre tableau de bord Creatabl et cliquez sur le bouton <strong className="text-[#111827]">&ldquo;Créer un post&rdquo;</strong> en haut à droite de votre écran.</p>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 : Accéder à l&apos;éditeur</h3>
+            <p>Connectez-vous à votre tableau de bord Creatabl et cliquez sur le bouton <strong className="text-[#14121F]">&ldquo;Créer un post&rdquo;</strong> en haut à droite de votre écran.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 : Rédiger et optimiser avec l&apos;IA</h3>
-            <p>Saisissez vos idées principales. Si vous manquez d&apos;inspiration, cliquez sur l&apos;icône <strong className="text-[#111827]">Assistant IA</strong>. Choisissez le ton souhaité (professionnel, amical, inspirant) et laissez l&apos;IA rédiger une légende percutante assortie de hashtags pertinents.</p>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 : Rédiger et optimiser avec l&apos;IA</h3>
+            <p>Saisissez vos idées principales. Si vous manquez d&apos;inspiration, cliquez sur l&apos;icône <strong className="text-[#14121F]">Assistant IA</strong>. Choisissez le ton souhaité (professionnel, amical, inspirant) et laissez l&apos;IA rédiger une légende percutante assortie de hashtags pertinents.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 3 : Associer vos visuels</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 3 : Associer vos visuels</h3>
             <p>Glissez-déposez vos images ou vidéos directement dans la zone multimédia, ou cliquez sur l&apos;onglet Canva pour importer un design existant.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 4 : Sélectionner les canaux et publier</h3>
-            <p>Cochez les icônes des réseaux cibles (LinkedIn, Instagram, TikTok, Facebook). Vous pouvez prévisualiser le rendu en temps réel sur la droite. Cliquez sur <strong className="text-[#111827]">&ldquo;Publier maintenant&rdquo;</strong> ou choisissez un créneau recommandé par l&apos;IA pour planifier.</p>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 4 : Sélectionner les canaux et publier</h3>
+            <p>Cochez les icônes des réseaux cibles (LinkedIn, Instagram, TikTok, Facebook). Vous pouvez prévisualiser le rendu en temps réel sur la droite. Cliquez sur <strong className="text-[#14121F]">&ldquo;Publier maintenant&rdquo;</strong> ou choisissez un créneau recommandé par l&apos;IA pour planifier.</p>
           </div>
 
           <div className="p-4 bg-purple-50 border border-purple-100 rounded-xl">
@@ -74,15 +74,15 @@ export default function GuidesPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Pourquoi reformuler avec l&apos;IA ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Pourquoi reformuler avec l&apos;IA ?</h3>
             <p>Parfois, un bon texte manque juste d&apos;accroche ou de structure. L&apos;IA ajuste le rythme, ajoute de la clarté et optimise le vocabulaire pour encourager les interactions (commentaires, partages).</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Comment faire en pratique ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Comment faire en pratique ?</h3>
             <ol className="list-decimal pl-5 space-y-2">
               <li>Collez votre brouillon dans l&apos;éditeur.</li>
-              <li>Surlignez la partie que vous souhaitez modifier et cliquez sur <strong className="text-[#111827]">Reformuler</strong>.</li>
+              <li>Surlignez la partie que vous souhaitez modifier et cliquez sur <strong className="text-[#14121F]">Reformuler</strong>.</li>
               <li>Choisissez une variante de ton : <em className="text-primary font-semibold">Humoristique, Professionnel, Connaisseur ou Minimaliste</em>.</li>
               <li>Cliquez sur &ldquo;Régénérer&rdquo; jusqu&apos;à obtenir la formulation parfaite.</li>
             </ol>
@@ -109,17 +109,17 @@ export default function GuidesPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">La planification intelligente pas à pas</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">La planification intelligente pas à pas</h3>
             <p>Après avoir rédigé votre message, repérez la section de planification au bas de l&apos;éditeur de post :</p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-[#111827]">1. Activer la planification automatique</h4>
+            <h4 className="text-lg font-bold text-[#14121F]">1. Activer la planification automatique</h4>
             <p>Cliquez sur l&apos;icône calendrier. L&apos;IA analysera les statistiques de votre compte pour mettre en avant les créneaux d&apos;engagement maximaux.</p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-[#111827]">2. Ajustement par canal</h4>
+            <h4 className="text-lg font-bold text-[#14121F]">2. Ajustement par canal</h4>
             <p>Si vous postez sur Instagram et LinkedIn, vous pouvez configurer une heure différente pour chacun afin de cibler les audiences B2B de LinkedIn le matin, et B2C d&apos;Instagram en soirée.</p>
           </div>
 
@@ -144,12 +144,12 @@ export default function GuidesPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 : Activer l&apos;intégration</h3>
-            <p>Rendez-vous dans vos Paramètres &gt; Intégrations. Recherchez Canva et cliquez sur <strong className="text-[#111827]">&ldquo;Connecter mon compte&rdquo;</strong>. Connectez-vous avec vos identifiants Canva ordinaires et accordez les permissions d&apos;importation.</p>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 : Activer l&apos;intégration</h3>
+            <p>Rendez-vous dans vos Paramètres &gt; Intégrations. Recherchez Canva et cliquez sur <strong className="text-[#14121F]">&ldquo;Connecter mon compte&rdquo;</strong>. Connectez-vous avec vos identifiants Canva ordinaires et accordez les permissions d&apos;importation.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 : Importer un design depuis l&apos;éditeur</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 : Importer un design depuis l&apos;éditeur</h3>
             <p>Lorsque vous créez un post dans Creatabl, cliquez sur l&apos;icône Canva dans la section média. Une fenêtre s&apos;ouvrira, affichant vos dossiers et projets récents. Sélectionnez le visuel de votre choix et validez. Il sera converti et optimisé automatiquement au bon format.</p>
           </div>
 
@@ -174,7 +174,7 @@ export default function GuidesPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">La règle des 3 tiers</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">La règle des 3 tiers</h3>
             <p>Pour chaque publication, notre IA utilise la méthode des trois tiers pour équilibrer la portée et la concurrence :</p>
             <ul className="space-y-2 list-disc pl-5">
               <li><strong className="text-slate-800">Hashtags à fort volume (100k+ publications) :</strong> Pour capter du trafic immédiat (ex: #MarketingDigital).</li>
@@ -184,7 +184,7 @@ export default function GuidesPage() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Combien de hashtags utiliser ?</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Combien de hashtags utiliser ?</h3>
             <p>Instagram autorise jusqu&apos;à 30 hashtags. Les études récentes montrent qu&apos;un bloc de 5 à 11 hashtags bien ciblés génère autant, sinon plus, d&apos;engagement qu&apos;une liste saturée. Notre générateur de hashtags IA sélectionne automatiquement les 8 à 10 tags les plus performants pour votre niche.</p>
           </div>
         </div>
@@ -204,17 +204,17 @@ export default function GuidesPage() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 1 : Définir vos piliers de contenu</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 1 : Définir vos piliers de contenu</h3>
             <p>Divisez votre communication en 3 ou 4 grands thèmes (ex: éducation/conseils, coulisses de l&apos;entreprise, promotion produit, témoignages clients). Cela assure un flux varié et évite l&apos;effet de lassitude.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 2 : Planifier en blocs (Time-blocking)</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 2 : Planifier en blocs (Time-blocking)</h3>
             <p>Consacrez 2 à 3 heures consécutives par mois pour rédiger tous vos posts. Utilisez le calendrier Creatabl pour glisser-déposer vos brouillons. Vous aurez ainsi une vision globale de la répartition thématique.</p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#111827] font-outfit">Étape 3 : Analyser et ajuster</h3>
+            <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 3 : Analyser et ajuster</h3>
             <p>À la fin de chaque mois, consultez vos Analytics unifiées sur Creatabl pour identifier le post le plus performant. Dupliquez sa structure ou son format pour le mois suivant.</p>
           </div>
         </div>
@@ -227,14 +227,14 @@ export default function GuidesPage() {
     : guides.filter(g => g.category === activeTab);
 
   return (
-    <div className="bg-[#FFFFFF] text-[#111827] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FFFFFF] text-[#14121F] min-h-screen pt-[140px] pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold uppercase tracking-wider">
             Ressources
           </div>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
             Guides & Ressources
           </h1>
           <p className="font-inter text-slate-500 text-base sm:text-lg">
@@ -251,7 +251,7 @@ export default function GuidesPage() {
               className={`font-inter font-medium text-sm px-5 py-2.5 rounded-full border transition-all duration-200 cursor-pointer ${
                 activeTab === tab
                   ? "bg-primary text-white border-primary shadow-lg shadow-purple-500/10"
-                  : "bg-white text-slate-500 border-slate-200 hover:text-[#111827] hover:border-slate-300"
+                  : "bg-white text-slate-500 border-slate-200 hover:text-[#14121F] hover:border-slate-300"
               }`}
             >
               {tab}
@@ -264,7 +264,7 @@ export default function GuidesPage() {
           {filteredGuides.map((guide) => (
             <div
               key={guide.id}
-              className="bg-white rounded-[24px] border border-[#F3F4F6] shadow-[0_2px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-[24px] border border-[#E8E6F0] shadow-[0_2px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Header Visual preview */}
               <div className="h-[180px] w-full relative overflow-hidden bg-slate-100">
@@ -283,7 +283,7 @@ export default function GuidesPage() {
                   <span className="text-[13px] font-extrabold uppercase tracking-widest text-[#7225E3]">
                     {guide.category}
                   </span>
-                  <h3 className="font-outfit text-lg font-bold text-[#111827] leading-snug group-hover:text-primary transition-colors">
+                  <h3 className="font-outfit text-lg font-bold text-[#14121F] leading-snug group-hover:text-primary transition-colors">
                     {guide.title}
                   </h3>
                   <p className="font-inter text-sm text-slate-500 leading-relaxed line-clamp-3">
@@ -316,7 +316,7 @@ export default function GuidesPage() {
           <div className="bg-white border border-slate-200 rounded-[28px] max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col relative">
             
             {/* Modal Header */}
-            <div className="p-8 bg-gradient-to-r from-[#7225E3] to-[#8B5CF6] text-white flex items-center justify-between relative">
+            <div className="p-8 bg-gradient-to-r from-[#7225E3] to-[#8A38F5] text-white flex items-center justify-between relative">
               <div className="space-y-1.5 pr-8">
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-white/25 px-2.5 py-0.5 rounded-full">
                   {selectedArticle.category}

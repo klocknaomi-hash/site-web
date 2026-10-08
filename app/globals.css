@@ -1,11 +1,71 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #8B5CF6;
-  --color-primary-hover: #7c3aed;
-  
+  --color-primary: #7225E3;
+  --color-primary-hover: #5B1BB8;
+
   --font-serif: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-outfit), "Segoe UI", system-ui, sans-serif;
+
+  /* Design system Creatabl.ia — neutres teintés violet, violets de marque */
+  --color-slate-50: #F8F7FC;
+  --color-slate-100: #F1EFF7;
+  --color-slate-200: #E8E6F0;
+  --color-slate-300: #D4D1E0;
+  --color-slate-400: #878399;
+  --color-slate-500: #6B6780;
+  --color-slate-600: #4B4B63;
+  --color-slate-700: #3A3850;
+  --color-slate-800: #24212F;
+  --color-slate-900: #14121F;
+  --color-slate-950: #0B0A12;
+  --color-gray-50: #F8F7FC;
+  --color-gray-100: #F1EFF7;
+  --color-gray-200: #E8E6F0;
+  --color-gray-300: #D4D1E0;
+  --color-gray-400: #878399;
+  --color-gray-500: #6B6780;
+  --color-gray-600: #4B4B63;
+  --color-gray-700: #3A3850;
+  --color-gray-800: #24212F;
+  --color-gray-900: #14121F;
+  --color-gray-950: #0B0A12;
+  --color-purple-50: #F3EEFD;
+  --color-purple-100: #E7DCFC;
+  --color-purple-200: #D3BFFA;
+  --color-purple-300: #B996F8;
+  --color-purple-400: #9E63F6;
+  --color-purple-500: #8A38F5;
+  --color-purple-600: #7225E3;
+  --color-purple-700: #5B1BB8;
+  --color-purple-800: #47168F;
+  --color-purple-900: #33106A;
+  --color-purple-950: #1F0A42;
+  --color-violet-50: #F3EEFD;
+  --color-violet-100: #E7DCFC;
+  --color-violet-200: #D3BFFA;
+  --color-violet-300: #B996F8;
+  --color-violet-400: #9E63F6;
+  --color-violet-500: #8A38F5;
+  --color-violet-600: #7225E3;
+  --color-violet-700: #5B1BB8;
+  --color-violet-800: #47168F;
+  --color-violet-900: #33106A;
+  --color-violet-950: #1F0A42;
+
+  /* Rayons : 8px (vignettes), 12px (cartes, champs, modales), pilule (boutons, tags) */
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+
+  /* Deux niveaux d'ombre seulement */
+  --shadow-sm: 0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04);
+  --shadow-md: 0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04);
+  --shadow-lg: 0 12px 32px rgba(20, 18, 31, 0.10), 0 2px 6px rgba(20, 18, 31, 0.05);
+  --shadow-xl: 0 12px 32px rgba(20, 18, 31, 0.10), 0 2px 6px rgba(20, 18, 31, 0.05);
+  --shadow-2xl: 0 12px 32px rgba(20, 18, 31, 0.10), 0 2px 6px rgba(20, 18, 31, 0.05);
   
   --animate-marquee: marquee 30s linear infinite;
   --animate-glow-pulse: glowPulse 4s ease-in-out infinite;
@@ -27,12 +87,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Custom layout transitions and variables */
+/* Design system Creatabl.ia : thème clair uniquement */
 :root {
   --bg-primary: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --border-color: #e2e8f0;
+  --text-primary: #14121F;
+  --text-secondary: #4B4B63;
+  --border-color: #E8E6F0;
+
+  --violet-600: #7225E3;
+  --violet-500: #8A38F5;
+  --violet-platform: #7C3AED;
+  --violet-700: #5B1BB8;
+  --violet-100: #E7DCFC;
+  --violet-50: #F3EEFD;
+  --surface: #F8F7FC;
+  --ink: #14121F;
+  --ink-muted: #4B4B63;
+  --ink-subtle: #6B6780;
+  --border: #E8E6F0;
+  --border-control: #878399;
+  --focus-ring: #7225E3;
+  --gradient-cta: linear-gradient(135deg, #7225E3 0%, #8A38F5 100%);
+  --shadow-1: 0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04);
+  --shadow-2: 0 12px 32px rgba(20, 18, 31, 0.10), 0 2px 6px rgba(20, 18, 31, 0.05);
 }
 
 .dark {
@@ -50,19 +127,34 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-inter), "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--font-outfit), "Segoe UI", system-ui, sans-serif;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Bouton principal : seul usage du dégradé violet avec le hero */
 @utility btn-purple-primary {
-  background: linear-gradient(135deg, #8A38F5 0%, #7225E3 100%) !important;
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.2) !important;
-  border-radius: 8px !important;
+  background: linear-gradient(135deg, #7225E3 0%, #8A38F5 100%) !important;
+  box-shadow: 0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04) !important;
+  border-radius: 999px !important;
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   border: none !important;
 }
 
@@ -79,11 +171,11 @@ body {
 
 /* Background glow effects */
 .radial-glow {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0) 70%);
+  background: radial-gradient(circle, rgba(114, 37, 227, 0.15) 0%, rgba(114, 37, 227, 0) 70%);
 }
 
 .radial-glow-cta {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(139, 92, 246, 0) 70%);
+  background: radial-gradient(circle, rgba(114, 37, 227, 0.25) 0%, rgba(114, 37, 227, 0) 70%);
 }
 
 .font-outfit   { font-family: var(--font-outfit); }
@@ -170,10 +262,10 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     ellipse at 50% 60%,
-    rgba(109, 40, 217, 0.55) 0%,
-    rgba(124, 58, 237, 0.35) 20%,
-    rgba(139, 92, 246, 0.18) 42%,
-    rgba(167, 139, 250, 0.07) 62%,
+    rgba(114, 37, 227, 0.55) 0%,
+    rgba(114, 37, 227, 0.35) 20%,
+    rgba(114, 37, 227, 0.18) 42%,
+    rgba(138, 56, 245, 0.07) 62%,
     transparent 78%
   );
   filter: blur(32px);
@@ -192,37 +284,37 @@ body {
    sont plus lumineuses/violettes, les bords plus fades */
 .hero-col {
   height: 100%;
-  border-right: 1px solid rgba(139, 92, 246, 0.08);
+  border-right: 1px solid rgba(114, 37, 227, 0.08);
 }
 
 /* Colonnes du bord (1, 2, 11, 12) — très fades */
 .hero-col:nth-child(1),
 .hero-col:nth-child(12) {
-  background: rgba(139, 92, 246, 0.012);
+  background: rgba(114, 37, 227, 0.012);
 }
 .hero-col:nth-child(2),
 .hero-col:nth-child(11) {
-  background: rgba(139, 92, 246, 0.022);
+  background: rgba(114, 37, 227, 0.022);
 }
 
 /* Colonnes intermédiaires (3, 4, 9, 10) */
 .hero-col:nth-child(3),
 .hero-col:nth-child(10) {
-  background: rgba(139, 92, 246, 0.035);
+  background: rgba(114, 37, 227, 0.035);
 }
 .hero-col:nth-child(4),
 .hero-col:nth-child(9) {
-  background: rgba(139, 92, 246, 0.05);
+  background: rgba(114, 37, 227, 0.05);
 }
 
 /* Colonnes proches du centre (5, 6, 7, 8) — plus lumineuses */
 .hero-col:nth-child(5),
 .hero-col:nth-child(8) {
-  background: rgba(139, 92, 246, 0.065);
+  background: rgba(114, 37, 227, 0.065);
 }
 .hero-col:nth-child(6),
 .hero-col:nth-child(7) {
-  background: rgba(139, 92, 246, 0.08);
+  background: rgba(114, 37, 227, 0.08);
 }
 
 /* Panneau encadrant gauche */
@@ -233,7 +325,7 @@ body {
   width: 6%;
   height: 60%;
   background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(114, 37, 227, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -247,7 +339,7 @@ body {
   width: 6%;
   height: 60%;
   background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(114, 37, 227, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

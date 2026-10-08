@@ -63,7 +63,7 @@ export default function ContactPage() {
           <h1 style={{
             fontSize: 'clamp(32px, 5vw, 48px)',
             fontWeight: 800,
-            color: '#111827',
+            color: '#14121F',
             lineHeight: 1.2,
             marginBottom: '16px',
             fontFamily: 'var(--font-outfit)',
@@ -72,7 +72,7 @@ export default function ContactPage() {
           </h1>
           <p style={{
             fontSize: '16px',
-            color: '#6B7280',
+            color: '#6B6780',
             lineHeight: 1.6,
           }}>
             On répond en moins de 24h ouvrées.
@@ -83,7 +83,7 @@ export default function ContactPage() {
           <div style={{
             background: '#F0FDF4',
             border: '1px solid #BBF7D0',
-            borderRadius: '16px',
+            borderRadius: '12px',
             padding: '32px',
             textAlign: 'center',
           }}>
@@ -96,7 +96,7 @@ export default function ContactPage() {
               ✓ Message envoyé !
             </p>
             <p style={{
-              color: '#6B7280',
+              color: '#6B6780',
               fontSize: '14px',
             }}>
               Nous vous répondrons rapidement.
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 display: 'block',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#374151',
+                color: '#4B4B63',
                 marginBottom: '8px',
               }}>
                 Nom complet
@@ -129,12 +129,12 @@ export default function ContactPage() {
                 style={{
                   width: '100%',
                   padding: '14px 18px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid #E8E6F0',
                   borderRadius: '12px',
                   fontSize: '15px',
-                  color: '#111827',
+                  color: '#14121F',
                   outline: 'none',
-                  background: '#FAFAFA',
+                  background: '#F8F7FC',
                   transition: 'border-color 0.2s',
                 }}
               />
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 display: 'block',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#374151',
+                color: '#4B4B63',
                 marginBottom: '8px',
               }}>
                 Email
@@ -161,12 +161,12 @@ export default function ContactPage() {
                 style={{
                   width: '100%',
                   padding: '14px 18px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid #E8E6F0',
                   borderRadius: '12px',
                   fontSize: '15px',
-                  color: '#111827',
+                  color: '#14121F',
                   outline: 'none',
-                  background: '#FAFAFA',
+                  background: '#F8F7FC',
                   transition: 'border-color 0.2s',
                 }}
               />
@@ -177,7 +177,7 @@ export default function ContactPage() {
                 display: 'block',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#374151',
+                color: '#4B4B63',
                 marginBottom: '8px',
               }}>
                 Sujet
@@ -190,11 +190,11 @@ export default function ContactPage() {
                 style={{
                   width: '100%',
                   padding: '14px 18px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid #E8E6F0',
                   borderRadius: '12px',
                   fontSize: '15px',
-                  color: '#111827',
-                  background: '#FAFAFA',
+                  color: '#14121F',
+                  background: '#F8F7FC',
                   outline: 'none',
                   cursor: 'pointer',
                 }}
@@ -222,7 +222,7 @@ export default function ContactPage() {
                 display: 'block',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#374151',
+                color: '#4B4B63',
                 marginBottom: '8px',
               }}>
                 Message
@@ -238,14 +238,14 @@ export default function ContactPage() {
                 style={{
                   width: '100%',
                   padding: '14px 18px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid #E8E6F0',
                   borderRadius: '12px',
                   fontSize: '15px',
-                  color: '#111827',
+                  color: '#14121F',
                   outline: 'none',
                   resize: 'none',
                   fontFamily: 'inherit',
-                  background: '#FAFAFA',
+                  background: '#F8F7FC',
                 }}
               />
             </div>
@@ -255,17 +255,17 @@ export default function ContactPage() {
               disabled={loading}
               style={{
                 width: '100%',
-                background: 'linear-gradient(135deg, #8A38F5 0%, #7225E3 100%)',
+                background: 'linear-gradient(135deg, #7225E3 0%, #8A38F5 100%)',
                 color: 'white',
                 padding: '16px',
-                borderRadius: '12px',
+                borderRadius: '999px',
                 fontSize: '15px',
                 fontWeight: 700,
                 border: 'none',
                 cursor: loading ? 'not-allowed' : 'pointer',
                 opacity: loading ? 0.6 : 1,
                 marginTop: '8px',
-                boxShadow: '0 4px 14px rgba(114, 37, 227, 0.25)',
+                boxShadow: '0 1px 2px rgba(20, 18, 31, 0.06), 0 1px 1px rgba(20, 18, 31, 0.04)',
                 transition: 'transform 0.2s, box-shadow 0.2s',
               }}
             >
@@ -274,7 +274,7 @@ export default function ContactPage() {
 
             <p style={{
               fontSize: '12px',
-              color: '#9CA3AF',
+              color: '#6B6780',
               textAlign: 'center',
             }}>
               Vos données sont utilisées uniquement pour vous répondre.
@@ -285,12 +285,12 @@ export default function ContactPage() {
         <div style={{
           marginTop: '64px',
           paddingTop: '32px',
-          borderTop: '1px solid #F3F4F6',
+          borderTop: '1px solid #E8E6F0',
           textAlign: 'center',
         }}>
           <p style={{
             fontSize: '14px',
-            color: '#9CA3AF',
+            color: '#6B6780',
             marginBottom: '8px',
           }}>
             Ou écrivez-nous directement à

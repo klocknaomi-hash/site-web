@@ -90,7 +90,7 @@ export default function FeaturesPage() {
               <path
                 d="M0,40 Q25,10 50,30 T100,5"
                 fill="none"
-                stroke="#8B5CF6"
+                stroke="#8A38F5"
                 strokeWidth="2.5"
                 strokeLinecap="round"
               />
@@ -318,7 +318,7 @@ export default function FeaturesPage() {
       {/* CTA at Bottom */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F5F3FF] p-8 sm:p-12 md:p-16 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
             <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
             <div className="max-w-3xl mx-auto space-y-6 relative z-10">
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">

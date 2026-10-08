@@ -8,6 +8,16 @@ const subjectLabels: Record<string, string> = {
   feedback: 'Feedback',
 }
 
+// Échappe le texte saisi par le visiteur avant de l'insérer dans l'e-mail HTML.
+function escapeHtml(value: unknown) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export async function POST(req: Request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder')
@@ -28,11 +38,11 @@ export async function POST(req: Request) {
       html: `
         <div style="font-family: sans-serif; max-width: 600px; padding: 20px;">
           <h2>Nouveau message depuis le site</h2>
-          <p><strong>De :</strong> ${name} (${email})</p>
-          <p><strong>Sujet :</strong> ${subjectLabels[subject] || subject}</p>
+          <p><strong>De :</strong> ${escapeHtml(name)} (${escapeHtml(email)})</p>
+          <p><strong>Sujet :</strong> ${escapeHtml(subjectLabels[subject] || subject)}</p>
           <hr />
           <p><strong>Message :</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
+          <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
         </div>
       `,
     })

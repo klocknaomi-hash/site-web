@@ -271,7 +271,7 @@ export default function PlateformesPage() {
                     href="https://app.creatabl-ia.com/sign-up"
                     className="w-full text-center py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-1 group/btn"
                     style={{ 
-                      background: "rgba(139, 92, 246, 0.05)",
+                      background: "rgba(114, 37, 227, 0.05)",
                       color: "var(--color-primary)" 
                     }}
                   >

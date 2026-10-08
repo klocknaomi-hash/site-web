@@ -118,8 +118,8 @@ export default function LogosStrip() {
       className="w-full select-none overflow-hidden logos-marquee-container"
       style={{
         backgroundColor: "#ffffff",
-        borderTop: "1px solid #f1f5f9",
-        borderBottom: "1px solid #f1f5f9",
+        borderTop: "1px solid #F1EFF7",
+        borderBottom: "1px solid #F1EFF7",
         paddingTop: "24px",
         paddingBottom: "24px",
       }}

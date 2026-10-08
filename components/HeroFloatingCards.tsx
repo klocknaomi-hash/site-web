@@ -32,7 +32,7 @@ export default function HeroFloatingCards() {
       <div className="w-full max-w-lg relative space-y-6">
         
         {/* Card 1: AI Generator Widget (Top Left floating) */}
-        <div className="relative lg:-left-12 bg-white dark:bg-[#121118] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-20">
+        <div className="relative lg:-left-12 bg-white dark:bg-[#14121F] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-20">
           <div className="flex items-center justify-between mb-3 border-b border-slate-100 dark:border-purple-950/20 pb-3">
             <div className="flex items-center gap-2">
               <div className="p-1.5 bg-purple-100 dark:bg-purple-950/45 text-primary rounded-lg">
@@ -66,7 +66,7 @@ export default function HeroFloatingCards() {
 
           <div className="space-y-3">
             {/* Input field simulation */}
-            <div className="bg-slate-50 dark:bg-[#0c0b10] border border-slate-100 dark:border-purple-950/20 p-2.5 rounded-lg text-xs min-h-[36px] flex items-center text-slate-500 dark:text-slate-400">
+            <div className="bg-slate-50 dark:bg-[#14121F] border border-slate-100 dark:border-purple-950/20 p-2.5 rounded-lg text-xs min-h-[36px] flex items-center text-slate-500 dark:text-slate-400">
               <span className="font-mono text-primary mr-1">&gt;</span>
               <span>{typedText}</span>
               <span className="w-1.5 h-3.5 bg-primary animate-pulse ml-0.5" />
@@ -93,7 +93,7 @@ export default function HeroFloatingCards() {
         </div>
 
         {/* Card 2: Calendar & Scheduler Widget (Center overlapping) */}
-        <div className="bg-white dark:bg-[#121118] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-10">
+        <div className="bg-white dark:bg-[#14121F] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-10">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <div className="p-1.5 bg-blue-100 dark:bg-blue-950/45 text-blue-500 rounded-lg">
@@ -106,7 +106,7 @@ export default function HeroFloatingCards() {
 
           <div className="space-y-2.5">
             {/* Scheduled item */}
-            <div className="flex items-center justify-between p-2.5 rounded-xl border border-dashed border-slate-200 dark:border-purple-950/20 bg-slate-50/50 dark:bg-[#0c0b10]/40">
+            <div className="flex items-center justify-between p-2.5 rounded-xl border border-dashed border-slate-200 dark:border-purple-950/20 bg-slate-50/50 dark:bg-[#14121F]/40">
               <div className="flex items-center gap-3">
                 <div className="relative w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-950/40 flex items-center justify-center text-primary text-[10px] font-bold">
                   POST
@@ -136,7 +136,7 @@ export default function HeroFloatingCards() {
         </div>
 
         {/* Card 3: Analytics Widget (Bottom Right floating) */}
-        <div className="lg:left-12 relative bg-white dark:bg-[#121118] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-20">
+        <div className="lg:left-12 relative bg-white dark:bg-[#14121F] border border-slate-200/60 dark:border-purple-950/40 p-5 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-black/20 hover:-translate-y-1.5 transition-transform duration-300 z-20">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <div className="p-1.5 bg-emerald-100 dark:bg-emerald-950/45 text-emerald-500 rounded-lg">
@@ -160,8 +160,8 @@ export default function HeroFloatingCards() {
               <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#8A38F5" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#8A38F5" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 {/* Area path */}
@@ -173,13 +173,13 @@ export default function HeroFloatingCards() {
                 <path
                   d="M0,22 Q15,10 25,18 T50,5 T75,12 T100,2"
                   fill="none"
-                  stroke="#8B5CF6"
+                  stroke="#8A38F5"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                 />
                 {/* Pulsing dot */}
-                <circle cx="100" cy="2" r="2.5" fill="#8B5CF6" className="animate-ping" />
-                <circle cx="100" cy="2" r="1.5" fill="#8B5CF6" />
+                <circle cx="100" cy="2" r="2.5" fill="#8A38F5" className="animate-ping" />
+                <circle cx="100" cy="2" r="1.5" fill="#8A38F5" />
               </svg>
             </div>
           </div>
