@@ -50,7 +50,7 @@ export default function GuidesPage() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-[#14121F] font-outfit">Étape 4 : Sélectionner les canaux et publier</h3>
-            <p>Cochez les icônes des réseaux cibles (LinkedIn, Instagram, TikTok, Facebook). Vous pouvez prévisualiser le rendu en temps réel sur la droite. Cliquez sur <strong className="text-[#14121F]">&ldquo;Publier maintenant&rdquo;</strong> ou choisissez un créneau recommandé par l&apos;IA pour planifier.</p>
+            <p>Cochez les icônes des réseaux cibles (LinkedIn, Instagram, Facebook, X). Vous pouvez prévisualiser le rendu en temps réel sur la droite. Cliquez sur <strong className="text-[#14121F]">&ldquo;Publier maintenant&rdquo;</strong> ou choisissez un créneau recommandé par l&apos;IA pour planifier.</p>
           </div>
 
           <div className="p-4 bg-[#F3EEFD] border border-[#E7DCFC] rounded-xl">

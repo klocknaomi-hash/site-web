@@ -50,23 +50,14 @@ export const metadata: Metadata = {
     description: 'Créez, planifiez et analysez tous vos réseaux sociaux.',
     url: 'https://creatabl-ia.com',
     siteName: 'Creatabl.ia',
-    images: [
-      {
-        url: '/logo.png',
-        width: 800,
-        height: 600,
-        alt: 'Creatabl.ia logo',
-      },
-    ],
     locale: 'fr_FR',
     type: 'website',
   },
   
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Creatabl.ia',
     description: 'Créez, planifiez et analysez tous vos réseaux sociaux.',
-    images: ['/logo.png'],
   },
 };
 

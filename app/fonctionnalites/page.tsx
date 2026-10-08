@@ -105,7 +105,7 @@ export default function FeaturesPage() {
       title: "Multi-plateforme natif",
       tagline: "Créez une fois, diffusez partout avec élégance.",
       description:
-        "Creatabl offre une intégration directe avec Instagram, LinkedIn, TikTok, Facebook, YouTube et X. Nous utilisons exclusivement les APIs officielles et sécurisées de chaque réseau pour garantir la stabilité de vos comptes et respecter scrupuleusement les conditions d'utilisation. Vos données d'accès sont chiffrées et protégées, assurant une connexion fiable sans aucun risque de blocage ou de restriction de vos profils.",
+        "Creatabl offre une intégration directe avec Instagram, LinkedIn, Facebook et X (TikTok et YouTube arrivent bientôt). Nous utilisons exclusivement les APIs officielles et sécurisées de chaque réseau pour garantir la stabilité de vos comptes et respecter scrupuleusement les conditions d'utilisation. Vos données d'accès sont chiffrées et protégées, assurant une connexion fiable sans aucun risque de blocage ou de restriction de vos profils.",
       bullets: [
         "Intégration fluide avec l'API Canva",
         "Recadrage d'images et vidéos intelligent selon le réseau",
@@ -118,7 +118,7 @@ export default function FeaturesPage() {
           <div className="space-y-2">
             {[
               { name: "Instagram Business", handle: "@creatabl.ia", active: true },
-              { name: "TikTok Professional", handle: "@creatabl_ia", active: true },
+              { name: "X", handle: "@creatabl_ia", active: true },
               { name: "LinkedIn Company", handle: "Creatabl IA", active: true },
               { name: "Canva Integration", handle: "Design direct", active: false },
             ].map((chan, i) => (

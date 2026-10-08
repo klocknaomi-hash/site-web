@@ -52,7 +52,7 @@ export default function PlanificationPage() {
                 Depuis votre calendrier éditorial, visualisez toutes vos publications sur 30 jours. L&apos;interface interactive vous permet de planifier des semaines de posts en quelques minutes. Déplacez vos publications par simple glisser-déposer (drag-and-drop), modifiez les heures de publication ou reprogrammez vos posts à la volée. Cette approche visuelle offre une visibilité globale sur votre ligne éditoriale, garantissant une communication régulière et harmonieuse.
               </p>
               <p>
-                Compatible avec Instagram, LinkedIn, TikTok, Facebook, YouTube et X. Une seule action suffit pour publier partout au moment idéal. Chaque réseau social ayant ses propres codes, notre interface vous permet d&apos;adapter facilement le texte de votre publication pour chaque canal avant de l&apos;envoyer au planificateur, avec des alertes régulières pour garder un contrôle parfait de votre image de marque.
+                Compatible avec Instagram, LinkedIn, Facebook et X (TikTok et YouTube arrivent bientôt). Une seule action suffit pour publier partout au moment idéal. Chaque réseau social ayant ses propres codes, notre interface vous permet d&apos;adapter facilement le texte de votre publication pour chaque canal avant de l&apos;envoyer au planificateur, avec des alertes régulières pour garder un contrôle parfait de votre image de marque.
               </p>
             </ScrollReveal>
           </div>

@@ -49,7 +49,7 @@ export default function CGUPage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold mr-1">&mdash;</span>
-              <span>Respecter les chartes d&apos;utilisation et limites de taux (rate-limits) imposées par les API des réseaux sociaux (Instagram, LinkedIn, TikTok, Facebook).</span>
+              <span>Respecter les chartes d&apos;utilisation et limites de taux (rate-limits) imposées par les API des réseaux sociaux (Instagram, LinkedIn, Facebook, X).</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold mr-1">&mdash;</span>

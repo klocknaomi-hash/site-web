@@ -62,6 +62,8 @@ interface SocialPlatform {
   gradientLine: string;
   icon: React.ReactNode;
   features: string[];
+  /** Réseau annoncé mais pas encore publiable depuis la plateforme. */
+  soon?: boolean;
 }
 
 export default function PlateformesPage() {
@@ -92,7 +94,7 @@ export default function PlateformesPage() {
     };
   }, []);
 
-  const socialPlatforms: SocialPlatform[] = [
+  const allPlatforms: SocialPlatform[] = [
     {
       id: "instagram",
       name: "Instagram",
@@ -127,9 +129,10 @@ export default function PlateformesPage() {
     },
     {
       id: "tiktok",
+      soon: true,
       name: "TikTok",
       desc: "Vidéos verticales",
-      longDesc: "Explosez votre visibilité organique. Envoyez vos vidéos courtes directement aux API TikTok et captez l'attention de votre audience.",
+      longDesc: "Explosez votre visibilité organique. Bientôt : envoyez vos vidéos courtes directement aux API TikTok et captez l'attention de votre audience.",
       color: "#000000",
       bgGradient: "from-[#14121F]/10 to-transparent",
       gradientLine: "from-[#000000] via-[#25F4EE] to-[#FE2C55]",
@@ -159,9 +162,10 @@ export default function PlateformesPage() {
     },
     {
       id: "youtube",
+      soon: true,
       name: "YouTube",
       desc: "Shorts uniquement",
-      longDesc: "Développez votre présence vidéo au format court. Planifiez et publiez vos YouTube Shorts verticaux de manière entièrement automatisée.",
+      longDesc: "Bientôt : développez votre présence vidéo au format court. Planifiez et publiez vos YouTube Shorts verticaux de manière entièrement automatisée.",
       color: "#FF0000",
       bgGradient: "from-[#B42318]/10 to-[#B42318]/5",
       gradientLine: "from-[#FF0000] to-[#CC0000]",
@@ -190,6 +194,8 @@ export default function PlateformesPage() {
       ]
     }
   ];
+  // Réseaux disponibles d'abord, puis ceux qui arrivent.
+  const socialPlatforms = [...allPlatforms.filter((p) => !p.soon), ...allPlatforms.filter((p) => p.soon)];
 
   return (
     <div className="relative pt-28 pb-20 overflow-x-hidden bg-white text-[#14121F]">
@@ -233,10 +239,16 @@ export default function PlateformesPage() {
                     <div className="w-16 h-16 rounded-2xl bg-[#F8F7FC] border border-[#E8E6F0] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       {platform.icon}
                     </div>
-                    <span className="text-xs font-bold text-[#0E7445] bg-[#0E7445]/10 px-2.5 py-1 rounded-full border border-[#0E7445]/20 flex items-center gap-1">
-                      <ShieldCheck size={12} />
-                      API Officielle
-                    </span>
+                    {platform.soon ? (
+                      <span className="text-xs font-semibold text-[#8A4B00] bg-[#FDF2DF] px-2.5 py-1 rounded-full border border-[#F4DDB3]">
+                        Bientôt disponible
+                      </span>
+                    ) : (
+                      <span className="text-xs font-semibold text-[#0E7445] bg-[#0E7445]/10 px-2.5 py-1 rounded-full border border-[#0E7445]/20 flex items-center gap-1">
+                        <ShieldCheck size={12} />
+                        API officielle
+                      </span>
+                    )}
                   </div>
                   
                   <div className="space-y-2">
@@ -246,7 +258,7 @@ export default function PlateformesPage() {
                     <p className="text-xs text-primary font-semibold font-outfit">
                       {platform.desc}
                     </p>
-                    <p className="text-sm text-slate-550 leading-relaxed pt-1">
+                    <p className="text-sm text-[#4B4B63] leading-relaxed pt-1">
                       {platform.longDesc}
                     </p>
                   </div>
@@ -267,6 +279,11 @@ export default function PlateformesPage() {
                 </div>
                 
                 <div className="pt-6 relative z-10">
+                  {platform.soon ? (
+                    <span className="w-full text-center py-2.5 px-4 rounded-xl border border-dashed border-[#878399] bg-[#F8F7FC] text-xs font-semibold text-[#6B6780] flex items-center justify-center">
+                      Disponible prochainement
+                    </span>
+                  ) : (
                   <a
                     href="https://app.creatabl-ia.com/sign-up"
                     className="w-full text-center py-2.5 px-4 rounded-xl border border-[#E8E6F0] text-xs font-bold transition-all flex items-center justify-center gap-1 group/btn"
@@ -278,6 +295,7 @@ export default function PlateformesPage() {
                     <span>Connecter {platform.name}</span>
                     <ArrowRight size={12} className="group-hover/btn:translate-x-0.5 transition-transform" />
                   </a>
+                  )}
                 </div>
               </div>
             </ScrollReveal>

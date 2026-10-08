@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Multi-plateforme natif | Creatabl.ia",
-  description: "Un post, tous vos réseaux, en un clic. Connectez Instagram, LinkedIn, TikTok, Facebook, YouTube et X via leurs APIs officielles.",
+  description: "Un post, tous vos réseaux, en un clic. Connectez Instagram, LinkedIn, Facebook et X via leurs APIs officielles.",
 };
 
 export default function MultiPlateformePage() {
@@ -46,7 +46,7 @@ export default function MultiPlateformePage() {
             
             <ScrollReveal delay={200} className="space-y-6 text-base sm:text-lg text-[#4B4B63] leading-relaxed">
               <p>
-                Creatabl offre une intégration directe avec Instagram, LinkedIn, TikTok, Facebook, YouTube et X. Nous utilisons exclusivement les APIs officielles et sécurisées de chaque réseau pour garantir la stabilité de vos comptes et respecter scrupuleusement les conditions d&apos;utilisation. Vos données d&apos;accès sont chiffrées et protégées, assurant une connexion fiable sans aucun risque de blocage ou de restriction de vos profils.
+                Creatabl offre une intégration directe avec Instagram, LinkedIn, Facebook et X (TikTok et YouTube arrivent bientôt). Nous utilisons exclusivement les APIs officielles et sécurisées de chaque réseau pour garantir la stabilité de vos comptes et respecter scrupuleusement les conditions d&apos;utilisation. Vos données d&apos;accès sont chiffrées et protégées, assurant une connexion fiable sans aucun risque de blocage ou de restriction de vos profils.
               </p>
               <p>
                 Chaque plateforme impose ses propres standards en matière de dimensions d&apos;images, de durée de vidéos ou de limites de caractères. Creatabl automatise cette adaptation : notre outil redimensionne intelligemment vos visuels et tronque ou adapte vos textes pour s&apos;assurer que chaque post s&apos;affiche parfaitement, que ce soit sous forme de Reel vertical, de carrousel LinkedIn ou de tweet textuel.
