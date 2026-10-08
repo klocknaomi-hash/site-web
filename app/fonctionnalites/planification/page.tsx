@@ -18,7 +18,7 @@ export default function PlanificationPage() {
   ];
 
   return (
-    <div className="relative pt-28 bg-white min-h-screen text-slate-800">
+    <div className="relative pt-28 bg-white min-h-screen text-[#14121F]">
       {/* Glow background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none radial-glow opacity-50 z-0" />
 
@@ -29,12 +29,12 @@ export default function PlanificationPage() {
           {/* Left: Text Content */}
           <div className="lg:col-span-7 space-y-6">
             <ScrollReveal>
-              <span className="text-xs font-bold text-[#7225E3] uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold text-[#7225E3] uppercase tracking-widest bg-[#F3EEFD] px-3 py-1 rounded-full">
                 Fonctionnalité
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#14121F] leading-tight">
                 Planification intelligente
               </h1>
             </ScrollReveal>
@@ -44,7 +44,7 @@ export default function PlanificationPage() {
               </p>
             </ScrollReveal>
             
-            <ScrollReveal delay={200} className="space-y-6 text-base sm:text-lg text-slate-600 leading-relaxed">
+            <ScrollReveal delay={200} className="space-y-6 text-base sm:text-lg text-[#4B4B63] leading-relaxed">
               <p>
                 La planification sur les réseaux sociaux ne doit plus reposer sur l&apos;intuition ou des suppositions. Creatabl analyse en continu les données d&apos;engagement historiques de votre audience cible pour identifier les pics d&apos;activité réels. Notre algorithme croise ces informations avec les spécificités de chaque plateforme pour publier votre contenu au moment exact où il obtiendra la plus grande portée organique possible. Plus besoin de deviner : notre IA planifie intelligemment à votre place.
               </p>
@@ -61,9 +61,9 @@ export default function PlanificationPage() {
           <div className="lg:col-span-5 space-y-8">
             {/* Visual Mockup */}
             <ScrollReveal delay={200}>
-              <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-slate-200/50 via-slate-100 to-purple-500/10 shadow-sm">
-                <div className="absolute inset-0 bg-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-                <div className="bg-white border border-slate-200 rounded-2xl p-2 shadow-md overflow-hidden">
+              <div className="relative group p-1.5 rounded-3xl bg-gradient-to-tr from-[#E8E6F0]/50 via-[#F8F7FC] to-[#7225E3]/10 shadow-sm">
+                <div className="absolute inset-0 bg-[#7225E3]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
+                <div className="bg-white border border-[#E8E6F0] rounded-2xl p-2 shadow-md overflow-hidden">
                   <video
                     src="/videos/demo-calendrier.mp4"
                     autoPlay
@@ -82,12 +82,12 @@ export default function PlanificationPage() {
 
             {/* Checklist */}
             <ScrollReveal delay={250}>
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-sm font-bold text-slate-800 mb-4">Fonctionnalités incluses :</h3>
+              <div className="bg-[#F8F7FC] border border-[#E8E6F0] rounded-2xl p-6 shadow-sm">
+                <h3 className="text-sm font-bold text-[#14121F] mb-4">Fonctionnalités incluses :</h3>
                 <ul className="space-y-3">
                   {bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700 font-medium">
-                      <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-2.5 text-sm text-[#4B4B63] font-medium">
+                      <CheckCircle2 size={18} className="text-[#0E7445] mt-0.5 flex-shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -102,13 +102,13 @@ export default function PlanificationPage() {
       {/* CTA at Bottom */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-purple-200/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl border border-[#E7DCFC]/50 bg-[#F3EEFD] p-8 sm:p-12 md:p-16 text-center shadow-lg">
             <div className="absolute inset-0 radial-glow-cta pointer-events-none" />
             <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#14121F]">
                 Prêt à planifier sans effort ?
               </h2>
-              <p className="text-sm sm:text-base text-slate-500 max-w-md mx-auto">
+              <p className="text-sm sm:text-base text-[#6B6780] max-w-md mx-auto">
                 Laissez notre IA s&apos;occuper de la planification et concentrez-vous sur la création de vos contenus.
               </p>
               <div className="pt-4">

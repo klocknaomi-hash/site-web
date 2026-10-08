@@ -13,16 +13,16 @@ export default function MentionsLegalesPage() {
       icon: <Info className="w-5 h-5 text-primary" />,
       title: "1. Éditeur du site",
       content: (
-        <div className="space-y-2 font-inter text-[15px] leading-relaxed text-slate-600">
-          <p>Le site internet <strong className="text-slate-800">Creatabl.ia</strong> est édité par :</p>
+        <div className="space-y-2 font-inter text-base leading-relaxed text-[#4B4B63]">
+          <p>Le site internet <strong className="text-[#14121F]">Creatabl.ia</strong> est édité par :</p>
           <ul className="space-y-1.5 list-none">
-            <li><strong className="text-slate-800">Raison sociale :</strong> Creatabl SAS</li>
-            <li><strong className="text-slate-800">Forme juridique :</strong> Société par Actions Simplifiée (SAS)</li>
-            <li><strong className="text-slate-800">Capital social :</strong> 10 000 €</li>
-            <li><strong className="text-slate-800">Siège social :</strong> 10 Rue de la Paix, 75002 Paris, France</li>
-            <li><strong className="text-slate-800">Immatriculation :</strong> RCS Paris sous le numéro B 987 654 321</li>
-            <li><strong className="text-slate-800">TVA intracommunautaire :</strong> FR 99 987 654 321</li>
-            <li><strong className="text-slate-800">Contact email :</strong> hello@creatabl-ia.com</li>
+            <li><strong className="text-[#14121F]">Raison sociale :</strong> Creatabl SAS</li>
+            <li><strong className="text-[#14121F]">Forme juridique :</strong> Société par Actions Simplifiée (SAS)</li>
+            <li><strong className="text-[#14121F]">Capital social :</strong> 10 000 €</li>
+            <li><strong className="text-[#14121F]">Siège social :</strong> 10 Rue de la Paix, 75002 Paris, France</li>
+            <li><strong className="text-[#14121F]">Immatriculation :</strong> RCS Paris sous le numéro B 987 654 321</li>
+            <li><strong className="text-[#14121F]">TVA intracommunautaire :</strong> FR 99 987 654 321</li>
+            <li><strong className="text-[#14121F]">Contact email :</strong> hello@creatabl-ia.com</li>
           </ul>
         </div>
       ),
@@ -31,8 +31,8 @@ export default function MentionsLegalesPage() {
       icon: <User className="w-5 h-5 text-primary" />,
       title: "2. Directeur de la publication",
       content: (
-        <p className="font-inter text-[15px] leading-relaxed text-slate-600">
-          Le directeur de la publication du site internet est <strong className="text-slate-800">Naomi Klock</strong>, en sa qualité de Présidente et Co-fondatrice de Creatabl SAS.
+        <p className="font-inter text-base leading-relaxed text-[#4B4B63]">
+          Le directeur de la publication du site internet est <strong className="text-[#14121F]">Naomi Klock</strong>, en sa qualité de Présidente et Co-fondatrice de Creatabl SAS.
         </p>
       ),
     },
@@ -40,9 +40,9 @@ export default function MentionsLegalesPage() {
       icon: <Server className="w-5 h-5 text-primary" />,
       title: "3. Hébergeur du site",
       content: (
-        <div className="space-y-1 font-inter text-[15px] leading-relaxed text-slate-600">
+        <div className="space-y-1 font-inter text-base leading-relaxed text-[#4B4B63]">
           <p>Le site internet et l&apos;application Creatabl sont hébergés par :</p>
-          <p className="text-slate-800 font-semibold">Vercel Inc.</p>
+          <p className="text-[#14121F] font-semibold">Vercel Inc.</p>
           <p>Adresse : 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis</p>
           <p>Site internet : <a href="https://vercel.com" className="text-primary hover:underline font-medium">vercel.com</a></p>
         </div>
@@ -52,7 +52,7 @@ export default function MentionsLegalesPage() {
       icon: <BookOpen className="w-5 h-5 text-primary" />,
       title: "4. Propriété intellectuelle",
       content: (
-        <p className="font-inter text-[15px] leading-relaxed text-slate-600">
+        <p className="font-inter text-base leading-relaxed text-[#4B4B63]">
           L&apos;ensemble du site Creatabl.ia, y compris les textes, logos, icônes, animations, chartes de design et codes informatiques, est protégé par les lois internationales sur le droit d&apos;auteur et la propriété intellectuelle. Toute reproduction ou représentation, intégrale ou partielle, sur quelque support que ce soit, est strictement interdite sans le consentement préalable écrit de la société Creatabl SAS.
         </p>
       ),
@@ -67,10 +67,10 @@ export default function MentionsLegalesPage() {
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
             LÉGAL
           </span>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-semibold text-[#14121F] leading-tight">
             Mentions légales
           </h1>
-          <p className="font-inter text-sm text-slate-500">
+          <p className="font-inter text-sm text-[#6B6780]">
             Dernière mise à jour : Mai 2026
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function MentionsLegalesPage() {
                 <div className="p-2 bg-primary/10 rounded-xl">
                   {sec.icon}
                 </div>
-                <h2 className="font-outfit text-xl font-bold text-slate-900">
+                <h2 className="font-outfit text-xl font-bold text-[#14121F]">
                   {sec.title}
                 </h2>
               </div>

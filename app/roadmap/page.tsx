@@ -33,8 +33,8 @@ export default function RoadmapPage() {
   const columns = [
     {
       title: "Planifié",
-      icon: <Lightbulb className="w-5 h-5 text-indigo-500" />,
-      colorClass: "border-indigo-100 bg-[#F8F7FC]",
+      icon: <Lightbulb className="w-5 h-5 text-[#7225E3]" />,
+      colorClass: "border-[#E7DCFC] bg-[#F8F7FC]",
       items: [
         {
           id: 1,
@@ -52,8 +52,8 @@ export default function RoadmapPage() {
     },
     {
       title: "En cours",
-      icon: <Settings className="w-5 h-5 text-amber-500 animate-spin" style={{ animationDuration: "3s" }} />,
-      colorClass: "border-amber-100 bg-[#FCFAF5]",
+      icon: <Settings className="w-5 h-5 text-[#8A4B00] animate-spin" style={{ animationDuration: "3s" }} />,
+      colorClass: "border-[#FDF2DF] bg-[#FCFAF5]",
       items: [
         {
           id: 3,
@@ -71,8 +71,8 @@ export default function RoadmapPage() {
     },
     {
       title: "Déployé",
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />,
-      colorClass: "border-emerald-100 bg-[#F5FCF7]",
+      icon: <CheckCircle2 className="w-5 h-5 text-[#0E7445]" />,
+      colorClass: "border-[#E7F6EE] bg-[#F5FCF7]",
       items: [
         {
           id: 5,
@@ -98,7 +98,7 @@ export default function RoadmapPage() {
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
             ÉVOLUTION
           </span>
-          <h1 className="font-outfit text-4xl sm:text-5xl font-extrabold text-[#14121F] leading-tight">
+          <h1 className="font-outfit text-4xl sm:text-5xl font-semibold text-[#14121F] leading-tight">
             Notre Feuille de Route
           </h1>
           <p className="font-inter text-slate-550 text-base sm:text-lg">
@@ -114,12 +114,12 @@ export default function RoadmapPage() {
               className={`border ${col.colorClass} rounded-[22px] p-6 space-y-6 shadow-[0_4px_16px_rgba(0,0,0,0.015)]`}
             >
               {/* Column Header */}
-              <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
+              <div className="flex items-center gap-2.5 pb-4 border-b border-[#E8E6F0]">
                 {col.icon}
-                <h3 className="font-outfit text-lg font-bold text-slate-900">
+                <h3 className="font-outfit text-lg font-bold text-[#14121F]">
                   {col.title}
                 </h3>
-                <span className="ml-auto text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                <span className="ml-auto text-xs font-bold text-[#6B6780] bg-[#F8F7FC] px-2.5 py-0.5 rounded-full">
                   {col.items.length}
                 </span>
               </div>
@@ -133,14 +133,14 @@ export default function RoadmapPage() {
                   return (
                     <div 
                       key={item.id}
-                      className="bg-white border border-slate-200/60 rounded-xl p-5 space-y-3 hover:border-purple-200 hover:shadow-sm transition-all duration-250 flex items-start gap-4"
+                      className="bg-white border border-[#E8E6F0]/60 rounded-xl p-5 space-y-3 hover:border-[#E7DCFC] hover:shadow-sm transition-all duration-250 flex items-start gap-4"
                     >
                       {/* Left Block (Text) */}
                       <div className="flex-grow space-y-1">
                         <h4 className="font-outfit text-sm font-bold text-[#14121F] leading-snug">
                           {item.title}
                         </h4>
-                        <p className="font-inter text-xs text-slate-500 leading-relaxed">
+                        <p className="font-inter text-xs text-[#6B6780] leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -151,11 +151,11 @@ export default function RoadmapPage() {
                         className={`flex flex-col items-center justify-center p-2.5 rounded-xl border transition-all duration-200 cursor-pointer min-w-[46px] ${
                           isVoted
                             ? "bg-primary border-primary text-white shadow-md shadow-purple-500/10"
-                            : "bg-slate-50 border-slate-200 text-slate-500 hover:border-primary/50 hover:text-primary"
+                            : "bg-[#F8F7FC] border-[#E8E6F0] text-[#6B6780] hover:border-primary/50 hover:text-primary"
                         }`}
                       >
                         <ChevronUp className={`w-4 h-4 transition-transform duration-300 ${isVoted ? "translate-y-0.5" : "group-hover:-translate-y-0.5"}`} />
-                        <span className="text-[12px] font-extrabold mt-0.5 leading-none">
+                        <span className="text-xs font-semibold mt-0.5 leading-none">
                           {displayVotes}
                         </span>
                       </button>
