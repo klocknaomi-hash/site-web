@@ -252,17 +252,15 @@ h1, h2, h3, h4 {
 }
 
 /* Fond du hero (maquette Figma « Desktop - 2 ») : un grand anneau violet centré en
-   haut, vu à travers 12 bandes de verre dépoli. L'anneau passe en boucle du violet
+   haut, vu à travers 12 bandes de verre dépoli, coupé net en blanc sous la vidéo. L'anneau passe en boucle du violet
    plein à un violet très léger (variantes « Frame 17 » et « Frame 18 »). */
 .hero-ring {
+  /* Violet partout sauf dans le cercle blanc central (rayon 765 px, centre à 155 px
+     du haut de la page) : le bord extérieur de l'anneau n'apparaît jamais, même sur
+     les écrans plus larges que la maquette. */
   position: absolute;
-  top: -1200px; /* centre de l'anneau à 155 px du haut de la page */
-  left: 50%;
-  width: 2550px;
-  height: 2550px;
-  margin-left: -1275px;
-  border-radius: 50%;
-  background: radial-gradient(circle closest-side, transparent 60%, #8A38F5 calc(60% + 1px));
+  inset: 0;
+  background: radial-gradient(circle at 50% 75px, transparent 765px, #8A38F5 766px);
   animation: heroRingPulse 6s ease-in-out infinite;
 }
 
@@ -292,6 +290,18 @@ h1, h2, h3, h4 {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-ring { animation: none; }
+}
+
+/* Coupe nette en blanc à mi-hauteur de la vidéo, sur toute la largeur de l'écran */
+.hero-cut {
+  position: absolute;
+  top: 50%;
+  bottom: -200px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #ffffff;
+  z-index: 0;
 }
 
 @keyframes scrollWords {
@@ -324,4 +334,10 @@ h1, h2, h3, h4 {
 }
 .testimonials-track:hover {
   animation-play-state: paused;
+}
+
+/* Barre de navigation : liens centrés dans la page (maquette Figma) quand la place le permet */
+@media (min-width: 1000px) {
+  .cr-nav .cr-container { position: relative; }
+  .cr-nav .cr-nav-links { position: absolute; left: 50%; transform: translateX(-50%); }
 }

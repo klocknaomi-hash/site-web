@@ -144,7 +144,7 @@ export default function Home() {
                 passer votre contenu
                 <br />
                 à la{" "}
-                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse</span> supérieure.
+                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse supérieure</span>.
               </h1>
             </ScrollReveal>
 
@@ -185,7 +185,9 @@ export default function Home() {
           </div>
 
           {/* Vidéo démo dans le cadre violet d'origine */}
-          <div className="w-full" style={{ marginTop: "56px" }}>
+          <div className="relative w-full" style={{ marginTop: "56px" }}>
+            {/* Fond blanc sous la moitié basse de la vidéo : le bas de l'anneau ne se voit pas */}
+            <div className="hero-cut" aria-hidden="true" />
             <ScrollReveal delay={300}>
               <DemoVideo />
             </ScrollReveal>
