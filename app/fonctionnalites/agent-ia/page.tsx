@@ -66,6 +66,7 @@ export default function AgentIaPage() {
                 <div className="bg-white border border-[#E8E6F0] rounded-2xl p-2 shadow-md overflow-hidden">
                   <video
                     src="/videos/demo-agent-ia.mp4"
+                    poster="/images/plateforme/agent-ia-executions.webp"
                     autoPlay
                     loop
                     muted

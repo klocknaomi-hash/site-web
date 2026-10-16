@@ -66,6 +66,7 @@ export default function AnalyticsPage() {
                 <div className="bg-white border border-[#E8E6F0] rounded-2xl p-2 shadow-md overflow-hidden">
                   <video
                     src="/videos/demo-analytics.mp4"
+                    poster="/images/plateforme/analytique.webp"
                     autoPlay
                     loop
                     muted

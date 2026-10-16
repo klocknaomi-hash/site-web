@@ -7,6 +7,16 @@ import { Play, X } from "lucide-react";
 // Bouton « En savoir plus » d'une fonctionnalité : ouvre une fenêtre avec la courte
 // vidéo de démonstration propre à cette fonctionnalité (public/videos/<fichier>.mp4).
 // Tant que la vidéo n'est pas déposée, la fenêtre l'indique et renvoie vers la page détaillée.
+// Image affichée avant le chargement de chaque vidéo : capture de l'écran concerné.
+const POSTERS: Record<string, string> = {
+  "/videos/demo-calendrier.mp4": "/images/plateforme/calendrier.webp",
+  "/videos/demo-create-post.mp4": "/images/plateforme/creer-un-post.webp",
+  "/videos/demo-analytics.mp4": "/images/plateforme/analytique.webp",
+  "/videos/demo-agent-ia.mp4": "/images/plateforme/agent-ia-mes-agents.webp",
+  "/videos/demo-equipe.mp4": "/images/plateforme/equipe.webp",
+  "/videos/demo-comptes.mp4": "/images/plateforme/comptes.webp",
+};
+
 export default function FeatureDemo({
   title,
   video,
@@ -72,7 +82,7 @@ export default function FeatureDemo({
               ) : (
                 <video
                   src={video}
-                  poster="/dashboard.png"
+                  poster={POSTERS[video] ?? "/images/plateforme/tableau-de-bord.webp"}
                   controls
                   autoPlay
                   playsInline
