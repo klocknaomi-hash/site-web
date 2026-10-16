@@ -251,98 +251,57 @@ h1, h2, h3, h4 {
   background: #ffffff;
 }
 
-/* Demi-cercle violet illuminé */
-.hero-glow-circle {
-  position: absolute;
-  bottom: -180px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at 50% 60%,
-    rgba(114, 37, 227, 0.55) 0%,
-    rgba(114, 37, 227, 0.35) 20%,
-    rgba(114, 37, 227, 0.18) 42%,
-    rgba(138, 56, 245, 0.07) 62%,
-    transparent 78%
-  );
-  filter: blur(32px);
-}
-
-/* Les 12 colonnes avec degrés de luminosité différents */
-.hero-columns {
+/* Fond du hero (maquette Figma « Desktop - 2 ») : un grand anneau violet centré en
+   haut, vu à travers 12 bandes de verre dépoli, coupé net en blanc sous la vidéo. L'anneau passe en boucle du violet
+   plein à un violet très léger (variantes « Frame 17 » et « Frame 18 »). */
+.hero-ring {
+  /* Violet partout sauf dans le cercle blanc central (rayon 765 px, centre à 155 px
+     du haut de la page) : le bord extérieur de l'anneau n'apparaît jamais, même sur
+     les écrans plus larges que la maquette. */
   position: absolute;
   inset: 0;
+  background: radial-gradient(circle at 50% 75px, transparent 765px, #8A38F5 766px);
+  animation: heroRingPulse 6s ease-in-out infinite;
+}
+
+@keyframes heroRingPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.1; }
+}
+
+/* 12 bandes de verre : chacune floute l'anneau séparément, d'où l'effet cannelé.
+   Elles couvrent les 1 024 premiers pixels de la page ; en dessous, l'anneau reste net. */
+.hero-columns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 944px; /* 1 024 px moins les 80 px au-dessus du hero */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
 
-/* Chaque colonne a une opacité différente selon 
-   sa distance du centre — les colonnes du centre 
-   sont plus lumineuses/violettes, les bords plus fades */
 .hero-col {
   height: 100%;
-  border-right: 1px solid rgba(114, 37, 227, 0.08);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 177.5%);
+  backdrop-filter: blur(150px);
+  -webkit-backdrop-filter: blur(150px);
 }
 
-/* Colonnes du bord (1, 2, 11, 12) — très fades */
-.hero-col:nth-child(1),
-.hero-col:nth-child(12) {
-  background: rgba(114, 37, 227, 0.012);
-}
-.hero-col:nth-child(2),
-.hero-col:nth-child(11) {
-  background: rgba(114, 37, 227, 0.022);
+@media (prefers-reduced-motion: reduce) {
+  .hero-ring { animation: none; }
 }
 
-/* Colonnes intermédiaires (3, 4, 9, 10) */
-.hero-col:nth-child(3),
-.hero-col:nth-child(10) {
-  background: rgba(114, 37, 227, 0.035);
-}
-.hero-col:nth-child(4),
-.hero-col:nth-child(9) {
-  background: rgba(114, 37, 227, 0.05);
-}
-
-/* Colonnes proches du centre (5, 6, 7, 8) — plus lumineuses */
-.hero-col:nth-child(5),
-.hero-col:nth-child(8) {
-  background: rgba(114, 37, 227, 0.065);
-}
-.hero-col:nth-child(6),
-.hero-col:nth-child(7) {
-  background: rgba(114, 37, 227, 0.08);
-}
-
-/* Panneau encadrant gauche */
-.hero-panel-left {
+/* Coupe nette en blanc à mi-hauteur de la vidéo, sur toute la largeur de l'écran */
+.hero-cut {
   position: absolute;
-  top: 80px;
-  left: 2.5%;
-  width: 6%;
-  height: 60%;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(114, 37, 227, 0.1);
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-/* Panneau encadrant droite */
-.hero-panel-right {
-  position: absolute;
-  top: 80px;
-  right: 2.5%;
-  width: 6%;
-  height: 60%;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(114, 37, 227, 0.1);
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  top: 50%;
+  bottom: -200px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #ffffff;
+  z-index: 0;
 }
 
 @keyframes scrollWords {
@@ -375,4 +334,10 @@ h1, h2, h3, h4 {
 }
 .testimonials-track:hover {
   animation-play-state: paused;
+}
+
+/* Barre de navigation : liens centrés dans la page (maquette Figma) quand la place le permet */
+@media (min-width: 1000px) {
+  .cr-nav .cr-container { position: relative; }
+  .cr-nav .cr-nav-links { position: absolute; left: 50%; transform: translateX(-50%); }
 }

@@ -96,16 +96,14 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden pt-20">
 
-      {/* HERO — fond d'origine conservé : colonnes, demi-cercle violet, panneaux */}
+      {/* HERO — fond de la maquette Figma : anneau violet animé et bandes de verre */}
       <section
         className="relative w-full overflow-hidden bg-white pt-24 pb-20 md:pt-32 md:pb-24 border-b border-slate-100"
         style={{ background: "#FFFFFF", position: "relative", overflow: "hidden", backgroundColor: "#ffffff" }}
       >
         <div className="hero-bg-wrapper" aria-hidden="true">
-          {/* Demi-cercle violet illuminé depuis le bas */}
-          <div className="hero-glow-circle" />
-
-          {/* 12 colonnes avec degrés de transparence variables */}
+          {/* Anneau violet animé, vu à travers 12 bandes de verre (maquette Figma) */}
+          <div className="hero-ring" />
           <div className="hero-columns">
             <div className="hero-col" />
             <div className="hero-col" />
@@ -120,10 +118,6 @@ export default function Home() {
             <div className="hero-col" />
             <div className="hero-col" />
           </div>
-
-          {/* Panneaux blancs semi-transparents */}
-          <div className="hero-panel-left" />
-          <div className="hero-panel-right" />
         </div>
 
         <div
@@ -150,7 +144,7 @@ export default function Home() {
                 passer votre contenu
                 <br />
                 à la{" "}
-                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse</span> supérieure.
+                <span className="font-playfair italic text-[#7225E3]" style={{ fontWeight: 500, letterSpacing: 0 }}>vitesse supérieure</span>.
               </h1>
             </ScrollReveal>
 
@@ -191,7 +185,9 @@ export default function Home() {
           </div>
 
           {/* Vidéo démo dans le cadre violet d'origine */}
-          <div className="w-full" style={{ marginTop: "56px" }}>
+          <div className="relative w-full" style={{ marginTop: "56px" }}>
+            {/* Fond blanc sous la moitié basse de la vidéo : le bas de l'anneau ne se voit pas */}
+            <div className="hero-cut" aria-hidden="true" />
             <ScrollReveal delay={300}>
               <DemoVideo />
             </ScrollReveal>
