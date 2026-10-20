@@ -60,12 +60,12 @@ export default function DemoVideo() {
                   type="button"
                   onClick={() => setState("playing")}
                   className="inline-flex items-center gap-3 rounded-full bg-white py-2 pl-2 pr-6 font-inter text-[15px] font-semibold text-[#14121F] shadow-[0_12px_32px_rgba(20,18,31,0.18)] transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7225E3]"
-                  aria-label="Lire la vidéo de démonstration, 1 minute 44"
+                  aria-label="Lire la vidéo de démonstration, 1 minute 49"
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-[#7225E3] text-white">
                     <Play size={18} fill="currentColor" aria-hidden="true" />
                   </span>
-                  Voir Creatabl IA en 1:44
+                  Voir Creatabl IA en 1:49
                 </button>
               )}
             </div>
