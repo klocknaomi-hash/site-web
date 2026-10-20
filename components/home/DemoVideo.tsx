@@ -38,7 +38,7 @@ export default function DemoVideo() {
           <video
             className="block w-full"
             src={VIDEO_SRC}
-            poster="/dashboard.png"
+            poster="/images/plateforme/tableau-de-bord.webp"
             controls
             autoPlay
             playsInline
@@ -49,8 +49,8 @@ export default function DemoVideo() {
         ) : (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/dashboard.png" alt="Tableau de bord Creatabl IA" className="block w-full" />
-            <div className="absolute inset-0 grid place-items-center bg-[rgba(20,18,31,0.18)]">
+            <img src="/images/plateforme/tableau-de-bord.webp" alt="Tableau de bord Creatabl IA" className="block w-full" width={1440} height={900} />
+            <div className="absolute inset-0 grid place-items-center bg-[rgba(20,18,31,0.06)]">
               {state === "unavailable" ? (
                 <p className="rounded-full bg-white px-5 py-3 font-inter text-sm font-medium text-[#14121F] shadow-lg">
                   La vidéo de démonstration arrive bientôt.
@@ -60,12 +60,12 @@ export default function DemoVideo() {
                   type="button"
                   onClick={() => setState("playing")}
                   className="inline-flex items-center gap-3 rounded-full bg-white py-2 pl-2 pr-6 font-inter text-[15px] font-semibold text-[#14121F] shadow-[0_12px_32px_rgba(20,18,31,0.18)] transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7225E3]"
-                  aria-label="Lire la vidéo de démonstration, 1 minute 42"
+                  aria-label="Lire la vidéo de démonstration, 1 minute 44"
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-[#7225E3] text-white">
                     <Play size={18} fill="currentColor" aria-hidden="true" />
                   </span>
-                  Voir Creatabl IA en 1:42
+                  Voir Creatabl IA en 1:44
                 </button>
               )}
             </div>

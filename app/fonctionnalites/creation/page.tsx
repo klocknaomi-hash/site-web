@@ -66,6 +66,7 @@ export default function CreationPage() {
                 <div className="bg-white border border-[#E8E6F0] rounded-2xl p-2 shadow-md overflow-hidden">
                   <video
                     src="/videos/demo-create-post.mp4"
+                    poster="/images/plateforme/creer-un-post.webp"
                     autoPlay
                     loop
                     muted

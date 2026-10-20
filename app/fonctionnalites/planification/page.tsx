@@ -66,6 +66,7 @@ export default function PlanificationPage() {
                 <div className="bg-white border border-[#E8E6F0] rounded-2xl p-2 shadow-md overflow-hidden">
                   <video
                     src="/videos/demo-calendrier.mp4"
+                    poster="/images/plateforme/calendrier.webp"
                     autoPlay
                     loop
                     muted
