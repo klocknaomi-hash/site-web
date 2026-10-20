@@ -15,6 +15,7 @@ const POSTERS: Record<string, string> = {
   "/videos/demo-agent-ia.mp4": "/images/plateforme/agent-ia-mes-agents.webp",
   "/videos/demo-equipe.mp4": "/images/plateforme/equipe.webp",
   "/videos/demo-comptes.mp4": "/images/plateforme/comptes.webp",
+  "/videos/demo-canva.mp4": "/images/plateforme/canva.webp",
 };
 
 export default function FeatureDemo({
